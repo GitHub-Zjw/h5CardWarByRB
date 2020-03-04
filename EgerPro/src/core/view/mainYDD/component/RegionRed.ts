@@ -34,6 +34,16 @@ class RegionRed extends BaseRegion
 	}
 	protected get StarPointY(): number
 	{
-		return this.height;
+		return this.height + 10;
+	}
+
+	protected get SelfStarPointX(): number
+	{
+		return this.width * 0.45;
+	}
+
+	protected get SelfStarPointY(): number
+	{
+		return this.height ;
 	}
 }

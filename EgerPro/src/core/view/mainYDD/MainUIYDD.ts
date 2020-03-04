@@ -21,6 +21,9 @@ module game
 		public regionRed: RegionRed;
 		public regionBlack: RegionBlack;
 		public regionOther: RegionOther;
+		public regionRed_btn: eui.Button;
+		public regionBlack_btn: eui.Button;
+		public regionOther_btn: eui.Button;
 		public moneyNumR_lab: eui.Label;
 		public moneyNumB_lab: eui.Label;
 		public moneyNumO_lab: eui.Label;
@@ -38,6 +41,7 @@ module game
 		public gameMethod_btn: eui.Button;
 
 		private _selectedBall: BallBtn;
+		private _selectIndex: number;
 		private _timer: egret.Timer;
 		private _cards: Card[];
 		private _GetCardAmiL: egret.Tween;
@@ -61,6 +65,7 @@ module game
 			this._cardStarXs[5] = this.card6.x;
 			this._vsManBlackX = this.vsManBlack_img.x;
 			this._vsManRedX = this.vsManRed_img.x;
+			this._selectIndex = -1;
 		}
 
 		protected partAdded(partName: string, instance: any): void
@@ -88,6 +93,9 @@ module game
 			this.betRecord_btn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBetRecordsBtnClick, this);
 			this.gameMethod_btn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onGameMethodBtnClick, this);
 			this.prizeInfo_btn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onPrizeInfoBtnClick, this);
+			this.regionRed_btn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onRedRegionClick, this);
+			this.regionBlack_btn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBlackRegionClick, this);
+			this.regionOther_btn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onOtherRegionClick, this);
 			AllData.instance.addEventListener(GameNotify.GAME_STAR, this.onBegigGame, this);
 			AllData.instance.addEventListener(GameNotify.STOP_BETS, this.onStopBet, this);
 			AllData.instance.addEventListener(GameNotify.SEND_CARD, this.SendCard, this);
@@ -111,6 +119,9 @@ module game
 			this.betRecord_btn.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onBetRecordsBtnClick, this);
 			this.gameMethod_btn.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onGameMethodBtnClick, this);
 			this.prizeInfo_btn.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onPrizeInfoBtnClick, this);
+			this.regionRed_btn.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onRedRegionClick, this);
+			this.regionBlack_btn.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onBlackRegionClick, this);
+			this.regionOther_btn.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onOtherRegionClick, this);
 			AllData.instance.removeEventListener(GameNotify.GAME_STAR, this.onBegigGame, this);
 			AllData.instance.removeEventListener(GameNotify.STOP_BETS, this.onStopBet, this);
 			AllData.instance.removeEventListener(GameNotify.SEND_CARD, this.SendCard, this);
@@ -131,6 +142,8 @@ module game
 			this.mengBan_btn.visible = false;
 			this.blackResult_img.alpha = 0;
 			this.redResult_img.alpha = 0;
+			this._selectIndex = -1;
+			this._selectedBall.hideSelectedAmi();
 			this.regionRed.removeAllBall();
 			this.regionBlack.removeAllBall();
 			this.regionOther.removeAllBall();
@@ -241,7 +254,8 @@ module game
 		public showWinner(): void
 		{
 			let winner: EnumerationType.RegionWinner = AllData.instance.Winner;
-			switch (winner) {
+			switch (winner)
+			{
 				case EnumerationType.RegionWinner.black:
 					this.regionBlack.showWinAmi()
 					break;
@@ -377,16 +391,42 @@ module game
 			game.AppFacade.getInstance().sendNotification(PanelNotify.OPEN_BET_DETAIL, false);
 		}
 
-		private onGameMethodBtnClick(): void
+		private onGameMethodBtnClick(ent: egret.TouchEvent): void
 		{
 			game.AppFacade.getInstance().sendNotification(PanelNotify.OPEN_GAME_METHOD, true);
 		}
 
-		private onPrizeInfoBtnClick(): void
+		private onPrizeInfoBtnClick(ent: egret.TouchEvent): void
 		{
 			game.AppFacade.getInstance().sendNotification(PanelNotify.OPEN_GAME_METHOD, false);
 		}
-		
+
+		private onRedRegionClick(ent: egret.TouchEvent): void
+		{ 
+			if (this._selectIndex >= 0)
+			{
+				let indexs: number[] = [this._selectIndex];
+				this.regionRed.addBall(indexs, true);
+			}
+		}
+
+		private onBlackRegionClick(ent: egret.TouchEvent): void
+		{ 
+			if (this._selectIndex >= 0)
+			{
+				let indexs: number[] = [this._selectIndex];
+				this.regionBlack.addBall(indexs, true);
+			}
+		}
+
+		private onOtherRegionClick(ent: egret.TouchEvent): void
+		{ 
+			if (this._selectIndex >= 0)
+			{
+				let indexs: number[] = [this._selectIndex];
+				this.regionOther.addBall(indexs, true);
+			}
+		}
 
 		private onBallBtnClick(ent: egret.TouchEvent): void
 		{
@@ -401,21 +441,27 @@ module game
 			switch (btn)
 			{//todo
 				case this.ball0_btn:
+					this._selectIndex = 0;
 					console.log("倍数为=========0");
 					break;
 				case this.ball1_btn:
+					this._selectIndex = 1;
 					console.log("倍数为=========1");
 					break;
 				case this.ball2_btn:
+					this._selectIndex = 2;
 					console.log("倍数为=========2");
 					break;
 				case this.ball3_btn:
+					this._selectIndex = 3;
 					console.log("倍数为=========3");
 					break;
 				case this.ball4_btn:
+					this._selectIndex = 4;
 					console.log("倍数为=========4");
 					break;
 				case this.ball5_btn:
+					this._selectIndex = 5;
 					console.log("倍数为=========5");
 					break;
 			}

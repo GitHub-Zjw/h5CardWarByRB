@@ -28,6 +28,7 @@ var game;
             _this._cardStarXs[5] = _this.card6.x;
             _this._vsManBlackX = _this.vsManBlack_img.x;
             _this._vsManRedX = _this.vsManRed_img.x;
+            _this._selectIndex = -1;
             return _this;
         }
         MainUIYDD.prototype.partAdded = function (partName, instance) {
@@ -49,6 +50,9 @@ var game;
             this.betRecord_btn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBetRecordsBtnClick, this);
             this.gameMethod_btn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onGameMethodBtnClick, this);
             this.prizeInfo_btn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onPrizeInfoBtnClick, this);
+            this.regionRed_btn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onRedRegionClick, this);
+            this.regionBlack_btn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBlackRegionClick, this);
+            this.regionOther_btn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onOtherRegionClick, this);
             AllData.instance.addEventListener(GameNotify.GAME_STAR, this.onBegigGame, this);
             AllData.instance.addEventListener(GameNotify.STOP_BETS, this.onStopBet, this);
             AllData.instance.addEventListener(GameNotify.SEND_CARD, this.SendCard, this);
@@ -68,6 +72,9 @@ var game;
             this.betRecord_btn.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onBetRecordsBtnClick, this);
             this.gameMethod_btn.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onGameMethodBtnClick, this);
             this.prizeInfo_btn.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onPrizeInfoBtnClick, this);
+            this.regionRed_btn.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onRedRegionClick, this);
+            this.regionBlack_btn.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onBlackRegionClick, this);
+            this.regionOther_btn.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onOtherRegionClick, this);
             AllData.instance.removeEventListener(GameNotify.GAME_STAR, this.onBegigGame, this);
             AllData.instance.removeEventListener(GameNotify.STOP_BETS, this.onStopBet, this);
             AllData.instance.removeEventListener(GameNotify.SEND_CARD, this.SendCard, this);
@@ -83,6 +90,7 @@ var game;
             this.mengBan_btn.visible = false;
             this.blackResult_img.alpha = 0;
             this.redResult_img.alpha = 0;
+            this._selectIndex = -1;
             this.regionRed.removeAllBall();
             this.regionBlack.removeAllBall();
             this.regionOther.removeAllBall();
@@ -283,11 +291,29 @@ var game;
         MainUIYDD.prototype.onBetRecordsBtnClick = function (ent) {
             game.AppFacade.getInstance().sendNotification(PanelNotify.OPEN_BET_DETAIL, false);
         };
-        MainUIYDD.prototype.onGameMethodBtnClick = function () {
+        MainUIYDD.prototype.onGameMethodBtnClick = function (ent) {
             game.AppFacade.getInstance().sendNotification(PanelNotify.OPEN_GAME_METHOD, true);
         };
-        MainUIYDD.prototype.onPrizeInfoBtnClick = function () {
+        MainUIYDD.prototype.onPrizeInfoBtnClick = function (ent) {
             game.AppFacade.getInstance().sendNotification(PanelNotify.OPEN_GAME_METHOD, false);
+        };
+        MainUIYDD.prototype.onRedRegionClick = function (ent) {
+            if (this._selectIndex >= 0) {
+                var indexs = [this._selectIndex];
+                this.regionRed.addBall(indexs, true);
+            }
+        };
+        MainUIYDD.prototype.onBlackRegionClick = function (ent) {
+            if (this._selectIndex >= 0) {
+                var indexs = [this._selectIndex];
+                this.regionBlack.addBall(indexs, true);
+            }
+        };
+        MainUIYDD.prototype.onOtherRegionClick = function (ent) {
+            if (this._selectIndex >= 0) {
+                var indexs = [this._selectIndex];
+                this.regionOther.addBall(indexs, true);
+            }
         };
         MainUIYDD.prototype.onBallBtnClick = function (ent) {
             if (this._selectedBall) {
@@ -298,21 +324,27 @@ var game;
             btn.showSelectedAmi();
             switch (btn) {
                 case this.ball0_btn:
+                    this._selectIndex = 0;
                     console.log("倍数为=========0");
                     break;
                 case this.ball1_btn:
+                    this._selectIndex = 1;
                     console.log("倍数为=========1");
                     break;
                 case this.ball2_btn:
+                    this._selectIndex = 2;
                     console.log("倍数为=========2");
                     break;
                 case this.ball3_btn:
+                    this._selectIndex = 3;
                     console.log("倍数为=========3");
                     break;
                 case this.ball4_btn:
+                    this._selectIndex = 4;
                     console.log("倍数为=========4");
                     break;
                 case this.ball5_btn:
+                    this._selectIndex = 5;
                     console.log("倍数为=========5");
                     break;
             }

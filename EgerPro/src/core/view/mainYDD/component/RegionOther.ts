@@ -32,6 +32,16 @@ class RegionOther extends RegionRed
 
 	protected get StarPointY(): number
 	{
+		return this.height * 1.5;
+	}
+
+	protected get SelfStarPointX(): number
+	{
+		return this.width * 0.9;
+	}
+
+	protected get SelfStarPointY(): number
+	{
 		return this.height * 1.3;
 	}
 }

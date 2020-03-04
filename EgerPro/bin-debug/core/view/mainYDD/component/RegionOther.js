@@ -40,6 +40,20 @@ var RegionOther = (function (_super) {
     });
     Object.defineProperty(RegionOther.prototype, "StarPointY", {
         get: function () {
+            return this.height * 1.5;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(RegionOther.prototype, "SelfStarPointX", {
+        get: function () {
+            return this.width * 0.9;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(RegionOther.prototype, "SelfStarPointY", {
+        get: function () {
             return this.height * 1.3;
         },
         enumerable: true,

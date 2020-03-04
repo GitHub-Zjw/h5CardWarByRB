@@ -57,7 +57,7 @@ class BallCom extends eui.Component implements eui.UIComponent
 		this.visible = true;
 		this.icon_img.source = AllData.instance.ballSource[this._sourceIndex];
 		let twX: egret.Tween = egret.Tween.get(this);
-		twX.to({ x: this._endX }, 300, egret.Ease.circOut);
+		twX.to({ x: this._endX }, 300, egret.Ease.quintOut);
 		let twY = egret.Tween.get(this);
 		twY.to({ y: this._endY }, 300);
 	}

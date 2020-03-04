@@ -40,6 +40,20 @@ var RegionRed = (function (_super) {
     });
     Object.defineProperty(RegionRed.prototype, "StarPointY", {
         get: function () {
+            return this.height + 10;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(RegionRed.prototype, "SelfStarPointX", {
+        get: function () {
+            return this.width * 0.45;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(RegionRed.prototype, "SelfStarPointY", {
+        get: function () {
             return this.height;
         },
         enumerable: true,

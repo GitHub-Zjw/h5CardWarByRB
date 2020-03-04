@@ -51,13 +51,20 @@ var BaseRegion = (function (_super) {
      * 增加小球
      * @param indexs 小球类型数组
      */
-    BaseRegion.prototype.addBall = function (indexs) {
+    BaseRegion.prototype.addBall = function (indexs, isSelf) {
+        if (isSelf === void 0) { isSelf = false; }
         var len = indexs.length;
         for (var i = 0; i < len; i++) {
             var ball = ObjectPool.instance.pop(BallCom.NAME, indexs[i]);
             this.addChild(ball);
-            ball.x = this.StarPointX;
-            ball.y = this.StarPointY;
+            if (isSelf) {
+                ball.x = this.SelfStarPointX;
+                ball.y = this.SelfStarPointY;
+            }
+            else {
+                ball.x = this.StarPointX;
+                ball.y = this.StarPointY;
+            }
             var pEnd = this.getEndPoint();
             ball.showJoinAmi(pEnd.x, pEnd.y);
             this._balls.push(ball);
@@ -94,6 +101,20 @@ var BaseRegion = (function (_super) {
         configurable: true
     });
     Object.defineProperty(BaseRegion.prototype, "StarPointY", {
+        get: function () {
+            return this.height;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(BaseRegion.prototype, "SelfStarPointX", {
+        get: function () {
+            return 100;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(BaseRegion.prototype, "SelfStarPointY", {
         get: function () {
             return this.height;
         },

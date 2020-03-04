@@ -48,4 +48,14 @@ class RegionBlack extends BaseRegion
 	{
 		return this.width;
 	}
+
+	protected get SelfStarPointX(): number
+	{
+		return this.width * 1.1;
+	}
+
+	protected get SelfStarPointY(): number
+	{
+		return this.height * 0.8;
+	}
 }

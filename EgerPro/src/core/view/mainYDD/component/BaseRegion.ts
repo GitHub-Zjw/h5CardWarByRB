@@ -61,15 +61,23 @@ class BaseRegion extends eui.Component implements eui.UIComponent
 	 * 增加小球
 	 * @param indexs 小球类型数组
 	 */
-	public addBall(indexs: number[]): void
+	public addBall(indexs: number[], isSelf: boolean = false): void
 	{
 		let len = indexs.length;
 		for (let i = 0; i < len; i++)
 		{
 			let ball: BallCom = ObjectPool.instance.pop(BallCom.NAME, indexs[i]);
 			this.addChild(ball);
-			ball.x = this.StarPointX;
-			ball.y = this.StarPointY;
+			if (isSelf)
+			{
+				ball.x = this.SelfStarPointX;
+				ball.y = this.SelfStarPointY;
+			}
+			else
+			{
+				ball.x = this.StarPointX;
+				ball.y = this.StarPointY;
+			}
 			let pEnd = this.getEndPoint();
 			ball.showJoinAmi(pEnd.x, pEnd.y);
 			this._balls.push(ball);
@@ -111,6 +119,16 @@ class BaseRegion extends eui.Component implements eui.UIComponent
 		return 0;
 	}
 	protected get StarPointY(): number
+	{
+		return this.height;
+	}
+
+	protected get SelfStarPointX(): number
+	{
+		return 100;
+	}
+
+	protected get SelfStarPointY(): number
 	{
 		return this.height;
 	}

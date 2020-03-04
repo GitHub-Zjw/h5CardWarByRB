@@ -51,6 +51,20 @@ var RegionBlack = (function (_super) {
         enumerable: true,
         configurable: true
     });
+    Object.defineProperty(RegionBlack.prototype, "SelfStarPointX", {
+        get: function () {
+            return this.width * 1.1;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(RegionBlack.prototype, "SelfStarPointY", {
+        get: function () {
+            return this.height * 0.8;
+        },
+        enumerable: true,
+        configurable: true
+    });
     return RegionBlack;
 }(BaseRegion));
 __reflect(RegionBlack.prototype, "RegionBlack");
