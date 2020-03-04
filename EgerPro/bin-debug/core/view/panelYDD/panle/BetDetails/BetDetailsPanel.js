@@ -15,8 +15,10 @@ var betDetails;
 (function (betDetails) {
     var BetDetailsPanel = (function (_super) {
         __extends(BetDetailsPanel, _super);
-        function BetDetailsPanel() {
+        function BetDetailsPanel(isDetail) {
+            if (isDetail === void 0) { isDetail = true; }
             var _this = _super.call(this) || this;
+            _this._isDetail = isDetail;
             _this.skinName = "resource/ui/panelYDD/BetDetails/BetDetailsPanelSkin.exml";
             return _this;
         }
@@ -25,16 +27,30 @@ var betDetails;
         };
         BetDetailsPanel.prototype.childrenCreated = function () {
             _super.prototype.childrenCreated.call(this);
+            this.details_scl.verticalScrollBar.visible = false;
+            this.details_scl.verticalScrollBar.autoVisibility = false;
         };
         BetDetailsPanel.prototype.initView = function () {
             _super.prototype.initView.call(this);
-            // this.details_scl.verticalScrollBar.visible = false;
+            if (this._isDetail) {
+                this.currentState = "betDetail";
+                this.details_list.itemRenderer = betDetails.BetDetailsItem;
+            }
+            else {
+                this.currentState = "betRecord";
+                this.details_list.itemRenderer = betDetails.BetRecordsItem;
+            }
             this.details_list.dataProvider = this.listData();
-            this.details_list.itemRenderer = betDetails.BetDetailsItem;
         };
         BetDetailsPanel.prototype.listData = function () {
-            var returnValue = new eui.ArrayCollection(AllData.instance.BetDetailsTypeDatas);
-            return returnValue;
+            if (this._isDetail) {
+                var returnValue = new eui.ArrayCollection(AllData.instance.BetDetailsTypeDatas);
+                return returnValue;
+            }
+            else {
+                var returnValue = new eui.ArrayCollection(AllData.instance.BetRecordsTypeDatas);
+                return returnValue;
+            }
         };
         BetDetailsPanel.prototype.onBtnClick = function (e) {
             var btn = e.target;

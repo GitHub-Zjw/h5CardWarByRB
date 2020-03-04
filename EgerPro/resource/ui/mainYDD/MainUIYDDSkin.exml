@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <e:Skin class="MainUIYDDSkin" width="812" height="375" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*" >
 	<w:Config id="17075f09754" ></w:Config>
-	<e:Image source="prefab_png" left="0" right="0" top="0" bottom="0" alpha="0.8"/>
+	<e:Image source="prefab_png" left="0" right="0" top="0" bottom="0" alpha="0.8" visible="false"/>
 	<e:Group x="0" y="0" width="812" height="375">
-		<e:Image source="zhuoZi_png" x="0" y="0" visible="false"/>
+		<e:Image source="zhuoZi_png" x="0" y="0"/>
 		<ns1:RegionRed id="regionRed" x="395" y="33" skinName="RegionRedSkin"/>
 		<ns1:RegionBlack id="regionBlack" x="82.67" y="21.7" skinName="RegionBlackSkin" anchorOffsetX="0" anchorOffsetY="0"/>
 		<ns1:RegionOther id="regionOther" x="255" y="148" skinName="RegionOtherSkin"/>
@@ -13,6 +13,8 @@
 		<e:Image x="413" y="353" source="playerId_png"/>
 		<e:Image x="413" y="353" source="playerId_png"/>
 		<e:Label text="投注金额" x="436" y="274" textColor="0xa09eac" size="11.3" fontFamily="Microsoft YaHei"/>
+		<e:Label text="投注详情" x="265" textColor="0xdf8cfb" size="13" top="6"/>
+		<e:Label text="投注记录" x="363" textColor="0xDF8CFB" size="13" top="6"/>
 		<e:Label id="moneyNumB_lab" text="0" y="121.34" size="10.6" horizontalCenter="-203" textColor="0xfac33f"/>
 		<e:Label id="moneyNumR_lab" text="0" y="121.34" size="10.6" textColor="0xFAC33F" horizontalCenter="137"/>
 		<e:Label id="moneyNumO_lab" text="0" y="168.34" size="10.6" textColor="0xFAC33F" horizontalCenter="-30"/>
@@ -79,7 +81,24 @@
 				</e:Skin>
 			</e:skinName>
 		</e:Button>
-		<e:Button id="betDetails_btn" label="投注详情" x="200" y="57" anchorOffsetX="0" width="128" anchorOffsetY="0" height="43">
+		<e:Button id="betDetails_btn" label="投注详情" x="237" anchorOffsetX="0" width="101" anchorOffsetY="0" height="27" top="0" alpha="0">
+		</e:Button>
+		<e:Button id="betRecord_btn" label="投注详情" x="340" anchorOffsetX="0" width="98" anchorOffsetY="0" height="27" top="0" alpha="0" y="10"/>
+		<e:Button id="gameMethod_btn" label="" x="460" y="3">
+			<e:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="jiangbei_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+			</e:skinName>
+		</e:Button>
+		<e:Button id="prizeInfo_btn" label="" x="525" y="5">
+			<e:skinName>
+				<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="youxi_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+			</e:skinName>
 		</e:Button>
 		<ns1:Clock id="clock" y="97.34" skinName="ClockSkin" horizontalCenter="-3" visible="false"/>
 		<e:Button id="mengBan_btn" label="" x="403" y="262" icon="mengBan_png" anchorOffsetY="0" height="114" anchorOffsetX="0" width="244" visible="false">

@@ -33,6 +33,9 @@ module game
 		public redResult_img: eui.Image;
 		public scoreBoard: Scoreboard;
 		public betDetails_btn: eui.Button;
+		public betRecord_btn: eui.Button;
+		public prizeInfo_btn: eui.Button;
+		public gameMethod_btn: eui.Button;
 
 		private _selectedBall: BallBtn;
 		private _timer: egret.Timer;
@@ -82,6 +85,9 @@ module game
 			this.ball4_btn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBallBtnClick, this);
 			this.ball5_btn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBallBtnClick, this);
 			this.betDetails_btn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBetDetailsBtnClick, this);
+			this.betRecord_btn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBetRecordsBtnClick, this);
+			this.gameMethod_btn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onGameMethodBtnClick, this);
+			this.prizeInfo_btn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onPrizeInfoBtnClick, this);
 			AllData.instance.addEventListener(GameNotify.GAME_STAR, this.onBegigGame, this);
 			AllData.instance.addEventListener(GameNotify.STOP_BETS, this.onStopBet, this);
 			AllData.instance.addEventListener(GameNotify.SEND_CARD, this.SendCard, this);
@@ -102,6 +108,9 @@ module game
 			this.ball4_btn.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onBallBtnClick, this);
 			this.ball5_btn.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onBallBtnClick, this);
 			this.betDetails_btn.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onBetDetailsBtnClick, this);
+			this.betRecord_btn.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onBetRecordsBtnClick, this);
+			this.gameMethod_btn.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onGameMethodBtnClick, this);
+			this.prizeInfo_btn.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onPrizeInfoBtnClick, this);
 			AllData.instance.removeEventListener(GameNotify.GAME_STAR, this.onBegigGame, this);
 			AllData.instance.removeEventListener(GameNotify.STOP_BETS, this.onStopBet, this);
 			AllData.instance.removeEventListener(GameNotify.SEND_CARD, this.SendCard, this);
@@ -360,8 +369,24 @@ module game
 
 		private onBetDetailsBtnClick(ent: egret.TouchEvent): void
 		{
-			game.AppFacade.getInstance().sendNotification(PanelNotify.OPEN_BET_DETAIL);
+			game.AppFacade.getInstance().sendNotification(PanelNotify.OPEN_BET_DETAIL, true);
 		}
+
+		private onBetRecordsBtnClick(ent: egret.TouchEvent): void
+		{
+			game.AppFacade.getInstance().sendNotification(PanelNotify.OPEN_BET_DETAIL, false);
+		}
+
+		private onGameMethodBtnClick(): void
+		{
+			game.AppFacade.getInstance().sendNotification(PanelNotify.OPEN_GAME_METHOD, true);
+		}
+
+		private onPrizeInfoBtnClick(): void
+		{
+			game.AppFacade.getInstance().sendNotification(PanelNotify.OPEN_GAME_METHOD, false);
+		}
+		
 
 		private onBallBtnClick(ent: egret.TouchEvent): void
 		{

@@ -6,9 +6,11 @@ module betDetails
 		public details_scl: eui.Scroller;
 		public close_btn: eui.Button;
 
-		public constructor()
+		private _isDetail: boolean;
+		public constructor(isDetail: boolean = true)
 		{
 			super();
+			this._isDetail = isDetail;
 			this.skinName = "resource/ui/panelYDD/BetDetails/BetDetailsPanelSkin.exml";
 		}
 
@@ -21,20 +23,38 @@ module betDetails
 		protected childrenCreated(): void
 		{
 			super.childrenCreated();
+			this.details_scl.verticalScrollBar.visible = false;
+			this.details_scl.verticalScrollBar.autoVisibility = false;
 		}
 
 		public initView(): void
 		{
 			super.initView();
-			// this.details_scl.verticalScrollBar.visible = false;
+			if (this._isDetail)
+			{
+				this.currentState = "betDetail";
+				this.details_list.itemRenderer = BetDetailsItem;
+			}
+			else
+			{
+				this.currentState = "betRecord";
+				this.details_list.itemRenderer = BetRecordsItem;
+			}
 			this.details_list.dataProvider = this.listData();
-			this.details_list.itemRenderer = BetDetailsItem;
 		}
 
 		private listData(): eui.ArrayCollection
 		{
-			let returnValue = new eui.ArrayCollection(AllData.instance.BetDetailsTypeDatas);
-			return returnValue;
+			if (this._isDetail)
+			{
+				let returnValue = new eui.ArrayCollection(AllData.instance.BetDetailsTypeDatas);
+				return returnValue;
+			}
+			else
+			{
+				let returnValue = new eui.ArrayCollection(AllData.instance.BetRecordsTypeDatas);
+				return returnValue;
+			}
 		}
 
 		public onBtnClick(e: egret.TouchEvent): void

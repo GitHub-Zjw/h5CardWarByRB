@@ -46,6 +46,9 @@ var game;
             this.ball4_btn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBallBtnClick, this);
             this.ball5_btn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBallBtnClick, this);
             this.betDetails_btn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBetDetailsBtnClick, this);
+            this.betRecord_btn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBetRecordsBtnClick, this);
+            this.gameMethod_btn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onGameMethodBtnClick, this);
+            this.prizeInfo_btn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onPrizeInfoBtnClick, this);
             AllData.instance.addEventListener(GameNotify.GAME_STAR, this.onBegigGame, this);
             AllData.instance.addEventListener(GameNotify.STOP_BETS, this.onStopBet, this);
             AllData.instance.addEventListener(GameNotify.SEND_CARD, this.SendCard, this);
@@ -62,6 +65,9 @@ var game;
             this.ball4_btn.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onBallBtnClick, this);
             this.ball5_btn.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onBallBtnClick, this);
             this.betDetails_btn.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onBetDetailsBtnClick, this);
+            this.betRecord_btn.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onBetRecordsBtnClick, this);
+            this.gameMethod_btn.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onGameMethodBtnClick, this);
+            this.prizeInfo_btn.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onPrizeInfoBtnClick, this);
             AllData.instance.removeEventListener(GameNotify.GAME_STAR, this.onBegigGame, this);
             AllData.instance.removeEventListener(GameNotify.STOP_BETS, this.onStopBet, this);
             AllData.instance.removeEventListener(GameNotify.SEND_CARD, this.SendCard, this);
@@ -272,7 +278,16 @@ var game;
             this._getCardAmiR.to({ x: endX }, endTime);
         };
         MainUIYDD.prototype.onBetDetailsBtnClick = function (ent) {
-            game.AppFacade.getInstance().sendNotification(PanelNotify.OPEN_BET_DETAIL);
+            game.AppFacade.getInstance().sendNotification(PanelNotify.OPEN_BET_DETAIL, true);
+        };
+        MainUIYDD.prototype.onBetRecordsBtnClick = function (ent) {
+            game.AppFacade.getInstance().sendNotification(PanelNotify.OPEN_BET_DETAIL, false);
+        };
+        MainUIYDD.prototype.onGameMethodBtnClick = function () {
+            game.AppFacade.getInstance().sendNotification(PanelNotify.OPEN_GAME_METHOD, true);
+        };
+        MainUIYDD.prototype.onPrizeInfoBtnClick = function () {
+            game.AppFacade.getInstance().sendNotification(PanelNotify.OPEN_GAME_METHOD, false);
         };
         MainUIYDD.prototype.onBallBtnClick = function (ent) {
             if (this._selectedBall) {

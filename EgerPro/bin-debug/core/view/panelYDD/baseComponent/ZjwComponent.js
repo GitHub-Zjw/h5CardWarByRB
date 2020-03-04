@@ -57,5 +57,5 @@ var ZjwComponent = (function (_super) {
     ZjwComponent.prototype.onBtnClick = function (e) { };
     return ZjwComponent;
 }(eui.Component));
-__reflect(ZjwComponent.prototype, "ZjwComponent");
+__reflect(ZjwComponent.prototype, "ZjwComponent", ["eui.UIComponent", "egret.DisplayObject"]);
 //# sourceMappingURL=ZjwComponent.js.map

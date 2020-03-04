@@ -27,6 +27,8 @@ var AllData = (function (_super) {
         _this._blackCardType = EnumerationType.CardType.sanPai;
         _this._allWinners = [];
         _this._betDetailsTypeDatas = [];
+        _this._betRecordsTypeDatas = [];
+        _this._gmaeMethItemTypeDatas = [];
         return _this;
     }
     Object.defineProperty(AllData, "instance", {
@@ -53,6 +55,22 @@ var AllData = (function (_super) {
         /**投注详情数据 */
         get: function () {
             return this._betDetailsTypeDatas;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(AllData.prototype, "BetRecordsTypeDatas", {
+        /**投注详情数据 */
+        get: function () {
+            return this._betRecordsTypeDatas;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(AllData.prototype, "GmaeMethItemTypeDatas", {
+        /**大奖数据 */
+        get: function () {
+            return this._gmaeMethItemTypeDatas;
         },
         enumerable: true,
         configurable: true
@@ -223,6 +241,10 @@ var AllData = (function (_super) {
             this._cardColor[i] = color;
             var betData = { playerName: i.toString(), money: this.getRandomF(0, 1000), region: this.getRandomInt(0, 3) };
             this._betDetailsTypeDatas.push(betData);
+            var recordData = { money: this.getRandomInt(100, 1000), isWin: this.getRandomInt(0, 2) == 1, region: this.getRandomInt(0, 3) };
+            this._betRecordsTypeDatas.push(recordData);
+            var strs = [i.toString(), EnumerationType.CardType[this.getRandomInt(0, 6)], this.getRandomInt(0, 7) * 100 + " HDAG"];
+            this._gmaeMethItemTypeDatas.push(strs);
         }
         this._winner = EnumerationType.RegionWinner.blackS;
         this._bleckMoneyNum = this.getRandomInt(1, 1000);

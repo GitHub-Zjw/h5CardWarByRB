@@ -153,7 +153,9 @@
 		"win_png": "images/mainYDD/win.png",
 		"close_png": "images/mainYDD/close.png",
 		"tzxq_png": "images/bettingDetails/tzxq.png",
-		"红黑大战 -金花 - 投注详情弹窗_png": "images/bettingDetails/红黑大战 -金花 - 投注详情弹窗.png"
+		"红黑大战 -金花 - 投注详情弹窗_png": "images/bettingDetails/红黑大战 -金花 - 投注详情弹窗.png",
+		"jbbg_png": "images/gameMethod/jbbg.png",
+		"wfxq_png": "images/gameMethod/wfxq.png"
 	},
 	"groups": {
 		"loading": [
@@ -317,6 +319,10 @@
 		"betDetails": [
 			"tzxq_png",
 			"红黑大战 -金花 - 投注详情弹窗_png"
+		],
+		"gameMethod": [
+			"jbbg_png",
+			"wfxq_png"
 		]
 	},
 	"resources": {
@@ -373,6 +379,18 @@
 					"url": "images/bettingDetails/红黑大战 -金花 - 投注详情弹窗.png",
 					"type": "image",
 					"name": "images/bettingDetails/红黑大战 -金花 - 投注详情弹窗.png"
+				}
+			},
+			"gameMethod": {
+				"jbbg.png": {
+					"url": "images/gameMethod/jbbg.png",
+					"type": "image",
+					"name": "images/gameMethod/jbbg.png"
+				},
+				"wfxq.png": {
+					"url": "images/gameMethod/wfxq.png",
+					"type": "image",
+					"name": "images/gameMethod/wfxq.png"
 				}
 			},
 			"loading": {

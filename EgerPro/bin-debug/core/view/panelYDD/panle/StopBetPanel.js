@@ -26,5 +26,5 @@ var StopBetPanel = (function (_super) {
     };
     return StopBetPanel;
 }(ZjwComponent));
-__reflect(StopBetPanel.prototype, "StopBetPanel", ["eui.UIComponent", "egret.DisplayObject"]);
+__reflect(StopBetPanel.prototype, "StopBetPanel");
 //# sourceMappingURL=StopBetPanel.js.map

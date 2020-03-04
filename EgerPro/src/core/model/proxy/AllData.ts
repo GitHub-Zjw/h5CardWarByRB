@@ -23,7 +23,8 @@ class AllData extends egret.EventDispatcher
 	private _blackCardType: EnumerationType.CardType;
 	private _allWinners: EnumerationType.RegionWinner[];
 	private _betDetailsTypeDatas: betDetails.BetDetailsTypeData[];
-
+	private _betRecordsTypeDatas: betDetails.BetRecordsTypeData[];
+	private _gmaeMethItemTypeDatas: string[][];
 	public constructor()
 	{
 		super();
@@ -39,6 +40,8 @@ class AllData extends egret.EventDispatcher
 		this._blackCardType = EnumerationType.CardType.sanPai;
 		this._allWinners = [];
 		this._betDetailsTypeDatas = [];
+		this._betRecordsTypeDatas = [];
+		this._gmaeMethItemTypeDatas = [];
 	}
 
 	/**
@@ -53,6 +56,16 @@ class AllData extends egret.EventDispatcher
 	public get BetDetailsTypeDatas(): betDetails.BetDetailsTypeData[]
 	{
 		return this._betDetailsTypeDatas;
+	}
+	/**投注详情数据 */
+	public get BetRecordsTypeDatas(): betDetails.BetRecordsTypeData[]
+	{
+		return this._betRecordsTypeDatas;
+	}
+	/**大奖数据 */
+	public get GmaeMethItemTypeDatas(): string[][]
+	{
+		return this._gmaeMethItemTypeDatas;
 	}
 
 	/**
@@ -222,6 +235,10 @@ class AllData extends egret.EventDispatcher
 			this._cardColor[i] = color;
 			let betData: betDetails.BetDetailsTypeData = { playerName: i.toString(), money: this.getRandomF(0, 1000), region: this.getRandomInt(0, 3) };
 			this._betDetailsTypeDatas.push(betData);
+			let recordData: betDetails.BetRecordsTypeData = {money: this.getRandomInt(100,1000),isWin: this.getRandomInt(0,2) == 1, region: this.getRandomInt(0, 3)};
+			this._betRecordsTypeDatas.push(recordData);
+			let strs: string[] = [i.toString(),EnumerationType.CardType[this.getRandomInt(0,6)], this.getRandomInt(0,7) * 100 + " HDAG"];
+			this._gmaeMethItemTypeDatas.push(strs);
 		}
 		this._winner = EnumerationType.RegionWinner.blackS;
 		this._bleckMoneyNum = this.getRandomInt(1, 1000);

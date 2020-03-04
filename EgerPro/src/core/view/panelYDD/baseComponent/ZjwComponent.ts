@@ -1,4 +1,4 @@
-class ZjwComponent extends eui.Component
+class ZjwComponent extends eui.Component implements eui.UIComponent
 {
 	private _allBtn: eui.Button[];
 	public constructor()

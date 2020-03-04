@@ -17,7 +17,8 @@
     "StopBetPanel": "resource/eui_skins/StopBetPanelSkin.exml",
     "SelectCarding": "resource/eui_skins/SelectCardingSkin.exml",
     "BetDetailsPanel": "resource/eui_skins/BetDetailsPanelSkin.exml",
-    "BetDetails.BetDetailsItem": "resource/eui_skins/BetDetailsItem.exml"
+    "BetDetails.BetDetailsItem": "resource/eui_skins/BetDetailsItem.exml",
+    "gameMethod.GameMethodPanel": "resource/eui_skins/GameMethodPanelSkin.exml"
   },
   "autoGenerateExmlsList": true,
   "exmls": [
@@ -67,6 +68,10 @@
     "resource/ui/panel/ZhaoXianSkin.exml",
     "resource/ui/panelYDD/BetDetails/BetDetailsItem.exml",
     "resource/ui/panelYDD/BetDetails/BetDetailsPanelSkin.exml",
+    "resource/ui/panelYDD/BetDetails/BetRecordsItemSkin.exml",
+    "resource/ui/panelYDD/GameMethod/GameMethodItemSkin.exml",
+    "resource/ui/panelYDD/GameMethod/GameMethodPanelSkin.exml",
+    "resource/ui/panelYDD/GameMethod/PrizeInfoPanelSkin.exml",
     "resource/ui/panelYDD/StopBetPanelSkin.exml",
     "resource/ui/scene/HomeCitySkin.exml"
   ]

@@ -1,33 +1,23 @@
 module betDetails
 {
-	export class BetDetailsItem extends eui.ItemRenderer implements eui.UIComponent
+	export class BetRecordsItem extends eui.ItemRenderer implements eui.UIComponent
 	{
-		public playerName_lab: eui.Label;
-		public playerbet_lab: eui.Label;
+		public betNum_lab: eui.Label;
+		public TorF_lab: eui.Label;
 		public color_img: eui.Image;
 
-		public data: BetDetailsTypeData;
+		public data: BetRecordsTypeData;
 		public constructor()
 		{
 			super();
-			this.skinName = "resource/ui/panelYDD/BetDetails/BetDetailsItem.exml"
-		}
-
-		protected partAdded(partName: string, instance: any): void
-		{
-			super.partAdded(partName, instance);
-		}
-
-
-		protected childrenCreated(): void
-		{
-			super.childrenCreated();
+			this.skinName = "resource/ui/panelYDD/BetDetails/BetRecordsItemSkin.exml";
 		}
 
 		protected dataChanged(): void
 		{
-			this.playerbet_lab.text = this.data.money + " HDAG";
-			this.playerName_lab.text = this.data.playerName;
+			this.betNum_lab.text = this.data.money + " HDAG";
+			let isWinStr = this.data.isWin ? "+" : "-";
+			this.TorF_lab.text =isWinStr + this.data.money + " HDAG";
 			let imgS: string = "";
 			switch (this.data.region)
 			{

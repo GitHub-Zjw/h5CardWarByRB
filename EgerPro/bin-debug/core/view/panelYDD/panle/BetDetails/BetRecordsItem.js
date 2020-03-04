@@ -13,22 +13,17 @@ var __extends = (this && this.__extends) || (function () {
 })();
 var betDetails;
 (function (betDetails) {
-    var BetDetailsItem = (function (_super) {
-        __extends(BetDetailsItem, _super);
-        function BetDetailsItem() {
+    var BetRecordsItem = (function (_super) {
+        __extends(BetRecordsItem, _super);
+        function BetRecordsItem() {
             var _this = _super.call(this) || this;
-            _this.skinName = "resource/ui/panelYDD/BetDetails/BetDetailsItem.exml";
+            _this.skinName = "resource/ui/panelYDD/BetDetails/BetRecordsItemSkin.exml";
             return _this;
         }
-        BetDetailsItem.prototype.partAdded = function (partName, instance) {
-            _super.prototype.partAdded.call(this, partName, instance);
-        };
-        BetDetailsItem.prototype.childrenCreated = function () {
-            _super.prototype.childrenCreated.call(this);
-        };
-        BetDetailsItem.prototype.dataChanged = function () {
-            this.playerbet_lab.text = this.data.money + " HDAG";
-            this.playerName_lab.text = this.data.playerName;
+        BetRecordsItem.prototype.dataChanged = function () {
+            this.betNum_lab.text = this.data.money + " HDAG";
+            var isWinStr = this.data.isWin ? "+" : "-";
+            this.TorF_lab.text = isWinStr + this.data.money + " HDAG";
             var imgS = "";
             switch (this.data.region) {
                 case EnumerationType.RegionWinner.black:
@@ -47,9 +42,9 @@ var betDetails;
             imgS += "_png";
             this.color_img.source = imgS;
         };
-        return BetDetailsItem;
+        return BetRecordsItem;
     }(eui.ItemRenderer));
-    betDetails.BetDetailsItem = BetDetailsItem;
-    __reflect(BetDetailsItem.prototype, "betDetails.BetDetailsItem", ["eui.UIComponent", "egret.DisplayObject"]);
+    betDetails.BetRecordsItem = BetRecordsItem;
+    __reflect(BetRecordsItem.prototype, "betDetails.BetRecordsItem", ["eui.UIComponent", "egret.DisplayObject"]);
 })(betDetails || (betDetails = {}));
-//# sourceMappingURL=BetDetailsItem.js.map
+//# sourceMappingURL=BetRecordsItem.js.map

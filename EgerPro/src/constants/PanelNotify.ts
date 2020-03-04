@@ -69,10 +69,24 @@ class PanelNotify{
      */
     public static CLOSE_STOP_BET: string = "PANELNOTIFY_CLOSE_STOP_BET";
 
-    /**打开投注详情 */
+    /**
+     * 打开
+     * true: 投注详情
+     * false: 投注记录
+     */
     public static OPEN_BET_DETAIL: string = "PANELNOTIFY_OPEN_BET_DETAIL";
     /**关闭投注详情 */
     public static CLOSE_BET_DETAIL: string = "PANELNOTIFY_CLOSE_BET_DETAIL";
+
+    /**
+     * 打开
+     * true: 大奖界面
+     * false: 玩法界面
+     */
+    public static OPEN_GAME_METHOD: string = "PANELNOTIFY_OPEN_GAME_METHOD";
+
+    /**关闭大奖玩法界面 */
+    public static CLOSE_GAME_METHOD: string = "PANELNOTIFY_CLOSE_GAME_METHOD";
 }	
 
 

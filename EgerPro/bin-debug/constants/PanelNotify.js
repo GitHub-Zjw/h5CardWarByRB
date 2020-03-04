@@ -50,10 +50,22 @@ var PanelNotify = (function () {
      * 关闭 停止下注
      */
     PanelNotify.CLOSE_STOP_BET = "PANELNOTIFY_CLOSE_STOP_BET";
-    /**打开投注详情 */
+    /**
+     * 打开
+     * true: 投注详情
+     * false: 投注记录
+     */
     PanelNotify.OPEN_BET_DETAIL = "PANELNOTIFY_OPEN_BET_DETAIL";
     /**关闭投注详情 */
     PanelNotify.CLOSE_BET_DETAIL = "PANELNOTIFY_CLOSE_BET_DETAIL";
+    /**
+     * 打开
+     * true: 大奖界面
+     * false: 玩法界面
+     */
+    PanelNotify.OPEN_GAME_METHOD = "PANELNOTIFY_OPEN_GAME_METHOD";
+    /**关闭大奖玩法界面 */
+    PanelNotify.CLOSE_GAME_METHOD = "PANELNOTIFY_CLOSE_GAME_METHOD";
     return PanelNotify;
 }());
 __reflect(PanelNotify.prototype, "PanelNotify");
