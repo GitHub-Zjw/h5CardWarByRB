@@ -60,6 +60,8 @@ declare class CardSkin extends eui.Skin{
 }
 declare class ClockSkin extends eui.Skin{
 }
+declare class HxItemSkin extends eui.Skin{
+}
 declare class RegionBlackSkin extends eui.Skin{
 }
 declare class RegionOtherSkin extends eui.Skin{

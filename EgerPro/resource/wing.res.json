@@ -308,6 +308,16 @@
       "name": "hongSheng_png"
     },
     {
+      "url": "images/mainYDD/huangKuang.png",
+      "type": "image",
+      "name": "huangKuang_png"
+    },
+    {
+      "url": "images/mainYDD/hxxp.png",
+      "type": "image",
+      "name": "hxxp_png"
+    },
+    {
       "url": "images/mainYDD/jiangbei.png",
       "type": "image",
       "name": "jiangbei_png"
@@ -321,6 +331,16 @@
       "url": "images/mainYDD/mengBan.png",
       "type": "image",
       "name": "mengBan_png"
+    },
+    {
+      "url": "images/mainYDD/numberOne.png",
+      "type": "image",
+      "name": "numberOne_png"
+    },
+    {
+      "url": "images/mainYDD/numberTwo.png",
+      "type": "image",
+      "name": "numberTwo_png"
     },
     {
       "url": "images/mainYDD/otherPoint.png",
@@ -481,6 +501,11 @@
       "url": "images/mainYDD/zuoRen.png",
       "type": "image",
       "name": "zuoRen_png"
+    },
+    {
+      "url": "images/mainYDD/红黑大战 -金花 - 开奖弹窗.png",
+      "type": "image",
+      "name": "红黑大战 -金花 - 开奖弹窗_png"
     },
     {
       "url": "images/mainYDD/cards/card0_0.png",

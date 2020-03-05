@@ -5,7 +5,7 @@
 			"name": "loading"
 		},
 		{
-			"keys": "enJson_txt,yellowBtn_png,tipsBg_png,loadingCircle_png,template_json,template_proto,homeBg1_jpg,homeBg2_jpg,homeBg3_jpg,homeBg4_jpg,homeBg5_jpg,activityBtn_png,backpackBtn_png,bgBarBg_png,chuangDangBtn_png,closeBtn_png,friendBtn_png,headBg_png,hengImg_png,infoBtn_png,jinjieBtn_png,kaiFuBtn_png,lianqiBtn_png,lunjianBtn_png,mainBtn_png,mapBtn_png,missionBtn_png,pgBar1_png,pgBar2_png,qianghuaBtn_png,roleBtn_png,roleInfoImg_png,shopBtn_png,shuImg_png,warBtn_png,zhaoXianBtn_png,config_json,bghuizuo_png,0.1_png,1_png,10_png,100_png,5_png,50_png,VS-1_png,bghuiyou_png,cehui_png,goldenLain_png,groupVS_png,groupVS1_png,groupVS2_png,jiangbei_png,playerId_png,prefab_png,qian_png,regionDownLine_png,regionUpLine_png,shizhong_png,touzhu_png,xu1_png,xu2_png,youRen_png,youxi_png,zhuoZi_png,zuoRen_png,card0_0_png,card1_1_png,card1_10_png,card1_11_png,card1_12_png,card1_13_png,card1_2_png,card1_3_png,card1_4_png,card1_5_png,card1_6_png,card1_7_png,card1_8_png,card1_9_png,card2_1_png,card2_10_png,card2_11_png,card2_12_png,card2_13_png,card2_2_png,card2_3_png,card2_4_png,card2_5_png,card2_6_png,card2_7_png,card2_8_png,card2_9_png,card3_1_png,card3_10_png,card3_11_png,card3_12_png,card3_13_png,card3_2_png,card3_3_png,card3_4_png,card3_5_png,card3_6_png,card3_7_png,card3_8_png,card3_9_png,card4_1_png,card4_10_png,card4_11_png,card4_12_png,card4_13_png,card4_2_png,card4_3_png,card4_4_png,card4_5_png,card4_6_png,card4_7_png,card4_8_png,card4_9_png,card5_1_png,card5_2_png,regionUpLine2_png,blackPoint_png,redPoint_png,otherPoint_png,heiJia_png,heiSheng_png,hongJia_png,hongSheng_png,PreLoadingBar_png,PreLoadingBarBg_png,PreLoadingBg_png,textBg_png,timer_png,mengBan_png,stopBet_png,stopBetBtn_png,tipZiBg_png,ziDian_png,ziHa_png,ziPai_png,ziXi_png,ziXuan_png,ziZhong_png,baoZi_png,duiZi_png,jinHua_png,sanPai_png,shunJin_png,shunZi_png,win_png,close_png",
+			"keys": "enJson_txt,yellowBtn_png,tipsBg_png,loadingCircle_png,template_json,template_proto,homeBg1_jpg,homeBg2_jpg,homeBg3_jpg,homeBg4_jpg,homeBg5_jpg,activityBtn_png,backpackBtn_png,bgBarBg_png,chuangDangBtn_png,closeBtn_png,friendBtn_png,headBg_png,hengImg_png,infoBtn_png,jinjieBtn_png,kaiFuBtn_png,lianqiBtn_png,lunjianBtn_png,mainBtn_png,mapBtn_png,missionBtn_png,pgBar1_png,pgBar2_png,qianghuaBtn_png,roleBtn_png,roleInfoImg_png,shopBtn_png,shuImg_png,warBtn_png,zhaoXianBtn_png,config_json,bghuizuo_png,0.1_png,1_png,10_png,100_png,5_png,50_png,VS-1_png,bghuiyou_png,cehui_png,goldenLain_png,groupVS_png,groupVS1_png,groupVS2_png,jiangbei_png,playerId_png,prefab_png,qian_png,regionDownLine_png,regionUpLine_png,shizhong_png,touzhu_png,xu1_png,xu2_png,youRen_png,youxi_png,zhuoZi_png,zuoRen_png,card0_0_png,card1_1_png,card1_10_png,card1_11_png,card1_12_png,card1_13_png,card1_2_png,card1_3_png,card1_4_png,card1_5_png,card1_6_png,card1_7_png,card1_8_png,card1_9_png,card2_1_png,card2_10_png,card2_11_png,card2_12_png,card2_13_png,card2_2_png,card2_3_png,card2_4_png,card2_5_png,card2_6_png,card2_7_png,card2_8_png,card2_9_png,card3_1_png,card3_10_png,card3_11_png,card3_12_png,card3_13_png,card3_2_png,card3_3_png,card3_4_png,card3_5_png,card3_6_png,card3_7_png,card3_8_png,card3_9_png,card4_1_png,card4_10_png,card4_11_png,card4_12_png,card4_13_png,card4_2_png,card4_3_png,card4_4_png,card4_5_png,card4_6_png,card4_7_png,card4_8_png,card4_9_png,card5_1_png,card5_2_png,regionUpLine2_png,blackPoint_png,redPoint_png,otherPoint_png,heiJia_png,heiSheng_png,hongJia_png,hongSheng_png,PreLoadingBar_png,PreLoadingBarBg_png,PreLoadingBg_png,textBg_png,timer_png,mengBan_png,stopBet_png,stopBetBtn_png,tipZiBg_png,ziDian_png,ziHa_png,ziPai_png,ziXi_png,ziXuan_png,ziZhong_png,baoZi_png,duiZi_png,jinHua_png,sanPai_png,shunJin_png,shunZi_png,win_png,close_png,huangKuang_png,hxxp_png,numberOne_png,numberTwo_png,红黑大战 -金花 - 开奖弹窗_png",
 			"name": "preload"
 		},
 		{
@@ -798,6 +798,31 @@
 			"url": "images/gameMethod/wfxq.png",
 			"type": "image",
 			"name": "wfxq_png"
+		},
+		{
+			"url": "images/mainYDD/huangKuang.png",
+			"type": "image",
+			"name": "huangKuang_png"
+		},
+		{
+			"url": "images/mainYDD/hxxp.png",
+			"type": "image",
+			"name": "hxxp_png"
+		},
+		{
+			"url": "images/mainYDD/numberOne.png",
+			"type": "image",
+			"name": "numberOne_png"
+		},
+		{
+			"url": "images/mainYDD/numberTwo.png",
+			"type": "image",
+			"name": "numberTwo_png"
+		},
+		{
+			"name": "红黑大战 -金花 - 开奖弹窗_png",
+			"type": "image",
+			"url": "images/mainYDD/红黑大战 -金花 - 开奖弹窗.png"
 		}
 	]
 }

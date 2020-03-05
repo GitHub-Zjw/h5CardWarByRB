@@ -48,9 +48,11 @@ module game
 		private _getCardAmiR: egret.Tween;
 		private _timeNum: number;
 		private _card1StarX: number;
+		private _card1StarY: number;
 		private _cardStarXs: number[];
 		private _vsManBlackX: number;
 		private _vsManRedX: number;
+		private _cac: ContinueAmiChain;
 		public constructor()
 		{
 			super();
@@ -78,6 +80,7 @@ module game
 		{
 			super.childrenCreated();
 			this._card1StarX = this.card1.x;
+			this._card1StarY = this.card1.y;
 			this.regitEvent();
 		}
 
@@ -247,8 +250,46 @@ module game
 		 */
 		public playGetCardAmi(): void
 		{
-			this._timeNum = 0;
-			this.startTimer(100);
+			// this._timeNum = 0;
+			// this.startTimer(100);
+			if (this._cac == null)
+			{
+				this._cac = new ContinueAmiChain(50);
+			}
+			let len = this._cards.length;
+			let cardCenterXs = [521, 557, 596, 218, 254, 290];
+			let cardCenterY = 59;
+			let cardCenterS = 1.65;
+			for (let i = 0; i < len; i++)
+			{
+				this._cards[i].scaleX = cardCenterS;
+				this._cards[i].scaleY = cardCenterS;
+				this._cards[i].x = 404;
+				this._cards[i].y = 108;
+				this._cards[i].visible = true;
+
+				let value = { com: this._cards[i], endX: cardCenterXs[i], endY: cardCenterY, sX: cardCenterS, sY: cardCenterS, time: 100 };
+				let starTime = i == 0 ? 0 : -1;
+				let needTime = 2;
+				this._cac.registerAction(this.playMoveAmi, this, starTime, needTime, value);
+			}
+
+			for (let i = 0; i < len; i++)
+			{
+				let value = { com: this._cards[i], endX: this._cardStarXs[i], endY: this._card1StarY, sX: 1, sY: 1, time: 100 };
+				let starTime = i == 0 ? 0 : -1;
+				let needTime = 2;
+				this._cac.registerAction(this.playMoveAmi, this, starTime, needTime, value);
+			}
+			this._cac.play();
+		}
+
+		/**
+		 * 播放移动动画
+		 */
+		public playMoveAmi(value: { com: eui.UIComponent, endX: number, endY: number, sX: number, sY: number, time: number }): void
+		{
+			egret.Tween.get(value.com).to({ x: value.endX, y: value.endY, scaleX: value.sX, scaleY: value.sY }, value.time);
 		}
 
 		public showWinner(): void
@@ -402,7 +443,7 @@ module game
 		}
 
 		private onRedRegionClick(ent: egret.TouchEvent): void
-		{ 
+		{
 			if (this._selectIndex >= 0)
 			{
 				let indexs: number[] = [this._selectIndex];
@@ -411,7 +452,7 @@ module game
 		}
 
 		private onBlackRegionClick(ent: egret.TouchEvent): void
-		{ 
+		{
 			if (this._selectIndex >= 0)
 			{
 				let indexs: number[] = [this._selectIndex];
@@ -420,7 +461,7 @@ module game
 		}
 
 		private onOtherRegionClick(ent: egret.TouchEvent): void
-		{ 
+		{
 			if (this._selectIndex >= 0)
 			{
 				let indexs: number[] = [this._selectIndex];

@@ -37,6 +37,7 @@ var game;
         MainUIYDD.prototype.childrenCreated = function () {
             _super.prototype.childrenCreated.call(this);
             this._card1StarX = this.card1.x;
+            this._card1StarY = this.card1.y;
             this.regitEvent();
         };
         MainUIYDD.prototype.regitEvent = function () {
@@ -91,6 +92,7 @@ var game;
             this.blackResult_img.alpha = 0;
             this.redResult_img.alpha = 0;
             this._selectIndex = -1;
+            this._selectedBall.hideSelectedAmi();
             this.regionRed.removeAllBall();
             this.regionBlack.removeAllBall();
             this.regionOther.removeAllBall();
@@ -171,8 +173,39 @@ var game;
          * 播放发牌动画
          */
         MainUIYDD.prototype.playGetCardAmi = function () {
-            this._timeNum = 0;
-            this.startTimer(100);
+            // this._timeNum = 0;
+            // this.startTimer(100);
+            if (this._cac == null) {
+                this._cac = new ContinueAmiChain(50);
+            }
+            var len = this._cards.length;
+            var cardCenterXs = [521, 557, 596, 218, 254, 290];
+            var cardCenterY = 59;
+            var cardCenterS = 1.65;
+            for (var i = 0; i < len; i++) {
+                this._cards[i].scaleX = cardCenterS;
+                this._cards[i].scaleY = cardCenterS;
+                this._cards[i].x = 404;
+                this._cards[i].y = 108;
+                this._cards[i].visible = true;
+                var value = { com: this._cards[i], endX: cardCenterXs[i], endY: cardCenterY, sX: cardCenterS, sY: cardCenterS, time: 100 };
+                var starTime = i == 0 ? 0 : -1;
+                var needTime = 2;
+                this._cac.registerAction(this.playMoveAmi, this, starTime, needTime, value);
+            }
+            for (var i = 0; i < len; i++) {
+                var value = { com: this._cards[i], endX: this._cardStarXs[i], endY: this._card1StarY, sX: 1, sY: 1, time: 100 };
+                var starTime = i == 0 ? 0 : -1;
+                var needTime = 2;
+                this._cac.registerAction(this.playMoveAmi, this, starTime, needTime, value);
+            }
+            this._cac.play();
+        };
+        /**
+         * 播放移动动画
+         */
+        MainUIYDD.prototype.playMoveAmi = function (value) {
+            egret.Tween.get(value.com).to({ x: value.endX, y: value.endY, scaleX: value.sX, scaleY: value.sY }, value.time);
         };
         MainUIYDD.prototype.showWinner = function () {
             var winner = AllData.instance.Winner;

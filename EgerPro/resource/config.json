@@ -155,7 +155,12 @@
 		"tzxq_png": "images/bettingDetails/tzxq.png",
 		"红黑大战 -金花 - 投注详情弹窗_png": "images/bettingDetails/红黑大战 -金花 - 投注详情弹窗.png",
 		"jbbg_png": "images/gameMethod/jbbg.png",
-		"wfxq_png": "images/gameMethod/wfxq.png"
+		"wfxq_png": "images/gameMethod/wfxq.png",
+		"huangKuang_png": "images/mainYDD/huangKuang.png",
+		"hxxp_png": "images/mainYDD/hxxp.png",
+		"numberOne_png": "images/mainYDD/numberOne.png",
+		"numberTwo_png": "images/mainYDD/numberTwo.png",
+		"红黑大战 -金花 - 开奖弹窗_png": "images/mainYDD/红黑大战 -金花 - 开奖弹窗.png"
 	},
 	"groups": {
 		"loading": [
@@ -314,7 +319,12 @@
 			"shunJin_png",
 			"shunZi_png",
 			"win_png",
-			"close_png"
+			"close_png",
+			"huangKuang_png",
+			"hxxp_png",
+			"numberOne_png",
+			"numberTwo_png",
+			"红黑大战 -金花 - 开奖弹窗_png"
 		],
 		"betDetails": [
 			"tzxq_png",
@@ -644,6 +654,16 @@
 					"type": "image",
 					"name": "images/mainYDD/hongSheng.png"
 				},
+				"huangKuang.png": {
+					"url": "images/mainYDD/huangKuang.png",
+					"type": "image",
+					"name": "images/mainYDD/huangKuang.png"
+				},
+				"hxxp.png": {
+					"url": "images/mainYDD/hxxp.png",
+					"type": "image",
+					"name": "images/mainYDD/hxxp.png"
+				},
 				"jiangbei.png": {
 					"url": "images/mainYDD/jiangbei.png",
 					"type": "image",
@@ -658,6 +678,16 @@
 					"url": "images/mainYDD/mengBan.png",
 					"type": "image",
 					"name": "images/mainYDD/mengBan.png"
+				},
+				"numberOne.png": {
+					"url": "images/mainYDD/numberOne.png",
+					"type": "image",
+					"name": "images/mainYDD/numberOne.png"
+				},
+				"numberTwo.png": {
+					"url": "images/mainYDD/numberTwo.png",
+					"type": "image",
+					"name": "images/mainYDD/numberTwo.png"
 				},
 				"otherPoint.png": {
 					"url": "images/mainYDD/otherPoint.png",
@@ -818,6 +848,11 @@
 					"url": "images/mainYDD/zuoRen.png",
 					"type": "image",
 					"name": "images/mainYDD/zuoRen.png"
+				},
+				"红黑大战 -金花 - 开奖弹窗.png": {
+					"url": "images/mainYDD/红黑大战 -金花 - 开奖弹窗.png",
+					"type": "image",
+					"name": "images/mainYDD/红黑大战 -金花 - 开奖弹窗.png"
 				},
 				"cards": {
 					"card0_0.png": {
