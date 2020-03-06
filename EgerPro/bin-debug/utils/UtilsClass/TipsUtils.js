@@ -106,22 +106,22 @@ var TipsUtils;
     function showTipsFromCenter(str, isWarning) {
         if (str === void 0) { str = ""; }
         if (isWarning === void 0) { isWarning = false; }
-        var effectTips = new egret.TextField();
-        effectTips.size = 24;
+        var effectTips = new TipText(str);
+        // effectTips.size = 24;
         effectTips.y = GameConfig.curHeight() / 2;
         if (isWarning) {
-            effectTips.textColor = GameConfig.TextColors.red;
+            // effectTips.textColor = GameConfig.TextColors.red;
         }
         else {
-            effectTips.textColor = GameConfig.TextColors.green;
+            // effectTips.textColor = GameConfig.TextColors.green;
         }
         effectTips.alpha = 0;
-        effectTips.text = str;
-        effectTips.strokeColor = 0x000000;
+        // effectTips.text = str;
+        // effectTips.strokeColor = 0x000000;
         effectTips.x = GameConfig.curWidth() / 2;
-        effectTips.stroke = 2;
-        effectTips.bold = true;
-        effectTips.textAlign = egret.HorizontalAlign.CENTER;
+        // effectTips.stroke  = 2;
+        // effectTips.bold = true;
+        // effectTips.textAlign = egret.HorizontalAlign.CENTER;
         if (!GameLayerManager.gameLayer().effectLayer.contains(effectTips)) {
             GameLayerManager.gameLayer().effectLayer.addChild(effectTips);
         }

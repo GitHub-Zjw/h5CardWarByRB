@@ -23,14 +23,6 @@ var RegionRed = (function (_super) {
             this.win_img.alpha = 0;
         }
     };
-    RegionRed.prototype.showWinAmi = function () {
-        _super.prototype.showWinAmi.call(this);
-        if (this.win_img) {
-            var num = this.numChildren - 1;
-            this.setChildIndex(this.win_img, num);
-            this.win_img.alpha = 1;
-        }
-    };
     Object.defineProperty(RegionRed.prototype, "StarPointX", {
         get: function () {
             return 0;

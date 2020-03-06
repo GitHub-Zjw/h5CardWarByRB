@@ -59,7 +59,7 @@ var game_file_list = [
 	"bin-debug/core/view/mainYDD/component/Card.js",
 	"bin-debug/core/view/mainYDD/component/Clock.js",
 	"bin-debug/core/view/mainYDD/component/HxItem.js",
-	"bin-debug/utils/UtilsClass/TipsUtils.js",
+	"bin-debug/LoadingUI.js",
 	"bin-debug/core/view/mainYDD/component/RegionOther.js",
 	"bin-debug/NewFile.js",
 	"bin-debug/core/view/mainYDD/component/Scoreboard.js",
@@ -104,7 +104,7 @@ var game_file_list = [
 	"bin-debug/utils/api/ErgodicUtils.js",
 	"bin-debug/utils/api/ObjectPool.js",
 	"bin-debug/utils/UtilsClass/BitmapBlink.js",
-	"bin-debug/LoadingUI.js",
+	"bin-debug/utils/UtilsClass/TipsUtils.js",
 	//----auto game_file_list end----
 ];
 

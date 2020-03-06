@@ -11,26 +11,23 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-var HxItem = (function (_super) {
-    __extends(HxItem, _super);
-    function HxItem() {
+var TipText = (function (_super) {
+    __extends(TipText, _super);
+    function TipText(tip) {
         var _this = _super.call(this) || this;
-        _this.skinName = "resource/ui/mainYDD/component/HxItemSkin.exml";
+        _this._str = tip;
+        _this.skinName = "resource/ui/mainYDD/component/TipTextSkin.exml";
         return _this;
     }
-    HxItem.prototype.partAdded = function (partName, instance) {
+    TipText.prototype.partAdded = function (partName, instance) {
         _super.prototype.partAdded.call(this, partName, instance);
     };
-    HxItem.prototype.childrenCreated = function () {
+    TipText.prototype.childrenCreated = function () {
         _super.prototype.childrenCreated.call(this);
+        this.tip_lab.text = this._str;
+        this.bg_png.width = this.tip_lab.width + 60;
     };
-    HxItem.prototype.dataChanged = function () {
-        this.qj_lab.text = this.data[0];
-        this.time_lab0.text = this.data[2];
-        var tx = this.hx_lab;
-        tx.textFlow = (new egret.HtmlTextParser).parser(this.data[1]);
-    };
-    return HxItem;
-}(eui.ItemRenderer));
-__reflect(HxItem.prototype, "HxItem", ["eui.UIComponent", "egret.DisplayObject"]);
-//# sourceMappingURL=HxItem.js.map
+    return TipText;
+}(eui.Component));
+__reflect(TipText.prototype, "TipText", ["eui.UIComponent", "egret.DisplayObject"]);
+//# sourceMappingURL=TipText.js.map

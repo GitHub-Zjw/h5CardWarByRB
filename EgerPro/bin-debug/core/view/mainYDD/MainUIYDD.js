@@ -54,6 +54,8 @@ var game;
             this.regionRed_btn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onRedRegionClick, this);
             this.regionBlack_btn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBlackRegionClick, this);
             this.regionOther_btn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onOtherRegionClick, this);
+            this.bets_btn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBetsBtn, this);
+            this.withdraw_btn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBackBetsBtnClick, this);
             AllData.instance.addEventListener(GameNotify.GAME_STAR, this.onBegigGame, this);
             AllData.instance.addEventListener(GameNotify.STOP_BETS, this.onStopBet, this);
             AllData.instance.addEventListener(GameNotify.SEND_CARD, this.SendCard, this);
@@ -76,6 +78,8 @@ var game;
             this.regionRed_btn.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onRedRegionClick, this);
             this.regionBlack_btn.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onBlackRegionClick, this);
             this.regionOther_btn.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onOtherRegionClick, this);
+            this.bets_btn.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onBetsBtn, this);
+            this.withdraw_btn.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onBackBetsBtnClick, this);
             AllData.instance.removeEventListener(GameNotify.GAME_STAR, this.onBegigGame, this);
             AllData.instance.removeEventListener(GameNotify.STOP_BETS, this.onStopBet, this);
             AllData.instance.removeEventListener(GameNotify.SEND_CARD, this.SendCard, this);
@@ -92,7 +96,9 @@ var game;
             this.blackResult_img.alpha = 0;
             this.redResult_img.alpha = 0;
             this._selectIndex = -1;
-            this._selectedBall.hideSelectedAmi();
+            if (this._selectedBall) {
+                this._selectedBall.hideSelectedAmi();
+            }
             this.regionRed.removeAllBall();
             this.regionBlack.removeAllBall();
             this.regionOther.removeAllBall();
@@ -173,38 +179,147 @@ var game;
          * 播放发牌动画
          */
         MainUIYDD.prototype.playGetCardAmi = function () {
-            // this._timeNum = 0;
-            // this.startTimer(100);
+            this.showHXUI();
             if (this._cac == null) {
                 this._cac = new ContinueAmiChain(50);
-            }
-            var len = this._cards.length;
-            var cardCenterXs = [521, 557, 596, 218, 254, 290];
-            var cardCenterY = 59;
-            var cardCenterS = 1.65;
-            for (var i = 0; i < len; i++) {
-                this._cards[i].scaleX = cardCenterS;
-                this._cards[i].scaleY = cardCenterS;
-                this._cards[i].x = 404;
-                this._cards[i].y = 108;
-                this._cards[i].visible = true;
-                var value = { com: this._cards[i], endX: cardCenterXs[i], endY: cardCenterY, sX: cardCenterS, sY: cardCenterS, time: 100 };
-                var starTime = i == 0 ? 0 : -1;
-                var needTime = 2;
-                this._cac.registerAction(this.playMoveAmi, this, starTime, needTime, value);
-            }
-            for (var i = 0; i < len; i++) {
-                var value = { com: this._cards[i], endX: this._cardStarXs[i], endY: this._card1StarY, sX: 1, sY: 1, time: 100 };
-                var starTime = i == 0 ? 0 : -1;
-                var needTime = 2;
-                this._cac.registerAction(this.playMoveAmi, this, starTime, needTime, value);
+                var len = this._cards.length;
+                var cardCenterXs = [521, 557, 596, 218, 254, 290];
+                var cardCenterY = 59;
+                var cardCenterS = 1.65;
+                //设置发牌起始位置
+                for (var i = 0; i < len; i++) {
+                    this._cac.registerAction(this.setCardStarTF, this, 0, 0, this._cards[i]);
+                }
+                //发牌
+                for (var i = 0; i < len; i++) {
+                    var value = { com: this._cards[i], endX: cardCenterXs[i], endY: cardCenterY, sX: cardCenterS, sY: cardCenterS, time: 100 };
+                    var starTime = i == 0 ? 0 : -1;
+                    var needTime = 2;
+                    this._cac.registerAction(this.playMoveAmi, this, starTime, needTime, value);
+                }
+                //翻前两张牌
+                this._cac.registerAction(this.playOpenCardAmi, this, 10, 4);
+                //增加哈希列表动画
+                this.playHXItemAmi();
+                //飘字动画
+                this._cac.registerAction(this.playMoveLabAmi, this, 0, 20);
+                //飘完亮黄框
+                this._cac.registerAction(this.showWinK, this, 0, 0);
+                //隐藏选牌界面
+                this._cac.registerAction(this.hideHXUI, this, 20, 0);
+                //卡牌归位置
+                for (var i = 0; i < len; i++) {
+                    var value = { com: this._cards[i], endX: this._cardStarXs[i], endY: this._card1StarY, sX: 1, sY: 1, time: 500 };
+                    var needTime = 10;
+                    var starTime = i == 0 ? 0 : -needTime;
+                    this._cac.registerAction(this.playMoveAmi, this, starTime, needTime, value);
+                }
+                //翻黑牌第三张
+                this._cac.registerAction(this._cards[2].showOpenCardAmi, this._cards[2], 0, 18, true);
+                //显示黑牌牌型
+                this._cac.registerAction(this.playCardResultAmiL, this, 0, 4);
+                //翻红牌第三张牌
+                this._cac.registerAction(this._cards[5].showOpenCardAmi, this._cards[5], 0, 18, true);
+                //显示红牌牌型
+                this._cac.registerAction(this.playCardResultAmiR, this, 0, 4);
+                //显示胜利区域
+                this._cac.registerAction(this.showWinner, this, 0, 27);
+                //显示记录分数面板
+                this._cac.registerAction(this.scoreBoard.addWinner, this.scoreBoard, 0, 0);
             }
             this._cac.play();
+        };
+        MainUIYDD.prototype.playCardResultAmiL = function () {
+            egret.Tween.get(this.blackResult_img).to({ alpha: 1 }, 200);
+        };
+        MainUIYDD.prototype.playCardResultAmiR = function () {
+            egret.Tween.get(this.redResult_img).to({ alpha: 1 }, 100);
+        };
+        MainUIYDD.prototype.playHXItemAmi = function () {
+            if (this._cac == null) {
+                return;
+            }
+            var len = AllData.instance.HX_ItemData.length;
+            for (var i = 1; i <= len; i++) {
+                this._cac.registerAction(this.setHXListData, this, 10, 0, i);
+            }
+        };
+        MainUIYDD.prototype.setHXListData = function (count) {
+            this.hxList.dataProvider = new eui.ArrayCollection(AllData.instance.getHXItemDataByNum(count));
+        };
+        MainUIYDD.prototype.showHXUI = function () {
+            this.hx_group.visible = true;
+            this.hxList.itemRenderer = HxItem;
+            this.oneHXNum_lab.textFlow = (new egret.HtmlTextParser).parser(AllData.instance.getOneHXStr());
+            this.twoHXNum_lab.textFlow = (new egret.HtmlTextParser).parser(AllData.instance.getTwoHXStr());
+            this.move_lab.visible = false;
+            this.kuangR_img.visible = false;
+            this.kuangL_img.visible = false;
+            this.setHXListData(0);
+        };
+        MainUIYDD.prototype.playMoveLabAmi = function () {
+            this.move_lab.x = 436;
+            this.move_lab.y = 272;
+            this.move_lab.text = AllData.instance.getMoveChat();
+            var endX = 0;
+            var endY = this.oneHXNum_lab.y;
+            var winner = AllData.instance.Winner;
+            var changeLab;
+            if (winner == EnumerationType.RegionWinner.black || winner == EnumerationType.RegionWinner.blackS) {
+                endX = this.twoHXNum_lab.x + this.twoHXNum_lab.size * AllData.instance.getMoveNum();
+                changeLab = this.twoHXNum_lab;
+            }
+            else {
+                endX = this.oneHXNum_lab.x + this.oneHXNum_lab.size * AllData.instance.getMoveNum();
+                changeLab = this.oneHXNum_lab;
+            }
+            this.move_lab.visible = true;
+            var self = this;
+            egret.Tween.get(this.move_lab).to({ x: endX, y: endY }, 1000)
+                .call(function () {
+                self.move_lab.visible = false;
+                var str = AllData.instance.getWinHXstr();
+                changeLab.textFlow = (new egret.HtmlTextParser).parser(str);
+            });
+        };
+        MainUIYDD.prototype.showWinK = function () {
+            var winner = AllData.instance.Winner;
+            if (winner == EnumerationType.RegionWinner.black || winner == EnumerationType.RegionWinner.blackS) {
+                this.kuangR_img.visible = true;
+            }
+            else {
+                this.kuangL_img.visible = true;
+            }
+        };
+        MainUIYDD.prototype.hideHXUI = function () {
+            this.hx_group.visible = false;
+        };
+        MainUIYDD.prototype.setCardStarTF = function (com) {
+            com.scaleX = 1.65;
+            com.scaleY = 1.65;
+            com.x = 404;
+            com.y = 108;
+            com.visible = true;
+        };
+        MainUIYDD.prototype.playOpenCardAmi = function () {
+            var cards = this._cards;
+            this.playOpenTwoCardAmi(cards[0], cards[1], cards[2]);
+            this.playOpenTwoCardAmi(cards[3], cards[4], cards[5]);
+        };
+        MainUIYDD.prototype.playOpenTwoCardAmi = function (card1, card2, card3) {
+            var starX1 = card1.x;
+            var starX3 = card3.x;
+            egret.Tween.get(card1).to({ x: card2.x }, 100)
+                .call(function () { card1.openSelf(); card2.openSelf(); })
+                .to({ x: starX1 }, 100);
+            egret.Tween.get(card3).to({ x: card2.x }, 100)
+                .to({ x: starX3 }, 100);
         };
         /**
          * 播放移动动画
          */
         MainUIYDD.prototype.playMoveAmi = function (value) {
+            egret.Tween.removeTweens(value.com);
             egret.Tween.get(value.com).to({ x: value.endX, y: value.endY, scaleX: value.sX, scaleY: value.sY }, value.time);
         };
         MainUIYDD.prototype.showWinner = function () {
@@ -226,71 +341,6 @@ var game;
                     break;
                 default:
                     break;
-            }
-        };
-        MainUIYDD.prototype.startTimer = function (time) {
-            if (this._timer == null) {
-                this._timer = new egret.Timer(time);
-                this._timer.addEventListener(egret.TimerEvent.TIMER, this.onTimer, this);
-            }
-            this._timer.start();
-            this.onTimer(null);
-        };
-        MainUIYDD.prototype.removeTimer = function () {
-            if (this._timer) {
-                this._timer.removeEventListener(egret.TimerEvent.TIMER, this.onTimer, this);
-                this._timer.stop();
-                this._timer = null;
-            }
-        };
-        //发牌具体时间控制
-        MainUIYDD.prototype.onTimer = function (e) {
-            var starR = 8; //开始播放右边发牌动画的时间
-            this._timeNum++;
-            if (this._timeNum < 4) {
-                this.playLeftGetCardAmi(this._timeNum - 1);
-            }
-            else if (this._timeNum <= starR) {
-            }
-            else if (this._timeNum < starR + 4) {
-                var index = this._timeNum - (starR - 2);
-                this.playRightGetCardAmi(index);
-            }
-            switch (this._timeNum) {
-                case 14:
-                    this._cards[0].showOpenCardAmi(false);
-                    break;
-                case 16:
-                    this._cards[1].showOpenCardAmi(false);
-                    break;
-                case 18:
-                    this._cards[3].showOpenCardAmi(false);
-                    break;
-                case 20:
-                    this._cards[4].showOpenCardAmi(false);
-                    break;
-                case 23:
-                    this._cards[2].showOpenCardAmi(true);
-                    break;
-                case 30://显示牌形
-                    egret.Tween.get(this.blackResult_img).to({ alpha: 1 }, 200);
-                    break;
-                case 36:
-                    this._cards[5].showOpenCardAmi(true);
-                    break;
-                case 43://显示牌形
-                    egret.Tween.get(this.redResult_img).to({ alpha: 1 }, 100);
-                    break;
-                case 50://显示胜利区域
-                    this.showWinner();
-                    break;
-                case 57:
-                    this.scoreBoard.addWinner();
-                    break;
-            }
-            if (this._timeNum > 57) {
-                this._timeNum = 0;
-                this.removeTimer();
             }
         };
         MainUIYDD.prototype.playLeftGetCardAmi = function (index, speed) {
@@ -341,6 +391,14 @@ var game;
                 var indexs = [this._selectIndex];
                 this.regionBlack.addBall(indexs, true);
             }
+        };
+        MainUIYDD.prototype.onBetsBtn = function (e) {
+            //todo
+            TipsUtils.showTipsFromCenter("投注成功", false);
+        };
+        MainUIYDD.prototype.onBackBetsBtnClick = function (e) {
+            //todo
+            TipsUtils.showTipsFromCenter("撤回失败(＞﹏＜)", false);
         };
         MainUIYDD.prototype.onOtherRegionClick = function (ent) {
             if (this._selectIndex >= 0) {

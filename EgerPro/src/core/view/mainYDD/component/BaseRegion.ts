@@ -55,6 +55,12 @@ class BaseRegion extends eui.Component implements eui.UIComponent
 	public showWinAmi(): void
 	{
 		this.playLineAmi();
+		if (this.win_img)
+		{
+			let num = this.numChildren - 1;
+			this.setChildIndex(this.win_img, num);
+			this.win_img.alpha = 1;
+		}
 	}
 
 	/**

@@ -72,6 +72,8 @@ declare class ScoreboardSkin extends eui.Skin{
 }
 declare class SelectCardingSkin extends eui.Skin{
 }
+declare class TipTextSkin extends eui.Skin{
+}
 declare class BackpackSkin extends eui.Skin{
 }
 declare class ChuangDangSkin extends eui.Skin{

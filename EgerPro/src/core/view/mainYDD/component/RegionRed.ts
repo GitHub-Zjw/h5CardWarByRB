@@ -17,17 +17,6 @@ class RegionRed extends BaseRegion
 		}
 	}
 
-	public showWinAmi(): void
-	{
-		super.showWinAmi();
-		if (this.win_img)
-		{
-			let num = this.numChildren - 1;
-			this.setChildIndex(this.win_img, num);
-			this.win_img.alpha = 1;
-		}
-	}
-
 	protected get StarPointX(): number
 	{
 		return 0;

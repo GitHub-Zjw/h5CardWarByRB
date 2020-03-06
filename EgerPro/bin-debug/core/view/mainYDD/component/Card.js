@@ -41,9 +41,16 @@ var Card = (function (_super) {
         this._color = AllData.instance.cardColor[index];
         this._cardNum = AllData.instance.cardNums[index];
         this.card_img.source = "card0_0_png";
+        this._cardImgS = "card" + this._color + "_" + this._cardNum + "_png";
     };
     Card.prototype.onBegigGame = function () {
         this.visible = false;
+    };
+    /**
+     * 翻牌
+     */
+    Card.prototype.openSelf = function () {
+        this.card_img.source = this._cardImgS;
     };
     /**
      * 播放翻牌动画
@@ -51,7 +58,7 @@ var Card = (function (_super) {
      * @param return 播放动画需要的时长，x
      */
     Card.prototype.showOpenCardAmi = function (isBig) {
-        var cardSource = "card" + this._color + "_" + this._cardNum + "_png";
+        var cardSource = this._cardImgS;
         var returnValue = 0;
         var self = this;
         if (isBig) {

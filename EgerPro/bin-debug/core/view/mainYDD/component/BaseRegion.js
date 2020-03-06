@@ -46,6 +46,11 @@ var BaseRegion = (function (_super) {
      */
     BaseRegion.prototype.showWinAmi = function () {
         this.playLineAmi();
+        if (this.win_img) {
+            var num = this.numChildren - 1;
+            this.setChildIndex(this.win_img, num);
+            this.win_img.alpha = 1;
+        }
     };
     /**
      * 增加小球

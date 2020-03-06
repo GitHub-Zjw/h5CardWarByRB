@@ -29,6 +29,7 @@ var AllData = (function (_super) {
         _this._betDetailsTypeDatas = [];
         _this._betRecordsTypeDatas = [];
         _this._gmaeMethItemTypeDatas = [];
+        _this._hX_ItemData = [];
         return _this;
     }
     Object.defineProperty(AllData, "instance", {
@@ -71,6 +72,57 @@ var AllData = (function (_super) {
         /**大奖数据 */
         get: function () {
             return this._gmaeMethItemTypeDatas;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    /**
+     * 获取 1 位置的哈希字符串
+     */
+    AllData.prototype.getOneHXStr = function () {
+        return "2,2,2,2,2,2,2,2,2,2,2";
+    };
+    /**
+     * 获取 2 位置的哈希字符串
+     */
+    AllData.prototype.getTwoHXStr = function () {
+        return "2,2,2,2,2,2,2,2,2,2,4,2";
+    };
+    /**
+     * 获取胜利位置的哈希字符串
+     */
+    AllData.prototype.getWinHXstr = function () {
+        return "2,2,2,2,2,2,2,2,2,2,<font color='#F9C834'>4</font>,2";
+    };
+    /**
+     * 获取中将需要移动的字符
+     */
+    AllData.prototype.getMoveChat = function () {
+        return "4";
+    };
+    /**
+     * 获取第几个字符中奖
+     */
+    AllData.prototype.getMoveNum = function () {
+        return 11;
+    };
+    /**
+     * 根据个数获取哈希选牌数据
+     */
+    AllData.prototype.getHXItemDataByNum = function (count) {
+        var returnValue = [];
+        var len = this._hX_ItemData.length;
+        for (var i = count; i > 0; i--) {
+            if (this._hX_ItemData[i - 1] && this._hX_ItemData[i - 1].length != 0) {
+                returnValue.push(this._hX_ItemData[i - 1]);
+            }
+        }
+        return returnValue;
+    };
+    Object.defineProperty(AllData.prototype, "HX_ItemData", {
+        /**哈希选牌数据 */
+        get: function () {
+            return this._hX_ItemData;
         },
         enumerable: true,
         configurable: true
@@ -250,6 +302,9 @@ var AllData = (function (_super) {
         this._bleckMoneyNum = this.getRandomInt(1, 1000);
         this._redMoneyNum = this.getRandomInt(1, 1000);
         this._otherMoneyNum = this.getRandomInt(1, 1000);
+        this._hX_ItemData[2] = ["21365", "...ee7b24123<font color='#E7B846'>4</font>", "14:15:16"];
+        this._hX_ItemData[1] = ["2123", "...ee7b241234", "14:15:16"];
+        this._hX_ItemData[0] = ["2g5", "...ee7b241234", "14:15:16"];
         console.log("动画数据设置完毕");
     };
     return AllData;

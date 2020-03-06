@@ -3,7 +3,7 @@
 	<w:Config id="17075f09754" ></w:Config>
 	<e:Image source="prefab_png" left="0" right="0" top="0" bottom="0" alpha="0.8" visible="false"/>
 	<e:Group x="0" y="0" width="812" height="375">
-		<e:Image source="zhuoZi_png" x="0" y="0"/>
+		<e:Image source="zhuoZi_png" x="0" y="0" visible="false"/>
 		<e:Image x="403.68" bottom="1" source="bghuiyou_png"/>
 		<e:Image x="412" y="352" source="textBg_png" alpha="0.5"/>
 		<e:Image x="413" source="qian_png" y="273"/>
@@ -59,9 +59,9 @@
 				</e:Skin>
 			</e:skinName>
 		</e:Button>
-		<ns1:SelectCarding id="selectCardCom" skinName="SelectCardingSkin" horizontalCenter="0" verticalCenter="0" visible="false"/>
-		<e:Image id="blackResult_img" x="169" source="jinHua_png" top="84" alpha="0"/>
-		<e:Image id="redResult_img" x="485" top="84" alpha="0" source="sanPai_png"/>
+
+
+
 		<ns1:RegionRed id="regionRed" x="395" y="33" skinName="RegionRedSkin"/>
 		<ns1:RegionBlack id="regionBlack" x="83.67" y="21.7" skinName="RegionBlackSkin" anchorOffsetX="0" anchorOffsetY="0" touchEnabled="false" touchChildren="false"/>
 		<ns1:RegionOther id="regionOther" x="255" y="148" skinName="RegionOtherSkin"/>
@@ -110,31 +110,35 @@
 		<e:Label id="moneyNumO_lab" text="0" y="168.34" size="10.6" textColor="0xFAC33F" horizontalCenter="-30"/>
 		<e:Label id="myHdag_lab" text="0 HDAG" y="290" size="8.67" textColor="0xFAC33F" right="331"/>
 		<e:Label id="myHdag_lab0" text="0" y="356" size="8.67" textColor="0xFAC33F" x="428"/>
-		<e:Group id="hx_group" left="0" right="0" top="0" bottom="0">
-			<e:Image id="anBg_img" source="stopBet_png" x="0" y="0"/>
+		<ns1:SelectCarding id="selectCardCom" skinName="SelectCardingSkin" horizontalCenter="0" verticalCenter="0" visible="false"/>
+		<e:Group id="hx_group" left="0" right="0" top="0" bottom="0" visible="false">
+			<e:Image source="stopBet_png" x="0" y="0"/>
 			<e:Image id="anBg_img2" source="红黑大战 -金花 - 开奖弹窗_png" left="0" right="0" top="0" bottom="0" visible="false"/>
-			<e:Image id="anBg_img0" source="hxxp_png" x="214" y="215.33"/>
-			<e:Image id="anBg_img1" x="174" y="59" source="huangKuang_png"/>
-			<e:Image id="anBg_img3" x="477" y="59" source="huangKuang_png"/>
+			<e:Image source="hxxp_png" x="214" y="215.33"/>
+			<e:Image id="kuangL_img" x="174.67" y="55.65" source="huangKuang_png" visible="false"/>
+			<e:Image id="kuangR_img" x="478.34" y="55.65" source="huangKuang_png" visible="false"/>
 			<e:Label text="区块" x="258" y="252" anchorOffsetX="0" anchorOffsetY="0" size="12" textColor="0xB676D7"/>
 			<e:Label text="哈希" x="391" y="252" anchorOffsetX="0" anchorOffsetY="0" size="12" textColor="0xB676D7"/>
 			<e:Label text="时间" x="526" y="252" anchorOffsetX="0" anchorOffsetY="0" size="12" textColor="0xB676D7"/>
 			<e:Label id="oneHXNum_lab" text="0,2,2,2, ,2," y="183" size="13" horizontalCenter="-155" fontFamily="SimHei"/>
 			<e:Label id="twoHXNum_lab" text="0,2,2,2,0, ,0,2,2,2,0,2" y="183.67" size="13" horizontalCenter="148.5" fontFamily="SimHei"/>
-			<e:Scroller width="365" height="72" x="221" y="272" anchorOffsetX="0" anchorOffsetY="0">
-				<e:List id="hxList" anchorOffsetX="0" width="352">
+			<e:Scroller id="hxpanel_scr" width="365" height="72" x="221" y="272" anchorOffsetX="0" anchorOffsetY="0">
+				<e:List id="hxList" anchorOffsetX="0" width="352" itemRendererSkinName="HxItemSkin">
 					<e:layout>
 						<e:VerticalLayout gap="8"/>
 					</e:layout>
 				</e:List>
 			</e:Scroller>
+			<e:Label id="move_lab" text="4" x="238" y="183" textColor="0xe7b846" size="13" fontFamily="SimHei" visible="false"/>
 		</e:Group>
-		<ns1:Card id="card1" y="34" skinName="CardSkin" anchorOffsetX="25" anchorOffsetY="0" x="200"/>
-		<ns1:Card y="34" skinName="CardSkin" anchorOffsetX="25" anchorOffsetY="0" id="card2" x="250"/>
-		<ns1:Card y="34" skinName="CardSkin" anchorOffsetX="25" anchorOffsetY="0" id="card3" x="300"/>
-		<ns1:Card y="34" skinName="CardSkin" anchorOffsetX="25" anchorOffsetY="0" id="card4" x="517"/>
-		<ns1:Card y="34" skinName="CardSkin" anchorOffsetX="25" anchorOffsetY="0" id="card5" x="567"/>
-		<ns1:Card y="34" skinName="CardSkin" anchorOffsetX="25" anchorOffsetY="0" id="card6" x="617"/>
+		<ns1:Card id="card1" y="34" skinName="CardSkin" anchorOffsetX="25" anchorOffsetY="0" x="200" visible="false"/>
+		<ns1:Card y="34" skinName="CardSkin" anchorOffsetX="25" anchorOffsetY="0" id="card2" x="250" visible="false"/>
+		<ns1:Card y="34" skinName="CardSkin" anchorOffsetX="25" anchorOffsetY="0" id="card3" x="300" visible="false"/>
+		<ns1:Card y="34" skinName="CardSkin" anchorOffsetX="25" anchorOffsetY="0" id="card4" x="517" visible="false"/>
+		<ns1:Card y="34" skinName="CardSkin" anchorOffsetX="25" anchorOffsetY="0" id="card5" x="567" visible="false"/>
+		<ns1:Card y="34" skinName="CardSkin" anchorOffsetX="25" anchorOffsetY="0" id="card6" x="617" visible="false"/>
+		<e:Image id="blackResult_img" x="169" source="jinHua_png" top="84" alpha="0"/>
+		<e:Image id="redResult_img" x="485" top="84" alpha="0" source="sanPai_png"/>
 	</e:Group>
 	<e:Button id="begin_btn" label="开始动画" y="0" left="-3"/>
 	<e:Button id="setCard_btn" label="重置数据" y="62.34" left="-3"/>

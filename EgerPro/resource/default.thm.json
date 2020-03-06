@@ -18,7 +18,8 @@
     "SelectCarding": "resource/eui_skins/SelectCardingSkin.exml",
     "BetDetailsPanel": "resource/eui_skins/BetDetailsPanelSkin.exml",
     "BetDetails.BetDetailsItem": "resource/eui_skins/BetDetailsItem.exml",
-    "gameMethod.GameMethodPanel": "resource/eui_skins/GameMethodPanelSkin.exml"
+    "gameMethod.GameMethodPanel": "resource/eui_skins/GameMethodPanelSkin.exml",
+    "TipText": "resource/eui_skins/TipTextSkin.exml"
   },
   "autoGenerateExmlsList": true,
   "exmls": [
@@ -51,14 +52,15 @@
     "resource/ui/mainYDD/component/ScoreboardSkin.exml",
     "resource/ui/mainYDD/component/BallBtnSkin.exml",
     "resource/ui/mainYDD/component/ClockSkin.exml",
-    "resource/ui/mainYDD/component/SelectCardingSkin.exml",
     "resource/ui/mainYDD/component/RegionRedSkin.exml",
     "resource/ui/mainYDD/component/RegionBlackSkin.exml",
     "resource/ui/mainYDD/component/RegionOtherSkin.exml",
+    "resource/ui/mainYDD/component/SelectCardingSkin.exml",
     "resource/ui/mainYDD/component/CardSkin.exml",
     "resource/ui/mainYDD/MainUIYDDSkin.exml",
     "resource/ui/mainYDD/component/BallComSkin.exml",
     "resource/ui/mainYDD/component/HxItemSkin.exml",
+    "resource/ui/mainYDD/component/TipTextSkin.exml",
     "src/component/button/main/CloseBtnSkin.exml",
     "resource/ui/panel/BackpackSkin.exml",
     "resource/ui/panel/ChuangDangSkin.exml",

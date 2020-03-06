@@ -25,6 +25,7 @@ class AllData extends egret.EventDispatcher
 	private _betDetailsTypeDatas: betDetails.BetDetailsTypeData[];
 	private _betRecordsTypeDatas: betDetails.BetRecordsTypeData[];
 	private _gmaeMethItemTypeDatas: string[][];
+	private _hX_ItemData: string[][];
 	public constructor()
 	{
 		super();
@@ -42,6 +43,7 @@ class AllData extends egret.EventDispatcher
 		this._betDetailsTypeDatas = [];
 		this._betRecordsTypeDatas = [];
 		this._gmaeMethItemTypeDatas = [];
+		this._hX_ItemData = [];
 	}
 
 	/**
@@ -66,6 +68,68 @@ class AllData extends egret.EventDispatcher
 	public get GmaeMethItemTypeDatas(): string[][]
 	{
 		return this._gmaeMethItemTypeDatas;
+	}
+	/**
+	 * 获取 1 位置的哈希字符串
+	 */
+	public getOneHXStr(): string
+	{//fix
+		return "2,2,2,2,2,2,2,2,2,2,2";
+	}
+
+	/**
+	 * 获取 2 位置的哈希字符串
+	 */
+	public getTwoHXStr(): string
+	{//fix
+		return "2,2,2,2,2,2,2,2,2,2,4,2";
+	}
+
+	/**
+	 * 获取胜利位置的哈希字符串
+	 */
+	public getWinHXstr(): string
+	{//fix
+		return "2,2,2,2,2,2,2,2,2,2,<font color='#F9C834'>4</font>,2";
+	}
+
+	/**
+	 * 获取中将需要移动的字符
+	 */
+	public getMoveChat(): string
+	{//fix
+		return "4";
+	}
+
+	/**
+	 * 获取第几个字符中奖
+	 */
+	public getMoveNum(): number
+	{//fix
+		return 11;
+	}
+
+	/**
+	 * 根据个数获取哈希选牌数据
+	 */
+	public getHXItemDataByNum(count: number): string[][]
+	{
+		let returnValue: string[][] = [];
+		let len = this._hX_ItemData.length;
+		for (let i = count; i > 0; i--)
+		{
+			if (this._hX_ItemData[i - 1] && this._hX_ItemData[i - 1].length != 0)
+			{
+				returnValue.push(this._hX_ItemData[i - 1]);
+			}
+		}
+		return returnValue;
+	}
+
+	/**哈希选牌数据 */
+	public get HX_ItemData(): string[][]
+	{
+		return this._hX_ItemData;
 	}
 
 	/**
@@ -235,15 +299,18 @@ class AllData extends egret.EventDispatcher
 			this._cardColor[i] = color;
 			let betData: betDetails.BetDetailsTypeData = { playerName: i.toString(), money: this.getRandomF(0, 1000), region: this.getRandomInt(0, 3) };
 			this._betDetailsTypeDatas.push(betData);
-			let recordData: betDetails.BetRecordsTypeData = {money: this.getRandomInt(100,1000),isWin: this.getRandomInt(0,2) == 1, region: this.getRandomInt(0, 3)};
+			let recordData: betDetails.BetRecordsTypeData = { money: this.getRandomInt(100, 1000), isWin: this.getRandomInt(0, 2) == 1, region: this.getRandomInt(0, 3) };
 			this._betRecordsTypeDatas.push(recordData);
-			let strs: string[] = [i.toString(),EnumerationType.CardType[this.getRandomInt(0,6)], this.getRandomInt(0,7) * 100 + " HDAG"];
+			let strs: string[] = [i.toString(), EnumerationType.CardType[this.getRandomInt(0, 6)], this.getRandomInt(0, 7) * 100 + " HDAG"];
 			this._gmaeMethItemTypeDatas.push(strs);
 		}
 		this._winner = EnumerationType.RegionWinner.blackS;
 		this._bleckMoneyNum = this.getRandomInt(1, 1000);
 		this._redMoneyNum = this.getRandomInt(1, 1000);
 		this._otherMoneyNum = this.getRandomInt(1, 1000);
+		this._hX_ItemData[2] = ["21365", "...ee7b24123<font color='#E7B846'>4</font>", "14:15:16"];
+		this._hX_ItemData[1] = ["2123", "...ee7b241234", "14:15:16"];
+		this._hX_ItemData[0] = ["2g5", "...ee7b241234", "14:15:16"];
 		console.log("动画数据设置完毕");
 	}
 }

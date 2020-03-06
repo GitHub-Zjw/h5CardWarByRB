@@ -1,8 +1,8 @@
-export class HxItem extends eui.ItemRenderer implements eui.UIComponent
+class HxItem extends eui.ItemRenderer implements eui.UIComponent
 {
-	public playerName_lab: eui.Label;
-	public playerbet_lab: eui.Label;
-	public color_img: eui.Image;
+	public qj_lab: eui.Label;
+	public hx_lab: eui.Label;
+	public time_lab0: eui.Label;
 
 	public data: string[];
 	public constructor()
@@ -24,5 +24,9 @@ export class HxItem extends eui.ItemRenderer implements eui.UIComponent
 
 	protected dataChanged(): void
 	{
+		this.qj_lab.text = this.data[0];
+		this.time_lab0.text = this.data[2];
+		let tx = this.hx_lab;
+		tx.textFlow = (new egret.HtmlTextParser).parser(this.data[1]);
 	}
 }

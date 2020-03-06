@@ -4,6 +4,7 @@ class Card extends eui.Component
 
 	private _color: EnumerationType.Color;
 	private _cardNum: number;
+	private _cardImgS: string;
 	public constructor()
 	{
 		super();
@@ -42,11 +43,20 @@ class Card extends eui.Component
 		this._color = AllData.instance.cardColor[index];
 		this._cardNum = AllData.instance.cardNums[index];
 		this.card_img.source = "card0_0_png";
+		this._cardImgS = "card" + this._color + "_" + this._cardNum + "_png";
 	}
 
 	public onBegigGame(): void
 	{
 		this.visible = false;
+	}
+
+	/**
+	 * 翻牌
+	 */
+	public openSelf(): void
+	{
+		this.card_img.source = this._cardImgS;
 	}
 
 	/**
@@ -56,7 +66,7 @@ class Card extends eui.Component
 	 */
 	public showOpenCardAmi(isBig: boolean): number
 	{
-		let cardSource = "card" + this._color + "_" + this._cardNum + "_png";
+		let cardSource = this._cardImgS;
 		let returnValue: number = 0;
 		let self = this;
 		if (isBig)

@@ -23,14 +23,6 @@ var RegionBlack = (function (_super) {
             this.win_img.alpha = 0;
         }
     };
-    RegionBlack.prototype.showWinAmi = function () {
-        _super.prototype.showWinAmi.call(this);
-        if (this.win_img) {
-            var num = this.numChildren - 1;
-            this.setChildIndex(this.win_img, num);
-            this.win_img.alpha = 1;
-        }
-    };
     /**
      * 获取小球最终停止点
      */
