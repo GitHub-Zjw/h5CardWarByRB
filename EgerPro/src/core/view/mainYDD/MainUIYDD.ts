@@ -12,6 +12,10 @@ module game
 		public card4: Card;
 		public card5: Card;
 		public card6: Card;
+		public card7: Card;
+		public card8: Card;
+		public card9: Card;
+		public card10: Card;
 		public ball5_btn: BallBtn;
 		public ball4_btn: BallBtn;
 		public ball3_btn: BallBtn;
@@ -68,14 +72,14 @@ module game
 		{
 			super();
 			this.skinName = "resource/ui/mainYDD/MainUIYDDSkin.exml";
-			this._cards = [this.card1, this.card2, this.card3, this.card4, this.card5, this.card6];
-			this._cardStarXs = [];
-			this._cardStarXs[0] = this.card1.x;
-			this._cardStarXs[1] = this.card2.x;
-			this._cardStarXs[2] = this.card3.x;
-			this._cardStarXs[3] = this.card4.x;
-			this._cardStarXs[4] = this.card5.x;
-			this._cardStarXs[5] = this.card6.x;
+			this._cards = [];//[this.card1, this.card2, this.card3, this.card4, this.card5, this.card6, this.card7, this.card8, this.card9, this.card10];
+			this._cardStarXs = [];//[this.card1.x, this.card2.x,this.card3.x,this.card4.x,this.card5.x,this.card6.x,this.card7.x,this.card8.x,this.card9.x,this.card10.x,];
+			for (let i = 0; i < 10; i++)
+			{
+				let key = "card" + (i + 1);
+				this._cards[i] = this[key];
+				this._cardStarXs[i] = this[key].x;
+			}
 			this._vsManBlackX = this.vsManBlack_img.x;
 			this._vsManRedX = this.vsManRed_img.x;
 			this._selectIndex = -1;
@@ -266,7 +270,7 @@ module game
 		 */
 		public setCardData(): void
 		{
-			for (let i = 0; i < 6; i++)
+			for (let i = 0; i < 10; i++)
 			{
 				this._cards[i].setCard(i);
 			}
@@ -284,7 +288,13 @@ module game
 			{
 				this._cac = new ContinueAmiChain(50);
 				let len = this._cards.length;
-				let cardCenterXs = [521, 557, 596, 218, 254, 290];
+				let cardCenterXs = [];
+				for (let i = 0; i < 5; i++)
+				{
+					let dz = i * 37
+					cardCenterXs[i + 5] = 176 + dz;
+					cardCenterXs[i] = 485 + dz;
+				}
 				let cardCenterY = 59;
 				let cardCenterS = 1.65;
 				//设置发牌起始位置
@@ -300,9 +310,9 @@ module game
 					let needTime = 8;
 					this._cac.registerAction(this.playMoveAmi, this, starTime, needTime, value);
 				}
-				//翻前两张牌
-				this._cac.registerAction(this.playOpenCardAmi, this, 10, 16);
-				//增加哈希列表动画
+				//翻前四张牌
+				this._cac.registerAction(this.playOpenCardAmi, this, 10, 18);
+				//动画：增加哈希列表
 				this.playHXItemAmi();
 				//飘字动画
 				this._cac.registerAction(this.playMoveLabAmi, this, 0, 20);
@@ -318,12 +328,12 @@ module game
 					let starTime = i == 0 ? 0 : -needTime;
 					this._cac.registerAction(this.playMoveAmi, this, starTime, needTime, value);
 				}
-				//翻黑牌第三张
-				this._cac.registerAction(this._cards[2].showOpenCardAmi, this._cards[2], 0, 18, true);
+				//翻黑牌第五张
+				this._cac.registerAction(this._cards[4].showOpenCardAmi, this._cards[4], 0, 18, true);
 				//显示黑牌牌型
 				this._cac.registerAction(this.playCardResultAmiL, this, 0, 4);
-				//翻红牌第三张牌
-				this._cac.registerAction(this._cards[5].showOpenCardAmi, this._cards[5], 0, 18, true);
+				//翻红牌第五张牌
+				this._cac.registerAction(this._cards[9].showOpenCardAmi, this._cards[9], 0, 18, true);
 				//显示红牌牌型
 				this._cac.registerAction(this.playCardResultAmiR, this, 0, 4);
 				//显示胜利区域
@@ -434,21 +444,29 @@ module game
 		private playOpenCardAmi(): void
 		{
 			let cards = this._cards;
-			this.playOpenTwoCardAmi(cards[0], cards[1], cards[2]);
-			this.playOpenTwoCardAmi(cards[3], cards[4], cards[5]);
+			this.playOpenTwoCardAmi(cards[0], cards[1], cards[2],cards[3],cards[4]);
+			this.playOpenTwoCardAmi(cards[5], cards[6], cards[7],cards[8],cards[9]);
 		}
 
-		private playOpenTwoCardAmi(card1: Card, card2: Card, card3: Card, ): void
+		private playOpenTwoCardAmi(card1: Card, card2: Card, card3: Card, card4: Card, card5: Card): void
 		{
 			let starX1 = card1.x;
+			let starX2 = card2.x;
 			let starX3 = card3.x;
+			let starX4 = card4.x;
+			let starX5 = card5.x;
+			let sX = card1.scaleX;
 
-			egret.Tween.get(card1).to({ x: card2.x }, 400)
-				.call(function () { card1.openSelf(); card2.openSelf() })
-				.to({ x: starX1 }, 400);
+			egret.Tween.get(card1).to({ x: card3.x }, 450)
+				.call(function () { card1.openSelf(); card3.openSelf(); card2.openSelf(); card4.openSelf();})
+				.to({ x: starX1 }, 450);
 
-			egret.Tween.get(card3).to({ x: card2.x }, 400)
-				.to({ x: starX3 }, 400);
+			egret.Tween.get(card2).to({ x: card3.x }, 450)
+				.to({ x: starX2 }, 450);
+			egret.Tween.get(card4).to({ x: card3.x }, 450)
+				.to({ x: starX4 }, 450);
+			egret.Tween.get(card5).to({ x: card3.x }, 450)
+				.to({ x: starX5 }, 450);
 		}
 
 		/**
