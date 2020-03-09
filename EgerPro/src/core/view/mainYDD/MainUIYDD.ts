@@ -296,12 +296,12 @@ module game
 				for (let i = 0; i < len; i++)
 				{
 					let value = { com: this._cards[i], endX: cardCenterXs[i], endY: cardCenterY, sX: cardCenterS, sY: cardCenterS, time: 100 };
-					let starTime = i == 0 ? 0 : -1;
-					let needTime = 2;
+					let starTime = i == 0 ? 0 : -6;
+					let needTime = 8;
 					this._cac.registerAction(this.playMoveAmi, this, starTime, needTime, value);
 				}
 				//翻前两张牌
-				this._cac.registerAction(this.playOpenCardAmi, this, 10, 4);
+				this._cac.registerAction(this.playOpenCardAmi, this, 10, 16);
 				//增加哈希列表动画
 				this.playHXItemAmi();
 				//飘字动画
@@ -443,12 +443,12 @@ module game
 			let starX1 = card1.x;
 			let starX3 = card3.x;
 
-			egret.Tween.get(card1).to({ x: card2.x }, 100)
+			egret.Tween.get(card1).to({ x: card2.x }, 400)
 				.call(function () { card1.openSelf(); card2.openSelf() })
-				.to({ x: starX1 }, 100);
+				.to({ x: starX1 }, 400);
 
-			egret.Tween.get(card3).to({ x: card2.x }, 100)
-				.to({ x: starX3 }, 100);
+			egret.Tween.get(card3).to({ x: card2.x }, 400)
+				.to({ x: starX3 }, 400);
 		}
 
 		/**

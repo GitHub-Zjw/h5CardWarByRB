@@ -27,6 +27,14 @@ var BallCom = (function (_super) {
     BallCom.prototype.partAdded = function (partName, instance) {
         _super.prototype.partAdded.call(this, partName, instance);
     };
+    Object.defineProperty(BallCom.prototype, "PlayerId", {
+        /**玩家id */
+        get: function () {
+            return this._playerId;
+        },
+        enumerable: true,
+        configurable: true
+    });
     BallCom.prototype.childrenCreated = function () {
         _super.prototype.childrenCreated.call(this);
     };
