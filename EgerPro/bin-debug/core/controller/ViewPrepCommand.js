@@ -36,6 +36,7 @@ var game;
             this.facade.registerMediator(new StopBetMediator());
             this.facade.registerMediator(new betDetails.BetDetailsMediator());
             this.facade.registerMediator(new gameMethod.GameMethodMediator());
+            this.facade.registerMediator(new bigWinner.BigWinnerMediator());
         };
         return ViewPrepCommand;
     }(puremvc.SimpleCommand));

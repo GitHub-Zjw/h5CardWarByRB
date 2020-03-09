@@ -17,10 +17,11 @@ var BallCom = (function (_super) {
      * 小球
      * @param sourceIndex 小球索引
      */
-    function BallCom(sourceIndex) {
+    function BallCom(sourceIndex, id) {
         var _this = _super.call(this) || this;
         _this.skinName = "resource/ui/mainYDD/component/BallComSkin.exml";
         _this._sourceIndex = sourceIndex;
+        _this._playerId = id;
         return _this;
     }
     BallCom.prototype.partAdded = function (partName, instance) {

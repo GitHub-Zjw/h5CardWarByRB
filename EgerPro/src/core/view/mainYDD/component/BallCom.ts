@@ -4,6 +4,7 @@ class BallCom extends eui.Component implements eui.UIComponent
 
 	public icon_img: eui.Image;
 
+	private _playerId: string;
 	private _sourceIndex: number;
 	private _endX: number;
 	private _endY: number;
@@ -11,11 +12,12 @@ class BallCom extends eui.Component implements eui.UIComponent
 	 * 小球
 	 * @param sourceIndex 小球索引
 	 */
-	public constructor(sourceIndex: number)
+	public constructor(sourceIndex: number, id: string)
 	{
 		super();
 		this.skinName = "resource/ui/mainYDD/component/BallComSkin.exml";
 		this._sourceIndex = sourceIndex;
+		this._playerId = id;
 	}
 
 	protected partAdded(partName: string, instance: any): void
@@ -23,6 +25,11 @@ class BallCom extends eui.Component implements eui.UIComponent
 		super.partAdded(partName, instance);
 	}
 
+	/**玩家id */
+	public get PlayerId(): string
+	{
+		return this._playerId;
+	}
 
 	protected childrenCreated(): void
 	{

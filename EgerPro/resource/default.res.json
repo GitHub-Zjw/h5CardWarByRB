@@ -15,6 +15,10 @@
 		{
 			"keys": "jbbg_png,wfxq_png",
 			"name": "gameMethod"
+		},
+		{
+			"keys": "bigWinnerBg_png,bwsd_png,textBgBW_png,红黑大战 -金花 - 本轮大赢家_png,jiangBei1_png,jiangBei2_png,jiangBei3_png",
+			"name": "bigWinner"
 		}
 	],
 	"resources": [
@@ -820,9 +824,44 @@
 			"name": "numberTwo_png"
 		},
 		{
-			"name": "红黑大战 -金花 - 开奖弹窗_png",
+			"url": "images/mainYDD/红黑大战 -金花 - 开奖弹窗.png",
 			"type": "image",
-			"url": "images/mainYDD/红黑大战 -金花 - 开奖弹窗.png"
+			"name": "红黑大战 -金花 - 开奖弹窗_png"
+		},
+		{
+			"url": "images/bigWinner/bigWinnerBg.png",
+			"type": "image",
+			"name": "bigWinnerBg_png"
+		},
+		{
+			"url": "images/bigWinner/bwsd.png",
+			"type": "image",
+			"name": "bwsd_png"
+		},
+		{
+			"url": "images/bigWinner/textBgBW.png",
+			"type": "image",
+			"name": "textBgBW_png"
+		},
+		{
+			"url": "images/bigWinner/红黑大战 -金花 - 本轮大赢家.png",
+			"type": "image",
+			"name": "红黑大战 -金花 - 本轮大赢家_png"
+		},
+		{
+			"url": "images/bigWinner/jiangBei1.png",
+			"type": "image",
+			"name": "jiangBei1_png"
+		},
+		{
+			"url": "images/bigWinner/jiangBei2.png",
+			"type": "image",
+			"name": "jiangBei2_png"
+		},
+		{
+			"url": "images/bigWinner/jiangBei3.png",
+			"type": "image",
+			"name": "jiangBei3_png"
 		}
 	]
 }

@@ -87,6 +87,13 @@ class PanelNotify{
 
     /**关闭大奖玩法界面 */
     public static CLOSE_GAME_METHOD: string = "PANELNOTIFY_CLOSE_GAME_METHOD";
+
+    /**打开大奖玩家界面 */
+    public static OPEN_BIG_WINNER: string = "PANELNOTIFY_OPEN_BIG_WINNER";
+
+    /**关闭大奖玩家界面 */
+    public static CLOSE_BIG_WINNER: string = "PANELNOTIFY_CLOSE__BIG_WINNER";
+
 }	
 
 

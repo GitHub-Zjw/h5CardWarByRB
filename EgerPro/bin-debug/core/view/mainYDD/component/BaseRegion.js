@@ -56,11 +56,11 @@ var BaseRegion = (function (_super) {
      * 增加小球
      * @param indexs 小球类型数组
      */
-    BaseRegion.prototype.addBall = function (indexs, isSelf) {
+    BaseRegion.prototype.addBall = function (indexs, playIds, isSelf) {
         if (isSelf === void 0) { isSelf = false; }
         var len = indexs.length;
         for (var i = 0; i < len; i++) {
-            var ball = ObjectPool.instance.pop(BallCom.NAME, indexs[i]);
+            var ball = ObjectPool.instance.pop(BallCom.NAME, indexs[i], playIds[i]);
             this.addChild(ball);
             if (isSelf) {
                 ball.x = this.SelfStarPointX;

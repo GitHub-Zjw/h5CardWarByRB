@@ -67,12 +67,12 @@ class BaseRegion extends eui.Component implements eui.UIComponent
 	 * 增加小球
 	 * @param indexs 小球类型数组
 	 */
-	public addBall(indexs: number[], isSelf: boolean = false): void
+	public addBall(indexs: number[],playIds: string[], isSelf: boolean = false): void
 	{
 		let len = indexs.length;
 		for (let i = 0; i < len; i++)
 		{
-			let ball: BallCom = ObjectPool.instance.pop(BallCom.NAME, indexs[i]);
+			let ball: BallCom = ObjectPool.instance.pop(BallCom.NAME, indexs[i], playIds[i]);
 			this.addChild(ball);
 			if (isSelf)
 			{

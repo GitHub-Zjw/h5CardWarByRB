@@ -18,6 +18,7 @@ var AllData = (function (_super) {
         _this._cardColor = [];
         _this._cardNums = [];
         _this.ballSource = ["0.1_png", "1_png", "5_png", "10_png", "50_png", "100_png"];
+        _this.ballValue = [0.1, 1, 5, 10, 50, 100];
         _this._bleckMoneyNum = 0;
         _this._redMoneyNum = 0;
         _this._redMoneyNum = 0;
@@ -30,6 +31,9 @@ var AllData = (function (_super) {
         _this._betRecordsTypeDatas = [];
         _this._gmaeMethItemTypeDatas = [];
         _this._hX_ItemData = [];
+        _this._bigWinnerDatas = [];
+        _this._myHdag = 0;
+        _this._myMoney = 0;
         return _this;
     }
     Object.defineProperty(AllData, "instance", {
@@ -38,6 +42,62 @@ var AllData = (function (_super) {
                 AllData._info = new AllData();
             }
             return AllData._info;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    /**
+     * 获取金币是否足够
+     * @param value 需要的金币
+     * @param isShowTip 是否显示提示
+     */
+    AllData.prototype.getMoneyIsEnough = function (value, isShowTip) {
+        if (isShowTip === void 0) { isShowTip = false; }
+        var afUse = AllData.instance.MyMoney - value;
+        if (afUse >= 0) {
+            return true;
+        }
+        else {
+            if (isShowTip) {
+                EffectUtils.showTips("剩余游戏币不足", 4);
+            }
+            return false;
+        }
+    };
+    Object.defineProperty(AllData.prototype, "playerInfo", {
+        /**玩家信息 */
+        get: function () {
+            return this._playerInfo;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(AllData.prototype, "BigWinnerDatas", {
+        /**大奖玩家数据 */
+        get: function () {
+            return this._bigWinnerDatas;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(AllData.prototype, "MyHDAG", {
+        /**我的下注金额 */
+        get: function () {
+            return this._myHdag;
+        },
+        set: function (value) {
+            this._myHdag = value;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(AllData.prototype, "MyMoney", {
+        /**我的游戏币 */
+        get: function () {
+            return this._myMoney;
+        },
+        set: function (value) {
+            this._myMoney = value;
         },
         enumerable: true,
         configurable: true
@@ -298,13 +358,19 @@ var AllData = (function (_super) {
             var strs = [i.toString(), EnumerationType.CardType[this.getRandomInt(0, 6)], this.getRandomInt(0, 7) * 100 + " HDAG"];
             this._gmaeMethItemTypeDatas.push(strs);
         }
+        var bwData1 = { playerName: "十七项", value: "651454.68", jiangBeiNum: 1 };
+        var bwData2 = { playerName: "十七项", value: "65154.68", jiangBeiNum: 2 };
+        var bwData3 = { playerName: "十七项", value: "65126454.68", jiangBeiNum: 3 };
+        this._bigWinnerDatas = [bwData1, bwData2, bwData3];
         this._winner = EnumerationType.RegionWinner.blackS;
         this._bleckMoneyNum = this.getRandomInt(1, 1000);
         this._redMoneyNum = this.getRandomInt(1, 1000);
         this._otherMoneyNum = this.getRandomInt(1, 1000);
+        this._myMoney = 250;
         this._hX_ItemData[2] = ["21365", "...ee7b24123<font color='#E7B846'>4</font>", "14:15:16"];
         this._hX_ItemData[1] = ["2123", "...ee7b241234", "14:15:16"];
         this._hX_ItemData[0] = ["2g5", "...ee7b241234", "14:15:16"];
+        this._playerInfo = { name: "旺气象", money: 669, id: "adsf" };
         console.log("动画数据设置完毕");
     };
     return AllData;

@@ -33,6 +33,9 @@
 
 		//关闭活动UI
 		public static CLOSE_ACTIVITY:string = "MainNotify_CLOSE_ACTIVITY";
+
+		/**下注 */
+		public static BET: string = "BET";
 	}	
 
 

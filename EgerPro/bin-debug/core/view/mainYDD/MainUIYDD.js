@@ -39,6 +39,7 @@ var game;
             this._card1StarX = this.card1.x;
             this._card1StarY = this.card1.y;
             this.regitEvent();
+            this.refreshMoneyLab();
         };
         MainUIYDD.prototype.regitEvent = function () {
             this.ball0_btn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBallBtnClick, this);
@@ -51,9 +52,9 @@ var game;
             this.betRecord_btn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBetRecordsBtnClick, this);
             this.gameMethod_btn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onGameMethodBtnClick, this);
             this.prizeInfo_btn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onPrizeInfoBtnClick, this);
-            this.regionRed_btn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onRedRegionClick, this);
-            this.regionBlack_btn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBlackRegionClick, this);
-            this.regionOther_btn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onOtherRegionClick, this);
+            this.regionRed_btn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onRegionClick, this);
+            this.regionBlack_btn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onRegionClick, this);
+            this.regionOther_btn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onRegionClick, this);
             this.bets_btn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBetsBtn, this);
             this.withdraw_btn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBackBetsBtnClick, this);
             AllData.instance.addEventListener(GameNotify.GAME_STAR, this.onBegigGame, this);
@@ -63,6 +64,7 @@ var game;
             this.setCard_btn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onSetCardBtnClick, this);
             this.cardAmi_btn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onCardAmiBtnClick, this);
             this.ballAmi_btn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBallAmiBtnClick, this);
+            this.bigWinner_btn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBigWinnerBtnClick, this);
         };
         MainUIYDD.prototype.removeEvent = function () {
             this.ball0_btn.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onBallBtnClick, this);
@@ -75,9 +77,9 @@ var game;
             this.betRecord_btn.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onBetRecordsBtnClick, this);
             this.gameMethod_btn.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onGameMethodBtnClick, this);
             this.prizeInfo_btn.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onPrizeInfoBtnClick, this);
-            this.regionRed_btn.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onRedRegionClick, this);
-            this.regionBlack_btn.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onBlackRegionClick, this);
-            this.regionOther_btn.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onOtherRegionClick, this);
+            this.regionRed_btn.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onRegionClick, this);
+            this.regionBlack_btn.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onRegionClick, this);
+            this.regionOther_btn.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onRegionClick, this);
             this.bets_btn.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onBetsBtn, this);
             this.withdraw_btn.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onBackBetsBtnClick, this);
             AllData.instance.removeEventListener(GameNotify.GAME_STAR, this.onBegigGame, this);
@@ -87,6 +89,7 @@ var game;
             this.setCard_btn.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onSetCardBtnClick, this);
             this.cardAmi_btn.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onCardAmiBtnClick, this);
             this.ballAmi_btn.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onBallAmiBtnClick, this);
+            this.bigWinner_btn.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onBigWinnerBtnClick, this);
         };
         /**
          * 游戏开始
@@ -111,6 +114,7 @@ var game;
             this.mengBan_btn.visible = true;
             var self = this;
             game.AppFacade.getInstance().sendNotification(PanelNotify.OPEN_STOP_BET);
+            this._selectIndex = -1;
             var temp = setTimeout(function () {
                 game.AppFacade.getInstance().sendNotification(PanelNotify.CLOSE_STOP_BET);
                 clearTimeout(temp);
@@ -123,6 +127,11 @@ var game;
             this.moneyNumB_lab.text = AllData.instance.BleckMoneyNum.toString();
             this.moneyNumR_lab.text = AllData.instance.RedMoneyNum.toString();
             this.moneyNumO_lab.text = AllData.instance.OtherMoneyNum.toString();
+        };
+        /**刷新本人数据 */
+        MainUIYDD.prototype.refreshPlayerMoney = function () {
+            this.myHdag_lab.text = "" + AllData.instance.MyHDAG + " HDAG";
+            this.myMoney_lab.text = "" + AllData.instance.MyMoney;
         };
         /**
          * 播放开始动画
@@ -380,16 +389,26 @@ var game;
         MainUIYDD.prototype.onPrizeInfoBtnClick = function (ent) {
             game.AppFacade.getInstance().sendNotification(PanelNotify.OPEN_GAME_METHOD, false);
         };
-        MainUIYDD.prototype.onRedRegionClick = function (ent) {
+        MainUIYDD.prototype.onRegionClick = function (ent) {
             if (this._selectIndex >= 0) {
-                var indexs = [this._selectIndex];
-                this.regionRed.addBall(indexs, true);
-            }
-        };
-        MainUIYDD.prototype.onBlackRegionClick = function (ent) {
-            if (this._selectIndex >= 0) {
-                var indexs = [this._selectIndex];
-                this.regionBlack.addBall(indexs, true);
+                var value = AllData.instance.ballValue[this._selectIndex];
+                if (AllData.instance.getMoneyIsEnough(value, true)) {
+                    game.AppFacade.getInstance().sendNotification(MainNotify.BET, this._selectIndex);
+                    var indexs = [this._selectIndex];
+                    var id = [AllData.instance.playerInfo.id];
+                    var btn = ent.target;
+                    switch (btn) {
+                        case this.regionRed_btn:
+                            this.regionRed.addBall(indexs, id, true);
+                            break;
+                        case this.regionBlack_btn:
+                            this.regionBlack.addBall(indexs, id, true);
+                            break;
+                        case this.regionOther_btn:
+                            this.regionOther.addBall(indexs, id, true);
+                            break;
+                    }
+                }
             }
         };
         MainUIYDD.prototype.onBetsBtn = function (e) {
@@ -399,12 +418,6 @@ var game;
         MainUIYDD.prototype.onBackBetsBtnClick = function (e) {
             //todo
             TipsUtils.showTipsFromCenter("撤回失败(＞﹏＜)", false);
-        };
-        MainUIYDD.prototype.onOtherRegionClick = function (ent) {
-            if (this._selectIndex >= 0) {
-                var indexs = [this._selectIndex];
-                this.regionOther.addBall(indexs, true);
-            }
         };
         MainUIYDD.prototype.onBallBtnClick = function (ent) {
             if (this._selectedBall) {
@@ -443,6 +456,7 @@ var game;
         MainUIYDD.prototype.onBeginBtnClick = function () {
             // this.showBeginAmi();
             AllData.instance.dispatchEventWith(GameNotify.GAME_STAR);
+            this.refreshMoneyLab();
         };
         MainUIYDD.prototype.onSetCardBtnClick = function () {
             AllData.instance.testSetData();
@@ -454,17 +468,22 @@ var game;
         MainUIYDD.prototype.onBallAmiBtnClick = function () {
             var ballNum = AllData.instance.getRandomInt(1, 10);
             var ballIndexs = [];
+            var ballId = [];
             this.regionRed.removeAllBall();
             this.regionBlack.removeAllBall();
             this.regionOther.removeAllBall();
             for (var i = 0; i < ballNum; i++) {
                 var ballIndex = AllData.instance.getRandomInt(0, 5);
                 ballIndexs.push(ballIndex);
+                ballId.push("6566655asd");
             }
-            this.regionRed.addBall(ballIndexs);
-            this.regionBlack.addBall(ballIndexs);
-            this.regionOther.addBall(ballIndexs);
-            this.refreshMoneyLab();
+            this.regionRed.addBall(ballIndexs, ballId);
+            this.regionBlack.addBall(ballIndexs, ballId);
+            this.regionOther.addBall(ballIndexs, ballId);
+            this.refreshPlayerMoney();
+        };
+        MainUIYDD.prototype.onBigWinnerBtnClick = function () {
+            game.AppFacade.getInstance().sendNotification(PanelNotify.OPEN_BIG_WINNER);
         };
         return MainUIYDD;
     }(eui.Component));

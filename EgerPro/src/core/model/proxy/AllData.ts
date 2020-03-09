@@ -12,6 +12,8 @@ class AllData extends egret.EventDispatcher
 
 	/**小球资源名 */
 	public ballSource: string[];
+	/**小球大小 */
+	public ballValue: number[];
 
 	private _cardColor: EnumerationType.Color[];
 	private _cardNums: number[];
@@ -26,12 +28,17 @@ class AllData extends egret.EventDispatcher
 	private _betRecordsTypeDatas: betDetails.BetRecordsTypeData[];
 	private _gmaeMethItemTypeDatas: string[][];
 	private _hX_ItemData: string[][];
+	private _bigWinnerDatas: bigWinner.RankItemTypeData[];
+	private _myHdag: number;
+	private _myMoney: number;
+	private _playerInfo: game.PlayerInfo;
 	public constructor()
 	{
 		super();
 		this._cardColor = [];
 		this._cardNums = [];
 		this.ballSource = ["0.1_png", "1_png", "5_png", "10_png", "50_png", "100_png"];
+		this.ballValue = [0.1, 1, 5, 10, 50, 100];
 		this._bleckMoneyNum = 0;
 		this._redMoneyNum = 0;
 		this._redMoneyNum = 0;
@@ -44,6 +51,65 @@ class AllData extends egret.EventDispatcher
 		this._betRecordsTypeDatas = [];
 		this._gmaeMethItemTypeDatas = [];
 		this._hX_ItemData = [];
+		this._bigWinnerDatas = [];
+		this._myHdag = 0;
+		this._myMoney = 0;
+	}
+
+
+	/**
+	 * 获取金币是否足够
+	 * @param value 需要的金币
+	 * @param isShowTip 是否显示提示
+	 */
+	public getMoneyIsEnough(value: number, isShowTip: boolean = false): boolean
+	{
+		let afUse = AllData.instance.MyMoney - value;
+		if (afUse >= 0)
+		{
+			return true;
+		}
+		else
+		{
+			if (isShowTip)
+			{
+				EffectUtils.showTips("剩余游戏币不足", 4);
+			}
+			return false;
+		}
+	}
+
+	/**玩家信息 */
+	public get playerInfo(): game.PlayerInfo
+	{
+		return this._playerInfo;
+	}
+	/**大奖玩家数据 */
+	public get BigWinnerDatas(): bigWinner.RankItemTypeData[]
+	{
+		return this._bigWinnerDatas;
+	}
+
+	/**我的下注金额 */
+	public get MyHDAG(): number
+	{
+		return this._myHdag;
+	}
+
+	public set MyHDAG(value: number)
+	{
+		this._myHdag = value;
+	}
+
+	/**我的游戏币 */
+	public get MyMoney(): number
+	{
+		return this._myMoney;
+	}
+
+	public set MyMoney(value: number)
+	{
+		this._myMoney = value;
 	}
 
 	/**
@@ -304,13 +370,19 @@ class AllData extends egret.EventDispatcher
 			let strs: string[] = [i.toString(), EnumerationType.CardType[this.getRandomInt(0, 6)], this.getRandomInt(0, 7) * 100 + " HDAG"];
 			this._gmaeMethItemTypeDatas.push(strs);
 		}
+		let bwData1: bigWinner.RankItemTypeData = { playerName: "十七项", value: "651454.68", jiangBeiNum: 1 };
+		let bwData2: bigWinner.RankItemTypeData = { playerName: "十七项", value: "65154.68", jiangBeiNum: 2 };
+		let bwData3: bigWinner.RankItemTypeData = { playerName: "十七项", value: "65126454.68", jiangBeiNum: 3 };
+		this._bigWinnerDatas = [bwData1, bwData2, bwData3];
 		this._winner = EnumerationType.RegionWinner.blackS;
 		this._bleckMoneyNum = this.getRandomInt(1, 1000);
 		this._redMoneyNum = this.getRandomInt(1, 1000);
 		this._otherMoneyNum = this.getRandomInt(1, 1000);
+		this._myMoney = 250;
 		this._hX_ItemData[2] = ["21365", "...ee7b24123<font color='#E7B846'>4</font>", "14:15:16"];
 		this._hX_ItemData[1] = ["2123", "...ee7b241234", "14:15:16"];
 		this._hX_ItemData[0] = ["2g5", "...ee7b241234", "14:15:16"];
+		this._playerInfo = {name: "旺气象", money: 669, id: "adsf"};
 		console.log("动画数据设置完毕");
 	}
 }

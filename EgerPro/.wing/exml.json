@@ -28,5 +28,15 @@
         "path": "core\\view\\mainYDD\\component\\TipText.ts",
         "class": "TipText",
         "parentPath": "resource/eui_skins/ButtonSkin.exml"
+    },
+    "170bced36c2": {
+        "path": "core\\view\\panelYDD\\panle\\BigWinner\\BigWinnerPanel.ts",
+        "class": "BigWinnerPanel",
+        "parentPath": ""
+    },
+    "170bcf77d39": {
+        "path": "core\\view\\panelYDD\\panle\\BigWinner\\BigWinnerItem.ts",
+        "class": "BigWinnerItem",
+        "parentPath": ""
     }
 }

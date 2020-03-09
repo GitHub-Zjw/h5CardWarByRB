@@ -27,6 +27,8 @@ var MainNotify = (function () {
     MainNotify.OPEN_ACTIVITY = "MainNotify_OPEN_ACTIVITY";
     //关闭活动UI
     MainNotify.CLOSE_ACTIVITY = "MainNotify_CLOSE_ACTIVITY";
+    /**下注 */
+    MainNotify.BET = "BET";
     return MainNotify;
 }());
 __reflect(MainNotify.prototype, "MainNotify");

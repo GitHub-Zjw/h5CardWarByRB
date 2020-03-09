@@ -19,7 +19,9 @@
     "BetDetailsPanel": "resource/eui_skins/BetDetailsPanelSkin.exml",
     "BetDetails.BetDetailsItem": "resource/eui_skins/BetDetailsItem.exml",
     "gameMethod.GameMethodPanel": "resource/eui_skins/GameMethodPanelSkin.exml",
-    "TipText": "resource/eui_skins/TipTextSkin.exml"
+    "TipText": "resource/eui_skins/TipTextSkin.exml",
+    "bigWinner.BigWinnerPanel": "resource/eui_skins/BigWinnerPanelSkin.exml",
+    "bigWinner.BigWinnerItem": "resource/eui_skins/BigWinnerItemSkin.exml"
   },
   "autoGenerateExmlsList": true,
   "exmls": [
@@ -72,6 +74,8 @@
     "resource/ui/panelYDD/BetDetails/BetDetailsItem.exml",
     "resource/ui/panelYDD/BetDetails/BetDetailsPanelSkin.exml",
     "resource/ui/panelYDD/BetDetails/BetRecordsItemSkin.exml",
+    "resource/ui/panelYDD/BigWinner/BigWinnerItemSkin.exml",
+    "resource/ui/panelYDD/BigWinner/BigWinnerPanelSkin.exml",
     "resource/ui/panelYDD/GameMethod/GameMethodItemSkin.exml",
     "resource/ui/panelYDD/GameMethod/GameMethodPanelSkin.exml",
     "resource/ui/panelYDD/GameMethod/PrizeInfoPanelSkin.exml",

@@ -103,13 +103,13 @@
 		<e:Button id="regionRed_btn" label="" x="550" y="122" anchorOffsetX="0" width="153" anchorOffsetY="0" height="147" alpha="0"/>
 		<e:Button id="regionOther_btn" label="" x="304" y="188" anchorOffsetX="0" width="192" anchorOffsetY="0" height="74" alpha="0"/>
 		<e:Label text="投注金额" x="436" y="274" textColor="0xa09eac" size="11.3" fontFamily="Microsoft YaHei"/>
-		<e:Label text="投注详情" x="265" textColor="0xdf8cfb" size="13" top="6"/>
-		<e:Label text="投注记录" x="363" textColor="0xDF8CFB" size="13" top="6"/>
+		<e:Label text="投注详情" x="265" textColor="0xdf8cfb" size="13" top="6" touchEnabled="false"/>
+		<e:Label text="投注记录" x="363" textColor="0xDF8CFB" size="13" top="6" touchEnabled="false"/>
 		<e:Label id="moneyNumB_lab" text="0" y="121.34" size="10.6" horizontalCenter="-203" textColor="0xfac33f"/>
 		<e:Label id="moneyNumR_lab" text="0" y="121.34" size="10.6" textColor="0xFAC33F" horizontalCenter="137"/>
 		<e:Label id="moneyNumO_lab" text="0" y="168.34" size="10.6" textColor="0xFAC33F" horizontalCenter="-30"/>
 		<e:Label id="myHdag_lab" text="0 HDAG" y="290" size="8.67" textColor="0xFAC33F" right="331"/>
-		<e:Label id="myHdag_lab0" text="0" y="356" size="8.67" textColor="0xFAC33F" x="428"/>
+		<e:Label id="myMoney_lab" text="0" y="356" size="8.67" textColor="0xFAC33F" x="428"/>
 		<ns1:SelectCarding id="selectCardCom" skinName="SelectCardingSkin" horizontalCenter="0" verticalCenter="0" visible="false"/>
 		<e:Group id="hx_group" left="0" right="0" top="0" bottom="0" visible="false">
 			<e:Image source="stopBet_png" x="0" y="0"/>
@@ -144,4 +144,5 @@
 	<e:Button id="setCard_btn" label="重置数据" y="62.34" left="-3"/>
 	<e:Button id="cardAmi_btn" label="发牌" y="124" left="-3"/>
 	<e:Button id="ballAmi_btn" label="发球" y="188" left="-3"/>
+	<e:Button id="bigWinner_btn" label="大奖玩家" y="248" left="-3"/>
 </e:Skin>

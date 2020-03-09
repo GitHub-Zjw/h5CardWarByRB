@@ -94,6 +94,10 @@ declare class BetDetailsPanelSkin extends eui.Skin{
 }
 declare class BetRecordsItemSkin extends eui.Skin{
 }
+declare class BigWinnerItemSkin extends eui.Skin{
+}
+declare class BigWinnerPanelSkin extends eui.Skin{
+}
 declare class GameMethodItemSkin extends eui.Skin{
 }
 declare class GameMethodPanelSkin extends eui.Skin{

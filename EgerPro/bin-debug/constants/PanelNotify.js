@@ -66,6 +66,10 @@ var PanelNotify = (function () {
     PanelNotify.OPEN_GAME_METHOD = "PANELNOTIFY_OPEN_GAME_METHOD";
     /**关闭大奖玩法界面 */
     PanelNotify.CLOSE_GAME_METHOD = "PANELNOTIFY_CLOSE_GAME_METHOD";
+    /**打开大奖玩家界面 */
+    PanelNotify.OPEN_BIG_WINNER = "PANELNOTIFY_OPEN_BIG_WINNER";
+    /**关闭大奖玩家界面 */
+    PanelNotify.CLOSE_BIG_WINNER = "PANELNOTIFY_CLOSE__BIG_WINNER";
     return PanelNotify;
 }());
 __reflect(PanelNotify.prototype, "PanelNotify");

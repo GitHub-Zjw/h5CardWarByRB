@@ -52,16 +52,6 @@
       "name": "红黑大战 -金花 - 投注详情弹窗_png"
     },
     {
-      "url": "images/gameMethod/jbbg.png",
-      "type": "image",
-      "name": "jbbg_png"
-    },
-    {
-      "url": "images/gameMethod/wfxq.png",
-      "type": "image",
-      "name": "wfxq_png"
-    },
-    {
       "url": "images/loading/PreLoadingBar.png",
       "type": "image",
       "name": "PreLoadingBar_png",
@@ -76,6 +66,51 @@
       "url": "images/loading/PreLoadingBg.png",
       "type": "image",
       "name": "PreLoadingBg_png"
+    },
+    {
+      "url": "images/bigWinner/bigWinnerBg.png",
+      "type": "image",
+      "name": "bigWinnerBg_png"
+    },
+    {
+      "url": "images/bigWinner/bwsd.png",
+      "type": "image",
+      "name": "bwsd_png"
+    },
+    {
+      "url": "images/bigWinner/jiangBei1.png",
+      "type": "image",
+      "name": "jiangBei1_png"
+    },
+    {
+      "url": "images/bigWinner/jiangBei2.png",
+      "type": "image",
+      "name": "jiangBei2_png"
+    },
+    {
+      "url": "images/bigWinner/jiangBei3.png",
+      "type": "image",
+      "name": "jiangBei3_png"
+    },
+    {
+      "url": "images/bigWinner/textBgBW.png",
+      "type": "image",
+      "name": "textBgBW_png"
+    },
+    {
+      "url": "images/bigWinner/红黑大战 -金花 - 本轮大赢家.png",
+      "type": "image",
+      "name": "红黑大战 -金花 - 本轮大赢家_png"
+    },
+    {
+      "url": "images/gameMethod/jbbg.png",
+      "type": "image",
+      "name": "jbbg_png"
+    },
+    {
+      "url": "images/gameMethod/wfxq.png",
+      "type": "image",
+      "name": "wfxq_png"
     },
     {
       "url": "images/main/activityBtn.png",
@@ -868,16 +903,6 @@
       "name": "assets/Panel/header.png"
     },
     {
-      "url": "assets/ProgressBar/thumb.png",
-      "type": "image",
-      "name": "assets/ProgressBar/thumb.png"
-    },
-    {
-      "url": "assets/ProgressBar/track.png",
-      "type": "image",
-      "name": "assets/ProgressBar/track.png"
-    },
-    {
       "url": "assets/RadioButton/radiobutton_select_disabled.png",
       "type": "image",
       "name": "assets/RadioButton/radiobutton_select_disabled.png"
@@ -896,6 +921,16 @@
       "url": "assets/RadioButton/radiobutton_unselect.png",
       "type": "image",
       "name": "assets/RadioButton/radiobutton_unselect.png"
+    },
+    {
+      "url": "assets/ProgressBar/thumb.png",
+      "type": "image",
+      "name": "assets/ProgressBar/thumb.png"
+    },
+    {
+      "url": "assets/ProgressBar/track.png",
+      "type": "image",
+      "name": "assets/ProgressBar/track.png"
     },
     {
       "url": "assets/ScrollBar/roundthumb.png",

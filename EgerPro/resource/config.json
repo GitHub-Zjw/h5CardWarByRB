@@ -160,7 +160,14 @@
 		"hxxp_png": "images/mainYDD/hxxp.png",
 		"numberOne_png": "images/mainYDD/numberOne.png",
 		"numberTwo_png": "images/mainYDD/numberTwo.png",
-		"红黑大战 -金花 - 开奖弹窗_png": "images/mainYDD/红黑大战 -金花 - 开奖弹窗.png"
+		"红黑大战 -金花 - 开奖弹窗_png": "images/mainYDD/红黑大战 -金花 - 开奖弹窗.png",
+		"bigWinnerBg_png": "images/bigWinner/bigWinnerBg.png",
+		"bwsd_png": "images/bigWinner/bwsd.png",
+		"textBgBW_png": "images/bigWinner/textBgBW.png",
+		"红黑大战 -金花 - 本轮大赢家_png": "images/bigWinner/红黑大战 -金花 - 本轮大赢家.png",
+		"jiangBei1_png": "images/bigWinner/jiangBei1.png",
+		"jiangBei2_png": "images/bigWinner/jiangBei2.png",
+		"jiangBei3_png": "images/bigWinner/jiangBei3.png"
 	},
 	"groups": {
 		"loading": [
@@ -333,6 +340,15 @@
 		"gameMethod": [
 			"jbbg_png",
 			"wfxq_png"
+		],
+		"bigWinner": [
+			"bigWinnerBg_png",
+			"bwsd_png",
+			"textBgBW_png",
+			"红黑大战 -金花 - 本轮大赢家_png",
+			"jiangBei1_png",
+			"jiangBei2_png",
+			"jiangBei3_png"
 		]
 	},
 	"resources": {
@@ -391,18 +407,6 @@
 					"name": "images/bettingDetails/红黑大战 -金花 - 投注详情弹窗.png"
 				}
 			},
-			"gameMethod": {
-				"jbbg.png": {
-					"url": "images/gameMethod/jbbg.png",
-					"type": "image",
-					"name": "images/gameMethod/jbbg.png"
-				},
-				"wfxq.png": {
-					"url": "images/gameMethod/wfxq.png",
-					"type": "image",
-					"name": "images/gameMethod/wfxq.png"
-				}
-			},
 			"loading": {
 				"PreLoadingBar.png": {
 					"url": "images/loading/PreLoadingBar.png",
@@ -419,6 +423,55 @@
 					"url": "images/loading/PreLoadingBg.png",
 					"type": "image",
 					"name": "images/loading/PreLoadingBg.png"
+				}
+			},
+			"bigWinner": {
+				"bigWinnerBg.png": {
+					"url": "images/bigWinner/bigWinnerBg.png",
+					"type": "image",
+					"name": "images/bigWinner/bigWinnerBg.png"
+				},
+				"bwsd.png": {
+					"url": "images/bigWinner/bwsd.png",
+					"type": "image",
+					"name": "images/bigWinner/bwsd.png"
+				},
+				"jiangBei1.png": {
+					"url": "images/bigWinner/jiangBei1.png",
+					"type": "image",
+					"name": "images/bigWinner/jiangBei1.png"
+				},
+				"jiangBei2.png": {
+					"url": "images/bigWinner/jiangBei2.png",
+					"type": "image",
+					"name": "images/bigWinner/jiangBei2.png"
+				},
+				"jiangBei3.png": {
+					"url": "images/bigWinner/jiangBei3.png",
+					"type": "image",
+					"name": "images/bigWinner/jiangBei3.png"
+				},
+				"textBgBW.png": {
+					"url": "images/bigWinner/textBgBW.png",
+					"type": "image",
+					"name": "images/bigWinner/textBgBW.png"
+				},
+				"红黑大战 -金花 - 本轮大赢家.png": {
+					"url": "images/bigWinner/红黑大战 -金花 - 本轮大赢家.png",
+					"type": "image",
+					"name": "images/bigWinner/红黑大战 -金花 - 本轮大赢家.png"
+				}
+			},
+			"gameMethod": {
+				"jbbg.png": {
+					"url": "images/gameMethod/jbbg.png",
+					"type": "image",
+					"name": "images/gameMethod/jbbg.png"
+				},
+				"wfxq.png": {
+					"url": "images/gameMethod/wfxq.png",
+					"type": "image",
+					"name": "images/gameMethod/wfxq.png"
 				}
 			},
 			"main": {
@@ -1233,18 +1286,6 @@
 					"name": "assets/Panel/header.png"
 				}
 			},
-			"ProgressBar": {
-				"thumb.png": {
-					"url": "assets/ProgressBar/thumb.png",
-					"type": "image",
-					"name": "assets/ProgressBar/thumb.png"
-				},
-				"track.png": {
-					"url": "assets/ProgressBar/track.png",
-					"type": "image",
-					"name": "assets/ProgressBar/track.png"
-				}
-			},
 			"RadioButton": {
 				"radiobutton_select_disabled.png": {
 					"url": "assets/RadioButton/radiobutton_select_disabled.png",
@@ -1265,6 +1306,18 @@
 					"url": "assets/RadioButton/radiobutton_unselect.png",
 					"type": "image",
 					"name": "assets/RadioButton/radiobutton_unselect.png"
+				}
+			},
+			"ProgressBar": {
+				"thumb.png": {
+					"url": "assets/ProgressBar/thumb.png",
+					"type": "image",
+					"name": "assets/ProgressBar/thumb.png"
+				},
+				"track.png": {
+					"url": "assets/ProgressBar/track.png",
+					"type": "image",
+					"name": "assets/ProgressBar/track.png"
 				}
 			},
 			"ScrollBar": {

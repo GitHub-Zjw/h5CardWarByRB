@@ -33,6 +33,7 @@ var game;
             this.facade.registerCommand(MainNotify.OPEN_MAIN, MainManager);
             this.facade.registerCommand(MainNotify.CLOSE_MAIN, MainManager);
             this.facade.registerCommand(PanelNotify.CLOSE_STOP_BET, MainManager);
+            this.facade.registerCommand(MainNotify.BET, MainManager);
         };
         MainManager.prototype.execute = function (notification) {
             var data = notification.getBody(); //携带数据
@@ -58,6 +59,25 @@ var game;
                         mainUI.SelectCard();
                     }
                     break;
+                case MainNotify.BET:
+                    this.bet(data);
+                    break;
+            }
+        };
+        /**
+         * 下注
+         * @param index 下注索引
+         */
+        MainManager.prototype.bet = function (index) {
+            var value = AllData.instance.ballValue[index];
+            if (AllData.instance.getMoneyIsEnough(value)) {
+                AllData.instance.MyHDAG += value;
+                AllData.instance.MyMoney -= value;
+                game.MainManager.mainUI.refreshPlayerMoney();
+                return true;
+            }
+            else {
+                return false;
             }
         };
         MainManager.NAME = "MainManager";
