@@ -14,11 +14,11 @@
 	],
 	"game": [
 		"bin-debug/core/view/mainYDD/component/BaseRegion.js",
-		"bin-debug/core/model/ResourceProxyBase.js",
 		"bin-debug/core/view/mainYDD/component/RegionRed.js",
 		"bin-debug/core/view/panel/BaseMediator.js",
 		"bin-debug/core/view/panelYDD/BasePanelMediator.js",
 		"bin-debug/core/view/panelYDD/baseComponent/ZjwComponent.js",
+		"bin-debug/core/model/ResourceProxyBase.js",
 		"bin-debug/core/view/mainYDD/component/RegionOther.js",
 		"bin-debug/component/EButton.js",
 		"bin-debug/component/ETextField.js",
@@ -62,7 +62,7 @@
 		"bin-debug/core/view/mainYDD/component/Clock.js",
 		"bin-debug/core/view/mainYDD/component/HxItem.js",
 		"bin-debug/core/view/mainYDD/component/RegionBlack.js",
-		"bin-debug/LoadingUI.js",
+		"bin-debug/utils/UtilsClass/TipsUtils.js",
 		"bin-debug/NewFile.js",
 		"bin-debug/core/view/mainYDD/component/Scoreboard.js",
 		"bin-debug/core/view/mainYDD/component/SelectCarding.js",
@@ -110,6 +110,6 @@
 		"bin-debug/utils/api/ErgodicUtils.js",
 		"bin-debug/utils/api/ObjectPool.js",
 		"bin-debug/utils/UtilsClass/BitmapBlink.js",
-		"bin-debug/utils/UtilsClass/TipsUtils.js"
+		"bin-debug/LoadingUI.js"
 	]
 }
