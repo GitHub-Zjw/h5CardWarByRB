@@ -17,14 +17,23 @@
 
 
 
-		<e:Image id="blackMan_img" x="97.02" source="zuoRen_png" y="27"/>
-		<e:Image id="redMan_img" source="youRen_png" x="437" y="28"/>
-		<e:Image x="181" y="37.3" source="xu2_png"/>
-		<e:Image x="230" y="37.3" source="xu2_png"/>
-		<e:Image x="279" y="37.3" source="xu2_png"/>
-		<e:Image x="497" y="37.3" source="xu1_png"/>
-		<e:Image x="546" y="37.3" source="xu1_png"/>
-		<e:Image x="595" y="37.3" source="xu1_png"/>
+		<e:Image id="blackMan_img" x="97.02" source="zuoRen_png" y="28"/>
+		<e:Image id="redMan_img" source="youRen_png" x="437" y="29"/>
+		<e:Image x="154" y="37" source="xu2_png"/>
+		<e:Image x="196" y="37" source="xu2_png"/>
+		<e:Image x="239" y="37" source="xu2_png"/>
+		<e:Image x="281" source="xu2_png" y="37"/>
+		<e:Image x="323" source="xu2_png" y="37"/>
+
+
+		<e:Image x="450" y="37.3" source="xu1_png"/>
+		<e:Image x="492" y="37.3" source="xu1_png"/>
+		<e:Image x="535" y="37.3" source="xu1_png"/>
+		<e:Image x="577" source="xu1_png" y="37.3"/>
+		<e:Image x="619" source="xu1_png" y="37.3"/>
+
+
+
 
 
 		<e:Image x="370" source="VS-1_png" y="41"/>
@@ -131,12 +140,21 @@
 			</e:Scroller>
 			<e:Label id="move_lab" text="4" x="238" y="183" textColor="0xe7b846" size="13" fontFamily="SimHei" visible="false"/>
 		</e:Group>
-		<ns1:Card id="card1" y="34" skinName="CardSkin" anchorOffsetX="25" anchorOffsetY="0" x="200" visible="false"/>
-		<ns1:Card y="34" skinName="CardSkin" anchorOffsetX="25" anchorOffsetY="0" id="card2" x="250" visible="false"/>
-		<ns1:Card y="34" skinName="CardSkin" anchorOffsetX="25" anchorOffsetY="0" id="card3" x="300" visible="false"/>
-		<ns1:Card y="34" skinName="CardSkin" anchorOffsetX="25" anchorOffsetY="0" id="card4" x="517" visible="false"/>
-		<ns1:Card y="34" skinName="CardSkin" anchorOffsetX="25" anchorOffsetY="0" id="card5" x="567" visible="false"/>
-		<ns1:Card y="34" skinName="CardSkin" anchorOffsetX="25" anchorOffsetY="0" id="card6" x="617" visible="false"/>
+		<ns1:Card id="card1" y="37" skinName="CardSkin" anchorOffsetX="20" anchorOffsetY="0" x="173.5" visible="false"/>
+		<ns1:Card y="37" skinName="CardSkin" anchorOffsetX="20" anchorOffsetY="0" id="card2" x="215.5" visible="false"/>
+		<ns1:Card y="37" skinName="CardSkin" anchorOffsetX="20" anchorOffsetY="0" id="card3" x="257.5" visible="false"/>
+		<ns1:Card y="37" skinName="CardSkin" anchorOffsetX="20" anchorOffsetY="0" id="card4" x="299.5" visible="false"/>
+		<ns1:Card y="37" skinName="CardSkin" anchorOffsetX="20" anchorOffsetY="0" id="card5" x="341.5" visible="false"/>
+
+
+
+
+		<ns1:Card y="37" skinName="CardSkin" anchorOffsetX="20" anchorOffsetY="0" id="card6" x="470" visible="false"/>
+		<ns1:Card y="37" skinName="CardSkin" anchorOffsetX="20" anchorOffsetY="0" id="card7" x="512" visible="false"/>
+		<ns1:Card y="37" skinName="CardSkin" anchorOffsetX="20" anchorOffsetY="0" id="card8" x="554" visible="false"/>
+		<ns1:Card y="37" skinName="CardSkin" anchorOffsetX="20" anchorOffsetY="0" id="card9" x="596" visible="false"/>
+		<ns1:Card y="37" skinName="CardSkin" anchorOffsetX="20" anchorOffsetY="0" id="card10" x="638" visible="false"/>
+
 		<e:Image id="blackResult_img" x="169" source="jinHua_png" top="84" alpha="0"/>
 		<e:Image id="redResult_img" x="485" top="84" alpha="0" source="sanPai_png"/>
 	</e:Group>

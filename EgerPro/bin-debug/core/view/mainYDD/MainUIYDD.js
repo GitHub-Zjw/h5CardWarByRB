@@ -18,14 +18,13 @@ var game;
         function MainUIYDD() {
             var _this = _super.call(this) || this;
             _this.skinName = "resource/ui/mainYDD/MainUIYDDSkin.exml";
-            _this._cards = [_this.card1, _this.card2, _this.card3, _this.card4, _this.card5, _this.card6];
-            _this._cardStarXs = [];
-            _this._cardStarXs[0] = _this.card1.x;
-            _this._cardStarXs[1] = _this.card2.x;
-            _this._cardStarXs[2] = _this.card3.x;
-            _this._cardStarXs[3] = _this.card4.x;
-            _this._cardStarXs[4] = _this.card5.x;
-            _this._cardStarXs[5] = _this.card6.x;
+            _this._cards = []; //[this.card1, this.card2, this.card3, this.card4, this.card5, this.card6, this.card7, this.card8, this.card9, this.card10];
+            _this._cardStarXs = []; //[this.card1.x, this.card2.x,this.card3.x,this.card4.x,this.card5.x,this.card6.x,this.card7.x,this.card8.x,this.card9.x,this.card10.x,];
+            for (var i = 0; i < 10; i++) {
+                var key = "card" + (i + 1);
+                _this._cards[i] = _this[key];
+                _this._cardStarXs[i] = _this[key].x;
+            }
             _this._vsManBlackX = _this.vsManBlack_img.x;
             _this._vsManRedX = _this.vsManRed_img.x;
             _this._selectIndex = -1;
@@ -178,7 +177,7 @@ var game;
          * 设置卡牌数据
          */
         MainUIYDD.prototype.setCardData = function () {
-            for (var i = 0; i < 6; i++) {
+            for (var i = 0; i < 10; i++) {
                 this._cards[i].setCard(i);
             }
             this.blackResult_img.source = EnumerationType.CardType[AllData.instance.CardTypeB] + "_png";
@@ -192,7 +191,12 @@ var game;
             if (this._cac == null) {
                 this._cac = new ContinueAmiChain(50);
                 var len = this._cards.length;
-                var cardCenterXs = [521, 557, 596, 218, 254, 290];
+                var cardCenterXs = [];
+                for (var i = 0; i < 5; i++) {
+                    var dz = i * 37;
+                    cardCenterXs[i + 5] = 176 + dz;
+                    cardCenterXs[i] = 485 + dz;
+                }
                 var cardCenterY = 59;
                 var cardCenterS = 1.65;
                 //设置发牌起始位置
@@ -206,9 +210,9 @@ var game;
                     var needTime = 8;
                     this._cac.registerAction(this.playMoveAmi, this, starTime, needTime, value);
                 }
-                //翻前两张牌
-                this._cac.registerAction(this.playOpenCardAmi, this, 10, 16);
-                //增加哈希列表动画
+                //翻前四张牌
+                this._cac.registerAction(this.playOpenCardAmi, this, 10, 18);
+                //动画：增加哈希列表
                 this.playHXItemAmi();
                 //飘字动画
                 this._cac.registerAction(this.playMoveLabAmi, this, 0, 20);
@@ -223,12 +227,12 @@ var game;
                     var starTime = i == 0 ? 0 : -needTime;
                     this._cac.registerAction(this.playMoveAmi, this, starTime, needTime, value);
                 }
-                //翻黑牌第三张
-                this._cac.registerAction(this._cards[2].showOpenCardAmi, this._cards[2], 0, 18, true);
+                //翻黑牌第五张
+                this._cac.registerAction(this._cards[4].showOpenCardAmi, this._cards[4], 0, 18, true);
                 //显示黑牌牌型
                 this._cac.registerAction(this.playCardResultAmiL, this, 0, 4);
-                //翻红牌第三张牌
-                this._cac.registerAction(this._cards[5].showOpenCardAmi, this._cards[5], 0, 18, true);
+                //翻红牌第五张牌
+                this._cac.registerAction(this._cards[9].showOpenCardAmi, this._cards[9], 0, 18, true);
                 //显示红牌牌型
                 this._cac.registerAction(this.playCardResultAmiR, this, 0, 4);
                 //显示胜利区域
@@ -312,17 +316,25 @@ var game;
         };
         MainUIYDD.prototype.playOpenCardAmi = function () {
             var cards = this._cards;
-            this.playOpenTwoCardAmi(cards[0], cards[1], cards[2]);
-            this.playOpenTwoCardAmi(cards[3], cards[4], cards[5]);
+            this.playOpenTwoCardAmi(cards[0], cards[1], cards[2], cards[3], cards[4]);
+            this.playOpenTwoCardAmi(cards[5], cards[6], cards[7], cards[8], cards[9]);
         };
-        MainUIYDD.prototype.playOpenTwoCardAmi = function (card1, card2, card3) {
+        MainUIYDD.prototype.playOpenTwoCardAmi = function (card1, card2, card3, card4, card5) {
             var starX1 = card1.x;
+            var starX2 = card2.x;
             var starX3 = card3.x;
-            egret.Tween.get(card1).to({ x: card2.x }, 400)
-                .call(function () { card1.openSelf(); card2.openSelf(); })
-                .to({ x: starX1 }, 400);
-            egret.Tween.get(card3).to({ x: card2.x }, 400)
-                .to({ x: starX3 }, 400);
+            var starX4 = card4.x;
+            var starX5 = card5.x;
+            var sX = card1.scaleX;
+            egret.Tween.get(card1).to({ x: card3.x }, 450)
+                .call(function () { card1.openSelf(); card3.openSelf(); card2.openSelf(); card4.openSelf(); })
+                .to({ x: starX1 }, 450);
+            egret.Tween.get(card2).to({ x: card3.x }, 450)
+                .to({ x: starX2 }, 450);
+            egret.Tween.get(card4).to({ x: card3.x }, 450)
+                .to({ x: starX4 }, 450);
+            egret.Tween.get(card5).to({ x: card3.x }, 450)
+                .to({ x: starX5 }, 450);
         };
         /**
          * 播放移动动画
