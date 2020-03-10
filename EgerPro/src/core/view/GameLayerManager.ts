@@ -54,7 +54,16 @@ class GameLayerManager extends eui.UILayer{
         this.addChild(this.effectLayer);
         this.addChild(this.maskLayer);
         this.addChild(this.loadLayer);
+        this.addEventListener(egret.Event.RESIZE, this.SetCenter, this);
+        this.SetCenter();
     }
-
+    /**
+    * 强制左右居中
+    */
+    public SetCenter(): void
+    {
+        let h = 812 / 2;
+        this.sceneLayer.x = this.mainLayer.x = GameConfig.curWidth() / 2 - h;
+    }
 }
 

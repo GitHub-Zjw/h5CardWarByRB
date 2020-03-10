@@ -28,7 +28,7 @@ class StopBetMediator extends BasePanelMediator
 				{
 					this._stopBetPanel = new StopBetPanel();
 				}
-				this.showUI(this._stopBetPanel, false, 0, 0, 2);
+				this.showUIInCenter(this._stopBetPanel, false, 2);
 				break;
 			case PanelNotify.CLOSE_STOP_BET:
 				this.closePanel(0);
