@@ -62,7 +62,7 @@ var game_file_list = [
 	"bin-debug/core/view/mainYDD/component/Clock.js",
 	"bin-debug/core/view/mainYDD/component/HxItem.js",
 	"bin-debug/core/view/mainYDD/component/RegionBlack.js",
-	"bin-debug/LoadingUI.js",
+	"bin-debug/utils/UtilsClass/TipsUtils.js",
 	"bin-debug/NewFile.js",
 	"bin-debug/core/view/mainYDD/component/Scoreboard.js",
 	"bin-debug/core/view/mainYDD/component/SelectCarding.js",
@@ -110,7 +110,7 @@ var game_file_list = [
 	"bin-debug/utils/api/ErgodicUtils.js",
 	"bin-debug/utils/api/ObjectPool.js",
 	"bin-debug/utils/UtilsClass/BitmapBlink.js",
-	"bin-debug/utils/UtilsClass/TipsUtils.js",
+	"bin-debug/LoadingUI.js",
 	//----auto game_file_list end----
 ];
 
@@ -140,7 +140,7 @@ egret_native.egretStart = function () {
         //----auto option start----
 		entryClassName: "Main",
 		frameRate: 30,
-		scaleMode: "showAll",
+		scaleMode: "noScale",
 		contentWidth: 812,
 		contentHeight: 375,
 		showPaintRect: false,
