@@ -1,32 +1,23 @@
 var __reflect = (this && this.__reflect) || function (p, c, t) {
     p.__class__ = c, t ? t.push(c) : t = [c], p.__types__ = p.__types__ ? t.concat(p.__types__) : t;
 };
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
+var __extends = this && this.__extends || function __extends(t, e) { 
+ function r() { 
+ this.constructor = t;
+}
+for (var i in e) e.hasOwnProperty(i) && (t[i] = e[i]);
+r.prototype = e.prototype, t.prototype = new r();
+};
 var game;
 (function (game) {
     var MainUIYDD = (function (_super) {
         __extends(MainUIYDD, _super);
         function MainUIYDD() {
             var _this = _super.call(this) || this;
+            // this.addEventListener(eui.UIEvent.COMPLETE, this.initView, this);
             _this.skinName = "resource/ui/mainYDD/MainUIYDDSkin.exml";
             _this._cards = []; //[this.card1, this.card2, this.card3, this.card4, this.card5, this.card6, this.card7, this.card8, this.card9, this.card10];
             _this._cardStarXs = []; //[this.card1.x, this.card2.x,this.card3.x,this.card4.x,this.card5.x,this.card6.x,this.card7.x,this.card8.x,this.card9.x,this.card10.x,];
-            for (var i = 0; i < 10; i++) {
-                var key = "card" + (i + 1);
-                _this._cards[i] = _this[key];
-                _this._cardStarXs[i] = _this[key].x;
-            }
-            _this._vsManBlackX = _this.vsManBlack_img.x;
-            _this._vsManRedX = _this.vsManRed_img.x;
             _this._selectIndex = -1;
             return _this;
         }
@@ -35,6 +26,16 @@ var game;
         };
         MainUIYDD.prototype.childrenCreated = function () {
             _super.prototype.childrenCreated.call(this);
+            this.initView();
+        };
+        MainUIYDD.prototype.initView = function () {
+            for (var i = 0; i < 10; i++) {
+                var key = "card" + (i + 1);
+                this._cards[i] = this[key];
+                this._cardStarXs[i] = this._cards[i].x;
+            }
+            this._vsManBlackX = this.vsManBlack_img.x;
+            this._vsManRedX = this.vsManRed_img.x;
             this._card1StarX = this.card1.x;
             this._card1StarY = this.card1.y;
             this.regitEvent();
@@ -84,6 +85,7 @@ var game;
             AllData.instance.removeEventListener(GameNotify.GAME_STAR, this.onBegigGame, this);
             AllData.instance.removeEventListener(GameNotify.STOP_BETS, this.onStopBet, this);
             AllData.instance.removeEventListener(GameNotify.SEND_CARD, this.SendCard, this);
+            this.removeEventListener(eui.UIEvent.COMPLETE, this.initView, this);
             this.begin_btn.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onBeginBtnClick, this);
             this.setCard_btn.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onSetCardBtnClick, this);
             this.cardAmi_btn.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onCardAmiBtnClick, this);
@@ -500,6 +502,6 @@ var game;
         return MainUIYDD;
     }(eui.Component));
     game.MainUIYDD = MainUIYDD;
-    __reflect(MainUIYDD.prototype, "game.MainUIYDD");
+    __reflect(MainUIYDD.prototype, "game.MainUIYDD", ["eui.UIComponent", "egret.DisplayObject"]);
 })(game || (game = {}));
 //# sourceMappingURL=MainUIYDD.js.map

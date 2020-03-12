@@ -52,22 +52,6 @@
       "name": "红黑大战 -金花 - 投注详情弹窗_png"
     },
     {
-      "url": "images/loading/PreLoadingBar.png",
-      "type": "image",
-      "name": "PreLoadingBar_png",
-      "scale9grid": "5,4,4,2"
-    },
-    {
-      "url": "images/loading/PreLoadingBarBg.png",
-      "type": "image",
-      "name": "PreLoadingBarBg_png"
-    },
-    {
-      "url": "images/loading/PreLoadingBg.png",
-      "type": "image",
-      "name": "PreLoadingBg_png"
-    },
-    {
       "url": "images/bigWinner/bigWinnerBg.png",
       "type": "image",
       "name": "bigWinnerBg_png"
@@ -111,6 +95,22 @@
       "url": "images/gameMethod/wfxq.png",
       "type": "image",
       "name": "wfxq_png"
+    },
+    {
+      "url": "images/loading/PreLoadingBar.png",
+      "type": "image",
+      "name": "PreLoadingBar_png",
+      "scale9grid": "5,4,4,2"
+    },
+    {
+      "url": "images/loading/PreLoadingBarBg.png",
+      "type": "image",
+      "name": "PreLoadingBarBg_png"
+    },
+    {
+      "url": "images/loading/PreLoadingBg.png",
+      "type": "image",
+      "name": "PreLoadingBg_png"
     },
     {
       "url": "images/main/activityBtn.png",
@@ -268,11 +268,6 @@
       "name": "50_png"
     },
     {
-      "url": "images/mainYDD/baoZi.png",
-      "type": "image",
-      "name": "baoZi_png"
-    },
-    {
       "url": "images/mainYDD/bghuiyou.png",
       "type": "image",
       "name": "bghuiyou_png"
@@ -296,11 +291,6 @@
       "url": "images/mainYDD/close.png",
       "type": "image",
       "name": "close_png"
-    },
-    {
-      "url": "images/mainYDD/duiZi.png",
-      "type": "image",
-      "name": "duiZi_png"
     },
     {
       "url": "images/mainYDD/goldenLain.png",
@@ -358,14 +348,59 @@
       "name": "jiangbei_png"
     },
     {
-      "url": "images/mainYDD/jinHua.png",
-      "type": "image",
-      "name": "jinHua_png"
-    },
-    {
       "url": "images/mainYDD/mengBan.png",
       "type": "image",
       "name": "mengBan_png"
+    },
+    {
+      "url": "images/mainYDD/niuba.png",
+      "type": "image",
+      "name": "niuba_png"
+    },
+    {
+      "url": "images/mainYDD/niuer.png",
+      "type": "image",
+      "name": "niuer_png"
+    },
+    {
+      "url": "images/mainYDD/niujiu.png",
+      "type": "image",
+      "name": "niujiu_png"
+    },
+    {
+      "url": "images/mainYDD/niuliu.png",
+      "type": "image",
+      "name": "niuliu_png"
+    },
+    {
+      "url": "images/mainYDD/niuniu.png",
+      "type": "image",
+      "name": "niuniu_png"
+    },
+    {
+      "url": "images/mainYDD/niuqi.png",
+      "type": "image",
+      "name": "niuqi_png"
+    },
+    {
+      "url": "images/mainYDD/niusan.png",
+      "type": "image",
+      "name": "niusan_png"
+    },
+    {
+      "url": "images/mainYDD/niusi.png",
+      "type": "image",
+      "name": "niusi_png"
+    },
+    {
+      "url": "images/mainYDD/niuwu.png",
+      "type": "image",
+      "name": "niuwu_png"
+    },
+    {
+      "url": "images/mainYDD/niuyi.png",
+      "type": "image",
+      "name": "niuyi_png"
     },
     {
       "url": "images/mainYDD/numberOne.png",
@@ -418,24 +453,9 @@
       "name": "regionUpLine2_png"
     },
     {
-      "url": "images/mainYDD/sanPai.png",
-      "type": "image",
-      "name": "sanPai_png"
-    },
-    {
       "url": "images/mainYDD/shizhong.png",
       "type": "image",
       "name": "shizhong_png"
-    },
-    {
-      "url": "images/mainYDD/shunJin.png",
-      "type": "image",
-      "name": "shunJin_png"
-    },
-    {
-      "url": "images/mainYDD/shunZi.png",
-      "type": "image",
-      "name": "shunZi_png"
     },
     {
       "url": "images/mainYDD/stopBet.png",
@@ -463,6 +483,11 @@
       "name": "tipZiBg_png"
     },
     {
+      "url": "images/mainYDD/tonghuashun.png",
+      "type": "image",
+      "name": "tonghuashun_png"
+    },
+    {
       "url": "images/mainYDD/touzhu.png",
       "type": "image",
       "name": "touzhu_png"
@@ -476,6 +501,21 @@
       "url": "images/mainYDD/win.png",
       "type": "image",
       "name": "win_png"
+    },
+    {
+      "url": "images/mainYDD/wuhuaniu.png",
+      "type": "image",
+      "name": "wuhuaniu_png"
+    },
+    {
+      "url": "images/mainYDD/wuniu.png",
+      "type": "image",
+      "name": "wuniu_png"
+    },
+    {
+      "url": "images/mainYDD/wuxiaoniu.png",
+      "type": "image",
+      "name": "wuxiaoniu_png"
     },
     {
       "url": "images/mainYDD/xu1.png",
@@ -496,6 +536,11 @@
       "url": "images/mainYDD/youxi.png",
       "type": "image",
       "name": "youxi_png"
+    },
+    {
+      "url": "images/mainYDD/zhadanniu.png",
+      "type": "image",
+      "name": "zhadanniu_png"
     },
     {
       "url": "images/mainYDD/zhuoZi.png",
@@ -868,6 +913,11 @@
       "name": "assets/Button/button_up.png"
     },
     {
+      "url": "assets/ItemRenderer/selected.png",
+      "type": "image",
+      "name": "assets/ItemRenderer/selected.png"
+    },
+    {
       "url": "assets/CheckBox/checkbox_select_disabled.png",
       "type": "image",
       "name": "assets/CheckBox/checkbox_select_disabled.png"
@@ -888,11 +938,6 @@
       "name": "assets/CheckBox/checkbox_unselect.png"
     },
     {
-      "url": "assets/ItemRenderer/selected.png",
-      "type": "image",
-      "name": "assets/ItemRenderer/selected.png"
-    },
-    {
       "url": "assets/Panel/border.png",
       "type": "image",
       "name": "assets/Panel/border.png"
@@ -901,6 +946,16 @@
       "url": "assets/Panel/header.png",
       "type": "image",
       "name": "assets/Panel/header.png"
+    },
+    {
+      "url": "assets/ProgressBar/thumb.png",
+      "type": "image",
+      "name": "assets/ProgressBar/thumb.png"
+    },
+    {
+      "url": "assets/ProgressBar/track.png",
+      "type": "image",
+      "name": "assets/ProgressBar/track.png"
     },
     {
       "url": "assets/RadioButton/radiobutton_select_disabled.png",
@@ -921,16 +976,6 @@
       "url": "assets/RadioButton/radiobutton_unselect.png",
       "type": "image",
       "name": "assets/RadioButton/radiobutton_unselect.png"
-    },
-    {
-      "url": "assets/ProgressBar/thumb.png",
-      "type": "image",
-      "name": "assets/ProgressBar/thumb.png"
-    },
-    {
-      "url": "assets/ProgressBar/track.png",
-      "type": "image",
-      "name": "assets/ProgressBar/track.png"
     },
     {
       "url": "assets/ScrollBar/roundthumb.png",

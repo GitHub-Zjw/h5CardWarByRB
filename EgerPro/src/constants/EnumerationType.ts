@@ -20,18 +20,21 @@ module EnumerationType
 	 */
 	export enum CardType
 	{
-		/**散牌 */
-		"sanPai",
-		/**顺子 */
-		"sunZi",
-		/**顺金 */
-		"sunJin",
-		/**对子 */
-		"duiZi",
-		/**豹子 */
-		"baoZi",
-		/**金花 */
-		"jinHua"
+		"niuba",
+		"niuer",
+		"niujiu",
+		"niuniu",
+		"niusan",
+		"niusi",
+		"niuwu",
+		"niuyi",
+		"tonghuashun",
+		"wuhuaniu",
+		"wuniu",
+		"wuxiaoniu",
+		"zhadanniu",
+		"niuqi",
+		"niuliu"
 	}
 	/**
 	 * 胜利区域
