@@ -1,6 +1,6 @@
 module game
 {
-	export class MainUIYDD extends eui.Component
+	export class MainUIYDD extends eui.Component implements eui.UIComponent
 	{
 		public blackMan_img: eui.Image;
 		public redMan_img: eui.Image;
@@ -71,17 +71,10 @@ module game
 		public constructor()
 		{
 			super();
+			// this.addEventListener(eui.UIEvent.COMPLETE, this.initView, this);
 			this.skinName = "resource/ui/mainYDD/MainUIYDDSkin.exml";
 			this._cards = [];//[this.card1, this.card2, this.card3, this.card4, this.card5, this.card6, this.card7, this.card8, this.card9, this.card10];
 			this._cardStarXs = [];//[this.card1.x, this.card2.x,this.card3.x,this.card4.x,this.card5.x,this.card6.x,this.card7.x,this.card8.x,this.card9.x,this.card10.x,];
-			for (let i = 0; i < 10; i++)
-			{
-				let key = "card" + (i + 1);
-				this._cards[i] = this[key];
-				this._cardStarXs[i] = this[key].x;
-			}
-			this._vsManBlackX = this.vsManBlack_img.x;
-			this._vsManRedX = this.vsManRed_img.x;
 			this._selectIndex = -1;
 		}
 
@@ -94,12 +87,24 @@ module game
 		protected childrenCreated(): void
 		{
 			super.childrenCreated();
+			this.initView();
+		}
+
+		protected initView(): void
+		{
+			for (let i = 0; i < 10; i++)
+			{
+				let key = "card" + (i + 1);
+				this._cards[i] = this[key];
+				this._cardStarXs[i] = this._cards[i].x;
+			}			
+			this._vsManBlackX = this.vsManBlack_img.x;
+			this._vsManRedX = this.vsManRed_img.x;
 			this._card1StarX = this.card1.x;
 			this._card1StarY = this.card1.y;
 			this.regitEvent();
 			this.refreshMoneyLab();
 		}
-
 		private regitEvent(): void
 		{
 			this.ball0_btn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBallBtnClick, this);
@@ -149,6 +154,7 @@ module game
 			AllData.instance.removeEventListener(GameNotify.GAME_STAR, this.onBegigGame, this);
 			AllData.instance.removeEventListener(GameNotify.STOP_BETS, this.onStopBet, this);
 			AllData.instance.removeEventListener(GameNotify.SEND_CARD, this.SendCard, this);
+			this.removeEventListener(eui.UIEvent.COMPLETE, this.initView, this);
 
 
 
@@ -444,8 +450,8 @@ module game
 		private playOpenCardAmi(): void
 		{
 			let cards = this._cards;
-			this.playOpenTwoCardAmi(cards[0], cards[1], cards[2],cards[3],cards[4]);
-			this.playOpenTwoCardAmi(cards[5], cards[6], cards[7],cards[8],cards[9]);
+			this.playOpenTwoCardAmi(cards[0], cards[1], cards[2], cards[3], cards[4]);
+			this.playOpenTwoCardAmi(cards[5], cards[6], cards[7], cards[8], cards[9]);
 		}
 
 		private playOpenTwoCardAmi(card1: Card, card2: Card, card3: Card, card4: Card, card5: Card): void
@@ -458,7 +464,7 @@ module game
 			let sX = card1.scaleX;
 
 			egret.Tween.get(card1).to({ x: card3.x }, 450)
-				.call(function () { card1.openSelf(); card3.openSelf(); card2.openSelf(); card4.openSelf();})
+				.call(function () { card1.openSelf(); card3.openSelf(); card2.openSelf(); card4.openSelf(); })
 				.to({ x: starX1 }, 450);
 
 			egret.Tween.get(card2).to({ x: card3.x }, 450)

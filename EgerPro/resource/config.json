@@ -144,12 +144,6 @@
 		"ziXi_png": "images/mainYDD/ziXi.png",
 		"ziXuan_png": "images/mainYDD/ziXuan.png",
 		"ziZhong_png": "images/mainYDD/ziZhong.png",
-		"baoZi_png": "images/mainYDD/baoZi.png",
-		"duiZi_png": "images/mainYDD/duiZi.png",
-		"jinHua_png": "images/mainYDD/jinHua.png",
-		"sanPai_png": "images/mainYDD/sanPai.png",
-		"shunJin_png": "images/mainYDD/shunJin.png",
-		"shunZi_png": "images/mainYDD/shunZi.png",
 		"win_png": "images/mainYDD/win.png",
 		"close_png": "images/mainYDD/close.png",
 		"tzxq_png": "images/bettingDetails/tzxq.png",
@@ -167,7 +161,22 @@
 		"红黑大战 -金花 - 本轮大赢家_png": "images/bigWinner/红黑大战 -金花 - 本轮大赢家.png",
 		"jiangBei1_png": "images/bigWinner/jiangBei1.png",
 		"jiangBei2_png": "images/bigWinner/jiangBei2.png",
-		"jiangBei3_png": "images/bigWinner/jiangBei3.png"
+		"jiangBei3_png": "images/bigWinner/jiangBei3.png",
+		"niujiu_png": "images/mainYDD/niujiu.png",
+		"niuliu_png": "images/mainYDD/niuliu.png",
+		"niuniu_png": "images/mainYDD/niuniu.png",
+		"niuqi_png": "images/mainYDD/niuqi.png",
+		"niusan_png": "images/mainYDD/niusan.png",
+		"niusi_png": "images/mainYDD/niusi.png",
+		"niuwu_png": "images/mainYDD/niuwu.png",
+		"niuyi_png": "images/mainYDD/niuyi.png",
+		"tonghuashun_png": "images/mainYDD/tonghuashun.png",
+		"wuhuaniu_png": "images/mainYDD/wuhuaniu.png",
+		"wuniu_png": "images/mainYDD/wuniu.png",
+		"wuxiaoniu_png": "images/mainYDD/wuxiaoniu.png",
+		"zhadanniu_png": "images/mainYDD/zhadanniu.png",
+		"niuba_png": "images/mainYDD/niuba.png",
+		"niuer_png": "images/mainYDD/niuer.png"
 	},
 	"groups": {
 		"loading": [
@@ -319,19 +328,28 @@
 			"ziXi_png",
 			"ziXuan_png",
 			"ziZhong_png",
-			"baoZi_png",
-			"duiZi_png",
-			"jinHua_png",
-			"sanPai_png",
-			"shunJin_png",
-			"shunZi_png",
 			"win_png",
 			"close_png",
 			"huangKuang_png",
 			"hxxp_png",
 			"numberOne_png",
 			"numberTwo_png",
-			"红黑大战 -金花 - 开奖弹窗_png"
+			"红黑大战 -金花 - 开奖弹窗_png",
+			"niujiu_png",
+			"niuliu_png",
+			"niuniu_png",
+			"niuqi_png",
+			"niusan_png",
+			"niusi_png",
+			"niuwu_png",
+			"niuyi_png",
+			"tonghuashun_png",
+			"wuhuaniu_png",
+			"wuniu_png",
+			"wuxiaoniu_png",
+			"zhadanniu_png",
+			"niuba_png",
+			"niuer_png"
 		],
 		"betDetails": [
 			"tzxq_png",
@@ -407,24 +425,6 @@
 					"name": "images/bettingDetails/红黑大战 -金花 - 投注详情弹窗.png"
 				}
 			},
-			"loading": {
-				"PreLoadingBar.png": {
-					"url": "images/loading/PreLoadingBar.png",
-					"type": "image",
-					"name": "images/loading/PreLoadingBar.png",
-					"scale9grid": "5,4,4,2"
-				},
-				"PreLoadingBarBg.png": {
-					"url": "images/loading/PreLoadingBarBg.png",
-					"type": "image",
-					"name": "images/loading/PreLoadingBarBg.png"
-				},
-				"PreLoadingBg.png": {
-					"url": "images/loading/PreLoadingBg.png",
-					"type": "image",
-					"name": "images/loading/PreLoadingBg.png"
-				}
-			},
 			"bigWinner": {
 				"bigWinnerBg.png": {
 					"url": "images/bigWinner/bigWinnerBg.png",
@@ -472,6 +472,24 @@
 					"url": "images/gameMethod/wfxq.png",
 					"type": "image",
 					"name": "images/gameMethod/wfxq.png"
+				}
+			},
+			"loading": {
+				"PreLoadingBar.png": {
+					"url": "images/loading/PreLoadingBar.png",
+					"type": "image",
+					"name": "images/loading/PreLoadingBar.png",
+					"scale9grid": "5,4,4,2"
+				},
+				"PreLoadingBarBg.png": {
+					"url": "images/loading/PreLoadingBarBg.png",
+					"type": "image",
+					"name": "images/loading/PreLoadingBarBg.png"
+				},
+				"PreLoadingBg.png": {
+					"url": "images/loading/PreLoadingBg.png",
+					"type": "image",
+					"name": "images/loading/PreLoadingBg.png"
 				}
 			},
 			"main": {
@@ -632,11 +650,6 @@
 					"type": "image",
 					"name": "images/mainYDD/50.png"
 				},
-				"baoZi.png": {
-					"url": "images/mainYDD/baoZi.png",
-					"type": "image",
-					"name": "images/mainYDD/baoZi.png"
-				},
 				"bghuiyou.png": {
 					"url": "images/mainYDD/bghuiyou.png",
 					"type": "image",
@@ -661,11 +674,6 @@
 					"url": "images/mainYDD/close.png",
 					"type": "image",
 					"name": "images/mainYDD/close.png"
-				},
-				"duiZi.png": {
-					"url": "images/mainYDD/duiZi.png",
-					"type": "image",
-					"name": "images/mainYDD/duiZi.png"
 				},
 				"goldenLain.png": {
 					"url": "images/mainYDD/goldenLain.png",
@@ -722,15 +730,60 @@
 					"type": "image",
 					"name": "images/mainYDD/jiangbei.png"
 				},
-				"jinHua.png": {
-					"url": "images/mainYDD/jinHua.png",
-					"type": "image",
-					"name": "images/mainYDD/jinHua.png"
-				},
 				"mengBan.png": {
 					"url": "images/mainYDD/mengBan.png",
 					"type": "image",
 					"name": "images/mainYDD/mengBan.png"
+				},
+				"niuba.png": {
+					"url": "images/mainYDD/niuba.png",
+					"type": "image",
+					"name": "images/mainYDD/niuba.png"
+				},
+				"niuer.png": {
+					"url": "images/mainYDD/niuer.png",
+					"type": "image",
+					"name": "images/mainYDD/niuer.png"
+				},
+				"niujiu.png": {
+					"url": "images/mainYDD/niujiu.png",
+					"type": "image",
+					"name": "images/mainYDD/niujiu.png"
+				},
+				"niuliu.png": {
+					"url": "images/mainYDD/niuliu.png",
+					"type": "image",
+					"name": "images/mainYDD/niuliu.png"
+				},
+				"niuniu.png": {
+					"url": "images/mainYDD/niuniu.png",
+					"type": "image",
+					"name": "images/mainYDD/niuniu.png"
+				},
+				"niuqi.png": {
+					"url": "images/mainYDD/niuqi.png",
+					"type": "image",
+					"name": "images/mainYDD/niuqi.png"
+				},
+				"niusan.png": {
+					"url": "images/mainYDD/niusan.png",
+					"type": "image",
+					"name": "images/mainYDD/niusan.png"
+				},
+				"niusi.png": {
+					"url": "images/mainYDD/niusi.png",
+					"type": "image",
+					"name": "images/mainYDD/niusi.png"
+				},
+				"niuwu.png": {
+					"url": "images/mainYDD/niuwu.png",
+					"type": "image",
+					"name": "images/mainYDD/niuwu.png"
+				},
+				"niuyi.png": {
+					"url": "images/mainYDD/niuyi.png",
+					"type": "image",
+					"name": "images/mainYDD/niuyi.png"
 				},
 				"numberOne.png": {
 					"url": "images/mainYDD/numberOne.png",
@@ -782,25 +835,10 @@
 					"type": "image",
 					"name": "images/mainYDD/regionUpLine2.png"
 				},
-				"sanPai.png": {
-					"url": "images/mainYDD/sanPai.png",
-					"type": "image",
-					"name": "images/mainYDD/sanPai.png"
-				},
 				"shizhong.png": {
 					"url": "images/mainYDD/shizhong.png",
 					"type": "image",
 					"name": "images/mainYDD/shizhong.png"
-				},
-				"shunJin.png": {
-					"url": "images/mainYDD/shunJin.png",
-					"type": "image",
-					"name": "images/mainYDD/shunJin.png"
-				},
-				"shunZi.png": {
-					"url": "images/mainYDD/shunZi.png",
-					"type": "image",
-					"name": "images/mainYDD/shunZi.png"
 				},
 				"stopBet.png": {
 					"url": "images/mainYDD/stopBet.png",
@@ -827,6 +865,11 @@
 					"type": "image",
 					"name": "images/mainYDD/tipZiBg.png"
 				},
+				"tonghuashun.png": {
+					"url": "images/mainYDD/tonghuashun.png",
+					"type": "image",
+					"name": "images/mainYDD/tonghuashun.png"
+				},
 				"touzhu.png": {
 					"url": "images/mainYDD/touzhu.png",
 					"type": "image",
@@ -841,6 +884,21 @@
 					"url": "images/mainYDD/win.png",
 					"type": "image",
 					"name": "images/mainYDD/win.png"
+				},
+				"wuhuaniu.png": {
+					"url": "images/mainYDD/wuhuaniu.png",
+					"type": "image",
+					"name": "images/mainYDD/wuhuaniu.png"
+				},
+				"wuniu.png": {
+					"url": "images/mainYDD/wuniu.png",
+					"type": "image",
+					"name": "images/mainYDD/wuniu.png"
+				},
+				"wuxiaoniu.png": {
+					"url": "images/mainYDD/wuxiaoniu.png",
+					"type": "image",
+					"name": "images/mainYDD/wuxiaoniu.png"
 				},
 				"xu1.png": {
 					"url": "images/mainYDD/xu1.png",
@@ -861,6 +919,11 @@
 					"url": "images/mainYDD/youxi.png",
 					"type": "image",
 					"name": "images/mainYDD/youxi.png"
+				},
+				"zhadanniu.png": {
+					"url": "images/mainYDD/zhadanniu.png",
+					"type": "image",
+					"name": "images/mainYDD/zhadanniu.png"
 				},
 				"zhuoZi.png": {
 					"url": "images/mainYDD/zhuoZi.png",
@@ -1245,6 +1308,13 @@
 					"name": "assets/Button/button_up.png"
 				}
 			},
+			"ItemRenderer": {
+				"selected.png": {
+					"url": "assets/ItemRenderer/selected.png",
+					"type": "image",
+					"name": "assets/ItemRenderer/selected.png"
+				}
+			},
 			"CheckBox": {
 				"checkbox_select_disabled.png": {
 					"url": "assets/CheckBox/checkbox_select_disabled.png",
@@ -1267,13 +1337,6 @@
 					"name": "assets/CheckBox/checkbox_unselect.png"
 				}
 			},
-			"ItemRenderer": {
-				"selected.png": {
-					"url": "assets/ItemRenderer/selected.png",
-					"type": "image",
-					"name": "assets/ItemRenderer/selected.png"
-				}
-			},
 			"Panel": {
 				"border.png": {
 					"url": "assets/Panel/border.png",
@@ -1284,6 +1347,18 @@
 					"url": "assets/Panel/header.png",
 					"type": "image",
 					"name": "assets/Panel/header.png"
+				}
+			},
+			"ProgressBar": {
+				"thumb.png": {
+					"url": "assets/ProgressBar/thumb.png",
+					"type": "image",
+					"name": "assets/ProgressBar/thumb.png"
+				},
+				"track.png": {
+					"url": "assets/ProgressBar/track.png",
+					"type": "image",
+					"name": "assets/ProgressBar/track.png"
 				}
 			},
 			"RadioButton": {
@@ -1306,18 +1381,6 @@
 					"url": "assets/RadioButton/radiobutton_unselect.png",
 					"type": "image",
 					"name": "assets/RadioButton/radiobutton_unselect.png"
-				}
-			},
-			"ProgressBar": {
-				"thumb.png": {
-					"url": "assets/ProgressBar/thumb.png",
-					"type": "image",
-					"name": "assets/ProgressBar/thumb.png"
-				},
-				"track.png": {
-					"url": "assets/ProgressBar/track.png",
-					"type": "image",
-					"name": "assets/ProgressBar/track.png"
 				}
 			},
 			"ScrollBar": {

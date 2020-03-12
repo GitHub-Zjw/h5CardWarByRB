@@ -20,18 +20,21 @@ var EnumerationType;
      */
     var CardType;
     (function (CardType) {
-        /**散牌 */
-        CardType[CardType["sanPai"] = 0] = "sanPai";
-        /**顺子 */
-        CardType[CardType["sunZi"] = 1] = "sunZi";
-        /**顺金 */
-        CardType[CardType["sunJin"] = 2] = "sunJin";
-        /**对子 */
-        CardType[CardType["duiZi"] = 3] = "duiZi";
-        /**豹子 */
-        CardType[CardType["baoZi"] = 4] = "baoZi";
-        /**金花 */
-        CardType[CardType["jinHua"] = 5] = "jinHua";
+        CardType[CardType["niuba"] = 0] = "niuba";
+        CardType[CardType["niuer"] = 1] = "niuer";
+        CardType[CardType["niujiu"] = 2] = "niujiu";
+        CardType[CardType["niuniu"] = 3] = "niuniu";
+        CardType[CardType["niusan"] = 4] = "niusan";
+        CardType[CardType["niusi"] = 5] = "niusi";
+        CardType[CardType["niuwu"] = 6] = "niuwu";
+        CardType[CardType["niuyi"] = 7] = "niuyi";
+        CardType[CardType["tonghuashun"] = 8] = "tonghuashun";
+        CardType[CardType["wuhuaniu"] = 9] = "wuhuaniu";
+        CardType[CardType["wuniu"] = 10] = "wuniu";
+        CardType[CardType["wuxiaoniu"] = 11] = "wuxiaoniu";
+        CardType[CardType["zhadanniu"] = 12] = "zhadanniu";
+        CardType[CardType["niuqi"] = 13] = "niuqi";
+        CardType[CardType["niuliu"] = 14] = "niuliu";
     })(CardType = EnumerationType.CardType || (EnumerationType.CardType = {}));
     /**
      * 胜利区域

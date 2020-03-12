@@ -44,8 +44,8 @@ class AllData extends egret.EventDispatcher
 		this._redMoneyNum = 0;
 		this._otherMoneyNum = 0;
 		this._winner = EnumerationType.RegionWinner.redS;
-		this._redCardType = EnumerationType.CardType.sanPai;
-		this._blackCardType = EnumerationType.CardType.sanPai;
+		this._redCardType = EnumerationType.CardType.zhadanniu;
+		this._blackCardType = EnumerationType.CardType.niuqi;
 		this._allWinners = [];
 		this._betDetailsTypeDatas = [];
 		this._betRecordsTypeDatas = [];
