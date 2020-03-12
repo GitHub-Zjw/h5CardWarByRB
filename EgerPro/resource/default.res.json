@@ -19,6 +19,10 @@
 		{
 			"keys": "bigWinnerBg_png,bwsd_png,textBgBW_png,红黑大战 -金花 - 本轮大赢家_png,jiangBei1_png,jiangBei2_png,jiangBei3_png",
 			"name": "bigWinner"
+		},
+		{
+			"keys": "pwBtnBg_png,srbmBg_png",
+			"name": "passWord"
 		}
 	],
 	"resources": [
@@ -862,6 +866,16 @@
 			"url": "images/bigWinner/jiangBei3.png",
 			"type": "image",
 			"name": "jiangBei3_png"
+		},
+		{
+			"url": "images/passWord/srbmBg.png",
+			"type": "image",
+			"name": "srbmBg_png"
+		},
+		{
+			"url": "images/passWord/pwBtnBg.png",
+			"type": "image",
+			"name": "pwBtnBg_png"
 		}
 	]
 }

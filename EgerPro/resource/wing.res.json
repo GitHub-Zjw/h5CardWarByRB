@@ -52,22 +52,6 @@
       "name": "红黑大战 -金花 - 投注详情弹窗_png"
     },
     {
-      "url": "images/loading/PreLoadingBar.png",
-      "type": "image",
-      "name": "PreLoadingBar_png",
-      "scale9grid": "5,4,4,2"
-    },
-    {
-      "url": "images/loading/PreLoadingBarBg.png",
-      "type": "image",
-      "name": "PreLoadingBarBg_png"
-    },
-    {
-      "url": "images/loading/PreLoadingBg.png",
-      "type": "image",
-      "name": "PreLoadingBg_png"
-    },
-    {
       "url": "images/bigWinner/bigWinnerBg.png",
       "type": "image",
       "name": "bigWinnerBg_png"
@@ -101,6 +85,22 @@
       "url": "images/bigWinner/红黑大战 -金花 - 本轮大赢家.png",
       "type": "image",
       "name": "红黑大战 -金花 - 本轮大赢家_png"
+    },
+    {
+      "url": "images/loading/PreLoadingBar.png",
+      "type": "image",
+      "name": "PreLoadingBar_png",
+      "scale9grid": "5,4,4,2"
+    },
+    {
+      "url": "images/loading/PreLoadingBarBg.png",
+      "type": "image",
+      "name": "PreLoadingBarBg_png"
+    },
+    {
+      "url": "images/loading/PreLoadingBg.png",
+      "type": "image",
+      "name": "PreLoadingBg_png"
     },
     {
       "url": "images/gameMethod/jbbg.png",
@@ -828,6 +828,16 @@
       "name": "tipsBg_png"
     },
     {
+      "url": "images/passWord/pwBtnBg.png",
+      "type": "image",
+      "name": "pwBtnBg_png"
+    },
+    {
+      "url": "images/passWord/srbmBg.png",
+      "type": "image",
+      "name": "srbmBg_png"
+    },
+    {
       "url": "images/scene/homeBg1.jpg",
       "type": "image",
       "name": "homeBg1_jpg"
@@ -868,6 +878,11 @@
       "name": "assets/Button/button_up.png"
     },
     {
+      "url": "assets/ItemRenderer/selected.png",
+      "type": "image",
+      "name": "assets/ItemRenderer/selected.png"
+    },
+    {
       "url": "assets/CheckBox/checkbox_select_disabled.png",
       "type": "image",
       "name": "assets/CheckBox/checkbox_select_disabled.png"
@@ -888,9 +903,14 @@
       "name": "assets/CheckBox/checkbox_unselect.png"
     },
     {
-      "url": "assets/ItemRenderer/selected.png",
+      "url": "assets/ProgressBar/thumb.png",
       "type": "image",
-      "name": "assets/ItemRenderer/selected.png"
+      "name": "assets/ProgressBar/thumb.png"
+    },
+    {
+      "url": "assets/ProgressBar/track.png",
+      "type": "image",
+      "name": "assets/ProgressBar/track.png"
     },
     {
       "url": "assets/Panel/border.png",
@@ -921,16 +941,6 @@
       "url": "assets/RadioButton/radiobutton_unselect.png",
       "type": "image",
       "name": "assets/RadioButton/radiobutton_unselect.png"
-    },
-    {
-      "url": "assets/ProgressBar/thumb.png",
-      "type": "image",
-      "name": "assets/ProgressBar/thumb.png"
-    },
-    {
-      "url": "assets/ProgressBar/track.png",
-      "type": "image",
-      "name": "assets/ProgressBar/track.png"
     },
     {
       "url": "assets/ScrollBar/roundthumb.png",
