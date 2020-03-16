@@ -42,14 +42,6 @@ declare module skins{
 	class VSliderSkin extends eui.Skin{
 	}
 }
-declare class ActivityBarSkin extends eui.Skin{
-}
-declare class FunctionBarSkin extends eui.Skin{
-}
-declare class MainUISkin extends eui.Skin{
-}
-declare class RoleInfoSkin extends eui.Skin{
-}
 declare class MainUIYDDSkin extends eui.Skin{
 }
 declare class BallBtnSkin extends eui.Skin{
@@ -74,20 +66,6 @@ declare class SelectCardingSkin extends eui.Skin{
 }
 declare class TipTextSkin extends eui.Skin{
 }
-declare class BackpackSkin extends eui.Skin{
-}
-declare class ChuangDangSkin extends eui.Skin{
-}
-declare class MapSkin extends eui.Skin{
-}
-declare class QianghuaSkin extends eui.Skin{
-}
-declare class RoleSkin extends eui.Skin{
-}
-declare class ShopSkin extends eui.Skin{
-}
-declare class ZhaoXianSkin extends eui.Skin{
-}
 declare class BetDetailsItemSkin extends eui.Skin{
 }
 declare class BetDetailsPanelSkin extends eui.Skin{
@@ -105,6 +83,8 @@ declare class GameMethodPanelSkin extends eui.Skin{
 declare class PrizeInfoPanelSkin extends eui.Skin{
 }
 declare class StopBetPanelSkin extends eui.Skin{
+}
+declare class PassWordPanelSkin extends eui.Skin{
 }
 declare class HomeCitySkin extends eui.Skin{
 }

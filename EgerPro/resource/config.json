@@ -8,38 +8,22 @@
 		"PreLoadingBar_png": "images/loading/PreLoadingBar.png",
 		"PreLoadingBarBg_png": "images/loading/PreLoadingBarBg.png",
 		"PreLoadingBg_png": "images/loading/PreLoadingBg.png",
-		"homeBg1_jpg": "images/scene/homeBg1.jpg",
-		"homeBg2_jpg": "images/scene/homeBg2.jpg",
-		"homeBg3_jpg": "images/scene/homeBg3.jpg",
-		"homeBg4_jpg": "images/scene/homeBg4.jpg",
-		"homeBg5_jpg": "images/scene/homeBg5.jpg",
-		"activityBtn_png": "images/main/activityBtn.png",
-		"backpackBtn_png": "images/main/backpackBtn.png",
-		"bgBarBg_png": "images/main/bgBarBg.png",
-		"chuangDangBtn_png": "images/main/chuangDangBtn.png",
-		"closeBtn_png": "images/main/closeBtn.png",
-		"friendBtn_png": "images/main/friendBtn.png",
-		"headBg_png": "images/main/headBg.png",
-		"hengImg_png": "images/main/hengImg.png",
-		"infoBtn_png": "images/main/infoBtn.png",
-		"jinjieBtn_png": "images/main/jinjieBtn.png",
-		"kaiFuBtn_png": "images/main/kaiFuBtn.png",
-		"lianqiBtn_png": "images/main/lianqiBtn.png",
-		"lunjianBtn_png": "images/main/lunjianBtn.png",
-		"mainBtn_png": "images/main/mainBtn.png",
-		"mapBtn_png": "images/main/mapBtn.png",
-		"missionBtn_png": "images/main/missionBtn.png",
-		"pgBar1_png": "images/main/pgBar1.png",
-		"pgBar2_png": "images/main/pgBar2.png",
-		"qianghuaBtn_png": "images/main/qianghuaBtn.png",
-		"roleBtn_png": "images/main/roleBtn.png",
-		"roleInfoImg_png": "images/main/roleInfoImg.png",
-		"shopBtn_png": "images/main/shopBtn.png",
-		"shuImg_png": "images/main/shuImg.png",
-		"warBtn_png": "images/main/warBtn.png",
-		"zhaoXianBtn_png": "images/main/zhaoXianBtn.png",
 		"config_json": "config.json",
 		"resource_json": "resource.json",
+		"tzxq_png": "images/bettingDetails/tzxq.png",
+		"jbbg_png": "images/gameMethod/jbbg.png",
+		"wfxq_png": "images/gameMethod/wfxq.png",
+		"bigWinnerBg_png": "images/bigWinner/bigWinnerBg.png",
+		"bwsd_png": "images/bigWinner/bwsd.png",
+		"textBgBW_png": "images/bigWinner/textBgBW.png",
+		"jiangBei1_png": "images/bigWinner/jiangBei1.png",
+		"jiangBei2_png": "images/bigWinner/jiangBei2.png",
+		"jiangBei3_png": "images/bigWinner/jiangBei3.png",
+		"pwBtnBg_png": "images/passWord/pwBtnBg.png",
+		"srbmBg_png": "images/passWord/srbmBg.png",
+		"backg_mp3": "sound/backg.mp3",
+		"button_mp3": "sound/button.mp3",
+		"main_bgm_mp3": "sound/main_bgm.mp3",
 		"0.1_png": "images/mainYDD/0.1.png",
 		"1_png": "images/mainYDD/1.png",
 		"10_png": "images/mainYDD/10.png",
@@ -47,26 +31,60 @@
 		"5_png": "images/mainYDD/5.png",
 		"50_png": "images/mainYDD/50.png",
 		"VS-1_png": "images/mainYDD/VS-1.png",
+		"baoZi_png": "images/mainYDD/baoZi.png",
+		"bghuiyou_png": "images/mainYDD/bghuiyou.png",
+		"bghuizuo_png": "images/mainYDD/bghuizuo.png",
+		"blackPoint_png": "images/mainYDD/blackPoint.png",
+		"cehui_png": "images/mainYDD/cehui.png",
+		"close_png": "images/mainYDD/close.png",
+		"duiZi_png": "images/mainYDD/duiZi.png",
+		"goldenLain_png": "images/mainYDD/goldenLain.png",
 		"groupVS_png": "images/mainYDD/groupVS.png",
+		"groupVS1_png": "images/mainYDD/groupVS1.png",
+		"groupVS2_png": "images/mainYDD/groupVS2.png",
+		"heiJia_png": "images/mainYDD/heiJia.png",
+		"heiSheng_png": "images/mainYDD/heiSheng.png",
+		"hongJia_png": "images/mainYDD/hongJia.png",
+		"hongSheng_png": "images/mainYDD/hongSheng.png",
+		"huangKuang_png": "images/mainYDD/huangKuang.png",
+		"hxxp_png": "images/mainYDD/hxxp.png",
+		"jiangbei_png": "images/mainYDD/jiangbei.png",
+		"jinHua_png": "images/mainYDD/jinHua.png",
+		"mengBan_png": "images/mainYDD/mengBan.png",
+		"numberOne_png": "images/mainYDD/numberOne.png",
+		"numberTwo_png": "images/mainYDD/numberTwo.png",
+		"otherPoint_png": "images/mainYDD/otherPoint.png",
+		"playerId_png": "images/mainYDD/playerId.png",
+		"prefab_png": "images/mainYDD/prefab.png",
+		"qian_png": "images/mainYDD/qian.png",
+		"redPoint_png": "images/mainYDD/redPoint.png",
+		"regionDownLine_png": "images/mainYDD/regionDownLine.png",
+		"regionUpLine_png": "images/mainYDD/regionUpLine.png",
+		"regionUpLine2_png": "images/mainYDD/regionUpLine2.png",
+		"sanPai_png": "images/mainYDD/sanPai.png",
+		"shizhong_png": "images/mainYDD/shizhong.png",
+		"shunJin_png": "images/mainYDD/shunJin.png",
+		"shunZi_png": "images/mainYDD/shunZi.png",
+		"stopBet_png": "images/mainYDD/stopBet.png",
+		"stopBetBtn_png": "images/mainYDD/stopBetBtn.png",
+		"textBg_png": "images/mainYDD/textBg.png",
+		"timer_png": "images/mainYDD/timer.png",
+		"tipZiBg_png": "images/mainYDD/tipZiBg.png",
+		"touzhu_png": "images/mainYDD/touzhu.png",
+		"win_png": "images/mainYDD/win.png",
 		"xu1_png": "images/mainYDD/xu1.png",
 		"xu2_png": "images/mainYDD/xu2.png",
 		"youRen_png": "images/mainYDD/youRen.png",
-		"zhuoZi_png": "images/mainYDD/zhuoZi.png",
-		"zuoRen_png": "images/mainYDD/zuoRen.png",
-		"bghuizuo_png": "images/mainYDD/bghuizuo.png",
-		"bghuiyou_png": "images/mainYDD/bghuiyou.png",
-		"cehui_png": "images/mainYDD/cehui.png",
-		"goldenLain_png": "images/mainYDD/goldenLain.png",
-		"groupVS1_png": "images/mainYDD/groupVS1.png",
-		"groupVS2_png": "images/mainYDD/groupVS2.png",
-		"jiangbei_png": "images/mainYDD/jiangbei.png",
-		"playerId_png": "images/mainYDD/playerId.png",
-		"qian_png": "images/mainYDD/qian.png",
-		"regionDownLine_png": "images/mainYDD/regionDownLine.png",
-		"regionUpLine_png": "images/mainYDD/regionUpLine.png",
-		"shizhong_png": "images/mainYDD/shizhong.png",
-		"touzhu_png": "images/mainYDD/touzhu.png",
 		"youxi_png": "images/mainYDD/youxi.png",
+		"zhuoZi_png": "images/mainYDD/zhuoZi.png",
+		"ziDian_png": "images/mainYDD/ziDian.png",
+		"ziHa_png": "images/mainYDD/ziHa.png",
+		"ziPai_png": "images/mainYDD/ziPai.png",
+		"ziXi_png": "images/mainYDD/ziXi.png",
+		"ziXuan_png": "images/mainYDD/ziXuan.png",
+		"ziZhong_png": "images/mainYDD/ziZhong.png",
+		"zuoRen_png": "images/mainYDD/zuoRen.png",
+		"红黑大战 -金花 - 开奖弹窗_png": "images/mainYDD/红黑大战 -金花 - 开奖弹窗.png",
 		"card0_0_png": "images/mainYDD/cards/card0_0.png",
 		"card1_1_png": "images/mainYDD/cards/card1_1.png",
 		"card1_10_png": "images/mainYDD/cards/card1_10.png",
@@ -121,53 +139,7 @@
 		"card4_8_png": "images/mainYDD/cards/card4_8.png",
 		"card4_9_png": "images/mainYDD/cards/card4_9.png",
 		"card5_1_png": "images/mainYDD/cards/card5_1.png",
-		"card5_2_png": "images/mainYDD/cards/card5_2.png",
-		"regionUpLine2_png": "images/mainYDD/regionUpLine2.png",
-		"blackPoint_png": "images/mainYDD/blackPoint.png",
-		"redPoint_png": "images/mainYDD/redPoint.png",
-		"otherPoint_png": "images/mainYDD/otherPoint.png",
-		"heiJia_png": "images/mainYDD/heiJia.png",
-		"heiSheng_png": "images/mainYDD/heiSheng.png",
-		"hongJia_png": "images/mainYDD/hongJia.png",
-		"hongSheng_png": "images/mainYDD/hongSheng.png",
-		"textBg_png": "images/mainYDD/textBg.png",
-		"timer_png": "images/mainYDD/timer.png",
-		"mengBan_png": "images/mainYDD/mengBan.png",
-		"stopBet_png": "images/mainYDD/stopBet.png",
-		"stopBetBtn_png": "images/mainYDD/stopBetBtn.png",
-		"tipZiBg_png": "images/mainYDD/tipZiBg.png",
-		"ziDian_png": "images/mainYDD/ziDian.png",
-		"ziHa_png": "images/mainYDD/ziHa.png",
-		"ziPai_png": "images/mainYDD/ziPai.png",
-		"ziXi_png": "images/mainYDD/ziXi.png",
-		"ziXuan_png": "images/mainYDD/ziXuan.png",
-		"ziZhong_png": "images/mainYDD/ziZhong.png",
-		"baoZi_png": "images/mainYDD/baoZi.png",
-		"duiZi_png": "images/mainYDD/duiZi.png",
-		"jinHua_png": "images/mainYDD/jinHua.png",
-		"sanPai_png": "images/mainYDD/sanPai.png",
-		"shunJin_png": "images/mainYDD/shunJin.png",
-		"shunZi_png": "images/mainYDD/shunZi.png",
-		"win_png": "images/mainYDD/win.png",
-		"close_png": "images/mainYDD/close.png",
-		"tzxq_png": "images/bettingDetails/tzxq.png",
-		"jbbg_png": "images/gameMethod/jbbg.png",
-		"wfxq_png": "images/gameMethod/wfxq.png",
-		"huangKuang_png": "images/mainYDD/huangKuang.png",
-		"hxxp_png": "images/mainYDD/hxxp.png",
-		"numberOne_png": "images/mainYDD/numberOne.png",
-		"numberTwo_png": "images/mainYDD/numberTwo.png",
-		"bigWinnerBg_png": "images/bigWinner/bigWinnerBg.png",
-		"bwsd_png": "images/bigWinner/bwsd.png",
-		"textBgBW_png": "images/bigWinner/textBgBW.png",
-		"jiangBei1_png": "images/bigWinner/jiangBei1.png",
-		"jiangBei2_png": "images/bigWinner/jiangBei2.png",
-		"jiangBei3_png": "images/bigWinner/jiangBei3.png",
-		"pwBtnBg_png": "images/passWord/pwBtnBg.png",
-		"srbmBg_png": "images/passWord/srbmBg.png",
-		"backg_mp3": "sound/backg.mp3",
-		"button_mp3": "sound/button.mp3",
-		"main_bgm_mp3": "sound/main_bgm.mp3"
+		"card5_2_png": "images/mainYDD/cards/card5_2.png"
 	},
 	"groups": {
 		"loading": [
@@ -181,38 +153,14 @@
 			"tipsBg_png",
 			"loadingCircle_png",
 			"template_json",
-			"homeBg1_jpg",
-			"homeBg2_jpg",
-			"homeBg3_jpg",
-			"homeBg4_jpg",
-			"homeBg5_jpg",
-			"activityBtn_png",
-			"backpackBtn_png",
-			"bgBarBg_png",
-			"chuangDangBtn_png",
-			"closeBtn_png",
-			"friendBtn_png",
-			"headBg_png",
-			"hengImg_png",
-			"infoBtn_png",
-			"jinjieBtn_png",
-			"kaiFuBtn_png",
-			"lianqiBtn_png",
-			"lunjianBtn_png",
-			"mainBtn_png",
-			"mapBtn_png",
-			"missionBtn_png",
-			"pgBar1_png",
-			"pgBar2_png",
-			"qianghuaBtn_png",
-			"roleBtn_png",
-			"roleInfoImg_png",
-			"shopBtn_png",
-			"shuImg_png",
-			"warBtn_png",
-			"zhaoXianBtn_png",
 			"config_json",
-			"bghuizuo_png",
+			"PreLoadingBar_png",
+			"PreLoadingBarBg_png",
+			"PreLoadingBg_png",
+			"backg_mp3",
+			"button_mp3",
+			"main_bgm_mp3",
+			"config_zip",
 			"0.1_png",
 			"1_png",
 			"10_png",
@@ -220,25 +168,60 @@
 			"5_png",
 			"50_png",
 			"VS-1_png",
+			"baoZi_png",
 			"bghuiyou_png",
+			"bghuizuo_png",
+			"blackPoint_png",
 			"cehui_png",
+			"close_png",
+			"duiZi_png",
 			"goldenLain_png",
 			"groupVS_png",
 			"groupVS1_png",
 			"groupVS2_png",
+			"heiJia_png",
+			"heiSheng_png",
+			"hongJia_png",
+			"hongSheng_png",
+			"huangKuang_png",
+			"hxxp_png",
 			"jiangbei_png",
+			"jinHua_png",
+			"mengBan_png",
+			"numberOne_png",
+			"numberTwo_png",
+			"otherPoint_png",
 			"playerId_png",
+			"prefab_png",
 			"qian_png",
+			"redPoint_png",
 			"regionDownLine_png",
 			"regionUpLine_png",
+			"regionUpLine2_png",
+			"sanPai_png",
 			"shizhong_png",
+			"shunJin_png",
+			"shunZi_png",
+			"stopBet_png",
+			"stopBetBtn_png",
+			"textBg_png",
+			"timer_png",
+			"tipZiBg_png",
 			"touzhu_png",
+			"win_png",
 			"xu1_png",
 			"xu2_png",
 			"youRen_png",
 			"youxi_png",
 			"zhuoZi_png",
+			"ziDian_png",
+			"ziHa_png",
+			"ziPai_png",
+			"ziXi_png",
+			"ziXuan_png",
+			"ziZhong_png",
 			"zuoRen_png",
+			"红黑大战 -金花 - 开奖弹窗_png",
 			"card0_0_png",
 			"card1_1_png",
 			"card1_10_png",
@@ -293,46 +276,7 @@
 			"card4_8_png",
 			"card4_9_png",
 			"card5_1_png",
-			"card5_2_png",
-			"regionUpLine2_png",
-			"blackPoint_png",
-			"redPoint_png",
-			"otherPoint_png",
-			"heiJia_png",
-			"heiSheng_png",
-			"hongJia_png",
-			"hongSheng_png",
-			"PreLoadingBar_png",
-			"PreLoadingBarBg_png",
-			"PreLoadingBg_png",
-			"textBg_png",
-			"timer_png",
-			"mengBan_png",
-			"stopBet_png",
-			"stopBetBtn_png",
-			"tipZiBg_png",
-			"ziDian_png",
-			"ziHa_png",
-			"ziPai_png",
-			"ziXi_png",
-			"ziXuan_png",
-			"ziZhong_png",
-			"baoZi_png",
-			"duiZi_png",
-			"jinHua_png",
-			"sanPai_png",
-			"shunJin_png",
-			"shunZi_png",
-			"win_png",
-			"close_png",
-			"huangKuang_png",
-			"hxxp_png",
-			"numberOne_png",
-			"numberTwo_png",
-			"backg_mp3",
-			"button_mp3",
-			"main_bgm_mp3",
-			"config_zip"
+			"card5_2_png"
 		],
 		"betDetails": [
 			"tzxq_png"
@@ -398,18 +342,6 @@
 				"type": "image",
 				"name": "images/yellowBtn.png"
 			},
-			"bettingDetails": {
-				"tzxq.png": {
-					"url": "images/bettingDetails/tzxq.png",
-					"type": "image",
-					"name": "images/bettingDetails/tzxq.png"
-				},
-				"红黑大战 -金花 - 投注详情弹窗.png": {
-					"url": "images/bettingDetails/红黑大战 -金花 - 投注详情弹窗.png",
-					"type": "image",
-					"name": "images/bettingDetails/红黑大战 -金花 - 投注详情弹窗.png"
-				}
-			},
 			"bigWinner": {
 				"bigWinnerBg.png": {
 					"url": "images/bigWinner/bigWinnerBg.png",
@@ -447,6 +379,18 @@
 					"name": "images/bigWinner/红黑大战 -金花 - 本轮大赢家.png"
 				}
 			},
+			"bettingDetails": {
+				"tzxq.png": {
+					"url": "images/bettingDetails/tzxq.png",
+					"type": "image",
+					"name": "images/bettingDetails/tzxq.png"
+				},
+				"红黑大战 -金花 - 投注详情弹窗.png": {
+					"url": "images/bettingDetails/红黑大战 -金花 - 投注详情弹窗.png",
+					"type": "image",
+					"name": "images/bettingDetails/红黑大战 -金花 - 投注详情弹窗.png"
+				}
+			},
 			"gameMethod": {
 				"jbbg.png": {
 					"url": "images/gameMethod/jbbg.png",
@@ -477,131 +421,16 @@
 					"name": "images/loading/PreLoadingBg.png"
 				}
 			},
-			"main": {
-				"activityBtn.png": {
-					"url": "images/main/activityBtn.png",
+			"mask": {
+				"loadingCircle.png": {
+					"url": "images/mask/loadingCircle.png",
 					"type": "image",
-					"name": "images/main/activityBtn.png"
+					"name": "images/mask/loadingCircle.png"
 				},
-				"backpackBtn.png": {
-					"url": "images/main/backpackBtn.png",
+				"tipsBg.png": {
+					"url": "images/mask/tipsBg.png",
 					"type": "image",
-					"name": "images/main/backpackBtn.png"
-				},
-				"bgBarBg.png": {
-					"url": "images/main/bgBarBg.png",
-					"type": "image",
-					"name": "images/main/bgBarBg.png"
-				},
-				"chuangDangBtn.png": {
-					"url": "images/main/chuangDangBtn.png",
-					"type": "image",
-					"name": "images/main/chuangDangBtn.png"
-				},
-				"closeBtn.png": {
-					"url": "images/main/closeBtn.png",
-					"type": "image",
-					"name": "images/main/closeBtn.png"
-				},
-				"friendBtn.png": {
-					"url": "images/main/friendBtn.png",
-					"type": "image",
-					"name": "images/main/friendBtn.png"
-				},
-				"headBg.png": {
-					"url": "images/main/headBg.png",
-					"type": "image",
-					"name": "images/main/headBg.png"
-				},
-				"hengImg.png": {
-					"url": "images/main/hengImg.png",
-					"type": "image",
-					"name": "images/main/hengImg.png"
-				},
-				"infoBtn.png": {
-					"url": "images/main/infoBtn.png",
-					"type": "image",
-					"name": "images/main/infoBtn.png"
-				},
-				"jinjieBtn.png": {
-					"url": "images/main/jinjieBtn.png",
-					"type": "image",
-					"name": "images/main/jinjieBtn.png"
-				},
-				"kaiFuBtn.png": {
-					"url": "images/main/kaiFuBtn.png",
-					"type": "image",
-					"name": "images/main/kaiFuBtn.png"
-				},
-				"lianqiBtn.png": {
-					"url": "images/main/lianqiBtn.png",
-					"type": "image",
-					"name": "images/main/lianqiBtn.png"
-				},
-				"lunjianBtn.png": {
-					"url": "images/main/lunjianBtn.png",
-					"type": "image",
-					"name": "images/main/lunjianBtn.png"
-				},
-				"mainBtn.png": {
-					"url": "images/main/mainBtn.png",
-					"type": "image",
-					"name": "images/main/mainBtn.png"
-				},
-				"mapBtn.png": {
-					"url": "images/main/mapBtn.png",
-					"type": "image",
-					"name": "images/main/mapBtn.png"
-				},
-				"missionBtn.png": {
-					"url": "images/main/missionBtn.png",
-					"type": "image",
-					"name": "images/main/missionBtn.png"
-				},
-				"pgBar1.png": {
-					"url": "images/main/pgBar1.png",
-					"type": "image",
-					"name": "images/main/pgBar1.png"
-				},
-				"pgBar2.png": {
-					"url": "images/main/pgBar2.png",
-					"type": "image",
-					"name": "images/main/pgBar2.png"
-				},
-				"qianghuaBtn.png": {
-					"url": "images/main/qianghuaBtn.png",
-					"type": "image",
-					"name": "images/main/qianghuaBtn.png"
-				},
-				"roleBtn.png": {
-					"url": "images/main/roleBtn.png",
-					"type": "image",
-					"name": "images/main/roleBtn.png"
-				},
-				"roleInfoImg.png": {
-					"url": "images/main/roleInfoImg.png",
-					"type": "image",
-					"name": "images/main/roleInfoImg.png"
-				},
-				"shopBtn.png": {
-					"url": "images/main/shopBtn.png",
-					"type": "image",
-					"name": "images/main/shopBtn.png"
-				},
-				"shuImg.png": {
-					"url": "images/main/shuImg.png",
-					"type": "image",
-					"name": "images/main/shuImg.png"
-				},
-				"warBtn.png": {
-					"url": "images/main/warBtn.png",
-					"type": "image",
-					"name": "images/main/warBtn.png"
-				},
-				"zhaoXianBtn.png": {
-					"url": "images/main/zhaoXianBtn.png",
-					"type": "image",
-					"name": "images/main/zhaoXianBtn.png"
+					"name": "images/mask/tipsBg.png"
 				}
 			},
 			"mainYDD": {
@@ -1188,18 +1017,6 @@
 					}
 				}
 			},
-			"mask": {
-				"loadingCircle.png": {
-					"url": "images/mask/loadingCircle.png",
-					"type": "image",
-					"name": "images/mask/loadingCircle.png"
-				},
-				"tipsBg.png": {
-					"url": "images/mask/tipsBg.png",
-					"type": "image",
-					"name": "images/mask/tipsBg.png"
-				}
-			},
 			"passWord": {
 				"pwBtnBg.png": {
 					"url": "images/passWord/pwBtnBg.png",
@@ -1210,33 +1027,6 @@
 					"url": "images/passWord/srbmBg.png",
 					"type": "image",
 					"name": "images/passWord/srbmBg.png"
-				}
-			},
-			"scene": {
-				"homeBg1.jpg": {
-					"url": "images/scene/homeBg1.jpg",
-					"type": "image",
-					"name": "images/scene/homeBg1.jpg"
-				},
-				"homeBg2.jpg": {
-					"url": "images/scene/homeBg2.jpg",
-					"type": "image",
-					"name": "images/scene/homeBg2.jpg"
-				},
-				"homeBg3.jpg": {
-					"url": "images/scene/homeBg3.jpg",
-					"type": "image",
-					"name": "images/scene/homeBg3.jpg"
-				},
-				"homeBg4.jpg": {
-					"url": "images/scene/homeBg4.jpg",
-					"type": "image",
-					"name": "images/scene/homeBg4.jpg"
-				},
-				"homeBg5.jpg": {
-					"url": "images/scene/homeBg5.jpg",
-					"type": "image",
-					"name": "images/scene/homeBg5.jpg"
 				}
 			}
 		},

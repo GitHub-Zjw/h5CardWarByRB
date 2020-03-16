@@ -13,13 +13,6 @@ module game {
 		}
 		public execute(notification:puremvc.INotification):void{
 			var main = GameLayerManager.gameLayer().panelLayer;
-			this.facade.registerMediator( new RoleMediator() );
-            this.facade.registerMediator(new BackpackMediator());
-            this.facade.registerMediator(new QianghuaMediator());
-            this.facade.registerMediator(new ZhaoXianMediator());
-            this.facade.registerMediator(new ChuangDangMediator());
-            this.facade.registerMediator(new ShopMediator());
-            this.facade.registerMediator(new MapMediator());
 
             this.facade.registerMediator(new StopBetMediator());
             this.facade.registerMediator(new betDetails.BetDetailsMediator());
