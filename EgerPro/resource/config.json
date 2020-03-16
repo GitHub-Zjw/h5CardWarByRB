@@ -9,36 +9,6 @@
 		"PreLoadingBar_png": "images/loading/PreLoadingBar.png",
 		"PreLoadingBarBg_png": "images/loading/PreLoadingBarBg.png",
 		"PreLoadingBg_png": "images/loading/PreLoadingBg.png",
-		"homeBg1_jpg": "images/scene/homeBg1.jpg",
-		"homeBg2_jpg": "images/scene/homeBg2.jpg",
-		"homeBg3_jpg": "images/scene/homeBg3.jpg",
-		"homeBg4_jpg": "images/scene/homeBg4.jpg",
-		"homeBg5_jpg": "images/scene/homeBg5.jpg",
-		"activityBtn_png": "images/main/activityBtn.png",
-		"backpackBtn_png": "images/main/backpackBtn.png",
-		"bgBarBg_png": "images/main/bgBarBg.png",
-		"chuangDangBtn_png": "images/main/chuangDangBtn.png",
-		"closeBtn_png": "images/main/closeBtn.png",
-		"friendBtn_png": "images/main/friendBtn.png",
-		"headBg_png": "images/main/headBg.png",
-		"hengImg_png": "images/main/hengImg.png",
-		"infoBtn_png": "images/main/infoBtn.png",
-		"jinjieBtn_png": "images/main/jinjieBtn.png",
-		"kaiFuBtn_png": "images/main/kaiFuBtn.png",
-		"lianqiBtn_png": "images/main/lianqiBtn.png",
-		"lunjianBtn_png": "images/main/lunjianBtn.png",
-		"mainBtn_png": "images/main/mainBtn.png",
-		"mapBtn_png": "images/main/mapBtn.png",
-		"missionBtn_png": "images/main/missionBtn.png",
-		"pgBar1_png": "images/main/pgBar1.png",
-		"pgBar2_png": "images/main/pgBar2.png",
-		"qianghuaBtn_png": "images/main/qianghuaBtn.png",
-		"roleBtn_png": "images/main/roleBtn.png",
-		"roleInfoImg_png": "images/main/roleInfoImg.png",
-		"shopBtn_png": "images/main/shopBtn.png",
-		"shuImg_png": "images/main/shuImg.png",
-		"warBtn_png": "images/main/warBtn.png",
-		"zhaoXianBtn_png": "images/main/zhaoXianBtn.png",
 		"config_json": "config.json",
 		"resource_json": "resource.json",
 		"0.1_png": "images/mainYDD/0.1.png",
@@ -193,36 +163,6 @@
 			"loadingCircle_png",
 			"template_json",
 			"template_proto",
-			"homeBg1_jpg",
-			"homeBg2_jpg",
-			"homeBg3_jpg",
-			"homeBg4_jpg",
-			"homeBg5_jpg",
-			"activityBtn_png",
-			"backpackBtn_png",
-			"bgBarBg_png",
-			"chuangDangBtn_png",
-			"closeBtn_png",
-			"friendBtn_png",
-			"headBg_png",
-			"hengImg_png",
-			"infoBtn_png",
-			"jinjieBtn_png",
-			"kaiFuBtn_png",
-			"lianqiBtn_png",
-			"lunjianBtn_png",
-			"mainBtn_png",
-			"mapBtn_png",
-			"missionBtn_png",
-			"pgBar1_png",
-			"pgBar2_png",
-			"qianghuaBtn_png",
-			"roleBtn_png",
-			"roleInfoImg_png",
-			"shopBtn_png",
-			"shuImg_png",
-			"warBtn_png",
-			"zhaoXianBtn_png",
 			"config_json",
 			"bghuizuo_png",
 			"0.1_png",
@@ -496,133 +436,6 @@
 					"url": "images/gameMethod/wfxq.png",
 					"type": "image",
 					"name": "images/gameMethod/wfxq.png"
-				}
-			},
-			"main": {
-				"activityBtn.png": {
-					"url": "images/main/activityBtn.png",
-					"type": "image",
-					"name": "images/main/activityBtn.png"
-				},
-				"backpackBtn.png": {
-					"url": "images/main/backpackBtn.png",
-					"type": "image",
-					"name": "images/main/backpackBtn.png"
-				},
-				"bgBarBg.png": {
-					"url": "images/main/bgBarBg.png",
-					"type": "image",
-					"name": "images/main/bgBarBg.png"
-				},
-				"chuangDangBtn.png": {
-					"url": "images/main/chuangDangBtn.png",
-					"type": "image",
-					"name": "images/main/chuangDangBtn.png"
-				},
-				"closeBtn.png": {
-					"url": "images/main/closeBtn.png",
-					"type": "image",
-					"name": "images/main/closeBtn.png"
-				},
-				"friendBtn.png": {
-					"url": "images/main/friendBtn.png",
-					"type": "image",
-					"name": "images/main/friendBtn.png"
-				},
-				"headBg.png": {
-					"url": "images/main/headBg.png",
-					"type": "image",
-					"name": "images/main/headBg.png"
-				},
-				"hengImg.png": {
-					"url": "images/main/hengImg.png",
-					"type": "image",
-					"name": "images/main/hengImg.png"
-				},
-				"infoBtn.png": {
-					"url": "images/main/infoBtn.png",
-					"type": "image",
-					"name": "images/main/infoBtn.png"
-				},
-				"jinjieBtn.png": {
-					"url": "images/main/jinjieBtn.png",
-					"type": "image",
-					"name": "images/main/jinjieBtn.png"
-				},
-				"kaiFuBtn.png": {
-					"url": "images/main/kaiFuBtn.png",
-					"type": "image",
-					"name": "images/main/kaiFuBtn.png"
-				},
-				"lianqiBtn.png": {
-					"url": "images/main/lianqiBtn.png",
-					"type": "image",
-					"name": "images/main/lianqiBtn.png"
-				},
-				"lunjianBtn.png": {
-					"url": "images/main/lunjianBtn.png",
-					"type": "image",
-					"name": "images/main/lunjianBtn.png"
-				},
-				"mainBtn.png": {
-					"url": "images/main/mainBtn.png",
-					"type": "image",
-					"name": "images/main/mainBtn.png"
-				},
-				"mapBtn.png": {
-					"url": "images/main/mapBtn.png",
-					"type": "image",
-					"name": "images/main/mapBtn.png"
-				},
-				"missionBtn.png": {
-					"url": "images/main/missionBtn.png",
-					"type": "image",
-					"name": "images/main/missionBtn.png"
-				},
-				"pgBar1.png": {
-					"url": "images/main/pgBar1.png",
-					"type": "image",
-					"name": "images/main/pgBar1.png"
-				},
-				"pgBar2.png": {
-					"url": "images/main/pgBar2.png",
-					"type": "image",
-					"name": "images/main/pgBar2.png"
-				},
-				"qianghuaBtn.png": {
-					"url": "images/main/qianghuaBtn.png",
-					"type": "image",
-					"name": "images/main/qianghuaBtn.png"
-				},
-				"roleBtn.png": {
-					"url": "images/main/roleBtn.png",
-					"type": "image",
-					"name": "images/main/roleBtn.png"
-				},
-				"roleInfoImg.png": {
-					"url": "images/main/roleInfoImg.png",
-					"type": "image",
-					"name": "images/main/roleInfoImg.png"
-				},
-				"shopBtn.png": {
-					"url": "images/main/shopBtn.png",
-					"type": "image",
-					"name": "images/main/shopBtn.png"
-				},
-				"shuImg.png": {
-					"url": "images/main/shuImg.png",
-					"type": "image",
-					"name": "images/main/shuImg.png"
-				},
-				"warBtn.png": {
-					"url": "images/main/warBtn.png",
-					"type": "image",
-					"name": "images/main/warBtn.png"
-				},
-				"zhaoXianBtn.png": {
-					"url": "images/main/zhaoXianBtn.png",
-					"type": "image",
-					"name": "images/main/zhaoXianBtn.png"
 				}
 			},
 			"mainYDD": {
@@ -1266,33 +1079,6 @@
 					"name": "images/mask/tipsBg.png"
 				}
 			},
-			"scene": {
-				"homeBg1.jpg": {
-					"url": "images/scene/homeBg1.jpg",
-					"type": "image",
-					"name": "images/scene/homeBg1.jpg"
-				},
-				"homeBg2.jpg": {
-					"url": "images/scene/homeBg2.jpg",
-					"type": "image",
-					"name": "images/scene/homeBg2.jpg"
-				},
-				"homeBg3.jpg": {
-					"url": "images/scene/homeBg3.jpg",
-					"type": "image",
-					"name": "images/scene/homeBg3.jpg"
-				},
-				"homeBg4.jpg": {
-					"url": "images/scene/homeBg4.jpg",
-					"type": "image",
-					"name": "images/scene/homeBg4.jpg"
-				},
-				"homeBg5.jpg": {
-					"url": "images/scene/homeBg5.jpg",
-					"type": "image",
-					"name": "images/scene/homeBg5.jpg"
-				}
-			},
 			"passWord": {
 				"pwBtnBg.png": {
 					"url": "images/passWord/pwBtnBg.png",
@@ -1326,6 +1112,13 @@
 					"name": "assets/Button/button_up.png"
 				}
 			},
+			"ItemRenderer": {
+				"selected.png": {
+					"url": "assets/ItemRenderer/selected.png",
+					"type": "image",
+					"name": "assets/ItemRenderer/selected.png"
+				}
+			},
 			"CheckBox": {
 				"checkbox_select_disabled.png": {
 					"url": "assets/CheckBox/checkbox_select_disabled.png",
@@ -1348,13 +1141,6 @@
 					"name": "assets/CheckBox/checkbox_unselect.png"
 				}
 			},
-			"ItemRenderer": {
-				"selected.png": {
-					"url": "assets/ItemRenderer/selected.png",
-					"type": "image",
-					"name": "assets/ItemRenderer/selected.png"
-				}
-			},
 			"Panel": {
 				"border.png": {
 					"url": "assets/Panel/border.png",
@@ -1367,18 +1153,6 @@
 					"name": "assets/Panel/header.png"
 				}
 			},
-			"passWord": {
-				"pwBtnBg.png": {
-					"url": "assets/passWord/pwBtnBg.png",
-					"type": "image",
-					"name": "assets/passWord/pwBtnBg.png"
-				},
-				"srbmBg.png": {
-					"url": "assets/passWord/srbmBg.png",
-					"type": "image",
-					"name": "assets/passWord/srbmBg.png"
-				}
-			},
 			"ProgressBar": {
 				"thumb.png": {
 					"url": "assets/ProgressBar/thumb.png",
@@ -1389,6 +1163,18 @@
 					"url": "assets/ProgressBar/track.png",
 					"type": "image",
 					"name": "assets/ProgressBar/track.png"
+				}
+			},
+			"passWord": {
+				"pwBtnBg.png": {
+					"url": "assets/passWord/pwBtnBg.png",
+					"type": "image",
+					"name": "assets/passWord/pwBtnBg.png"
+				},
+				"srbmBg.png": {
+					"url": "assets/passWord/srbmBg.png",
+					"type": "image",
+					"name": "assets/passWord/srbmBg.png"
 				}
 			},
 			"RadioButton": {
@@ -1411,18 +1197,6 @@
 					"url": "assets/RadioButton/radiobutton_unselect.png",
 					"type": "image",
 					"name": "assets/RadioButton/radiobutton_unselect.png"
-				}
-			},
-			"ScrollBar": {
-				"roundthumb.png": {
-					"url": "assets/ScrollBar/roundthumb.png",
-					"type": "image",
-					"name": "assets/ScrollBar/roundthumb.png"
-				},
-				"track.png": {
-					"url": "assets/ScrollBar/track.png",
-					"type": "image",
-					"name": "assets/ScrollBar/track.png"
 				}
 			},
 			"Slider": {
@@ -1457,6 +1231,18 @@
 					"url": "assets/ToggleSwitch/on.png",
 					"type": "image",
 					"name": "assets/ToggleSwitch/on.png"
+				}
+			},
+			"ScrollBar": {
+				"roundthumb.png": {
+					"url": "assets/ScrollBar/roundthumb.png",
+					"type": "image",
+					"name": "assets/ScrollBar/roundthumb.png"
+				},
+				"track.png": {
+					"url": "assets/ScrollBar/track.png",
+					"type": "image",
+					"name": "assets/ScrollBar/track.png"
 				}
 			}
 		}

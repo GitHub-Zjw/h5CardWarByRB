@@ -26,13 +26,6 @@ var game;
         }
         ViewPrepCommand.prototype.execute = function (notification) {
             var main = GameLayerManager.gameLayer().panelLayer;
-            this.facade.registerMediator(new game.RoleMediator());
-            this.facade.registerMediator(new game.BackpackMediator());
-            this.facade.registerMediator(new game.QianghuaMediator());
-            this.facade.registerMediator(new game.ZhaoXianMediator());
-            this.facade.registerMediator(new game.ChuangDangMediator());
-            this.facade.registerMediator(new game.ShopMediator());
-            this.facade.registerMediator(new game.MapMediator());
             this.facade.registerMediator(new StopBetMediator());
             this.facade.registerMediator(new betDetails.BetDetailsMediator());
             this.facade.registerMediator(new gameMethod.GameMethodMediator());
