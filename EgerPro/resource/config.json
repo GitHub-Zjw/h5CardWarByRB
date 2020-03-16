@@ -1,7 +1,6 @@
 {
 	"alias": {
 		"enJson_txt": "data/enJson.txt",
-		"template_proto": "net/template.proto",
 		"template_json": "data/template.json",
 		"yellowBtn_png": "images/yellowBtn.png",
 		"tipsBg_png": "images/mask/tipsBg.png",
@@ -54,7 +53,6 @@
 		"youRen_png": "images/mainYDD/youRen.png",
 		"zhuoZi_png": "images/mainYDD/zhuoZi.png",
 		"zuoRen_png": "images/mainYDD/zuoRen.png",
-		"prefab_png": "images/mainYDD/prefab.png",
 		"bghuizuo_png": "images/mainYDD/bghuizuo.png",
 		"bghuiyou_png": "images/mainYDD/bghuiyou.png",
 		"cehui_png": "images/mainYDD/cehui.png",
@@ -153,21 +151,23 @@
 		"win_png": "images/mainYDD/win.png",
 		"close_png": "images/mainYDD/close.png",
 		"tzxq_png": "images/bettingDetails/tzxq.png",
-		"红黑大战 -金花 - 投注详情弹窗_png": "images/bettingDetails/红黑大战 -金花 - 投注详情弹窗.png",
 		"jbbg_png": "images/gameMethod/jbbg.png",
 		"wfxq_png": "images/gameMethod/wfxq.png",
 		"huangKuang_png": "images/mainYDD/huangKuang.png",
 		"hxxp_png": "images/mainYDD/hxxp.png",
 		"numberOne_png": "images/mainYDD/numberOne.png",
 		"numberTwo_png": "images/mainYDD/numberTwo.png",
-		"红黑大战 -金花 - 开奖弹窗_png": "images/mainYDD/红黑大战 -金花 - 开奖弹窗.png",
 		"bigWinnerBg_png": "images/bigWinner/bigWinnerBg.png",
 		"bwsd_png": "images/bigWinner/bwsd.png",
 		"textBgBW_png": "images/bigWinner/textBgBW.png",
-		"红黑大战 -金花 - 本轮大赢家_png": "images/bigWinner/红黑大战 -金花 - 本轮大赢家.png",
 		"jiangBei1_png": "images/bigWinner/jiangBei1.png",
 		"jiangBei2_png": "images/bigWinner/jiangBei2.png",
-		"jiangBei3_png": "images/bigWinner/jiangBei3.png"
+		"jiangBei3_png": "images/bigWinner/jiangBei3.png",
+		"pwBtnBg_png": "images/passWord/pwBtnBg.png",
+		"srbmBg_png": "images/passWord/srbmBg.png",
+		"backg_mp3": "sound/backg.mp3",
+		"button_mp3": "sound/button.mp3",
+		"main_bgm_mp3": "sound/main_bgm.mp3"
 	},
 	"groups": {
 		"loading": [
@@ -181,7 +181,6 @@
 			"tipsBg_png",
 			"loadingCircle_png",
 			"template_json",
-			"template_proto",
 			"homeBg1_jpg",
 			"homeBg2_jpg",
 			"homeBg3_jpg",
@@ -229,7 +228,6 @@
 			"groupVS2_png",
 			"jiangbei_png",
 			"playerId_png",
-			"prefab_png",
 			"qian_png",
 			"regionDownLine_png",
 			"regionUpLine_png",
@@ -331,11 +329,13 @@
 			"hxxp_png",
 			"numberOne_png",
 			"numberTwo_png",
-			"红黑大战 -金花 - 开奖弹窗_png"
+			"backg_mp3",
+			"button_mp3",
+			"main_bgm_mp3",
+			"config_zip"
 		],
 		"betDetails": [
-			"tzxq_png",
-			"红黑大战 -金花 - 投注详情弹窗_png"
+			"tzxq_png"
 		],
 		"gameMethod": [
 			"jbbg_png",
@@ -345,10 +345,13 @@
 			"bigWinnerBg_png",
 			"bwsd_png",
 			"textBgBW_png",
-			"红黑大战 -金花 - 本轮大赢家_png",
 			"jiangBei1_png",
 			"jiangBei2_png",
 			"jiangBei3_png"
+		],
+		"passWord": [
+			"pwBtnBg_png",
+			"srbmBg_png"
 		]
 	},
 	"resources": {
@@ -407,24 +410,6 @@
 					"name": "images/bettingDetails/红黑大战 -金花 - 投注详情弹窗.png"
 				}
 			},
-			"loading": {
-				"PreLoadingBar.png": {
-					"url": "images/loading/PreLoadingBar.png",
-					"type": "image",
-					"name": "images/loading/PreLoadingBar.png",
-					"scale9grid": "5,4,4,2"
-				},
-				"PreLoadingBarBg.png": {
-					"url": "images/loading/PreLoadingBarBg.png",
-					"type": "image",
-					"name": "images/loading/PreLoadingBarBg.png"
-				},
-				"PreLoadingBg.png": {
-					"url": "images/loading/PreLoadingBg.png",
-					"type": "image",
-					"name": "images/loading/PreLoadingBg.png"
-				}
-			},
 			"bigWinner": {
 				"bigWinnerBg.png": {
 					"url": "images/bigWinner/bigWinnerBg.png",
@@ -472,6 +457,24 @@
 					"url": "images/gameMethod/wfxq.png",
 					"type": "image",
 					"name": "images/gameMethod/wfxq.png"
+				}
+			},
+			"loading": {
+				"PreLoadingBar.png": {
+					"url": "images/loading/PreLoadingBar.png",
+					"type": "image",
+					"name": "images/loading/PreLoadingBar.png",
+					"scale9grid": "5,4,4,2"
+				},
+				"PreLoadingBarBg.png": {
+					"url": "images/loading/PreLoadingBarBg.png",
+					"type": "image",
+					"name": "images/loading/PreLoadingBarBg.png"
+				},
+				"PreLoadingBg.png": {
+					"url": "images/loading/PreLoadingBg.png",
+					"type": "image",
+					"name": "images/loading/PreLoadingBg.png"
 				}
 			},
 			"main": {
@@ -1197,6 +1200,18 @@
 					"name": "images/mask/tipsBg.png"
 				}
 			},
+			"passWord": {
+				"pwBtnBg.png": {
+					"url": "images/passWord/pwBtnBg.png",
+					"type": "image",
+					"name": "images/passWord/pwBtnBg.png"
+				},
+				"srbmBg.png": {
+					"url": "images/passWord/srbmBg.png",
+					"type": "image",
+					"name": "images/passWord/srbmBg.png"
+				}
+			},
 			"scene": {
 				"homeBg1.jpg": {
 					"url": "images/scene/homeBg1.jpg",
@@ -1225,11 +1240,21 @@
 				}
 			}
 		},
-		"net": {
-			"template.proto": {
-				"url": "net/template.proto",
-				"type": "text",
-				"name": "net/template.proto"
+		"sound": {
+			"backg.mp3": {
+				"url": "sound/backg.mp3",
+				"type": "sound",
+				"name": "sound/backg.mp3"
+			},
+			"button.mp3": {
+				"url": "sound/button.mp3",
+				"type": "sound",
+				"name": "sound/button.mp3"
+			},
+			"main_bgm.mp3": {
+				"url": "sound/main_bgm.mp3",
+				"type": "sound",
+				"name": "sound/main_bgm.mp3"
 			}
 		},
 		"assets": {
@@ -1286,6 +1311,18 @@
 					"name": "assets/Panel/header.png"
 				}
 			},
+			"ProgressBar": {
+				"thumb.png": {
+					"url": "assets/ProgressBar/thumb.png",
+					"type": "image",
+					"name": "assets/ProgressBar/thumb.png"
+				},
+				"track.png": {
+					"url": "assets/ProgressBar/track.png",
+					"type": "image",
+					"name": "assets/ProgressBar/track.png"
+				}
+			},
 			"RadioButton": {
 				"radiobutton_select_disabled.png": {
 					"url": "assets/RadioButton/radiobutton_select_disabled.png",
@@ -1306,18 +1343,6 @@
 					"url": "assets/RadioButton/radiobutton_unselect.png",
 					"type": "image",
 					"name": "assets/RadioButton/radiobutton_unselect.png"
-				}
-			},
-			"ProgressBar": {
-				"thumb.png": {
-					"url": "assets/ProgressBar/thumb.png",
-					"type": "image",
-					"name": "assets/ProgressBar/thumb.png"
-				},
-				"track.png": {
-					"url": "assets/ProgressBar/track.png",
-					"type": "image",
-					"name": "assets/ProgressBar/track.png"
 				}
 			},
 			"ScrollBar": {
@@ -1366,6 +1391,11 @@
 					"name": "assets/ToggleSwitch/on.png"
 				}
 			}
+		},
+		"config_zip": {
+			"url": "assets/config/config.zip",
+			"type": "bin",
+			"name": "config_zip"
 		}
 	}
 }

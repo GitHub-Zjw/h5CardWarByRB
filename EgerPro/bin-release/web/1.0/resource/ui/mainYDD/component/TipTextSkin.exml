@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<e:Skin class="TipTextSkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+    <e:Image id="bg_png" width="62" height="30" scale9Grid="1,3,8,8"                             source="stopBet_png" anchorOffsetX="0" anchorOffsetY="0"/>
+	<e:Label id="tip_lab" text="6" size="17" horizontalCenter="0" verticalCenter="0"/>
+
+
+	<w:Config id="170af143cd4" ></w:Config>
+</e:Skin>

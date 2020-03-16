@@ -1,16 +1,13 @@
 var __reflect = (this && this.__reflect) || function (p, c, t) {
     p.__class__ = c, t ? t.push(c) : t = [c], p.__types__ = p.__types__ ? t.concat(p.__types__) : t;
 };
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
+var __extends = this && this.__extends || function __extends(t, e) { 
+ function r() { 
+ this.constructor = t;
+}
+for (var i in e) e.hasOwnProperty(i) && (t[i] = e[i]);
+r.prototype = e.prototype, t.prototype = new r();
+};
 var game;
 (function (game) {
     var MainUIYDD = (function (_super) {
@@ -40,6 +37,7 @@ var game;
             this._card1StarY = this.card1.y;
             this.regitEvent();
             this.refreshMoneyLab();
+            core.SoundUtils.getInstance().setMusicEnable(true);
         };
         MainUIYDD.prototype.regitEvent = function () {
             this.ball0_btn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBallBtnClick, this);
@@ -412,8 +410,7 @@ var game;
             }
         };
         MainUIYDD.prototype.onBetsBtn = function (e) {
-            //todo
-            TipsUtils.showTipsFromCenter("投注成功", false);
+            game.AppFacade.getInstance().sendNotification(PanelNotify.OPEN_INPUT_PASSWORD);
         };
         MainUIYDD.prototype.onBackBetsBtnClick = function (e) {
             //todo
@@ -426,6 +423,7 @@ var game;
             var btn = ent.target;
             this._selectedBall = btn;
             btn.showSelectedAmi();
+            core.SoundUtils.getInstance().playSound(2);
             switch (btn) {
                 case this.ball0_btn:
                     this._selectIndex = 0;
@@ -457,6 +455,7 @@ var game;
             // this.showBeginAmi();
             AllData.instance.dispatchEventWith(GameNotify.GAME_STAR);
             this.refreshMoneyLab();
+            core.SoundUtils.getInstance().playSound(1, 0);
         };
         MainUIYDD.prototype.onSetCardBtnClick = function () {
             AllData.instance.testSetData();

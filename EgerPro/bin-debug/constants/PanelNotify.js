@@ -70,6 +70,10 @@ var PanelNotify = (function () {
     PanelNotify.OPEN_BIG_WINNER = "PANELNOTIFY_OPEN_BIG_WINNER";
     /**关闭大奖玩家界面 */
     PanelNotify.CLOSE_BIG_WINNER = "PANELNOTIFY_CLOSE__BIG_WINNER";
+    /**打开输入密码界面 */
+    PanelNotify.OPEN_INPUT_PASSWORD = "PANELNOTIFY_OPEN_INPUT_PASSWORD";
+    /**关闭输入密码界面 */
+    PanelNotify.CLOSE_INPUT_PASSWORD = "PANELNOTIFY_CLOSE_INPUT_PASSWORD";
     return PanelNotify;
 }());
 __reflect(PanelNotify.prototype, "PanelNotify");

@@ -41,6 +41,10 @@
 			"path": "../modules/newaes"
 		},
 		{
+			"name": "jszip",
+			"path": "../modules/jszip"
+		},
+		{
 			"name": "promise",
 			"path": "./promise"
 		}

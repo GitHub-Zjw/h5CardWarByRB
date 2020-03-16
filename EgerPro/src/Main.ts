@@ -80,11 +80,10 @@ class Main extends eui.UILayer {
      */
     private createGameScene():void {
         this.testEnJson();
-
+        core.Config.init(RES.getRes('config_zip'));
         game.AppFacade.getInstance().startUp(GameLayerManager.gameLayer());
         game.AppFacade.getInstance().sendNotification(SceneNotify.OPEN_HOME);
         game.AppFacade.getInstance().sendNotification(MainNotify.OPEN_MAIN);
-
     }
 
     //测试Json加密解密

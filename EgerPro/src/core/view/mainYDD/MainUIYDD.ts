@@ -94,6 +94,7 @@ module game
 			this._card1StarY = this.card1.y;
 			this.regitEvent();
 			this.refreshMoneyLab();
+			core.SoundUtils.getInstance().setMusicEnable(true);
 		}
 
 		private regitEvent(): void
@@ -561,8 +562,7 @@ module game
 
 		private onBetsBtn(e: egret.TouchEvent): void
 		{
-			//todo
-			TipsUtils.showTipsFromCenter("投注成功", false);
+			game.AppFacade.getInstance().sendNotification(PanelNotify.OPEN_INPUT_PASSWORD);
 		}
 
 		private onBackBetsBtnClick(e: egret.TouchEvent): void
@@ -583,7 +583,7 @@ module game
 			let btn: BallBtn = ent.target;
 			this._selectedBall = btn;
 			btn.showSelectedAmi();
-
+			core.SoundUtils.getInstance().playSound(2);
 			switch (btn)
 			{//todo
 				case this.ball0_btn:
@@ -624,6 +624,8 @@ module game
 			// this.showBeginAmi();
 			AllData.instance.dispatchEventWith(GameNotify.GAME_STAR);
 			this.refreshMoneyLab();
+			
+			core.SoundUtils.getInstance().playSound(1, 0);
 		}
 		private onSetCardBtnClick(): void
 		{
