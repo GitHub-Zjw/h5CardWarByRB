@@ -104,6 +104,8 @@ declare class GameMethodPanelSkin extends eui.Skin{
 }
 declare class PrizeInfoPanelSkin extends eui.Skin{
 }
+declare class PassWordPanelSkin extends eui.Skin{
+}
 declare class StopBetPanelSkin extends eui.Skin{
 }
 declare class HomeCitySkin extends eui.Skin{

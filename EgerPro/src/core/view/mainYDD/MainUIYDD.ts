@@ -585,8 +585,7 @@ module game
 
 		private onBetsBtn(e: egret.TouchEvent): void
 		{
-			//todo
-			TipsUtils.showTipsFromCenter("投注成功", false);
+			game.AppFacade.getInstance().sendNotification(PanelNotify.OPEN_INPUT_PASSWORD);
 		}
 
 		private onBackBetsBtnClick(e: egret.TouchEvent): void

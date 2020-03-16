@@ -176,7 +176,9 @@
 		"wuxiaoniu_png": "images/mainYDD/wuxiaoniu.png",
 		"zhadanniu_png": "images/mainYDD/zhadanniu.png",
 		"niuba_png": "images/mainYDD/niuba.png",
-		"niuer_png": "images/mainYDD/niuer.png"
+		"niuer_png": "images/mainYDD/niuer.png",
+		"pwBtnBg_png": "images/passWord/pwBtnBg.png",
+		"srbmBg_png": "images/passWord/srbmBg.png"
 	},
 	"groups": {
 		"loading": [
@@ -367,6 +369,10 @@
 			"jiangBei1_png",
 			"jiangBei2_png",
 			"jiangBei3_png"
+		],
+		"passWord": [
+			"pwBtnBg_png",
+			"srbmBg_png"
 		]
 	},
 	"resources": {
@@ -462,18 +468,6 @@
 					"name": "images/bigWinner/红黑大战 -金花 - 本轮大赢家.png"
 				}
 			},
-			"gameMethod": {
-				"jbbg.png": {
-					"url": "images/gameMethod/jbbg.png",
-					"type": "image",
-					"name": "images/gameMethod/jbbg.png"
-				},
-				"wfxq.png": {
-					"url": "images/gameMethod/wfxq.png",
-					"type": "image",
-					"name": "images/gameMethod/wfxq.png"
-				}
-			},
 			"loading": {
 				"PreLoadingBar.png": {
 					"url": "images/loading/PreLoadingBar.png",
@@ -490,6 +484,18 @@
 					"url": "images/loading/PreLoadingBg.png",
 					"type": "image",
 					"name": "images/loading/PreLoadingBg.png"
+				}
+			},
+			"gameMethod": {
+				"jbbg.png": {
+					"url": "images/gameMethod/jbbg.png",
+					"type": "image",
+					"name": "images/gameMethod/jbbg.png"
+				},
+				"wfxq.png": {
+					"url": "images/gameMethod/wfxq.png",
+					"type": "image",
+					"name": "images/gameMethod/wfxq.png"
 				}
 			},
 			"main": {
@@ -1286,6 +1292,18 @@
 					"type": "image",
 					"name": "images/scene/homeBg5.jpg"
 				}
+			},
+			"passWord": {
+				"pwBtnBg.png": {
+					"url": "images/passWord/pwBtnBg.png",
+					"type": "image",
+					"name": "images/passWord/pwBtnBg.png"
+				},
+				"srbmBg.png": {
+					"url": "images/passWord/srbmBg.png",
+					"type": "image",
+					"name": "images/passWord/srbmBg.png"
+				}
 			}
 		},
 		"net": {
@@ -1306,13 +1324,6 @@
 					"url": "assets/Button/button_up.png",
 					"type": "image",
 					"name": "assets/Button/button_up.png"
-				}
-			},
-			"ItemRenderer": {
-				"selected.png": {
-					"url": "assets/ItemRenderer/selected.png",
-					"type": "image",
-					"name": "assets/ItemRenderer/selected.png"
 				}
 			},
 			"CheckBox": {
@@ -1337,6 +1348,13 @@
 					"name": "assets/CheckBox/checkbox_unselect.png"
 				}
 			},
+			"ItemRenderer": {
+				"selected.png": {
+					"url": "assets/ItemRenderer/selected.png",
+					"type": "image",
+					"name": "assets/ItemRenderer/selected.png"
+				}
+			},
 			"Panel": {
 				"border.png": {
 					"url": "assets/Panel/border.png",
@@ -1347,6 +1365,18 @@
 					"url": "assets/Panel/header.png",
 					"type": "image",
 					"name": "assets/Panel/header.png"
+				}
+			},
+			"passWord": {
+				"pwBtnBg.png": {
+					"url": "assets/passWord/pwBtnBg.png",
+					"type": "image",
+					"name": "assets/passWord/pwBtnBg.png"
+				},
+				"srbmBg.png": {
+					"url": "assets/passWord/srbmBg.png",
+					"type": "image",
+					"name": "assets/passWord/srbmBg.png"
 				}
 			},
 			"ProgressBar": {

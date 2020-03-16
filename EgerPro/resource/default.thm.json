@@ -79,6 +79,7 @@
     "resource/ui/panelYDD/GameMethod/GameMethodItemSkin.exml",
     "resource/ui/panelYDD/GameMethod/GameMethodPanelSkin.exml",
     "resource/ui/panelYDD/GameMethod/PrizeInfoPanelSkin.exml",
+    "resource/ui/panelYDD/PassWord/PassWordPanelSkin.exml",
     "resource/ui/panelYDD/StopBetPanelSkin.exml",
     "resource/ui/scene/HomeCitySkin.exml"
   ]

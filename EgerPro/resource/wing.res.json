@@ -87,16 +87,6 @@
       "name": "红黑大战 -金花 - 本轮大赢家_png"
     },
     {
-      "url": "images/gameMethod/jbbg.png",
-      "type": "image",
-      "name": "jbbg_png"
-    },
-    {
-      "url": "images/gameMethod/wfxq.png",
-      "type": "image",
-      "name": "wfxq_png"
-    },
-    {
       "url": "images/loading/PreLoadingBar.png",
       "type": "image",
       "name": "PreLoadingBar_png",
@@ -111,6 +101,16 @@
       "url": "images/loading/PreLoadingBg.png",
       "type": "image",
       "name": "PreLoadingBg_png"
+    },
+    {
+      "url": "images/gameMethod/jbbg.png",
+      "type": "image",
+      "name": "jbbg_png"
+    },
+    {
+      "url": "images/gameMethod/wfxq.png",
+      "type": "image",
+      "name": "wfxq_png"
     },
     {
       "url": "images/main/activityBtn.png",
@@ -898,6 +898,16 @@
       "name": "homeBg5_jpg"
     },
     {
+      "url": "images/passWord/pwBtnBg.png",
+      "type": "image",
+      "name": "pwBtnBg_png"
+    },
+    {
+      "url": "images/passWord/srbmBg.png",
+      "type": "image",
+      "name": "srbmBg_png"
+    },
+    {
       "url": "net/template.proto",
       "type": "text",
       "name": "template_proto"
@@ -911,11 +921,6 @@
       "url": "assets/Button/button_up.png",
       "type": "image",
       "name": "assets/Button/button_up.png"
-    },
-    {
-      "url": "assets/ItemRenderer/selected.png",
-      "type": "image",
-      "name": "assets/ItemRenderer/selected.png"
     },
     {
       "url": "assets/CheckBox/checkbox_select_disabled.png",
@@ -938,6 +943,11 @@
       "name": "assets/CheckBox/checkbox_unselect.png"
     },
     {
+      "url": "assets/ItemRenderer/selected.png",
+      "type": "image",
+      "name": "assets/ItemRenderer/selected.png"
+    },
+    {
       "url": "assets/Panel/border.png",
       "type": "image",
       "name": "assets/Panel/border.png"
@@ -946,6 +956,16 @@
       "url": "assets/Panel/header.png",
       "type": "image",
       "name": "assets/Panel/header.png"
+    },
+    {
+      "url": "assets/passWord/pwBtnBg.png",
+      "type": "image",
+      "name": "assets/passWord/pwBtnBg.png"
+    },
+    {
+      "url": "assets/passWord/srbmBg.png",
+      "type": "image",
+      "name": "assets/passWord/srbmBg.png"
     },
     {
       "url": "assets/ProgressBar/thumb.png",

@@ -19,6 +19,10 @@
 		{
 			"keys": "bigWinnerBg_png,bwsd_png,textBgBW_png,红黑大战 -金花 - 本轮大赢家_png,jiangBei1_png,jiangBei2_png,jiangBei3_png",
 			"name": "bigWinner"
+		},
+		{
+			"keys": "PassWordPanelSkin_exml",
+			"name": "passWord"
 		}
 	],
 	"resources": [
@@ -907,6 +911,11 @@
 			"url": "images/mainYDD/niuer.png",
 			"type": "image",
 			"name": "niuer_png"
+		},
+		{
+			"url": "assets/PassWordPanelSkin.exml",
+			"type": "bin",
+			"name": "PassWordPanelSkin_exml"
 		}
 	]
 }
