@@ -124,8 +124,8 @@
 			<e:Image source="stopBet_png" x="0" y="0"/>
 			<e:Image id="anBg_img2" source="红黑大战 -金花 - 开奖弹窗_png" left="0" right="0" top="0" bottom="0" visible="false"/>
 			<e:Image source="hxxp_png" x="214" y="215.33"/>
-			<e:Image id="kuangL_img" x="174.67" y="55.65" source="huangKuang_png" visible="false"/>
-			<e:Image id="kuangR_img" x="478.34" y="55.65" source="huangKuang_png" visible="false"/>
+			<e:Image id="kuangL_img" x="140" y="55" source="huangKuang_png" width="222" height="100" visible="false"/>
+			<e:Image id="kuangR_img" x="449" y="55" source="huangKuang_png" width="222" height="100" visible="false"/>
 			<e:Label text="区块" x="258" y="252" anchorOffsetX="0" anchorOffsetY="0" size="12" textColor="0xB676D7"/>
 			<e:Label text="哈希" x="391" y="252" anchorOffsetX="0" anchorOffsetY="0" size="12" textColor="0xB676D7"/>
 			<e:Label text="时间" x="526" y="252" anchorOffsetX="0" anchorOffsetY="0" size="12" textColor="0xB676D7"/>

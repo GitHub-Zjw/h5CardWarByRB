@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<e:Skin class="BigWinnerItemSkin" height="36" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing"  width="281">
-	<w:Config id="170bcf77d39" ></w:Config>
-	<e:Image source="textBgBW_png" y="2"/>
-	<e:Image x="164" source="bwsd_png" verticalCenter="0"/>
-	<e:Image id="jiangBei_img" x="2" y="5" source=""/>
-	<e:Label id="playerName_lab" text="L=" x="75" size="13" verticalCenter="0"/>
-	<e:Label id="value_lab" text="L" size="13" textColor="0xf6d478" verticalCenter="0" x="184"/>
-</e:Skin>

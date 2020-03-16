@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<e:Skin class="ClockSkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing"  width="25" height="25">
-	<w:Config id="17085cefa1b" ></w:Config>
-	<e:Image source="timer_png"/>
-	<e:Label id="surplusTime_lab" text="25" size="13.3" horizontalCenter="0" verticalCenter="0.5"/>
-</e:Skin>

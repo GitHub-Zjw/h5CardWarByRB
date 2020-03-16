@@ -408,6 +408,18 @@
 					"name": "images/bigWinner/红黑大战 -金花 - 本轮大赢家.png"
 				}
 			},
+			"gameMethod": {
+				"jbbg.png": {
+					"url": "images/gameMethod/jbbg.png",
+					"type": "image",
+					"name": "images/gameMethod/jbbg.png"
+				},
+				"wfxq.png": {
+					"url": "images/gameMethod/wfxq.png",
+					"type": "image",
+					"name": "images/gameMethod/wfxq.png"
+				}
+			},
 			"loading": {
 				"PreLoadingBar.png": {
 					"url": "images/loading/PreLoadingBar.png",
@@ -424,18 +436,6 @@
 					"url": "images/loading/PreLoadingBg.png",
 					"type": "image",
 					"name": "images/loading/PreLoadingBg.png"
-				}
-			},
-			"gameMethod": {
-				"jbbg.png": {
-					"url": "images/gameMethod/jbbg.png",
-					"type": "image",
-					"name": "images/gameMethod/jbbg.png"
-				},
-				"wfxq.png": {
-					"url": "images/gameMethod/wfxq.png",
-					"type": "image",
-					"name": "images/gameMethod/wfxq.png"
 				}
 			},
 			"mainYDD": {
@@ -1112,13 +1112,6 @@
 					"name": "assets/Button/button_up.png"
 				}
 			},
-			"ItemRenderer": {
-				"selected.png": {
-					"url": "assets/ItemRenderer/selected.png",
-					"type": "image",
-					"name": "assets/ItemRenderer/selected.png"
-				}
-			},
 			"CheckBox": {
 				"checkbox_select_disabled.png": {
 					"url": "assets/CheckBox/checkbox_select_disabled.png",
@@ -1141,6 +1134,13 @@
 					"name": "assets/CheckBox/checkbox_unselect.png"
 				}
 			},
+			"ItemRenderer": {
+				"selected.png": {
+					"url": "assets/ItemRenderer/selected.png",
+					"type": "image",
+					"name": "assets/ItemRenderer/selected.png"
+				}
+			},
 			"Panel": {
 				"border.png": {
 					"url": "assets/Panel/border.png",
@@ -1151,18 +1151,6 @@
 					"url": "assets/Panel/header.png",
 					"type": "image",
 					"name": "assets/Panel/header.png"
-				}
-			},
-			"ProgressBar": {
-				"thumb.png": {
-					"url": "assets/ProgressBar/thumb.png",
-					"type": "image",
-					"name": "assets/ProgressBar/thumb.png"
-				},
-				"track.png": {
-					"url": "assets/ProgressBar/track.png",
-					"type": "image",
-					"name": "assets/ProgressBar/track.png"
 				}
 			},
 			"passWord": {
@@ -1199,6 +1187,30 @@
 					"name": "assets/RadioButton/radiobutton_unselect.png"
 				}
 			},
+			"ProgressBar": {
+				"thumb.png": {
+					"url": "assets/ProgressBar/thumb.png",
+					"type": "image",
+					"name": "assets/ProgressBar/thumb.png"
+				},
+				"track.png": {
+					"url": "assets/ProgressBar/track.png",
+					"type": "image",
+					"name": "assets/ProgressBar/track.png"
+				}
+			},
+			"ScrollBar": {
+				"roundthumb.png": {
+					"url": "assets/ScrollBar/roundthumb.png",
+					"type": "image",
+					"name": "assets/ScrollBar/roundthumb.png"
+				},
+				"track.png": {
+					"url": "assets/ScrollBar/track.png",
+					"type": "image",
+					"name": "assets/ScrollBar/track.png"
+				}
+			},
 			"Slider": {
 				"thumb.png": {
 					"url": "assets/Slider/thumb.png",
@@ -1231,18 +1243,6 @@
 					"url": "assets/ToggleSwitch/on.png",
 					"type": "image",
 					"name": "assets/ToggleSwitch/on.png"
-				}
-			},
-			"ScrollBar": {
-				"roundthumb.png": {
-					"url": "assets/ScrollBar/roundthumb.png",
-					"type": "image",
-					"name": "assets/ScrollBar/roundthumb.png"
-				},
-				"track.png": {
-					"url": "assets/ScrollBar/track.png",
-					"type": "image",
-					"name": "assets/ScrollBar/track.png"
 				}
 			}
 		}
