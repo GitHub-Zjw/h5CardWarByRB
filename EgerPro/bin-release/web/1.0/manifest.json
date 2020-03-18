@@ -10,6 +10,7 @@
 		"libs/modules/puremvc/puremvc.min.js",
 		"libs/modules/protobuf/protobuf.min.js",
 		"libs/modules/newaes/newaes.min.js",
+		"libs/modules/jszip/jszip.min.js",
 		"promise/promise.min.js"
 	],
 	"game": [
