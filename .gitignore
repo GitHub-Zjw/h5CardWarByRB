@@ -1,3 +1,6 @@
 EgerPro/bin-debug/
 EgerPro/bin-release/
 EgerPro/libs/
+.js
+.min.js
+.d.ts

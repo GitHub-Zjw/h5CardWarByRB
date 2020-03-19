@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<e:Skin class="StopBetPanelSkin" width="812" height="375" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" >
-	<w:Config id="1708a8d5965" ></w:Config>
-	<e:Image source="stopBet_png" left="-200" right="-200" top="-200" bottom="-200"/>
-
-	<e:Image source="stopBetBtn_png" horizontalCenter="0" verticalCenter="0"/>
-</e:Skin>

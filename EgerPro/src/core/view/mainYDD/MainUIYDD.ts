@@ -124,6 +124,7 @@ module game
 			this.cardAmi_btn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onCardAmiBtnClick, this);
 			this.ballAmi_btn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBallAmiBtnClick, this);
 			this.bigWinner_btn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBigWinnerBtnClick, this);
+			this.timeTestBtn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onTimeTestBtnClick, this);
 		}
 
 		private removeEvent(): void
@@ -154,6 +155,7 @@ module game
 			this.cardAmi_btn.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onCardAmiBtnClick, this);
 			this.ballAmi_btn.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onBallAmiBtnClick, this);
 			this.bigWinner_btn.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onBigWinnerBtnClick, this);
+			this.timeTestBtn.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onTimeTestBtnClick, this);
 		}
 
 		/**
@@ -254,7 +256,8 @@ module game
 		 */
 		public SelectCard(): void
 		{
-			this.selectCardCom.showSelectAmi();
+			// this.selectCardCom.showSelectAmi();
+			AllData.instance.dispatchEventWith(GameNotify.SEND_CARD);
 		}
 
 		private SendCard(): void
@@ -618,13 +621,15 @@ module game
 		public cardAmi_btn: eui.Button;
 		public ballAmi_btn: eui.Button;
 		public bigWinner_btn: eui.Button;
+		public testLab: eui.EditableText;
+		public timeTestBtn: eui.Button;
 
 		private onBeginBtnClick(): void
 		{
 			// this.showBeginAmi();
 			AllData.instance.dispatchEventWith(GameNotify.GAME_STAR);
 			this.refreshMoneyLab();
-			
+
 			core.SoundUtils.getInstance().playSound(1, 0);
 		}
 		private onSetCardBtnClick(): void
@@ -658,6 +663,20 @@ module game
 		private onBigWinnerBtnClick(): void
 		{
 			game.AppFacade.getInstance().sendNotification(PanelNotify.OPEN_BIG_WINNER);
+		}
+
+		private onTimeTestBtnClick(): void
+		{
+			let w = Math.floor(Date.parse((new Date()).toString()) / 1000);
+			let s = parseInt(this.testLab.text);
+			let j = Math.floor((w - s) / 45);
+			let n = j + 1;
+			let t = 45-(w-(s+j*45));
+			console.log("\n\n+++++++++++++开始时间戳：" + s);
+			console.log("============当前时间戳：" + w);
+			console.log("-----------------期号：" + n);
+			console.log("*****************计时：" + t);
+			this.clock.starTiming(t);
 		}
 	}
 }

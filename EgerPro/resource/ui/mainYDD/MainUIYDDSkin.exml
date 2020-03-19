@@ -3,7 +3,7 @@
 	<w:Config id="17075f09754" ></w:Config>
 
 	<e:Group x="0" y="0" width="812" height="375">
-		<e:Image source="zhuoZi_png" x="0" y="0" visible="false"/>
+		<e:Image source="zhuoZi_png" x="0" y="0"/>
 		<e:Image x="403.68" bottom="1" source="bghuiyou_png"/>
 		<e:Image x="412" y="352" source="textBg_png" alpha="0.5"/>
 		<e:Image x="413" source="qian_png" y="273"/>
@@ -145,4 +145,6 @@
 	<e:Button id="cardAmi_btn" label="发牌" y="124" left="-3"/>
 	<e:Button id="ballAmi_btn" label="发球" y="188" left="-3"/>
 	<e:Button id="bigWinner_btn" label="大奖玩家" y="248" left="-3"/>
+	<e:Button id="timeTestBtn" label="时间戳测试" y="314" x="-4"/>
+	<e:EditableText id="testLab" width="138.33" height="27" text="19960708" x="104" y="6" anchorOffsetX="0" anchorOffsetY="0" textColor="0xea2323" size="14" touchEnabled="true"/>
 </e:Skin>
