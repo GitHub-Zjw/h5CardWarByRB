@@ -19,6 +19,7 @@ class ContinueAmiChain
 
 	/**
 	 * @param timeSpeed 检查时间间隔
+	 * @param 从第几个检查点开始
 	 */
 	public constructor(timeSpeed: number)
 	{
@@ -77,11 +78,26 @@ class ContinueAmiChain
 	/**
 	 * 开始执行
 	 */
-	public play(): void
+	public play(starPoint = 0): void
 	{
-		this._nextDoIndex = 0;
-		this._currentCheckNum = 0;
+		this._currentCheckNum = starPoint;
+		this._nextDoIndex = this.getNextDoIndexByPoint(starPoint);
 		this.startTimer();
+	}
+
+	/**
+	 * 根据检查点获取下一次会执行的回调的索引
+	 */
+	private getNextDoIndexByPoint(checkPoint: number): number
+	{
+		let len = this._doOrderIndex.length;
+		for(let i = 0; i < len; i++)
+		{
+			if (this._starPoins[this._doOrderIndex[i]].value >= this._currentCheckNum)
+			{
+				return this._starPoins[this._doOrderIndex[i]].index;
+			}
+		}
 	}
 
 	private startTimer(): void

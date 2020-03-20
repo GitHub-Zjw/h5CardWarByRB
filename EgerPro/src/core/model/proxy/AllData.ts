@@ -32,6 +32,9 @@ class AllData extends egret.EventDispatcher
 	private _myHdag: number;
 	private _myMoney: number;
 	private _playerInfo: game.PlayerInfo;
+	private _beginTimeStamp: number;		//游戏开始时间戳
+	private _qiHao: number;					//游戏期号
+
 	public constructor()
 	{
 		super();
@@ -54,6 +57,31 @@ class AllData extends egret.EventDispatcher
 		this._bigWinnerDatas = [];
 		this._myHdag = 0;
 		this._myMoney = 0;
+		this._beginTimeStamp = 0;
+	}
+
+	/**
+	 * 获取游戏进行到的时间（秒）
+	 */
+	public getCurrentSecond(): number
+	{
+		let w = Math.floor(Date.parse((new Date()).toString()) / 1000);
+		let s = this._beginTimeStamp;
+		let j = Math.floor((w - s) / 45);
+		let t = w - (s + j * 45);
+		return t;
+	}
+
+	/**
+	 * 获取当前游戏期号
+	 */
+	public getCurrentIssueNumber(): number
+	{
+		let w = Math.floor(Date.parse((new Date()).toString()) / 1000);
+		let s = this._beginTimeStamp;
+		let j = Math.floor((w - s) / 45);
+		let n = j + 1;
+		return n;
 	}
 
 
@@ -160,7 +188,7 @@ class AllData extends egret.EventDispatcher
 	}
 
 	/**
-	 * 获取中将需要移动的字符
+	 * 获取中奖需要移动的字符
 	 */
 	public getMoveChat(): string
 	{//fix
@@ -370,6 +398,7 @@ class AllData extends egret.EventDispatcher
 			let strs: string[] = [i.toString(), EnumerationType.CardType[this.getRandomInt(0, 6)], this.getRandomInt(0, 7) * 100 + " HDAG"];
 			this._gmaeMethItemTypeDatas.push(strs);
 		}
+		this._beginTimeStamp = 1575302400;
 		let bwData1: bigWinner.RankItemTypeData = { playerName: "十七项", value: "651454.68", jiangBeiNum: 1 };
 		let bwData2: bigWinner.RankItemTypeData = { playerName: "十七项", value: "65154.68", jiangBeiNum: 2 };
 		let bwData3: bigWinner.RankItemTypeData = { playerName: "十七项", value: "65126454.68", jiangBeiNum: 3 };
@@ -382,7 +411,7 @@ class AllData extends egret.EventDispatcher
 		this._hX_ItemData[2] = ["21365", "...ee7b24123<font color='#E7B846'>4</font>", "14:15:16"];
 		this._hX_ItemData[1] = ["2123", "...ee7b241234", "14:15:16"];
 		this._hX_ItemData[0] = ["2g5", "...ee7b241234", "14:15:16"];
-		this._playerInfo = {name: "旺气象", money: 669, id: "adsf"};
+		this._playerInfo = { name: "旺气象", money: 669, id: "adsf" };
 		console.log("动画数据设置完毕");
 	}
 }

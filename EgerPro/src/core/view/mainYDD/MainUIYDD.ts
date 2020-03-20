@@ -63,7 +63,8 @@ module game
 		private _cardStarXs: number[];
 		private _vsManBlackX: number;
 		private _vsManRedX: number;
-		private _cac: ContinueAmiChain
+		private _cac: ContinueAmiChain;
+		private _isFirstOpenGame: boolean = true;
 		public constructor()
 		{
 			super();
@@ -115,16 +116,11 @@ module game
 			this.bets_btn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBetsBtn, this);
 			this.withdraw_btn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBackBetsBtnClick, this);
 			AllData.instance.addEventListener(GameNotify.GAME_STAR, this.onBegigGame, this);
-			AllData.instance.addEventListener(GameNotify.STOP_BETS, this.onStopBet, this);
-			AllData.instance.addEventListener(GameNotify.SEND_CARD, this.SendCard, this);
 
 
 			this.begin_btn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBeginBtnClick, this);
 			this.setCard_btn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onSetCardBtnClick, this);
-			this.cardAmi_btn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onCardAmiBtnClick, this);
 			this.ballAmi_btn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBallAmiBtnClick, this);
-			this.bigWinner_btn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBigWinnerBtnClick, this);
-			this.timeTestBtn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onTimeTestBtnClick, this);
 		}
 
 		private removeEvent(): void
@@ -145,17 +141,12 @@ module game
 			this.bets_btn.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onBetsBtn, this);
 			this.withdraw_btn.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onBackBetsBtnClick, this);
 			AllData.instance.removeEventListener(GameNotify.GAME_STAR, this.onBegigGame, this);
-			AllData.instance.removeEventListener(GameNotify.STOP_BETS, this.onStopBet, this);
-			AllData.instance.removeEventListener(GameNotify.SEND_CARD, this.SendCard, this);
 
 
 
 			this.begin_btn.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onBeginBtnClick, this);
 			this.setCard_btn.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onSetCardBtnClick, this);
-			this.cardAmi_btn.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onCardAmiBtnClick, this);
-			this.ballAmi_btn.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onBallAmiBtnClick, this);
-			this.bigWinner_btn.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onBigWinnerBtnClick, this);
-			this.timeTestBtn.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onTimeTestBtnClick, this);
+			this.ballAmi_btn.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onBallAmiBtnClick, this)
 		}
 
 		/**
@@ -174,7 +165,85 @@ module game
 			this.regionRed.removeAllBall();
 			this.regionBlack.removeAllBall();
 			this.regionOther.removeAllBall();
-			this.showBeginAmi();
+			
+			let starPoint = 0;
+			if (this._isFirstOpenGame)
+			{
+				let currentSecond = AllData.instance.getCurrentSecond(); 
+				starPoint = currentSecond * 1000 / 50;
+				egret.log("游戏执行到" + currentSecond + "秒");
+				if (currentSecond > 4 && currentSecond < 28)
+				{//处于25秒倒计时内
+					this.playAllLine(28 - currentSecond);
+					this._isFirstOpenGame = false;
+				}
+			}
+
+			if (this._cac == null)
+			{
+				this._cac = new ContinueAmiChain(50);
+				//播放开始动画 3
+				this._cac.registerAction(this.showBeginAmi, this, 0, 60);
+				//倒计时 25
+				this._cac.registerAction(this.playAllLine, this, 0, 500);
+				//停止发牌 1.5
+				this._cac.registerAction(this.onStopBet, this, 0, 30);
+				//显示哈希选牌界面 0
+				this._cac.registerAction(this.showHXUI,this, 0, 0);
+				//设置卡牌数据 0
+				this._cac.registerAction(this.setCardData, this, 0, 0);
+
+				let len = this._cards.length;
+				let cardCenterXs = [521, 557, 596, 218, 254, 290];
+				let cardCenterY = 59;
+				let cardCenterS = 1.65;
+				//设置发牌起始位置 0
+				for (let i = 0; i < len; i++)
+				{
+					this._cac.registerAction(this.setCardStarTF, this, 0, 0, this._cards[i]);
+				}
+				//发牌 0.7
+				for (let i = 0; i < len; i++)
+				{
+					let value = { com: this._cards[i], endX: cardCenterXs[i], endY: cardCenterY, sX: cardCenterS, sY: cardCenterS, time: 200 };
+					let starTime = i == 0 ? 0 : -2;
+					let needTime = 4;
+					this._cac.registerAction(this.playSendCardMoveAmi, this, starTime, needTime, value);
+				}
+				//翻前两张牌 1
+				this._cac.registerAction(this.playOpenCardAmi, this, 10, 10);
+				//增加哈希列表动画 1
+				this.playHXItemAmi();
+				//飘字动画 1
+				this._cac.registerAction(this.playMoveLabAmi, this, 0, 20);
+				//飘完亮黄框 1
+				this._cac.registerAction(this.showWinK, this, 10, 10);
+				//隐藏选牌界面 1
+				this._cac.registerAction(this.hideHXUI, this, 20, 0);
+				//卡牌归位置 1
+				for (let i = 0; i < len; i++)
+				{
+					let value = { com: this._cards[i], endX: this._cardStarXs[i], endY: this._card1StarY, sX: 1, sY: 1, time: 1000 };
+					let needTime = 20;
+					let starTime = i == 0 ? 0 : -needTime;
+					this._cac.registerAction(this.playBackCardMoveAmi, this, starTime, needTime, value);
+				}
+				//翻黑牌第三张 1
+				this._cac.registerAction(this.showCard3OpenAmi, this, 0, 20, true);
+				//显示黑牌牌型 0.5
+				this._cac.registerAction(this.playCardResultAmiL, this, 0, 10);
+				//翻红牌第三张牌 1
+				this._cac.registerAction(this.showCard6OpenAmi, this, 0, 20, true);
+				//显示红牌牌型 0.5
+				this._cac.registerAction(this.playCardResultAmiR, this, 0, 10);
+				//显示胜利区域 3
+				this._cac.registerAction(this.showWinner, this, 0, 60);
+				//显示记录分数面板 0
+				this._cac.registerAction(this.scoreBoard.addWinner, this.scoreBoard, -10, 10);
+				//显示大赢家 2.8
+				this._cac.registerAction(this.playShowBigWinner, this, 0, 56);
+			}
+			this._cac.play(starPoint);
 		}
 
 		/**
@@ -182,6 +251,10 @@ module game
 		 */
 		public onStopBet(): void
 		{
+			if (this._isFirstOpenGame)
+			{
+				return;
+			}
 			this.mengBan_btn.visible = true;
 			let self = this;
 			game.AppFacade.getInstance().sendNotification(PanelNotify.OPEN_STOP_BET);
@@ -215,6 +288,10 @@ module game
 		 */
 		public showBeginAmi(): void
 		{
+			if (this._isFirstOpenGame)
+			{
+				this._isFirstOpenGame = false;
+			}
 			let self = this;
 			let vsLeft = this.vsManBlack_img;
 			let vsRight = this.vsManRed_img;
@@ -222,33 +299,29 @@ module game
 			vsLeft.visible = true;
 			vsRight.visible = true;
 
-			this.moveTw(vsLeft, -vsLeft.width, this._vsManBlackX, this.playAllLine);
-			this.moveTw(vsRight, this.width, this._vsManRedX, this.playAllLine);
+			this.moveTw(vsLeft, -vsLeft.width, this._vsManBlackX);
+			this.moveTw(vsRight, this.width, this._vsManRedX);
 		}
 
-		private playAllLine(): void
+		private playAllLine(surplusTime: number = 25): void
 		{
 			this.regionBlack.playLineAmi();
 			this.regionRed.playLineAmi();
 			this.regionOther.playLineAmi();
-			this.clock.starTiming(5);//fix
+			this.clock.starTiming(surplusTime);
 		}
 
-		private moveTw(uiCom: eui.UIComponent, starX: number, endX: number, call: Function): void
+		private moveTw(uiCom: eui.UIComponent, starX: number, endX: number): void
 		{
 			let self = this;
 			this.touchEnabled = false;
 			uiCom.x = starX;
 
 			let tw = egret.Tween.get(uiCom);
-			tw.to({ x: endX }, 200)
-				.wait(500)
-				.to({ x: starX }, 150)
-				.call(function ()
-				{
-					self.touchEnabled = true;
-					call.apply(self);
-				}, self);
+			tw.to({ x: endX }, 500)
+				.wait(1000)
+				.to({ x: starX }, 500)
+				.wait(1000);
 		}
 
 		/**
@@ -260,11 +333,6 @@ module game
 			AllData.instance.dispatchEventWith(GameNotify.SEND_CARD);
 		}
 
-		private SendCard(): void
-		{
-			this.setCardData();
-			this.playGetCardAmi();
-		}
 		/**
 		 * 设置卡牌数据
 		 */
@@ -278,74 +346,34 @@ module game
 			this.redResult_img.source = EnumerationType.CardType[AllData.instance.CardTypeR] + "_png";
 		}
 
-		/**
-		 * 播放发牌动画
-		 */
-		public playGetCardAmi(): void
-		{
-			this.showHXUI();
-			if (this._cac == null)
-			{
-				this._cac = new ContinueAmiChain(50);
-				let len = this._cards.length;
-				let cardCenterXs = [521, 557, 596, 218, 254, 290];
-				let cardCenterY = 59;
-				let cardCenterS = 1.65;
-				//设置发牌起始位置
-				for (let i = 0; i < len; i++)
-				{
-					this._cac.registerAction(this.setCardStarTF, this, 0, 0, this._cards[i]);
-				}
-				//发牌
-				for (let i = 0; i < len; i++)
-				{
-					let value = { com: this._cards[i], endX: cardCenterXs[i], endY: cardCenterY, sX: cardCenterS, sY: cardCenterS, time: 100 };
-					let starTime = i == 0 ? 0 : -1;
-					let needTime = 2;
-					this._cac.registerAction(this.playMoveAmi, this, starTime, needTime, value);
-				}
-				//翻前两张牌
-				this._cac.registerAction(this.playOpenCardAmi, this, 10, 4);
-				//增加哈希列表动画
-				this.playHXItemAmi();
-				//飘字动画
-				this._cac.registerAction(this.playMoveLabAmi, this, 0, 20);
-				//飘完亮黄框
-				this._cac.registerAction(this.showWinK, this, 0, 0);
-				//隐藏选牌界面
-				this._cac.registerAction(this.hideHXUI, this, 20, 0);
-				//卡牌归位置
-				for (let i = 0; i < len; i++)
-				{
-					let value = { com: this._cards[i], endX: this._cardStarXs[i], endY: this._card1StarY, sX: 1, sY: 1, time: 500 };
-					let needTime = 10;
-					let starTime = i == 0 ? 0 : -needTime;
-					this._cac.registerAction(this.playMoveAmi, this, starTime, needTime, value);
-				}
-				//翻黑牌第三张
-				this._cac.registerAction(this._cards[2].showOpenCardAmi, this._cards[2], 0, 18, true);
-				//显示黑牌牌型
-				this._cac.registerAction(this.playCardResultAmiL, this, 0, 4);
-				//翻红牌第三张牌
-				this._cac.registerAction(this._cards[5].showOpenCardAmi, this._cards[5], 0, 18, true);
-				//显示红牌牌型
-				this._cac.registerAction(this.playCardResultAmiR, this, 0, 4);
-				//显示胜利区域
-				this._cac.registerAction(this.showWinner, this, 0, 27);
-				//显示记录分数面板
-				this._cac.registerAction(this.scoreBoard.addWinner, this.scoreBoard, 0, 0);
-			}
-			this._cac.play();
-		}
-
 		private playCardResultAmiL(): void
 		{
-			egret.Tween.get(this.blackResult_img).to({ alpha: 1 }, 200);
+			if (this._isFirstOpenGame)
+			{
+				return;
+			}
+			egret.Tween.get(this.blackResult_img).to({ alpha: 1 }, 500);
 		}
 
 		private playCardResultAmiR(): void
 		{
-			egret.Tween.get(this.redResult_img).to({ alpha: 1 }, 100);
+			if (this._isFirstOpenGame)
+			{
+				return;
+			}
+			egret.Tween.get(this.redResult_img).to({ alpha: 1 }, 500);
+		}
+
+		private playShowBigWinner(): void
+		{
+			if (this._isFirstOpenGame)
+			{
+				this._isFirstOpenGame = false;
+			}
+			if (AllData.instance.BigWinnerDatas.length > 0)
+			{
+				game.AppFacade.getInstance().sendNotification(PanelNotify.OPEN_BIG_WINNER, true);
+			}
 		}
 
 		private playHXItemAmi(): void
@@ -355,14 +383,19 @@ module game
 				return;
 			}
 			let len = AllData.instance.HX_ItemData.length;
+			let speed = Math.floor(1000 / 50 / len);
 			for (let i = 1; i <= len; i++)
 			{
-				this._cac.registerAction(this.setHXListData, this, 10, 0, i);
+				this._cac.registerAction(this.setHXListData, this, speed, 0, i);
 			}
 		}
 
 		private setHXListData(count: number): void
 		{
+			if (this._isFirstOpenGame)
+			{
+				return;
+			}
 			this.hxList.dataProvider = new eui.ArrayCollection(AllData.instance.getHXItemDataByNum(count));
 		}
 
@@ -380,6 +413,10 @@ module game
 
 		private playMoveLabAmi(): void
 		{
+			if (this._isFirstOpenGame)
+			{
+				return;
+			}
 			this.move_lab.x = 436;
 			this.move_lab.y = 272;
 			this.move_lab.text = AllData.instance.getMoveChat();
@@ -410,6 +447,10 @@ module game
 
 		private showWinK(): void
 		{
+			if (this._isFirstOpenGame)
+			{
+				return;
+			}
 			let winner = AllData.instance.Winner;
 			if (winner == EnumerationType.RegionWinner.black || winner == EnumerationType.RegionWinner.blackS)
 			{
@@ -428,6 +469,10 @@ module game
 
 		private setCardStarTF(com: eui.UIComponent): void
 		{
+			if (this._isFirstOpenGame)
+			{
+				return;
+			}
 			com.scaleX = 1.65;
 			com.scaleY = 1.65;
 			com.x = 404;
@@ -437,9 +482,37 @@ module game
 
 		private playOpenCardAmi(): void
 		{
+			if (this._isFirstOpenGame)
+			{
+				this.beforePlayOpenCardAmi();
+			}
 			let cards = this._cards;
 			this.playOpenTwoCardAmi(cards[0], cards[1], cards[2]);
 			this.playOpenTwoCardAmi(cards[3], cards[4], cards[5]);
+		}
+
+		private beforePlayOpenCardAmi(): void
+		{
+			this._isFirstOpenGame = false;
+			this.showHXUI();
+			let len = this._cards.length;
+			let cardCenterXs = [521, 557, 596, 218, 254, 290];
+			for(let i = 0; i < len; i++)
+			{
+				this._cards[i].visible = true;
+				this._cards[i].x = cardCenterXs[i];
+				this._cards[i].y = 59;
+				this._cards[i].scaleX = this._cards[i].scaleY = 1.65;
+			}
+		}
+
+		private showCard(): void
+		{
+			let len = this._cards.length;
+			for(let i = 0; i < len; i++)
+			{
+				this._cards[i].visible = true;
+			}
 		}
 
 		private playOpenTwoCardAmi(card1: Card, card2: Card, card3: Card, ): void
@@ -447,12 +520,65 @@ module game
 			let starX1 = card1.x;
 			let starX3 = card3.x;
 
-			egret.Tween.get(card1).to({ x: card2.x }, 100)
+			egret.Tween.get(card1).to({ x: card2.x }, 250)
 				.call(function () { card1.openSelf(); card2.openSelf() })
-				.to({ x: starX1 }, 100);
+				.to({ x: starX1 }, 250);
 
-			egret.Tween.get(card3).to({ x: card2.x }, 100)
-				.to({ x: starX3 }, 100);
+			egret.Tween.get(card3).to({ x: card2.x }, 250)
+				.to({ x: starX3 }, 250);
+		}
+
+		/**
+		 * 发牌移动动画
+		 */
+		public playSendCardMoveAmi(value: { com: eui.UIComponent, endX: number, endY: number, sX: number, sY: number, time: number }): void
+		{
+			if (this._isFirstOpenGame)
+			{
+				return;
+			}
+			this.playMoveAmi(value);
+		}
+		
+		/**
+		 * 发牌移动动画
+		 */
+		public playBackCardMoveAmi(value: { com: eui.UIComponent, endX: number, endY: number, sX: number, sY: number, time: number }): void
+		{
+			if (this._isFirstOpenGame)
+			{
+				return;
+			}
+			this.playMoveAmi(value);
+		}
+		/**
+		 * 翻黑牌第三张牌
+		 */
+		public showCard3OpenAmi(): void
+		{
+			if (this._isFirstOpenGame)
+			{
+				this.showCard();
+				this._isFirstOpenGame = false;
+				this.setCardData();
+				this.card1.openSelf();
+				this.card2.openSelf();
+				this.card4.openSelf();
+				this.card5.openSelf();
+			}
+			this.card3.showOpenCardAmi(true);
+		}
+
+		/**
+		 * 翻红牌第三张牌
+		 */
+		public showCard6OpenAmi(): void
+		{
+			if (this._isFirstOpenGame)
+			{
+				return;
+			}
+			this.card6.showOpenCardAmi(true);
 		}
 
 		/**
@@ -466,6 +592,10 @@ module game
 
 		public showWinner(): void
 		{
+			if (this._isFirstOpenGame)
+			{
+				return;
+			}
 			let winner: EnumerationType.RegionWinner = AllData.instance.Winner;
 			switch (winner)
 			{
@@ -621,8 +751,6 @@ module game
 		public cardAmi_btn: eui.Button;
 		public ballAmi_btn: eui.Button;
 		public bigWinner_btn: eui.Button;
-		public testLab: eui.EditableText;
-		public timeTestBtn: eui.Button;
 
 		private onBeginBtnClick(): void
 		{
@@ -637,10 +765,7 @@ module game
 			AllData.instance.testSetData();
 			this.setCardData();
 		}
-		private onCardAmiBtnClick(): void
-		{
-			this.playGetCardAmi();
-		}
+		
 		private onBallAmiBtnClick(): void
 		{
 			let ballNum = AllData.instance.getRandomInt(1, 10);
@@ -659,24 +784,6 @@ module game
 			this.regionBlack.addBall(ballIndexs, ballId);
 			this.regionOther.addBall(ballIndexs, ballId);
 			this.refreshPlayerMoney();
-		}
-		private onBigWinnerBtnClick(): void
-		{
-			game.AppFacade.getInstance().sendNotification(PanelNotify.OPEN_BIG_WINNER);
-		}
-
-		private onTimeTestBtnClick(): void
-		{
-			let w = Math.floor(Date.parse((new Date()).toString()) / 1000);
-			let s = parseInt(this.testLab.text);
-			let j = Math.floor((w - s) / 45);
-			let n = j + 1;
-			let t = 45-(w-(s+j*45));
-			console.log("\n\n+++++++++++++开始时间戳：" + s);
-			console.log("============当前时间戳：" + w);
-			console.log("-----------------期号：" + n);
-			console.log("*****************计时：" + t);
-			this.clock.starTiming(t);
 		}
 	}
 }

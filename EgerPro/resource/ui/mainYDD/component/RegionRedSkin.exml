@@ -8,12 +8,12 @@
 						<e:Object alpha="{0}"/>
 					</tween:props>
 				</tween:Set>
-				<tween:To duration="350">
+				<tween:To duration="400">
 					<tween:props>
 						<e:Object alpha="{1}"/>
 					</tween:props>
 				</tween:To>
-				<tween:To duration="350">
+				<tween:To duration="400">
 					<tween:props>
 						<e:Object alpha="{0}"/>
 					</tween:props>

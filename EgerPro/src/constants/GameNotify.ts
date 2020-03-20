@@ -24,4 +24,7 @@ class GameNotify
 	 * 发牌
 	 */
 	public static SEND_CARD: string = "GameNotify_SEND_CARD";
+
+	/**首次打开游戏 */
+	public static FIRST_OPEN_GAME: string = "FIRST_OPEN_GAME";
 }

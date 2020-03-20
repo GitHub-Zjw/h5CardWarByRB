@@ -123,11 +123,6 @@
 			"name": "jiangBei3_png"
 		},
 		{
-			"url": "net/template.proto",
-			"type": "bin",
-			"name": "template_proto"
-		},
-		{
 			"url": "images/passWord/pwBtnBg.png",
 			"type": "image",
 			"name": "pwBtnBg_png"

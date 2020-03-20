@@ -72,18 +72,17 @@ class Card extends eui.Component
 		if (isBig)
 		{
 			let tw = egret.Tween.get(this.card_img);
-			tw.to({ scaleX: 1.2, scaleY: 1.2 }, 150)
+			tw.to({ scaleX: 1.2, scaleY: 1.2 }, 200)
 				.wait(100)
-				.to({ scaleX: 0 }, 100)
+				.to({ scaleX: 0 }, 200)
 				.call(function ()
 				{
 					self.card_img.source = cardSource;
 				})
-				// .to({ source: cardSource })
-				.to({ scaleX: 1.2 }, 100)
-				.wait(300)
-				.to({ scaleX: 1, scaleY: 1 }, 150)
-			returnValue = 9;
+				.to({ scaleX: 1.2 }, 200)
+				.wait(100)
+				.to({ scaleX: 1, scaleY: 1 }, 200)
+			returnValue = 1000;
 		}
 		else
 		{

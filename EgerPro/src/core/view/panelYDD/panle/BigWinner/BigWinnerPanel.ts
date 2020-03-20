@@ -28,7 +28,7 @@ module bigWinner
 			let self = this;
 			setTimeout(function() {
 				self.closePanel();
-			}, 5000);
+			}, 2800);
 		}
 
 		private listData(): eui.ArrayCollection
