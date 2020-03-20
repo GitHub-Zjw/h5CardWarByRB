@@ -28,6 +28,7 @@ class StopBetMediator extends BasePanelMediator
 				{
 					this._stopBetPanel = new StopBetPanel();
 				}
+				core.SoundUtils.getInstance().playSound(9);
 				this.showUI(this._stopBetPanel, false, 0, 0, 2);
 				break;
 			case PanelNotify.CLOSE_STOP_BET:

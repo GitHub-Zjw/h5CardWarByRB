@@ -17,21 +17,22 @@ module EnumerationType
 	}
 	/**
 	 * 牌形
+	 * 数值是音效id
 	 */
 	export enum CardType
 	{
 		/**散牌 */
-		"sanPai",
+		"sanPai" = 12,
 		/**顺子 */
-		"sunZi",
+		"sunZi" = 13,
 		/**顺金 */
-		"sunJin",
+		"sunJin" = 14,
 		/**对子 */
-		"duiZi",
+		"duiZi" = 15,
 		/**豹子 */
-		"baoZi",
+		"baoZi" = 16,
 		/**金花 */
-		"jinHua"
+		"jinHua" = 17
 	}
 	/**
 	 * 胜利区域

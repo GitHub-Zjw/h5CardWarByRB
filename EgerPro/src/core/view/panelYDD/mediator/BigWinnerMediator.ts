@@ -51,6 +51,7 @@ module bigWinner
 				this._bigWinnerPanel = new BigWinnerPanel();
 			}
 			this.showUIInCenter(this._bigWinnerPanel, true, 1);
+			core.SoundUtils.getInstance().playSound(3);
 		}
 
 		private stLoadProcess(): void

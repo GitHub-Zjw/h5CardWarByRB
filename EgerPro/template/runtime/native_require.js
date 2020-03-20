@@ -15,10 +15,10 @@ var game_file_list = [
 	"libs/modules/jszip/jszip.js",
 	"promise/promise.js",
 	"bin-debug/core/view/mainYDD/component/BaseRegion.js",
-	"bin-debug/core/model/ResourceProxyBase.js",
 	"bin-debug/core/view/mainYDD/component/RegionRed.js",
 	"bin-debug/core/view/panelYDD/BasePanelMediator.js",
 	"bin-debug/core/view/panelYDD/baseComponent/ZjwComponent.js",
+	"bin-debug/core/model/ResourceProxyBase.js",
 	"bin-debug/core/view/mainYDD/component/BallCom.js",
 	"bin-debug/analyzer/ProtoAnalyzer.js",
 	"bin-debug/component/EButton.js",
@@ -56,7 +56,7 @@ var game_file_list = [
 	"bin-debug/core/view/SceneManager.js",
 	"bin-debug/core/view/mainYDD/MainUIYDD.js",
 	"bin-debug/core/view/mainYDD/component/BallBtn.js",
-	"bin-debug/LoadingUI.js",
+	"bin-debug/utils/UtilsClass/TipsUtils.js",
 	"bin-debug/Main.js",
 	"bin-debug/core/view/mainYDD/component/Card.js",
 	"bin-debug/core/view/mainYDD/component/Clock.js",
@@ -98,7 +98,7 @@ var game_file_list = [
 	"bin-debug/utils/api/ErgodicUtils.js",
 	"bin-debug/utils/api/ObjectPool.js",
 	"bin-debug/utils/UtilsClass/BitmapBlink.js",
-	"bin-debug/utils/UtilsClass/TipsUtils.js",
+	"bin-debug/LoadingUI.js",
 	//----auto game_file_list end----
 ];
 

@@ -1,27 +1,17 @@
 /**
  * 该文件为工具自动生成，请勿自行修改。
  **/
-class RobotNameConfig {
-	/**
-	 * 编号
-	 **/
-	public id:number;
-	/**
-	 * 名称
-	 **/
-	public name:string;
-}
 class SoundConfig {
 	/**
 	 * 物品ID
 	 **/
 	public id:number;
 	/**
-	 * 音乐说明
+	 * 物品名称
 	 **/
 	public tips:string;
 	/**
-	 * 音乐文件Key
+	 * 物品说明
 	 **/
 	public soundName:string;
 	/**

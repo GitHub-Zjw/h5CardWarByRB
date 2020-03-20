@@ -42,6 +42,16 @@
       "name": "yellowBtn_png"
     },
     {
+      "url": "images/bettingDetails/tzxq.png",
+      "type": "image",
+      "name": "tzxq_png"
+    },
+    {
+      "url": "images/bettingDetails/红黑大战 -金花 - 投注详情弹窗.png",
+      "type": "image",
+      "name": "images/bettingDetails/红黑大战 -金花 - 投注详情弹窗.png"
+    },
+    {
       "url": "images/bigWinner/bigWinnerBg.png",
       "type": "image",
       "name": "bigWinnerBg_png"
@@ -77,16 +87,6 @@
       "name": "images/bigWinner/红黑大战 -金花 - 本轮大赢家.png"
     },
     {
-      "url": "images/bettingDetails/tzxq.png",
-      "type": "image",
-      "name": "tzxq_png"
-    },
-    {
-      "url": "images/bettingDetails/红黑大战 -金花 - 投注详情弹窗.png",
-      "type": "image",
-      "name": "images/bettingDetails/红黑大战 -金花 - 投注详情弹窗.png"
-    },
-    {
       "url": "images/gameMethod/jbbg.png",
       "type": "image",
       "name": "jbbg_png"
@@ -111,16 +111,6 @@
       "url": "images/loading/PreLoadingBg.png",
       "type": "image",
       "name": "PreLoadingBg_png"
-    },
-    {
-      "url": "images/mask/loadingCircle.png",
-      "type": "image",
-      "name": "loadingCircle_png"
-    },
-    {
-      "url": "images/mask/tipsBg.png",
-      "type": "image",
-      "name": "tipsBg_png"
     },
     {
       "url": "images/mainYDD/0.1.png",
@@ -703,6 +693,16 @@
       "name": "card5_2_png"
     },
     {
+      "url": "images/mask/loadingCircle.png",
+      "type": "image",
+      "name": "loadingCircle_png"
+    },
+    {
+      "url": "images/mask/tipsBg.png",
+      "type": "image",
+      "name": "tipsBg_png"
+    },
+    {
       "url": "images/passWord/pwBtnBg.png",
       "type": "image",
       "name": "pwBtnBg_png"
@@ -718,14 +718,99 @@
       "name": "backg_mp3"
     },
     {
+      "url": "sound/background1.mp3",
+      "type": "sound",
+      "name": "background1_mp3"
+    },
+    {
+      "url": "sound/baozi.mp3",
+      "type": "sound",
+      "name": "baozi_mp3"
+    },
+    {
       "url": "sound/button.mp3",
       "type": "sound",
       "name": "button_mp3"
     },
     {
+      "url": "sound/cmxz.mp3",
+      "type": "sound",
+      "name": "cmxz_mp3"
+    },
+    {
+      "url": "sound/daojishi.mp3",
+      "type": "sound",
+      "name": "daojishi_mp3"
+    },
+    {
+      "url": "sound/dgcmxz1.mp3",
+      "type": "sound",
+      "name": "dgcmxz1_mp3"
+    },
+    {
+      "url": "sound/dgcmxz2.mp3",
+      "type": "sound",
+      "name": "dgcmxz2_mp3"
+    },
+    {
+      "url": "sound/duizi.mp3",
+      "type": "sound",
+      "name": "duizi_mp3"
+    },
+    {
+      "url": "sound/dyjtc.mp3",
+      "type": "sound",
+      "name": "dyjtc_mp3"
+    },
+    {
+      "url": "sound/fdzpyx.mp3",
+      "type": "sound",
+      "name": "fdzpyx_mp3"
+    },
+    {
+      "url": "sound/fpyx.mp3",
+      "type": "sound",
+      "name": "fpyx_mp3"
+    },
+    {
+      "url": "sound/jinhua.mp3",
+      "type": "sound",
+      "name": "jinhua_mp3"
+    },
+    {
+      "url": "sound/kjpkdp.mp3",
+      "type": "sound",
+      "name": "kjpkdp_mp3"
+    },
+    {
+      "url": "sound/ksxz.mp3",
+      "type": "sound",
+      "name": "ksxz_mp3"
+    },
+    {
       "url": "sound/main_bgm.mp3",
       "type": "sound",
       "name": "main_bgm_mp3"
+    },
+    {
+      "url": "sound/sanpai.mp3",
+      "type": "sound",
+      "name": "sanpai_mp3"
+    },
+    {
+      "url": "sound/shunjin.mp3",
+      "type": "sound",
+      "name": "shunjin_mp3"
+    },
+    {
+      "url": "sound/shunzi.mp3",
+      "type": "sound",
+      "name": "shunzi_mp3"
+    },
+    {
+      "url": "sound/tzxz.mp3",
+      "type": "sound",
+      "name": "tzxz_mp3"
     },
     {
       "url": "assets/Button/button_down.png",
@@ -843,7 +928,7 @@
       "name": "assets/ToggleSwitch/on.png"
     },
     {
-      "url": "assets/config/config.zip",
+      "url": "data/config/config.zip",
       "type": "bin",
       "name": "config_zip"
     }

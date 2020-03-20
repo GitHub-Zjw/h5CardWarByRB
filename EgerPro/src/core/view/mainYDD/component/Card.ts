@@ -69,6 +69,7 @@ class Card extends eui.Component
 		let cardSource = this._cardImgS;
 		let returnValue: number = 0;
 		let self = this;
+		core.SoundUtils.getInstance().playSound(8);
 		if (isBig)
 		{
 			let tw = egret.Tween.get(this.card_img);

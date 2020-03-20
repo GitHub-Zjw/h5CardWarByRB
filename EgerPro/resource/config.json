@@ -139,7 +139,24 @@
 		"card4_8_png": "images/mainYDD/cards/card4_8.png",
 		"card4_9_png": "images/mainYDD/cards/card4_9.png",
 		"card5_1_png": "images/mainYDD/cards/card5_1.png",
-		"card5_2_png": "images/mainYDD/cards/card5_2.png"
+		"card5_2_png": "images/mainYDD/cards/card5_2.png",
+		"background1_mp3": "sound/background1.mp3",
+		"baozi_mp3": "sound/baozi.mp3",
+		"cmxz_mp3": "sound/cmxz.mp3",
+		"daojishi_mp3": "sound/daojishi.mp3",
+		"dgcmxz1_mp3": "sound/dgcmxz1.mp3",
+		"dgcmxz2_mp3": "sound/dgcmxz2.mp3",
+		"duizi_mp3": "sound/duizi.mp3",
+		"dyjtc_mp3": "sound/dyjtc.mp3",
+		"fpyx_mp3": "sound/fpyx.mp3",
+		"jinhua_mp3": "sound/jinhua.mp3",
+		"kjpkdp_mp3": "sound/kjpkdp.mp3",
+		"ksxz_mp3": "sound/ksxz.mp3",
+		"sanpai_mp3": "sound/sanpai.mp3",
+		"shunjin_mp3": "sound/shunjin.mp3",
+		"shunzi_mp3": "sound/shunzi.mp3",
+		"tzxz_mp3": "sound/tzxz.mp3",
+		"fdzpyx_mp3": "sound/fdzpyx.mp3"
 	},
 	"groups": {
 		"loading": [
@@ -160,7 +177,6 @@
 			"backg_mp3",
 			"button_mp3",
 			"main_bgm_mp3",
-			"config_zip",
 			"0.1_png",
 			"1_png",
 			"10_png",
@@ -276,7 +292,25 @@
 			"card4_8_png",
 			"card4_9_png",
 			"card5_1_png",
-			"card5_2_png"
+			"card5_2_png",
+			"background1_mp3",
+			"baozi_mp3",
+			"cmxz_mp3",
+			"daojishi_mp3",
+			"dgcmxz1_mp3",
+			"dgcmxz2_mp3",
+			"duizi_mp3",
+			"dyjtc_mp3",
+			"fpyx_mp3",
+			"jinhua_mp3",
+			"kjpkdp_mp3",
+			"ksxz_mp3",
+			"sanpai_mp3",
+			"shunjin_mp3",
+			"shunzi_mp3",
+			"tzxz_mp3",
+			"config_zip",
+			"fdzpyx_mp3"
 		],
 		"betDetails": [
 			"tzxq_png"
@@ -342,6 +376,18 @@
 				"type": "image",
 				"name": "images/yellowBtn.png"
 			},
+			"bettingDetails": {
+				"tzxq.png": {
+					"url": "images/bettingDetails/tzxq.png",
+					"type": "image",
+					"name": "images/bettingDetails/tzxq.png"
+				},
+				"红黑大战 -金花 - 投注详情弹窗.png": {
+					"url": "images/bettingDetails/红黑大战 -金花 - 投注详情弹窗.png",
+					"type": "image",
+					"name": "images/bettingDetails/红黑大战 -金花 - 投注详情弹窗.png"
+				}
+			},
 			"bigWinner": {
 				"bigWinnerBg.png": {
 					"url": "images/bigWinner/bigWinnerBg.png",
@@ -379,18 +425,6 @@
 					"name": "images/bigWinner/红黑大战 -金花 - 本轮大赢家.png"
 				}
 			},
-			"bettingDetails": {
-				"tzxq.png": {
-					"url": "images/bettingDetails/tzxq.png",
-					"type": "image",
-					"name": "images/bettingDetails/tzxq.png"
-				},
-				"红黑大战 -金花 - 投注详情弹窗.png": {
-					"url": "images/bettingDetails/红黑大战 -金花 - 投注详情弹窗.png",
-					"type": "image",
-					"name": "images/bettingDetails/红黑大战 -金花 - 投注详情弹窗.png"
-				}
-			},
 			"gameMethod": {
 				"jbbg.png": {
 					"url": "images/gameMethod/jbbg.png",
@@ -419,18 +453,6 @@
 					"url": "images/loading/PreLoadingBg.png",
 					"type": "image",
 					"name": "images/loading/PreLoadingBg.png"
-				}
-			},
-			"mask": {
-				"loadingCircle.png": {
-					"url": "images/mask/loadingCircle.png",
-					"type": "image",
-					"name": "images/mask/loadingCircle.png"
-				},
-				"tipsBg.png": {
-					"url": "images/mask/tipsBg.png",
-					"type": "image",
-					"name": "images/mask/tipsBg.png"
 				}
 			},
 			"mainYDD": {
@@ -1017,6 +1039,18 @@
 					}
 				}
 			},
+			"mask": {
+				"loadingCircle.png": {
+					"url": "images/mask/loadingCircle.png",
+					"type": "image",
+					"name": "images/mask/loadingCircle.png"
+				},
+				"tipsBg.png": {
+					"url": "images/mask/tipsBg.png",
+					"type": "image",
+					"name": "images/mask/tipsBg.png"
+				}
+			},
 			"passWord": {
 				"pwBtnBg.png": {
 					"url": "images/passWord/pwBtnBg.png",
@@ -1036,15 +1070,100 @@
 				"type": "sound",
 				"name": "sound/backg.mp3"
 			},
+			"background1.mp3": {
+				"url": "sound/background1.mp3",
+				"type": "sound",
+				"name": "sound/background1.mp3"
+			},
+			"baozi.mp3": {
+				"url": "sound/baozi.mp3",
+				"type": "sound",
+				"name": "sound/baozi.mp3"
+			},
 			"button.mp3": {
 				"url": "sound/button.mp3",
 				"type": "sound",
 				"name": "sound/button.mp3"
 			},
+			"cmxz.mp3": {
+				"url": "sound/cmxz.mp3",
+				"type": "sound",
+				"name": "sound/cmxz.mp3"
+			},
+			"daojishi.mp3": {
+				"url": "sound/daojishi.mp3",
+				"type": "sound",
+				"name": "sound/daojishi.mp3"
+			},
+			"dgcmxz1.mp3": {
+				"url": "sound/dgcmxz1.mp3",
+				"type": "sound",
+				"name": "sound/dgcmxz1.mp3"
+			},
+			"dgcmxz2.mp3": {
+				"url": "sound/dgcmxz2.mp3",
+				"type": "sound",
+				"name": "sound/dgcmxz2.mp3"
+			},
+			"duizi.mp3": {
+				"url": "sound/duizi.mp3",
+				"type": "sound",
+				"name": "sound/duizi.mp3"
+			},
+			"dyjtc.mp3": {
+				"url": "sound/dyjtc.mp3",
+				"type": "sound",
+				"name": "sound/dyjtc.mp3"
+			},
+			"fdzpyx.mp3": {
+				"url": "sound/fdzpyx.mp3",
+				"type": "sound",
+				"name": "sound/fdzpyx.mp3"
+			},
+			"fpyx.mp3": {
+				"url": "sound/fpyx.mp3",
+				"type": "sound",
+				"name": "sound/fpyx.mp3"
+			},
+			"jinhua.mp3": {
+				"url": "sound/jinhua.mp3",
+				"type": "sound",
+				"name": "sound/jinhua.mp3"
+			},
+			"kjpkdp.mp3": {
+				"url": "sound/kjpkdp.mp3",
+				"type": "sound",
+				"name": "sound/kjpkdp.mp3"
+			},
+			"ksxz.mp3": {
+				"url": "sound/ksxz.mp3",
+				"type": "sound",
+				"name": "sound/ksxz.mp3"
+			},
 			"main_bgm.mp3": {
 				"url": "sound/main_bgm.mp3",
 				"type": "sound",
 				"name": "sound/main_bgm.mp3"
+			},
+			"sanpai.mp3": {
+				"url": "sound/sanpai.mp3",
+				"type": "sound",
+				"name": "sound/sanpai.mp3"
+			},
+			"shunjin.mp3": {
+				"url": "sound/shunjin.mp3",
+				"type": "sound",
+				"name": "sound/shunjin.mp3"
+			},
+			"shunzi.mp3": {
+				"url": "sound/shunzi.mp3",
+				"type": "sound",
+				"name": "sound/shunzi.mp3"
+			},
+			"tzxz.mp3": {
+				"url": "sound/tzxz.mp3",
+				"type": "sound",
+				"name": "sound/tzxz.mp3"
 			}
 		},
 		"assets": {
@@ -1183,7 +1302,7 @@
 			}
 		},
 		"config_zip": {
-			"url": "assets/config/config.zip",
+			"url": "data/config/config.zip",
 			"type": "bin",
 			"name": "config_zip"
 		}

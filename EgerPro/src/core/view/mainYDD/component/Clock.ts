@@ -70,6 +70,10 @@ class Clock extends eui.Component implements eui.UIComponent
 		else
 		{
 			this.surplusTime_lab.text = this._surplusTime.toString();
+			if (this._surplusTime == 3)
+			{
+				core.SoundUtils.getInstance().playSound(5);
+			}
 		}
 	}
 }

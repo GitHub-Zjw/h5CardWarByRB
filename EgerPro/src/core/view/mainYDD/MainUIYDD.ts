@@ -165,11 +165,11 @@ module game
 			this.regionRed.removeAllBall();
 			this.regionBlack.removeAllBall();
 			this.regionOther.removeAllBall();
-			
+
 			let starPoint = 0;
 			if (this._isFirstOpenGame)
 			{
-				let currentSecond = AllData.instance.getCurrentSecond(); 
+				let currentSecond = AllData.instance.getCurrentSecond();
 				starPoint = currentSecond * 1000 / 50;
 				egret.log("游戏执行到" + currentSecond + "秒");
 				if (currentSecond > 4 && currentSecond < 28)
@@ -189,7 +189,7 @@ module game
 				//停止发牌 1.5
 				this._cac.registerAction(this.onStopBet, this, 0, 30);
 				//显示哈希选牌界面 0
-				this._cac.registerAction(this.showHXUI,this, 0, 0);
+				this._cac.registerAction(this.showHXUI, this, 0, 0);
 				//设置卡牌数据 0
 				this._cac.registerAction(this.setCardData, this, 0, 0);
 
@@ -301,6 +301,7 @@ module game
 
 			this.moveTw(vsLeft, -vsLeft.width, this._vsManBlackX);
 			this.moveTw(vsRight, this.width, this._vsManRedX);
+			core.SoundUtils.getInstance().playSound(10);
 		}
 
 		private playAllLine(surplusTime: number = 25): void
@@ -309,6 +310,7 @@ module game
 			this.regionRed.playLineAmi();
 			this.regionOther.playLineAmi();
 			this.clock.starTiming(surplusTime);
+			core.SoundUtils.getInstance().playSound(11);
 		}
 
 		private moveTw(uiCom: eui.UIComponent, starX: number, endX: number): void
@@ -348,20 +350,25 @@ module game
 
 		private playCardResultAmiL(): void
 		{
-			if (this._isFirstOpenGame)
-			{
-				return;
-			}
-			egret.Tween.get(this.blackResult_img).to({ alpha: 1 }, 500);
+			this.changeAlpha(this.blackResult_img, 500);
+			let soundId = AllData.instance.CardTypeB;
+			core.SoundUtils.getInstance().playSound(soundId);
 		}
 
 		private playCardResultAmiR(): void
+		{
+			this.changeAlpha(this.redResult_img, 500);
+			let soundId = AllData.instance.CardTypeR;
+			core.SoundUtils.getInstance().playSound(soundId);
+		}
+
+		private changeAlpha(com: eui.Image, time: number): void
 		{
 			if (this._isFirstOpenGame)
 			{
 				return;
 			}
-			egret.Tween.get(this.redResult_img).to({ alpha: 1 }, 500);
+			egret.Tween.get(com).to({ alpha: 1 }, time);
 		}
 
 		private playShowBigWinner(): void
@@ -497,7 +504,7 @@ module game
 			this.showHXUI();
 			let len = this._cards.length;
 			let cardCenterXs = [521, 557, 596, 218, 254, 290];
-			for(let i = 0; i < len; i++)
+			for (let i = 0; i < len; i++)
 			{
 				this._cards[i].visible = true;
 				this._cards[i].x = cardCenterXs[i];
@@ -509,7 +516,7 @@ module game
 		private showCard(): void
 		{
 			let len = this._cards.length;
-			for(let i = 0; i < len; i++)
+			for (let i = 0; i < len; i++)
 			{
 				this._cards[i].visible = true;
 			}
@@ -537,11 +544,12 @@ module game
 			{
 				return;
 			}
+			core.SoundUtils.getInstance().playSound(7);
 			this.playMoveAmi(value);
 		}
-		
+
 		/**
-		 * 发牌移动动画
+		 * 还牌移动动画
 		 */
 		public playBackCardMoveAmi(value: { com: eui.UIComponent, endX: number, endY: number, sX: number, sY: number, time: number }): void
 		{
@@ -677,6 +685,7 @@ module game
 					let indexs: number[] = [this._selectIndex];
 					let id: string[] = [AllData.instance.playerInfo.id];
 					let btn = ent.target;
+					core.SoundUtils.getInstance().playSound(4);
 					switch (btn)
 					{
 						case this.regionRed_btn:
@@ -716,7 +725,6 @@ module game
 			let btn: BallBtn = ent.target;
 			this._selectedBall = btn;
 			btn.showSelectedAmi();
-			core.SoundUtils.getInstance().playSound(2);
 			switch (btn)
 			{//todo
 				case this.ball0_btn:
@@ -765,7 +773,7 @@ module game
 			AllData.instance.testSetData();
 			this.setCardData();
 		}
-		
+
 		private onBallAmiBtnClick(): void
 		{
 			let ballNum = AllData.instance.getRandomInt(1, 10);
