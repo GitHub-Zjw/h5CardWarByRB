@@ -67,11 +67,11 @@ module game
 		private _cardStarXs: number[];
 		private _vsManBlackX: number;
 		private _vsManRedX: number;
-		private _cac: ContinueAmiChain
+		private _cac: ContinueAmiChain;
+		private _isFirstOpenGame: boolean = true;
 		public constructor()
 		{
 			super();
-			// this.addEventListener(eui.UIEvent.COMPLETE, this.initView, this);
 			this.skinName = "resource/ui/mainYDD/MainUIYDDSkin.exml";
 			this._cards = [];//[this.card1, this.card2, this.card3, this.card4, this.card5, this.card6, this.card7, this.card8, this.card9, this.card10];
 			this._cardStarXs = [];//[this.card1.x, this.card2.x,this.card3.x,this.card4.x,this.card5.x,this.card6.x,this.card7.x,this.card8.x,this.card9.x,this.card10.x,];
@@ -123,16 +123,11 @@ module game
 			this.bets_btn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBetsBtn, this);
 			this.withdraw_btn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBackBetsBtnClick, this);
 			AllData.instance.addEventListener(GameNotify.GAME_STAR, this.onBegigGame, this);
-			AllData.instance.addEventListener(GameNotify.STOP_BETS, this.onStopBet, this);
-			AllData.instance.addEventListener(GameNotify.SEND_CARD, this.SendCard, this);
 
 
 			this.begin_btn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBeginBtnClick, this);
 			this.setCard_btn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onSetCardBtnClick, this);
-			this.cardAmi_btn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onCardAmiBtnClick, this);
-			this.ballAmi_btn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBallAmiBtnClick, this);
-			this.bigWinner_btn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBigWinnerBtnClick, this);
-		}
+			this.ballAmi_btn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBallAmiBtnClick, this);		}
 
 		private removeEvent(): void
 		{
@@ -152,17 +147,12 @@ module game
 			this.bets_btn.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onBetsBtn, this);
 			this.withdraw_btn.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onBackBetsBtnClick, this);
 			AllData.instance.removeEventListener(GameNotify.GAME_STAR, this.onBegigGame, this);
-			AllData.instance.removeEventListener(GameNotify.STOP_BETS, this.onStopBet, this);
-			AllData.instance.removeEventListener(GameNotify.SEND_CARD, this.SendCard, this);
-			this.removeEventListener(eui.UIEvent.COMPLETE, this.initView, this);
 
 
 
 			this.begin_btn.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onBeginBtnClick, this);
 			this.setCard_btn.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onSetCardBtnClick, this);
-			this.cardAmi_btn.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onCardAmiBtnClick, this);
 			this.ballAmi_btn.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onBallAmiBtnClick, this);
-			this.bigWinner_btn.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onBigWinnerBtnClick, this);
 		}
 
 		/**

@@ -60,14 +60,7 @@
 
 
 		<ns1:Clock id="clock" y="97.34" skinName="ClockSkin" horizontalCenter="-3" visible="false"/>
-		<e:Button id="mengBan_btn" label="" x="403" y="262" icon="mengBan_png" anchorOffsetY="0" height="114" anchorOffsetX="0" width="244" visible="false">
-			<e:skinName>
-				<e:Skin states="up,down,disabled">
-				<e:Image width="100%" height="100%" source="mengBan_png"/>
-				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
-				</e:Skin>
-			</e:skinName>
-		</e:Button>
+
 
 
 
@@ -111,6 +104,14 @@
 		<e:Button id="regionBlack_btn" label="" x="104" y="121" anchorOffsetX="0" width="163" anchorOffsetY="0" height="147" alpha="0"/>
 		<e:Button id="regionRed_btn" label="" x="550" y="122" anchorOffsetX="0" width="153" anchorOffsetY="0" height="147" alpha="0"/>
 		<e:Button id="regionOther_btn" label="" x="304" y="188" anchorOffsetX="0" width="192" anchorOffsetY="0" height="74" alpha="0"/>
+		<e:Button id="mengBan_btn" label="" x="403" y="262" icon="mengBan_png" anchorOffsetY="0" height="114" anchorOffsetX="0" width="244">
+			<e:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="mengBan_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+			</e:skinName>
+		</e:Button>
 		<e:Label text="投注金额" x="436" y="274" textColor="0xa09eac" size="11.3" fontFamily="Microsoft YaHei"/>
 		<e:Label text="投注详情" x="265" textColor="0xdf8cfb" size="13" top="6" touchEnabled="false"/>
 		<e:Label text="投注记录" x="363" textColor="0xDF8CFB" size="13" top="6" touchEnabled="false"/>
@@ -160,7 +161,7 @@
 	</e:Group>
 	<e:Button id="begin_btn" label="开始动画" y="0" left="-3"/>
 	<e:Button id="setCard_btn" label="重置数据" y="62.34" left="-3"/>
-	<e:Button id="cardAmi_btn" label="发牌" y="124" left="-3"/>
+
 	<e:Button id="ballAmi_btn" label="发球" y="188" left="-3"/>
-	<e:Button id="bigWinner_btn" label="大奖玩家" y="248" left="-3"/>
+
 </e:Skin>
