@@ -41,4 +41,9 @@ class Scoreboard extends eui.Component implements eui.UIComponent
 		this.wpOther_lab.text = wp.other + "%";
 	}
 
+	/**
+	 * 记录历史胜利
+	 */
+	public addAllWinner(): void
+	{}
 }

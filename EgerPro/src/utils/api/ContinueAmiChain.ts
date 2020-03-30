@@ -17,6 +17,7 @@ class ContinueAmiChain
 	private _doOrderIndex: number[];				//执行顺序索引
 	private _nextDoIndex: number;					//下一次执行函数的索引，与 _doOrderIndex 对应
 
+	private _isPause: boolean;
 	/**
 	 * @param timeSpeed 检查时间间隔
 	 * @param 从第几个检查点开始
@@ -32,6 +33,7 @@ class ContinueAmiChain
 		this._doOrderIndex = [];
 		this._currentCheckNum = 0;
 		this._nextDoIndex = 0;
+		this._isPause = false;
 	}
 
 	/**
@@ -124,8 +126,24 @@ class ContinueAmiChain
 	//发牌具体时间控制
 	private onTimer(e: egret.TimerEvent): void
 	{
+		if (this._isPause)
+		{
+			return;
+		}
 		this.checkToDo();
 		this._currentCheckNum++;
+	}
+
+	/**暂停 */
+	public pause(): void
+	{
+		this._isPause = true;
+	}
+
+	/**继续 */
+	public continue(): void
+	{
+		this._isPause = false;
 	}
 
 	/**判断，执行函数 */

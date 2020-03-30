@@ -29,6 +29,10 @@
 			"name": "socket"
 		},
 		{
+			"name": "jsencrypt",
+			"path":"../modules/jsencrypt"
+		},
+		{
 			"name": "puremvc",
 			"path": "../modules/puremvc"
 		},

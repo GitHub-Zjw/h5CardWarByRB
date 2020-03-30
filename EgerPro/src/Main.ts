@@ -51,7 +51,7 @@ class Main extends eui.UILayer {
         let sym2 = Symbol("key"); // 可选的字符串key
         
     }
-
+    
     private async loadRes()
     {
         let self = this;
@@ -84,6 +84,21 @@ class Main extends eui.UILayer {
         game.AppFacade.getInstance().startUp(GameLayerManager.gameLayer());
         game.AppFacade.getInstance().sendNotification(SceneNotify.OPEN_HOME);
         game.AppFacade.getInstance().sendNotification(MainNotify.OPEN_MAIN);
+        
+        this.stage.addEventListener(egret.Event.ACTIVATE, this.onStageFocusInEvent, this);
+        this.stage.addEventListener(egret.Event.DEACTIVATE, this.onStageFocusOutEvent, this);
+    }
+
+    private onStageFocusInEvent(e: egret.Event): void
+    {
+        GameLayerManager.gameLayer().IsHaveFocus = true;
+        game.AppFacade.getInstance().sendNotification(SysNotify.GET_FOCUS);
+    }
+
+    private onStageFocusOutEvent(e: egret.Event): void
+    {
+        GameLayerManager.gameLayer().IsHaveFocus = false;
+        game.AppFacade.getInstance().sendNotification(SysNotify.LOSS_FOCUS);
     }
 
     //测试Json加密解密

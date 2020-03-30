@@ -14,6 +14,10 @@ class SysNotify{
         //服务器返回数据
         public static SERVER_BACK_DATA: string = "SERVER_BACK_DATA";
 
+		/**游戏获取焦点 */
+		public static GET_FOCUS: string = "GET_FOCUS";
+		/**游戏失去焦点 */
+		public static LOSS_FOCUS: string = "GET_FOCUS";
 	}	
 
 

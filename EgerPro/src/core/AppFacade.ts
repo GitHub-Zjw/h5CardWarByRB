@@ -27,5 +27,15 @@ module game {
 			this.sendNotification(AppFacade.STARTUP, rootView);
 			this.removeCommand(AppFacade.STARTUP); //PureMVC初始化完成，注销STARUP命令
 		}
+
+		private _httpManager: HttpManager;
+		public get HttpManager(): HttpManager
+		{
+			if (this._httpManager == null)
+			{
+				this._httpManager = new HttpManager();
+			}
+			return this._httpManager;
+		}
 	}
 }

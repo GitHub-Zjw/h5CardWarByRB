@@ -41,7 +41,7 @@ class Card extends eui.Component
 	public setCard(index: number): void
 	{
 		this._color = AllData.instance.cardColor[index];
-		this._cardNum = AllData.instance.cardNums[index];
+		this._cardNum = AllData.instance.CardNums[index];
 		this.card_img.source = "card0_0_png";
 		this._cardImgS = "card" + this._color + "_" + this._cardNum + "_png";
 	}
@@ -64,7 +64,7 @@ class Card extends eui.Component
 	 * @param isBig 是否要变大
 	 * @param return 播放动画需要的时长，x
 	 */
-	public showOpenCardAmi(isBig: boolean): number
+	public showOpenCardAmi(isBig: boolean, call?: Function): number
 	{
 		let cardSource = this._cardImgS;
 		let returnValue: number = 0;
@@ -83,6 +83,12 @@ class Card extends eui.Component
 				.to({ scaleX: 1.2 }, 200)
 				.wait(100)
 				.to({ scaleX: 1, scaleY: 1 }, 200)
+				.call(function(){
+					if (call)
+					{
+						call.apply(game.MainManager.mainUI);
+					}
+				})
 			returnValue = 1000;
 		}
 		else

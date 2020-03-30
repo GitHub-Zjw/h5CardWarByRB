@@ -4,6 +4,7 @@ class Clock extends eui.Component implements eui.UIComponent
 
 	private _timer: egret.Timer;
 	private _surplusTime: number = 25;
+	private _call: Function;
 	public constructor()
 	{
 		super();
@@ -29,12 +30,13 @@ class Clock extends eui.Component implements eui.UIComponent
 	/**
 	 * 开始计时
 	 */
-	public starTiming(timeNum: number = 25): void
+	public starTiming(timeNum: number = 25, call?: Function): void
 	{
 		this.visible = true;
 		this._surplusTime = timeNum;
 		this.surplusTime_lab.text = this._surplusTime.toString();
 		this.startTimer(1000);
+		this._call = call;
 	}
 
 	private startTimer(time: number): void
@@ -65,6 +67,7 @@ class Clock extends eui.Component implements eui.UIComponent
 		{
 			this.visible = false;
 			AllData.instance.dispatchEventWith(GameNotify.STOP_BETS);
+			this._call.apply(game.MainManager.mainUI);
 			this.removeTimer();
 		}
 		else

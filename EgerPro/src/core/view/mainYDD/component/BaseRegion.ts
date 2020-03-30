@@ -2,13 +2,15 @@ class BaseRegion extends eui.Component implements eui.UIComponent
 {
 	public line_img: eui.Image;
 	public showLine: egret.tween.TweenGroup;
-	public _balls: BallCom[];
 	public win_img: eui.Image;
 
+	private _balls: BallCom[];
+	private _myBalls: BallCom[];
 	public constructor()
 	{
 		super();
 		this._balls = [];
+		this._myBalls = [];
 		this.addEventListener(eui.UIEvent.COMPLETE, this.onUIComplete, this);
 	}
 
@@ -66,27 +68,31 @@ class BaseRegion extends eui.Component implements eui.UIComponent
 	/**
 	 * 增加小球
 	 * @param indexs 小球类型数组
+	 * @param playIds 玩家id
+	 * @param boolean 是否是玩家本人
 	 */
 	public addBall(indexs: number[],playIds: string[], isSelf: boolean = false): void
 	{
 		let len = indexs.length;
 		for (let i = 0; i < len; i++)
 		{
-			let ball: BallCom = ObjectPool.instance.pop(BallCom.NAME, indexs[i], playIds[i]);
+			let ball: BallCom = ObjectPool.instance.pop(BallCom.NAME);
+			ball.setData(indexs[i], playIds[i]);
 			this.addChild(ball);
 			if (isSelf)
 			{
 				ball.x = this.SelfStarPointX;
 				ball.y = this.SelfStarPointY;
+				this._myBalls.push(ball);
 			}
 			else
 			{
 				ball.x = this.StarPointX;
 				ball.y = this.StarPointY;
+				this._balls.push(ball);
 			}
 			let pEnd = this.getEndPoint();
 			ball.showJoinAmi(pEnd.x, pEnd.y);
-			this._balls.push(ball);
 		}
 	}
 
@@ -99,8 +105,36 @@ class BaseRegion extends eui.Component implements eui.UIComponent
 		for (let i = 0; i < len; i++)
 		{
 			ObjectPool.instance.push(this._balls[i], "hideBall");
+			this.removeChild(this._balls[i]);
 		}
 		this._balls = [];
+		this.withdrawBall();
+	}
+
+	/**
+	 * 撤回小球
+	 */
+	public withdrawBall(): boolean
+	{
+		let len = this._myBalls.length;
+		if (len == 0)
+		{
+			return false;
+		}
+		for (let i = 0; i < len; i++)
+		{
+			ObjectPool.instance.push(this._myBalls[i], "hideBall");
+			this.removeChild(this._myBalls[i]);
+		}
+		this._myBalls = [];
+		return true;
+	}
+
+	/**投注成功 */
+	public onBetSucceed(): void
+	{
+		this._balls.push.apply(this._balls, this._myBalls);
+		this._myBalls = [];
 	}
 
 	/**

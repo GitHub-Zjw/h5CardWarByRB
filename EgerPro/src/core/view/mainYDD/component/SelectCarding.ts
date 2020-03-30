@@ -63,7 +63,7 @@ class SelectCarding extends eui.Component implements eui.UIComponent
 		}
 		else
 		{
-			if (AllData.instance.cardNums.length > 0)//服务器有牌了
+			if (AllData.instance.CardNums.length > 0)//服务器有牌了
 			{
 				AllData.instance.dispatchEventWith(GameNotify.SEND_CARD);
 				this.removeTimer();

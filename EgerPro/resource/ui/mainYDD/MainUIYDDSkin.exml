@@ -109,6 +109,9 @@
 		<e:Label id="moneyNumB_lab" text="0" y="121.34" size="10.6" horizontalCenter="-203" textColor="0xfac33f"/>
 		<e:Label id="moneyNumR_lab" text="0" y="121.34" size="10.6" textColor="0xFAC33F" horizontalCenter="137"/>
 		<e:Label id="moneyNumO_lab" text="0" y="168.34" size="10.6" textColor="0xFAC33F" horizontalCenter="-30"/>
+		<e:Label id="myBetBlack_lab" text="0" y="120.67" size="10.6" horizontalCenter="-138.5" textColor="0xFAC33F"/>
+		<e:Label id="myBetRed_lab" text="0" y="121.33" size="10.6" textColor="0xFAC33F" horizontalCenter="201" x="10"/>
+		<e:Label id="myBetOther_lab" text="0" y="168.34" size="10.6" textColor="0xFAC33F" horizontalCenter="24"/>
 		<e:Label id="myHdag_lab" text="0 HDAG" y="290" size="8.67" textColor="0xFAC33F" right="331"/>
 		<e:Label id="myMoney_lab" text="0" y="356" size="8.67" textColor="0xFAC33F" x="428"/>
 		<ns1:SelectCarding id="selectCardCom" skinName="SelectCardingSkin" horizontalCenter="0" verticalCenter="0" visible="false"/>

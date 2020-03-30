@@ -12,10 +12,14 @@ class BallCom extends eui.Component implements eui.UIComponent
 	 * 小球
 	 * @param sourceIndex 小球索引
 	 */
-	public constructor(sourceIndex: number, id: string)
+	public constructor()
 	{
 		super();
 		this.skinName = "resource/ui/mainYDD/component/BallComSkin.exml";
+	}
+
+	public setData(sourceIndex: number, id: string): void
+	{
 		this._sourceIndex = sourceIndex;
 		this._playerId = id;
 	}

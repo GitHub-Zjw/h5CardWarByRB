@@ -22,6 +22,8 @@ class GameLayerManager extends eui.UILayer{
     // 加载遮罩层 场景切换的时候加载资源UI
     public loadLayer:eui.UILayer = new eui.UILayer();
 
+    public IsHaveFocus: boolean = false;
+    
     private static _instance:GameLayerManager; 
 
     //构造方法

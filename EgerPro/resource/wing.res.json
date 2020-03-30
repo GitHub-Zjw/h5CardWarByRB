@@ -42,16 +42,6 @@
       "name": "yellowBtn_png"
     },
     {
-      "url": "images/bettingDetails/tzxq.png",
-      "type": "image",
-      "name": "tzxq_png"
-    },
-    {
-      "url": "images/bettingDetails/红黑大战 -金花 - 投注详情弹窗.png",
-      "type": "image",
-      "name": "images/bettingDetails/红黑大战 -金花 - 投注详情弹窗.png"
-    },
-    {
       "url": "images/bigWinner/bigWinnerBg.png",
       "type": "image",
       "name": "bigWinnerBg_png"
@@ -87,14 +77,14 @@
       "name": "images/bigWinner/红黑大战 -金花 - 本轮大赢家.png"
     },
     {
-      "url": "images/gameMethod/jbbg.png",
+      "url": "images/bettingDetails/tzxq.png",
       "type": "image",
-      "name": "jbbg_png"
+      "name": "tzxq_png"
     },
     {
-      "url": "images/gameMethod/wfxq.png",
+      "url": "images/bettingDetails/红黑大战 -金花 - 投注详情弹窗.png",
       "type": "image",
-      "name": "wfxq_png"
+      "name": "images/bettingDetails/红黑大战 -金花 - 投注详情弹窗.png"
     },
     {
       "url": "images/loading/PreLoadingBar.png",
@@ -111,6 +101,16 @@
       "url": "images/loading/PreLoadingBg.png",
       "type": "image",
       "name": "PreLoadingBg_png"
+    },
+    {
+      "url": "images/gameMethod/jbbg.png",
+      "type": "image",
+      "name": "jbbg_png"
+    },
+    {
+      "url": "images/gameMethod/wfxq.png",
+      "type": "image",
+      "name": "wfxq_png"
     },
     {
       "url": "images/mainYDD/0.1.png",
@@ -693,16 +693,6 @@
       "name": "card5_2_png"
     },
     {
-      "url": "images/mask/loadingCircle.png",
-      "type": "image",
-      "name": "loadingCircle_png"
-    },
-    {
-      "url": "images/mask/tipsBg.png",
-      "type": "image",
-      "name": "tipsBg_png"
-    },
-    {
       "url": "images/passWord/pwBtnBg.png",
       "type": "image",
       "name": "pwBtnBg_png"
@@ -711,6 +701,16 @@
       "url": "images/passWord/srbmBg.png",
       "type": "image",
       "name": "srbmBg_png"
+    },
+    {
+      "url": "images/mask/loadingCircle.png",
+      "type": "image",
+      "name": "loadingCircle_png"
+    },
+    {
+      "url": "images/mask/tipsBg.png",
+      "type": "image",
+      "name": "tipsBg_png"
     },
     {
       "url": "sound/backg.mp3",
@@ -868,6 +868,16 @@
       "name": "assets/ProgressBar/track.png"
     },
     {
+      "url": "assets/ScrollBar/roundthumb.png",
+      "type": "image",
+      "name": "assets/ScrollBar/roundthumb.png"
+    },
+    {
+      "url": "assets/ScrollBar/track.png",
+      "type": "image",
+      "name": "assets/ScrollBar/track.png"
+    },
+    {
       "url": "assets/RadioButton/radiobutton_select_disabled.png",
       "type": "image",
       "name": "assets/RadioButton/radiobutton_select_disabled.png"
@@ -886,16 +896,6 @@
       "url": "assets/RadioButton/radiobutton_unselect.png",
       "type": "image",
       "name": "assets/RadioButton/radiobutton_unselect.png"
-    },
-    {
-      "url": "assets/ScrollBar/roundthumb.png",
-      "type": "image",
-      "name": "assets/ScrollBar/roundthumb.png"
-    },
-    {
-      "url": "assets/ScrollBar/track.png",
-      "type": "image",
-      "name": "assets/ScrollBar/track.png"
     },
     {
       "url": "assets/Slider/thumb.png",

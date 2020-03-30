@@ -1,5 +1,6 @@
 module betDetails
 {
+	/**下注详细信息 */
 	export interface BetDetailsTypeData
 	{
 		/**玩家名 */
@@ -10,6 +11,7 @@ module betDetails
 		money: number;
 	}
 
+	/**下注详细信息 */
 	export interface BetRecordsTypeData
 	{
 		/**输赢true：赢 */

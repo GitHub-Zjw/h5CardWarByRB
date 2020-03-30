@@ -15,11 +15,20 @@ class AllData extends egret.EventDispatcher
 	/**小球大小 */
 	public ballValue: number[];
 
+	private _winHxStr: string;
+	private _moveChat: string;
+	private _moveNum: number;
+	private _playerAddBNum: number;
+	private _playerAddRNum: number;
+	private _playerAddONum: number;
 	private _cardColor: EnumerationType.Color[];
 	private _cardNums: number[];
 	private _bleckMoneyNum: number;
 	private _redMoneyNum: number;
 	private _otherMoneyNum: number;
+	private _myBetBlackNum: number;
+	private _myBetRedNum: number;
+	private _myBetOtherNum: number;
 	private _winner: EnumerationType.RegionWinner;
 	private _redCardType: EnumerationType.CardType;
 	private _blackCardType: EnumerationType.CardType;
@@ -33,7 +42,6 @@ class AllData extends egret.EventDispatcher
 	private _myMoney: number;
 	private _playerInfo: game.PlayerInfo;
 	private _beginTimeStamp: number;		//游戏开始时间戳
-	private _qiHao: number;					//游戏期号
 
 	public constructor()
 	{
@@ -58,8 +66,185 @@ class AllData extends egret.EventDispatcher
 		this._myHdag = 0;
 		this._myMoney = 0;
 		this._beginTimeStamp = 0;
+		this._playerAddBNum = 0;
+		this._playerAddRNum = 0;
+		this._playerAddONum = 0;
+		this._myBetBlackNum = 0;
+		this._myBetRedNum = 0;
+		this._myBetOtherNum = 0;
+		this._playerInfo = {id: "2333",name: "",money: 666};
 	}
 
+	/**
+	 * 设置游戏首页信息
+	 */
+	public setHomePageData(jhgame: game.JhGameData): void
+	{
+		this._myMoney = jhgame.Data.m;
+		this._myHdag = jhgame.Data.bm;
+		let len = jhgame.Data.w.list.length;
+		for (let i = 0; i < len; i++)
+		{//fix分数面板
+		}
+	}
+
+	/**
+	 * 
+	 * 设置本局投注金额消息
+	 */
+	public setBetMoney(betMoneyData: game.BetMoneyData): void
+	{
+		this._bleckMoneyNum = betMoneyData.Data.h.z;
+		this._redMoneyNum = betMoneyData.Data.h.z;
+		this._otherMoneyNum = betMoneyData.Data.l.z;
+	}
+
+	/**
+	 * 玩家本人下注消息返回
+	 */
+	public setBetInfo(betInfo: game.BetInfoData): void
+	{
+		if (betInfo.Code == 200)
+		{
+			this._bleckMoneyNum += this._myBetBlackNum;
+			this._redMoneyNum += this._myBetRedNum;
+			this._otherMoneyNum += this._myBetOtherNum;
+			this._playerAddBNum += this._myBetBlackNum;
+			this._playerAddRNum += this._myBetRedNum;
+			this._playerAddONum += this._myBetOtherNum;
+			this._myHdag = this._myHdag + this._myBetOtherNum + this._myBetBlackNum + this._myBetRedNum;
+			this._myBetRedNum = 0;
+			this._myBetBlackNum = 0;
+			this._myBetOtherNum = 0;
+		}
+	}
+
+	/**
+	 * 玩家撤回投注
+	 */
+	public withdrawBet(): void
+	{
+		this._myBetRedNum = 0;
+		this._myBetBlackNum = 0;
+		this._myBetOtherNum = 0;
+	}
+
+	/**
+	 * 卡牌结果
+	 */
+	public setGameResult(resultData: game.GameResultData): void
+	{
+		let blackCards: string[] = resultData.Data.block.p;
+		let redCards: string[] = resultData.Data.red.p;
+		for (let i = 0; i < 3; i++)
+		{
+			this._cardNums[i] = this.parseCardNum(blackCards[i]);
+			this._cardNums[i + 3] = this.parseCardNum(redCards[i]);
+			this._cardColor[i] = this.parseCardColor(blackCards[i]);
+			this._cardColor[i + 3] = this.parseCardColor(redCards[i]);
+			let hsData = resultData.Data.hash[0];
+			for (let k = 1; k <= 3; k++)
+			{
+				this._hX_ItemData[i][k] = hsData["k_" + k].toString();
+			}
+		}
+		this._blackCardType = this.parseCardType(resultData.Data.block.m);
+		this._redCardType = this.parseCardType(resultData.Data.red.m);
+		//fix
+	}
+
+	private parseCardNum(str: string): number
+	{
+		let endChat = str.charAt(str.length - 1);
+		switch (endChat)
+		{
+			case "A":
+				return 10;
+			case "B":
+				return 11;
+			case "C":
+				return 12;
+			case "D":
+				return 13;
+		}
+		return parseInt(endChat);
+	}
+
+	private parseCardColor(str: string): EnumerationType.Color
+	{
+		let endChat = str.charAt(str.length - 2);
+		switch (endChat)
+		{
+			case "0": return EnumerationType.Color.heiTao;
+			case "1": return EnumerationType.Color.hongTao;
+			case "2": return EnumerationType.Color.meiHua;
+			case "3": return EnumerationType.Color.fangKuai;
+		}
+	}
+
+	private parseCardType(num: number): EnumerationType.CardType
+	{
+		switch (num)
+		{
+			case 10: return EnumerationType.CardType.baoZi;
+			case 9: return EnumerationType.CardType.sunJin;
+			case 8: return EnumerationType.CardType.jinHua;
+			case 7: return EnumerationType.CardType.sunZi;
+			case 6: return EnumerationType.CardType.duiZi;
+		}
+	}
+
+	/**本人已投注黑色金额 */
+	public get PlayerBetBlack(): number
+	{
+		return this._playerAddBNum;
+	}
+
+	/**本人已投住红色金额 */
+	public get PlayerBetRed(): number
+	{
+		return this._playerAddRNum;
+	}
+
+	/**本人已投注紫色金额 */
+	public get PlayerBetOther(): number
+	{
+		return this._playerAddONum;
+	}
+
+	/**本人黑色下注金额 */
+	public get MyBetBlackNum(): number
+	{
+		return this._myBetBlackNum;
+	}
+
+	/**本人红色下注金额 */
+	public get MyBetRedNum(): number
+	{
+		return this._myBetRedNum;
+	}
+
+	/**本人幸运一击下注金额 */
+	public get MyBetOtherNum(): number
+	{
+		return this._myBetOtherNum;
+	}
+
+	/**增加投注黑色区域 */
+	public playerAddBetB(addNum: number): void
+	{
+		this._myBetBlackNum += addNum;
+	}
+	/**增加投注红色区域 */
+	public playerAddBetR(addNum: number): void
+	{
+		this._myBetRedNum += addNum;
+	}
+	/**增加投注紫色区域 */
+	public playerAddBetO(addNum: number): void
+	{
+		this._myBetOtherNum += addNum;
+	}
 	/**
 	 * 获取游戏进行到的时间（秒）
 	 */
@@ -92,7 +277,7 @@ class AllData extends egret.EventDispatcher
 	 */
 	public getMoneyIsEnough(value: number, isShowTip: boolean = false): boolean
 	{
-		let afUse = AllData.instance.MyMoney - value;
+		let afUse = AllData.instance.MyMoney - value - this._myBetRedNum - this._myBetOtherNum - this._myBetBlackNum;
 		if (afUse >= 0)
 		{
 			return true;
@@ -167,40 +352,40 @@ class AllData extends egret.EventDispatcher
 	 * 获取 1 位置的哈希字符串
 	 */
 	public getOneHXStr(): string
-	{//fix
-		return "2,2,2,2,2,2,2,2,2,2,2";
+	{
+		return "0,2,4,6,8,a,c,e";
 	}
 
 	/**
 	 * 获取 2 位置的哈希字符串
 	 */
 	public getTwoHXStr(): string
-	{//fix
-		return "2,2,2,2,2,2,2,2,2,2,4,2";
+	{
+		return "1,3,5,7,9,b,d,f";
 	}
 
 	/**
 	 * 获取胜利位置的哈希字符串
 	 */
 	public getWinHXstr(): string
-	{//fix
-		return "2,2,2,2,2,2,2,2,2,2,<font color='#F9C834'>4</font>,2";
+	{
+		return this._winHxStr;//"2,2,2,2,2,2,2,2,2,2,<font color='#F9C834'>4</font>,2";
 	}
 
 	/**
 	 * 获取中奖需要移动的字符
 	 */
 	public getMoveChat(): string
-	{//fix
-		return "4";
+	{
+		return this._moveChat;
 	}
 
 	/**
 	 * 获取第几个字符中奖
 	 */
 	public getMoveNum(): number
-	{//fix
-		return 11;
+	{
+		return this._moveNum;
 	}
 
 	/**
@@ -351,7 +536,7 @@ class AllData extends egret.EventDispatcher
 	/**
 	 * 当前卡牌数字
 	 */
-	public get cardNums(): number[]
+	public get CardNums(): number[]
 	{
 		return this._cardNums;
 	}

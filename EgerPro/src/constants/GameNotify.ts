@@ -27,4 +27,16 @@ class GameNotify
 
 	/**首次打开游戏 */
 	public static FIRST_OPEN_GAME: string = "FIRST_OPEN_GAME";
+
+	/**游戏首页信息获取*/
+	public static HOME_PAGE_DATA: string = "HOME_PAGE_DATA";
+
+	/**本局投注金额消息 */
+	public static BET_MONEY: string = "BET_MONEY";
+
+	/**玩家下注消息 */
+	public static BET: string = "BET";
+
+	/**游戏结果消息 */
+	public static GAME_RESULT: string = "GAME_RESULT";
 }

@@ -58,7 +58,9 @@ module passWord
 					game.AppFacade.getInstance().sendNotification(PanelNotify.CLOSE_INPUT_PASSWORD);
 					break;
 				case this.ok_btn:
-					console.log("密码是：" + this.input_elab.text);//to do
+					let data = AllData.instance;
+					BetInfoRequest.sendBetRequestData(data.MyBetBlackNum, data.MyBetRedNum, data.MyBetOtherNum);
+					game.AppFacade.getInstance().sendNotification(PanelNotify.CLOSE_INPUT_PASSWORD);
 					break;
 			}
 		}
