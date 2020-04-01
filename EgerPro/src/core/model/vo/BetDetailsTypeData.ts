@@ -6,19 +6,19 @@ module betDetails
 		/**玩家名 */
 		playerName: string;
 		/**胜利区域 */
-		region: EnumerationType.RegionWinner;
+		region: EnumerationType.RegionWinner[];
 		/**投注大小 */
-		money: number;
+		money: string;
 	}
 
 	/**下注详细信息 */
 	export interface BetRecordsTypeData
 	{
-		/**输赢true：赢 */
-		isWin: boolean;
+		/**输赢*/
+		isWin: string;
 		/**胜利区域 */
-		region: EnumerationType.RegionWinner;
+		region: EnumerationType.RegionWinner[];
 		/**投注大小 */
-		money: number;
+		money: string;
 	}
 }

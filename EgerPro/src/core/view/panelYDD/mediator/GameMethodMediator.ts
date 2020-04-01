@@ -13,7 +13,9 @@ module gameMethod
 		{
 			return [
 				PanelNotify.OPEN_GAME_METHOD,
-				PanelNotify.CLOSE_GAME_METHOD
+				PanelNotify.CLOSE_GAME_METHOD,
+				GameNotify.BIG_WINNER,
+				GameNotify.BIG_WINNER_OVER
 			];
 		}
 		private _betDetailsPanel: GameMethodPanel;
@@ -44,6 +46,19 @@ module gameMethod
 				case PanelNotify.CLOSE_GAME_METHOD:
 					this.closePanel(1);
 					break;
+				case GameNotify.BIG_WINNER:
+					if (this._betDetailsPanel)
+					{
+						this._betDetailsPanel.refreshView();
+						this._betDetailsPanel.IsGetDataing = false;
+					}
+					break;
+				case GameNotify.BIG_WINNER_OVER:
+					if (this._betDetailsPanel)
+					{
+						this._betDetailsPanel.setDataOver();
+					}
+					break;
 			}
 		}
 
@@ -56,6 +71,7 @@ module gameMethod
 					this._betDetailsPanel = new GameMethodPanel();
 				}
 				this.showUIInCenter(this._betDetailsPanel, true, 1);
+				TodayBigWinnerRequest.sendTodayBigWinnerRequest();
 			}
 			else
 			{

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<e:Skin class="SelectBtnSkin" states="up,down,disabled" minHeight="50" minWidth="100" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" width="128" height="36">
+
+
+	<e:Rect width="126" height="34" anchorOffsetX="0" anchorOffsetY="0" fillColor="0x142C89" fillAlpha="0" strokeColor="0x3976F5" strokeWeight="1" ellipseWidth="4" horizontalCenter="0" verticalCenter="0"/>
+	<e:Label id="labelDisplay" text="拒绝" size="15" horizontalCenter="0" verticalCenter="0" textColor="0x1b76f5"/>
+
+	<w:Config id="1712e29c3e4" ></w:Config>
+</e:Skin>

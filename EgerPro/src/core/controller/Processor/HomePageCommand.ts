@@ -40,7 +40,7 @@ module game
 				/**红球占比 */
 				red: string;
 				/**黑球占比 */
-				bolck: string;
+				block: string;
 				/**幸运一击占比 */
 				lucky: string;
 			}

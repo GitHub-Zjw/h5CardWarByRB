@@ -15,6 +15,15 @@ class RequestsNotify
 	/**投注详情 */
 	public static betdetails: string = "betdetails";
 
+	/**投注记录 */
+	public static userbet: string = "userbet";
+
 	/**密码验证 */
 	public static checkpwd: string = "checkpwd";
+
+	/**今日大赢家 */
+	public static bigwin: string = "bigwin";
+
+	/**交易信息 */
+	public static trainfo: string = "trainfo";
 }

@@ -151,10 +151,10 @@ module core {
          * @param  {()=>void} onPlayComplete?   播放完毕回调
          */
         public playSound(id: number, loop: number = 1, onPlayComplete?: () => void): void {
-            if (!GameLayerManager.gameLayer().IsHaveFocus)
-            {
-                return;
-            }
+            // if (!GameLayerManager.gameLayer().IsHaveFocus)
+            // {
+              if (1==1)  return;
+            // }
             let config: SoundConfig = Config.getConfig(SoundConfig).get(id);
             if (config) {
                 if (this.isSoundPlaying(id) && config.soundType == 1) {

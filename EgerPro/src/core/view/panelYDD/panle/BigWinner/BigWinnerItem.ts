@@ -6,7 +6,7 @@ module bigWinner
 		public playerName_lab: eui.Label;
 		public value_lab: eui.Label;
 
-		public data: RankItemTypeData;
+		public data: game.ThisBigWinnerData;
 		public constructor()
 		{
 			super();
@@ -26,9 +26,9 @@ module bigWinner
 
 		protected dataChanged(): void
 		{
-			this.jiangBei_img.source = "jiangBei" + this.data.jiangBeiNum + "_png";
-			this.playerName_lab.text = this.data.playerName;
-			this.value_lab.text = this.data.value;
+			this.jiangBei_img.source = "jiangBei" + this.data.index + "_png";
+			this.playerName_lab.text = this.data.account;
+			this.value_lab.text = this.data.hcoin;
 		}
 	}
 }

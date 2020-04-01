@@ -4,6 +4,6 @@ module bigWinner
 	{
 		playerName: string;
 		value: string;
-		jiangBeiNum: number;
+		jiangBeiNum: string
 	}
 }

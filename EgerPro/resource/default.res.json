@@ -9,7 +9,7 @@
 			"name": "preload"
 		},
 		{
-			"keys": "tzxq_png",
+			"keys": "tzxq_png,loading_png,红黑大战 -金花 - 投注详情弹窗_png",
 			"name": "betDetails"
 		},
 		{
@@ -21,7 +21,7 @@
 			"name": "bigWinner"
 		},
 		{
-			"keys": "pwBtnBg_png,srbmBg_png",
+			"keys": "pwBtnBg_png,srbmBg_png,dacha_png,tuoYuan_png,xuanZhong_png,红黑大战 -金花 - 发起交易_png",
 			"name": "passWord"
 		}
 	],
@@ -773,11 +773,6 @@
 			"name": "dyjtc_mp3"
 		},
 		{
-			"url": "sound/fdzpyx.wav",
-			"type": "sound",
-			"name": "fdzpyx_wav"
-		},
-		{
 			"url": "sound/fpyx.mp3",
 			"type": "sound",
 			"name": "fpyx_mp3"
@@ -821,6 +816,36 @@
 			"url": "sound/fdzpyx.mp3",
 			"type": "sound",
 			"name": "fdzpyx_mp3"
+		},
+		{
+			"url": "images/bettingDetails/loading.png",
+			"type": "image",
+			"name": "loading_png"
+		},
+		{
+			"url": "images/bettingDetails/红黑大战 -金花 - 投注详情弹窗.png",
+			"type": "image",
+			"name": "红黑大战 -金花 - 投注详情弹窗_png"
+		},
+		{
+			"url": "images/passWord/dacha.png",
+			"type": "image",
+			"name": "dacha_png"
+		},
+		{
+			"url": "images/passWord/tuoYuan.png",
+			"type": "image",
+			"name": "tuoYuan_png"
+		},
+		{
+			"url": "images/passWord/xuanZhong.png",
+			"type": "image",
+			"name": "xuanZhong_png"
+		},
+		{
+			"url": "images/passWord/红黑大战 -金花 - 发起交易.png",
+			"type": "image",
+			"name": "红黑大战 -金花 - 发起交易_png"
 		}
 	]
 }

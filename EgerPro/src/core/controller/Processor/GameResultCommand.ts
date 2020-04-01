@@ -14,9 +14,19 @@ module game
 		{
 			super.execute(notification);
 			let data: GameResultData = notification.getBody();
-			AllData.instance.setBetInfo(data);
-			game.AppFacade.instance.sendNotification(GameNotify.BET);
-			TipsUtils.showTipsFromCenter(data.Msg);
+			AllData.instance.setGameResult(data);
+			game.AppFacade.instance.sendNotification(GameNotify.GAME_RESULT);
+		}
+
+		private sortHXList(data: GameResultData): GameResultData
+		{
+			for(let i = 1; i< 6; i++)
+			{
+				let temp = data.Data.hash[0]["k_"+1];
+				data.Data.hash[0]["k_"+i] = data.Data.hash[0]["k_"+(11-i)];
+				data.Data.hash[0]["k_"+(11-i)] = temp;
+			}
+			return data;
 		}
 	}
 	export interface GameResultData extends AllResponseData
@@ -46,30 +56,32 @@ module game
 			}
 			hash:
 			{
-				"0": 
-				{
-					k_1: 
-					{
-						ar: number,
-						hr: string,
-						tr: string
-					},
-					k_2: 
-					{
-						ar: number,
-						hr: string,
-						tr: string
-					},
-					k_3: 
-					{
-						ar: number,
-						hr: string,
-						tr: string
-					}
-				},
+				"0": any,
 				/**中奖的key */
 				luck: string
 			}
+			/**本轮大赢家 */
+			bw: ThisBigWinnerData[]
 		}
+	}
+	export interface HxListItemData
+	{
+		ar: number,
+		hr: string,
+		tr: string
+	}
+
+	/**
+	 * 本轮大赢家数据
+	 */
+	export interface ThisBigWinnerData
+	{
+		/**玩家名 */
+		account: string,
+		/**玩家钱 */
+		hcoin: string,
+
+		/**索引前端数据 */
+		index: number
 	}
 }

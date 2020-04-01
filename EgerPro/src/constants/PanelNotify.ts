@@ -50,6 +50,10 @@ class PanelNotify{
     /**关闭输入密码界面 */
     public static CLOSE_INPUT_PASSWORD: string = "PANELNOTIFY_CLOSE_INPUT_PASSWORD";
 
+    /**打开协议界面 */
+    public static OPEN_AGREEMENT_PANEL: string = "OPEN_AGREEMENT_PANEL";
+    /**关闭协议界面 */
+    public static CLOSE_AGREEMENT_PANEL: string = "CLOSE_AGREEMENT_PANEL";
 }	
 
 

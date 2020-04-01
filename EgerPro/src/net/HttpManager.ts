@@ -11,17 +11,16 @@ class HttpManager
 	/**
 	 * 请求数据
 	 */
-	public request(typeStr: string, msgData: any): void
+	public request(typeStr: string, msgData: any, completeLink?: string): void
 	{
 		let sunlight = "sunlight=" + this.getRSAStr();
 		let language = "&language=cn";
 		let content: string = sunlight + language + this.paseObj(msgData);
-		egret.log("发送请求：");
-		egret.log(JSON.stringify(content));
+		egret.log("发送请求：", msgData);
 		let request = this._requests.get(typeStr);
 		if (request == null)
 		{
-			request = new MyRequest(typeStr, content);
+			request = new MyRequest(typeStr, content, completeLink);
 		}
 		else
 		{
@@ -48,6 +47,10 @@ class HttpManager
 
 	private paseObj(msgData: any): string
 	{
+		if (msgData == null)
+		{
+			return "";
+		}
 		let returnValue: string = "";
 		let isFirst = true;
 		for (let i in msgData)
@@ -63,18 +66,20 @@ class MyRequest
 	private _typeStr: string;
 	private _content: string;
 	private _request: egret.HttpRequest;
-	public constructor(typeStr: string, content: string)
+	private _completeLink: string;
+	public constructor(typeStr: string, content: string, completeLink?: string)
 	{
 		this._typeStr = typeStr;
 		this._content = content;
 		this._request = new egret.HttpRequest();
+		this._completeLink = completeLink;
 		this.openNet();
 	}
 
 	private openNet()
 	{
 		let request = this._request;
-		let dizhi = "http://www.libraw.io/hgmdapp/golden/" + this._typeStr;
+		let dizhi = this._completeLink ? this._completeLink : "http://www.libraw.io/hgmdapp/golden/" + this._typeStr;
 		request.responseType = egret.HttpResponseType.TEXT;
 		request.open(dizhi, "POST");
 		request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
@@ -99,7 +104,7 @@ class MyRequest
 		let data: AllResponseData = JSON.parse(request.response);
 		if (data.Code == 200 || data.Code == 400)
 		{
-			egret.log("收到服务器消息: ",data);
+			egret.log("收到服务器消息: ", data);
 			game.AppFacade.instance.sendNotification(this._typeStr, data);
 		}
 		else

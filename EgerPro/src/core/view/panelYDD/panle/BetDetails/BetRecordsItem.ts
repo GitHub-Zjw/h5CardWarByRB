@@ -4,7 +4,9 @@ module betDetails
 	{
 		public betNum_lab: eui.Label;
 		public TorF_lab: eui.Label;
-		public color_img: eui.Image;
+		public color_img0: eui.Image;
+		public color_img1: eui.Image;
+		public color_img2: eui.Image;
 
 		public data: BetRecordsTypeData;
 		public constructor()
@@ -15,11 +17,34 @@ module betDetails
 
 		protected dataChanged(): void
 		{
-			this.betNum_lab.text = this.data.money + " HDAG";
-			let isWinStr = this.data.isWin ? "+" : "-";
-			this.TorF_lab.text =isWinStr + this.data.money + " HDAG";
+			this.betNum_lab.text = this.data.money;
+			this.TorF_lab.text = this.data.isWin;
 			let imgS: string = "";
-			switch (this.data.region)
+			let len = this.data.region.length;
+			this.color_img0.visible = false;
+			this.color_img1.visible = false;
+			this.color_img2.visible = false;
+			if (len == 1)
+			{
+				this.setColorImg(this.data.region[0], this.color_img1);
+			}
+			else if (len == 2)
+			{
+				this.setColorImg(this.data.region[0], this.color_img0);
+				this.setColorImg(this.data.region[1], this.color_img2);
+			}
+			else if (len == 3)
+			{
+				this.setColorImg(this.data.region[0], this.color_img0);
+				this.setColorImg(this.data.region[1], this.color_img1);
+				this.setColorImg(this.data.region[2], this.color_img2);
+			}
+		}
+		
+		private setColorImg(type: EnumerationType.RegionWinner, img: eui.Image): void
+		{
+			let imgS: string = "";
+			switch (type)
 			{
 				case EnumerationType.RegionWinner.black:
 					imgS = "heiSheng";
@@ -35,8 +60,8 @@ module betDetails
 					break;
 			}
 			imgS += "_png"
-			this.color_img.source = imgS;
-
+			img.source = imgS;
+			img.visible = true;
 		}
 	}
 }

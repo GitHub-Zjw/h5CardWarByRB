@@ -42,6 +42,21 @@
       "name": "yellowBtn_png"
     },
     {
+      "url": "images/bettingDetails/loading.png",
+      "type": "image",
+      "name": "loading_png"
+    },
+    {
+      "url": "images/bettingDetails/tzxq.png",
+      "type": "image",
+      "name": "tzxq_png"
+    },
+    {
+      "url": "images/bettingDetails/红黑大战 -金花 - 投注详情弹窗.png",
+      "type": "image",
+      "name": "红黑大战 -金花 - 投注详情弹窗_png"
+    },
+    {
       "url": "images/bigWinner/bigWinnerBg.png",
       "type": "image",
       "name": "bigWinnerBg_png"
@@ -75,16 +90,6 @@
       "url": "images/bigWinner/红黑大战 -金花 - 本轮大赢家.png",
       "type": "image",
       "name": "images/bigWinner/红黑大战 -金花 - 本轮大赢家.png"
-    },
-    {
-      "url": "images/bettingDetails/tzxq.png",
-      "type": "image",
-      "name": "tzxq_png"
-    },
-    {
-      "url": "images/bettingDetails/红黑大战 -金花 - 投注详情弹窗.png",
-      "type": "image",
-      "name": "images/bettingDetails/红黑大战 -金花 - 投注详情弹窗.png"
     },
     {
       "url": "images/loading/PreLoadingBar.png",
@@ -693,6 +698,21 @@
       "name": "card5_2_png"
     },
     {
+      "url": "images/mask/loadingCircle.png",
+      "type": "image",
+      "name": "loadingCircle_png"
+    },
+    {
+      "url": "images/mask/tipsBg.png",
+      "type": "image",
+      "name": "tipsBg_png"
+    },
+    {
+      "url": "images/passWord/dacha.png",
+      "type": "image",
+      "name": "dacha_png"
+    },
+    {
       "url": "images/passWord/pwBtnBg.png",
       "type": "image",
       "name": "pwBtnBg_png"
@@ -703,14 +723,19 @@
       "name": "srbmBg_png"
     },
     {
-      "url": "images/mask/loadingCircle.png",
+      "url": "images/passWord/tuoYuan.png",
       "type": "image",
-      "name": "loadingCircle_png"
+      "name": "tuoYuan_png"
     },
     {
-      "url": "images/mask/tipsBg.png",
+      "url": "images/passWord/xuanZhong.png",
       "type": "image",
-      "name": "tipsBg_png"
+      "name": "xuanZhong_png"
+    },
+    {
+      "url": "images/passWord/红黑大战 -金花 - 发起交易.png",
+      "type": "image",
+      "name": "红黑大战 -金花 - 发起交易_png"
     },
     {
       "url": "sound/backg.mp3",
@@ -843,11 +868,6 @@
       "name": "assets/CheckBox/checkbox_unselect.png"
     },
     {
-      "url": "assets/ItemRenderer/selected.png",
-      "type": "image",
-      "name": "assets/ItemRenderer/selected.png"
-    },
-    {
       "url": "assets/Panel/border.png",
       "type": "image",
       "name": "assets/Panel/border.png"
@@ -858,6 +878,11 @@
       "name": "assets/Panel/header.png"
     },
     {
+      "url": "assets/ItemRenderer/selected.png",
+      "type": "image",
+      "name": "assets/ItemRenderer/selected.png"
+    },
+    {
       "url": "assets/ProgressBar/thumb.png",
       "type": "image",
       "name": "assets/ProgressBar/thumb.png"
@@ -866,16 +891,6 @@
       "url": "assets/ProgressBar/track.png",
       "type": "image",
       "name": "assets/ProgressBar/track.png"
-    },
-    {
-      "url": "assets/ScrollBar/roundthumb.png",
-      "type": "image",
-      "name": "assets/ScrollBar/roundthumb.png"
-    },
-    {
-      "url": "assets/ScrollBar/track.png",
-      "type": "image",
-      "name": "assets/ScrollBar/track.png"
     },
     {
       "url": "assets/RadioButton/radiobutton_select_disabled.png",
@@ -896,6 +911,16 @@
       "url": "assets/RadioButton/radiobutton_unselect.png",
       "type": "image",
       "name": "assets/RadioButton/radiobutton_unselect.png"
+    },
+    {
+      "url": "assets/ScrollBar/roundthumb.png",
+      "type": "image",
+      "name": "assets/ScrollBar/roundthumb.png"
+    },
+    {
+      "url": "assets/ScrollBar/track.png",
+      "type": "image",
+      "name": "assets/ScrollBar/track.png"
     },
     {
       "url": "assets/Slider/thumb.png",

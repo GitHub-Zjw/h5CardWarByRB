@@ -66,7 +66,6 @@ module game
 		private _cardStarXs: number[];
 		private _vsManBlackX: number;
 		private _vsManRedX: number;
-		private _cac: ContinueAmiChain;
 		private _isFirstOpenGame: boolean = true;
 		public constructor()
 		{
@@ -119,11 +118,6 @@ module game
 			this.bets_btn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBetsBtn, this);
 			this.withdraw_btn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBackBetsBtnClick, this);
 			AllData.instance.addEventListener(GameNotify.GAME_STAR, this.onBegigGame, this);
-
-
-			this.begin_btn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBeginBtnClick, this);
-			this.setCard_btn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onSetCardBtnClick, this);
-			this.ballAmi_btn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBallAmiBtnClick, this);
 		}
 
 		private removeEvent(): void
@@ -144,33 +138,31 @@ module game
 			this.bets_btn.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onBetsBtn, this);
 			this.withdraw_btn.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onBackBetsBtnClick, this);
 			AllData.instance.removeEventListener(GameNotify.GAME_STAR, this.onBegigGame, this);
-
-
-
-			this.begin_btn.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onBeginBtnClick, this);
-			this.setCard_btn.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onSetCardBtnClick, this);
-			this.ballAmi_btn.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onBallAmiBtnClick, this)
 		}
 
+		private resetView(): void
+		{
+			this._selectIndex = -1;
+			this.mengBan_btn.visible = false;
+			this.blackResult_img.alpha = 0;
+			this.redResult_img.alpha = 0;
+			if (this._selectedBall)
+			{
+				this._selectedBall.hideSelectedAmi();
+			}
+			AllData.instance.withdrawBet();
+			this.refreshMoneyLab();
+			this.regionRed.removeAllBall();
+			this.regionBlack.removeAllBall();
+			this.regionOther.removeAllBall();
+		}
 		/**
 		 * 游戏开始
 		 */
 		public onBegigGame(): void
 		{
-			this.mengBan_btn.visible = false;
-			this.blackResult_img.alpha = 0;
-			this.redResult_img.alpha = 0;
-			this._selectIndex = -1;
-			if (this._selectedBall)
-			{
-				this._selectedBall.hideSelectedAmi();
-			}
-			this.regionRed.removeAllBall();
-			this.regionBlack.removeAllBall();
-			this.regionOther.removeAllBall();
-			AllData.instance.withdrawBet();
+			this.resetView();
 
-			let starPoint = 0;
 			if (this._isFirstOpenGame)
 			{
 				let currentSecond = AllData.instance.getCurrentSecond();
@@ -193,72 +185,6 @@ module game
 			{
 				this.showBeginAmi();
 			}
-			// this.showBeginAmi();
-			// if (this._cac == null)
-			// {
-			// 	this._cac = new ContinueAmiChain(50);
-			// 	//播放开始动画 3
-			// 	this._cac.registerAction(this.showBeginAmi, this, 0, 60);
-			// 	//倒计时 25
-			// 	this._cac.registerAction(this.playAllLine, this, 0, 500);
-			// 	//停止下注 1.5
-			// 	this._cac.registerAction(this.onStopBet, this, 0, 30);
-			// 	//显示哈希选牌界面 0
-			// 	this._cac.registerAction(this.showHXUI, this, 0, 0);
-			// 	//设置卡牌数据 0
-			// 	this._cac.registerAction(this.setCardData, this, 0, 0);
-
-			// 	let len = this._cards.length;
-			// 	let cardCenterXs = [521, 557, 596, 218, 254, 290];
-			// 	let cardCenterY = 59;
-			// 	let cardCenterS = 1.65;
-			// 	//设置发牌起始位置 0
-			// 	for (let i = 0; i < len; i++)
-			// 	{
-			// 		this._cac.registerAction(this.setCardStarTF, this, 0, 0, this._cards[i]);
-			// 	}
-			// 	//发牌 0.7
-			// 	for (let i = 0; i < len; i++)
-			// 	{
-			// 		let value = { com: this._cards[i], endX: cardCenterXs[i], endY: cardCenterY, sX: cardCenterS, sY: cardCenterS, time: 200 };
-			// 		let starTime = i == 0 ? 0 : -2;
-			// 		let needTime = 4;
-			// 		this._cac.registerAction(this.playSendCardMoveAmi, this, starTime, needTime, value);
-			// 	}
-			// 	//翻前两张牌 1
-			// 	this._cac.registerAction(this.playOpenCardAmi, this, 10, 10);
-			// 	//增加哈希列表动画 1
-			// 	this.playHXItemAmi();
-			// 	//飘字动画 1
-			// 	this._cac.registerAction(this.playMoveLabAmi, this, 0, 20);
-			// 	//飘完亮黄框 1
-			// 	this._cac.registerAction(this.showWinK, this, 10, 10);
-			// 	//隐藏选牌界面 1
-			// 	this._cac.registerAction(this.hideHXUI, this, 20, 0);
-			// 	//卡牌归位置 1
-			// 	for (let i = 0; i < len; i++)
-			// 	{
-			// 		let value = { com: this._cards[i], endX: this._cardStarXs[i], endY: this._card1StarY, sX: 1, sY: 1, time: 1000 };
-			// 		let needTime = 20;
-			// 		let starTime = i == 0 ? 0 : -needTime;
-			// 		this._cac.registerAction(this.playBackCardMoveAmi, this, starTime, needTime, value);
-			// 	}
-			// 	//翻黑牌第三张 1
-			// 	this._cac.registerAction(this.showCard3OpenAmi, this, 0, 20, true);
-			// 	//显示黑牌牌型 0.5
-			// 	this._cac.registerAction(this.playCardResultAmiL, this, 0, 10);
-			// 	//翻红牌第三张牌 1
-			// 	this._cac.registerAction(this.showCard6OpenAmi, this, 0, 20, true);
-			// 	//显示红牌牌型 0.5
-			// 	this._cac.registerAction(this.playCardResultAmiR, this, 0, 10);
-			// 	//显示胜利区域 3
-			// 	this._cac.registerAction(this.showWinner, this, 0, 60);
-			// 	//显示记录分数面板 0
-			// 	this._cac.registerAction(this.scoreBoard.addWinner, this.scoreBoard, -10, 10);
-			// 	//显示大赢家 2.8
-			// 	this._cac.registerAction(this.playShowBigWinner, this, 0, 56);
-			// }
-			// this._cac.play(starPoint);
 		}
 
 		/**
@@ -266,19 +192,10 @@ module game
 		 */
 		public onStopBet(): void
 		{
-			// if (this._isFirstOpenGame)
-			// {
-			// 	return;
-			// }
 			this.mengBan_btn.visible = true;
 			let self = this;
 			game.AppFacade.getInstance().sendNotification(PanelNotify.OPEN_STOP_BET);
 			this._selectIndex = -1;
-			// let temp = setTimeout(function ()
-			// {
-			// 	game.AppFacade.getInstance().sendNotification(PanelNotify.CLOSE_STOP_BET);
-			// 	clearTimeout(temp);
-			// }, 1500);
 			GameResultRequest.sendGameResultRequest();
 		}
 
@@ -287,13 +204,18 @@ module game
 		 */
 		public refreshMoneyLab(): void
 		{
-			this.moneyNumB_lab.text = AllData.instance.BleckMoneyNum.toString();
-			this.moneyNumR_lab.text = AllData.instance.RedMoneyNum.toString();
-			this.moneyNumO_lab.text = AllData.instance.OtherMoneyNum.toString();
-			this.myBetRed_lab.text = AllData.instance.PlayerBetRed.toString();
-			this.myBetBlack_lab.text = AllData.instance.PlayerBetBlack.toString();
-			this.myBetOther_lab.text = AllData.instance.PlayerBetOther.toString();
-			this.myHdag_lab.text = AllData.instance.MyHDAG.toString();
+			let numB = AllData.instance.BleckMoneyNum;
+			let numR = AllData.instance.RedMoneyNum;
+			let numO = AllData.instance.OtherMoneyNum;
+			let myR = AllData.instance.PlayerBetRed;
+			let myB = AllData.instance.PlayerBetBlack;
+			let myO = AllData.instance.PlayerBetOther;
+			this.moneyNumB_lab.text = numB == 0 ? "" : numB.toString();
+			this.moneyNumR_lab.text = numR == 0 ? "" : numR.toString();
+			this.moneyNumO_lab.text = numO == 0 ? "" : numO.toString();
+			this.myBetRed_lab.text = myR == 0 ? "" : myR.toString();
+			this.myBetBlack_lab.text = myB == 0 ? "" : myB.toString();
+			this.myBetOther_lab.text = myO == 0 ? "" : myO.toString();
 		}
 
 		/**刷新计分面板数据 */
@@ -380,15 +302,6 @@ module game
 		}
 
 		/**
-		 * 哈希选牌
-		 */
-		public SelectCard(): void
-		{
-			// this.selectCardCom.showSelectAmi();
-			AllData.instance.dispatchEventWith(GameNotify.SEND_CARD);
-		}
-
-		/**
 		 * 设置卡牌数据
 		 */
 		public setCardData(): void
@@ -437,24 +350,23 @@ module game
 			{
 				this._isFirstOpenGame = false;
 			}
-			if (AllData.instance.BigWinnerDatas.length > 0)
+			if (AllData.instance.ThisBigWinnerData.length > 0)
 			{
 				game.AppFacade.getInstance().sendNotification(PanelNotify.OPEN_BIG_WINNER, true);
+			}
+			else
+			{
+				HomePageRequest.sendHomePageData();
 			}
 		}
 
 		/**增加哈希列表动画 1 */
 		private playHXItemAmi(): void
 		{
-			if (this._cac == null)
-			{
-				return;
-			}
 			let len = AllData.instance.HX_ItemData.length;
-			let speed = Math.floor(1000 / len);
+			let speed = 500;//Math.floor(1000 / len);
 			for (let i = 0; i < len; i++)
 			{
-				// this._cac.registerAction(this.setHXListData, this, speed, 0, i);
 				let self = this;
 				let temp = setTimeout(function ()
 				{
@@ -477,7 +389,7 @@ module game
 			this.hxList.dataProvider = new eui.ArrayCollection(AllData.instance.getHXItemDataByNum(count));
 		}
 
-		private showHXUI(): void
+		public showHXUI(): void
 		{
 			this.hx_group.visible = true;
 			this.hxList.itemRenderer = HxItem;
@@ -488,7 +400,7 @@ module game
 			this.kuangL_img.visible = false;
 			this.setHXListData(0);
 			this.setCardData();
-			game.AppFacade.getInstance().sendNotification(PanelNotify.CLOSE_STOP_BET);
+			this.openCards();
 		}
 
 		/**发牌 */
@@ -554,10 +466,11 @@ module game
 				{
 					self.showWinK();
 				})
-				.wait(300)
+				.wait(1500)
 				.call(function ()
 				{
 					self.hideHXUI();
+					self.playCardBackAmi();
 				});
 		}
 
@@ -609,7 +522,7 @@ module game
 			com.y = 108;
 			com.visible = true;
 		}
-		/**翻前两张牌 1 */
+		// /**翻前两张牌 1 */
 		private playOpenCardAmi(): void
 		{
 			if (this._isFirstOpenGame)
@@ -676,27 +589,6 @@ module game
 			}
 			core.SoundUtils.getInstance().playSound(7);
 			this.playMoveAmi(value);
-		}
-
-		private judgeOpenCard(): void
-		{
-			let cardNums = AllData.instance.CardNums;
-			if (cardNums == null || cardNums.length == 0)
-			{
-				this.AmiPause();
-			}
-		}
-
-		/**暂停动画 */
-		public AmiPause(): void
-		{
-			this._cac.pause();
-		}
-
-		/**动画继续 */
-		public AmiContinue(): void
-		{
-			this._cac.continue();
 		}
 
 		/**
@@ -790,7 +682,6 @@ module game
 			{
 				self.playShowBigWinner();
 			}, 3000);
-			this.playShowBigWinner();
 		}
 
 		private playLeftGetCardAmi(index: number, speed: number = 300): void
@@ -874,7 +765,14 @@ module game
 		private ht: HttpManager = new HttpManager();
 		private onBetsBtn(e: egret.TouchEvent): void
 		{
-			game.AppFacade.getInstance().sendNotification(PanelNotify.OPEN_INPUT_PASSWORD);
+			if (AllData.instance.IsNoShowAgreem)
+			{
+				game.AppFacade.getInstance().sendNotification(PanelNotify.OPEN_INPUT_PASSWORD);
+			}
+			else
+			{
+				game.AppFacade.getInstance().sendNotification(PanelNotify.OPEN_AGREEMENT_PANEL);
+			}
 		}
 
 		private onBackBetsBtnClick(e: egret.TouchEvent): void
@@ -906,75 +804,26 @@ module game
 			this._selectedBall = btn;
 			btn.showSelectedAmi();
 			switch (btn)
-			{//todo
+			{
 				case this.ball0_btn:
 					this._selectIndex = 0;
-					console.log("倍数为=========0");
 					break;
 				case this.ball1_btn:
 					this._selectIndex = 1;
-					console.log("倍数为=========1");
 					break;
 				case this.ball2_btn:
 					this._selectIndex = 2;
-					console.log("倍数为=========2");
 					break;
 				case this.ball3_btn:
 					this._selectIndex = 3;
-					console.log("倍数为=========3");
 					break;
 				case this.ball4_btn:
 					this._selectIndex = 4;
-					console.log("倍数为=========4");
 					break;
 				case this.ball5_btn:
 					this._selectIndex = 5;
-					console.log("倍数为=========5");
 					break;
 			}
-		}
-
-		public begin_btn: eui.Button;
-		public setCard_btn: eui.Button;
-		public cardAmi_btn: eui.Button;
-		public ballAmi_btn: eui.Button;
-		public bigWinner_btn: eui.Button;
-
-		private onBeginBtnClick(): void
-		{
-			// this.showBeginAmi();
-			// AllData.instance.dispatchEventWith(GameNotify.GAME_STAR);
-			// this.refreshMoneyLab();
-
-			// core.SoundUtils.getInstance().playSound(1, 0);
-			SocketManager.connectServer();
-			// GameResultRequest.sendGameResultRequest();
-		}
-		private onSetCardBtnClick(): void
-		{
-			AllData.instance.testSetData();
-			this.setCardData();
-		}
-
-		private onBallAmiBtnClick(): void
-		{
-			let ballNum = AllData.instance.getRandomInt(1, 10);
-			let ballIndexs: number[] = [];
-			let ballId: string[] = [];
-			this.regionRed.removeAllBall();
-			this.regionBlack.removeAllBall();
-			this.regionOther.removeAllBall();
-			for (let i = 0; i < ballNum; i++)
-			{
-				let ballIndex: number = AllData.instance.getRandomInt(0, 5);
-				ballIndexs.push(ballIndex);
-				ballId.push("6566655asd");
-			}
-			this.regionRed.addBall(ballIndexs, ballId);
-			this.regionBlack.addBall(ballIndexs, ballId);
-			this.regionOther.addBall(ballIndexs, ballId);
-			this.refreshPlayerMoney();
-			core.SoundUtils.getInstance().playSound(6);
 		}
 	}
 }

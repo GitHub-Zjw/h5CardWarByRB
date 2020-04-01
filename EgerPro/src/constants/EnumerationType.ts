@@ -24,9 +24,9 @@ module EnumerationType
 		/**散牌 */
 		"sanPai" = 12,
 		/**顺子 */
-		"sunZi" = 13,
+		"shunZi" = 13,
 		/**顺金 */
-		"sunJin" = 14,
+		"shunJin" = 14,
 		/**对子 */
 		"duiZi" = 15,
 		/**豹子 */

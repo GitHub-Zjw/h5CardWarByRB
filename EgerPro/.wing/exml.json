@@ -38,5 +38,10 @@
     "path": "core\\view\\panelYDD\\panle\\BigWinner\\BigWinnerItem.ts",
     "class": "BigWinnerItem",
     "parentPath": ""
+  },
+  "1712ad88f99": {
+    "path": "..\\resource\\ui\\panelYDD\\passWord\\AgreementPanel.ts",
+    "class": "AgreementPanel",
+    "parentPath": ""
   }
 }

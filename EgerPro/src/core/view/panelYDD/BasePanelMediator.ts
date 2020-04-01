@@ -92,8 +92,11 @@ class BasePanelMediator extends puremvc.Mediator implements puremvc.IMediator
 	 */
 	public destroy(): void
 	{
-		this.ui.destroy();
-		this.ui = null;
+		if (this.ui)
+		{
+			this.ui.destroy();
+			this.ui = null;
+		}
 	}
 
 

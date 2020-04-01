@@ -21,7 +21,10 @@
     "gameMethod.GameMethodPanel": "resource/eui_skins/GameMethodPanelSkin.exml",
     "TipText": "resource/eui_skins/TipTextSkin.exml",
     "bigWinner.BigWinnerPanel": "resource/eui_skins/BigWinnerPanelSkin.exml",
-    "bigWinner.BigWinnerItem": "resource/eui_skins/BigWinnerItemSkin.exml"
+    "bigWinner.BigWinnerItem": "resource/eui_skins/BigWinnerItemSkin.exml",
+    "passWord.AgreementPanel": "resource/eui_skins/AgreementPanelSkin.exml",
+    "passWord.SelectBtn": "resource/eui_skins/SelectBtn.exml",
+    "passWord.SelectOkBtn": "resource/ui/passWord/SelectOkBtn.exml"
   },
   "autoGenerateExmlsList": true,
   "exmls": [
@@ -57,6 +60,9 @@
     "resource/ui/panelYDD/GameMethod/GameMethodPanelSkin.exml",
     "resource/ui/panelYDD/GameMethod/PrizeInfoPanelSkin.exml",
     "resource/ui/panelYDD/StopBetPanelSkin.exml",
+    "resource/ui/panelYDD/passWord/SelectBtn.exml",
+    "resource/ui/panelYDD/passWord/SelectOkBtn.exml",
+    "resource/ui/panelYDD/passWord/AgreementPanelSkin.exml",
     "resource/ui/panelYDD/passWord/PassWordPanelSkin.exml",
     "resource/ui/scene/HomeCitySkin.exml",
     "src/component/button/main/ActivityBtnSkin.exml",

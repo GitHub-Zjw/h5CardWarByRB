@@ -6,7 +6,7 @@ module bigWinner
 		public constructor()
 		{
 			super();
-			this.skinName = "resource/ui/panelYDD/BigWinner/BigWinnerPanelSkin.exml"
+			this.skinName = "resource/ui/panelYDD/BigWinner/BigWinnerPanelSkin.exml";
 		}
 
 		protected partAdded(partName: string, instance: any): void
@@ -26,14 +26,15 @@ module bigWinner
 			this.rankList.dataProvider = this.listData();
 			this.rankList.itemRenderer = BigWinnerItem;
 			let self = this;
-			setTimeout(function() {
+			setTimeout(function ()
+			{
 				self.closePanel();
 			}, 2800);
 		}
 
 		private listData(): eui.ArrayCollection
 		{
-			return new eui.ArrayCollection(AllData.instance.BigWinnerDatas);
+			return new eui.ArrayCollection(AllData.instance.ThisBigWinnerData);
 		}
 
 		/**
@@ -46,6 +47,8 @@ module bigWinner
 
 		public closePanel(): void
 		{
+			AllData.instance.onBeginGame();
+			HomePageRequest.sendHomePageData();
 			game.AppFacade.getInstance().sendNotification(PanelNotify.CLOSE_BIG_WINNER);
 		}
 	}

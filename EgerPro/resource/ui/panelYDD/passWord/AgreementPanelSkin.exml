@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="AgreementPanelSkin" width="346" height="375" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" >
+	<w:Config id="1712ad88f99" ></w:Config>
+	<e:Rect fillColor="0xffffff" right="0" bottom="0" left="0" top="0" ellipseWidth="30"/>
+	<e:Label text="正在发起以下交易" x="18.33" y="15.33" textColor="0x000000" size="16" bold="true"/>
+	<e:Label text="退出服务器前不用再次确认" x="37" y="287" size="13" bold="true" textColor="0x383434"/>
+	<e:Label text="授权账号" x="19.33" y="46.33" size="14" bold="true" textColor="0x999999"/>
+	<e:Label id="name_lab" text="666666666666" x="112" y="45" textColor="0x000000" size="16"/>
+	<e:Scroller width="327" height="207" x="11" y="67">
+		<e:Group>
+			<e:Rect fillColor="0xf2f2f2" anchorOffsetY="0" width="327" x="0" height="301" y="0"/>
+			<e:Label text="Transfer" x="11.33" y="17.33" size="16" textColor="0x000000"/>
+			<e:Label id="transfer_lab" text="hjkhjklhjklhjklhjklhjklhjklhjkljkljuifod aufiodfasjhjkahjklhjkl" x="86.33" y="15.33" size="14" anchorOffsetX="0" width="232" anchorOffsetY="0" height="36" textColor="0x323232"/>
+			<e:Label id="to_lab" text="hjkhjklhjklhjklhjklhjklhjklhjkljkljuifod aufiodfasjhjkahjklhjkl" x="12" y="190.33" textColor="0x323232" size="14" anchorOffsetX="0" width="302" anchorOffsetY="0" height="36"/>
+			<e:Label text="hjkhjklhjklhjklhjklhjklhjklhjkljkljuifod aufiodfasjhjkahjklhjkl" x="12" y="262.33" textColor="0x323232" size="14" anchorOffsetX="0" width="302" anchorOffsetY="0" height="36"/>
+			<e:Label text="hsadgyhukdfshafkjhdsajkflhdsajk" x="12" y="76.33" textColor="0x323232" size="14" anchorOffsetX="0" width="307" anchorOffsetY="0" height="19"/>
+			<e:Label text="memo" x="12" y="55" size="14" textColor="0x999999"/>
+			<e:Label text="quantity" x="12" y="113" size="14" textColor="0x999999"/>
+			<e:Label text="to" x="12" y="169" size="14" textColor="0x999999"/>
+			<e:Label text="from" x="12" y="242" size="14" textColor="0x999999"/>
+		</e:Group>
+	</e:Scroller>
+	<e:Button id="concel_btn" label="拒绝" x="21" y="318" anchorOffsetX="0" width="128" anchorOffsetY="0" height="36" skinName="SelectBtnSkin">
+	</e:Button>
+	<e:Button id="ok_btn" label="同意" x="195" y="318" anchorOffsetX="0" width="128" anchorOffsetY="0" height="36" skinName="SelectOkBtnSkin"/>
+	<e:RadioButton id="selectBtn" label="" x="15" y="285" width="15" height="15">
+		<e:skinName>
+			<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" source="tuoYuan_png" source.down="xuanZhong_png"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+		</e:skinName>
+	</e:RadioButton>
+</e:Skin>

@@ -27,7 +27,7 @@ module passWord
 		public initView(): void
 		{
 			super.initView();
-			this.input_elab.restrict = "0-9";
+			this.input_elab.restrict = "0-9,a-z,A-Z";
 			(<eui.Label>this.cencle_btn.labelDisplay).size = 13;
 			(<eui.Label>this.ok_btn.labelDisplay).size = 13;
 		}
@@ -58,8 +58,7 @@ module passWord
 					game.AppFacade.getInstance().sendNotification(PanelNotify.CLOSE_INPUT_PASSWORD);
 					break;
 				case this.ok_btn:
-					let data = AllData.instance;
-					BetInfoRequest.sendBetRequestData(data.MyBetBlackNum, data.MyBetRedNum, data.MyBetOtherNum);
+					PassWordRequest.sendPassWordRequest(this.input_elab.text);
 					game.AppFacade.getInstance().sendNotification(PanelNotify.CLOSE_INPUT_PASSWORD);
 					break;
 			}

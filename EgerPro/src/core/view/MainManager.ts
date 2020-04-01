@@ -27,7 +27,6 @@ module game
         {
             this.facade.registerCommand(MainNotify.OPEN_MAIN, MainManager);
             this.facade.registerCommand(MainNotify.CLOSE_MAIN, MainManager);
-            this.facade.registerCommand(PanelNotify.CLOSE_STOP_BET, MainManager);
             this.facade.registerCommand(GameNotify.HOME_PAGE_DATA, MainManager);
             this.facade.registerCommand(GameNotify.BET_MONEY, MainManager);
             this.facade.registerCommand(GameNotify.BET, MainManager);
@@ -62,16 +61,9 @@ module game
                         game.MainManager.mainUI = null;
                     }
                     break;
-                case PanelNotify.CLOSE_STOP_BET:
-                    if (mainUI != null)
-                    {
-                        mainUI.SelectCard();
-                    }
-                    break;
                 case GameNotify.HOME_PAGE_DATA:
-                    mainUI.refreshPlayerMoney();
+                    AllData.instance.dispatchEventWith(GameNotify.GAME_STAR);
                     mainUI.refreshScoreBoard();
-                    mainUI.onBegigGame();
                     break;
                 case GameNotify.BET_MONEY:
                     mainUI.refreshMoneyLab();
@@ -80,7 +72,8 @@ module game
                     mainUI.onBetSecceed();
                     break;
                 case GameNotify.GAME_RESULT:
-                    mainUI.AmiContinue();
+			        game.AppFacade.getInstance().sendNotification(PanelNotify.CLOSE_STOP_BET);
+                    mainUI.showHXUI();
                     break;
                 case SysNotify.GET_FOCUS:
                     core.SoundUtils.getInstance().playSound(1, 0);

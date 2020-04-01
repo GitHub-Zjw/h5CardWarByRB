@@ -42,6 +42,9 @@ class AllData extends egret.EventDispatcher
 	private _myMoney: number;
 	private _playerInfo: game.PlayerInfo;
 	private _beginTimeStamp: number;		//游戏开始时间戳
+	private _isNoShowAgreem: boolean;
+	private _wp: { black: string, red: string, other: string };
+	private _thisBigWinner: game.ThisBigWinnerData[];
 
 	public constructor()
 	{
@@ -72,7 +75,9 @@ class AllData extends egret.EventDispatcher
 		this._myBetBlackNum = 0;
 		this._myBetRedNum = 0;
 		this._myBetOtherNum = 0;
-		this._playerInfo = {id: "2333",name: "",money: 666};
+		this._playerInfo = { id: "2333", name: "", money: 666 };
+		this._isNoShowAgreem = false;
+		this._bigWinnerDatas = [];
 	}
 
 	/**
@@ -84,7 +89,27 @@ class AllData extends egret.EventDispatcher
 		this._myHdag = jhgame.Data.bm;
 		let len = jhgame.Data.w.list.length;
 		for (let i = 0; i < len; i++)
-		{//fix分数面板
+		{
+			switch (jhgame.Data.w.list[i])
+			{
+				case 1:
+					this._allWinners[i] = EnumerationType.RegionWinner.black;
+					break;
+				case 2:
+					this._allWinners[i] = EnumerationType.RegionWinner.red;
+					break;
+				case 3:
+					this._allWinners[i] = EnumerationType.RegionWinner.blackS;
+					break;
+				case 4:
+					this._allWinners[i] = EnumerationType.RegionWinner.redS;
+					break;
+			}
+		}
+		this._wp = {
+			black: jhgame.Data.w.block,
+			red: jhgame.Data.w.red,
+			other: jhgame.Data.w.lucky
 		}
 	}
 
@@ -97,6 +122,100 @@ class AllData extends egret.EventDispatcher
 		this._bleckMoneyNum = betMoneyData.Data.h.z;
 		this._redMoneyNum = betMoneyData.Data.h.z;
 		this._otherMoneyNum = betMoneyData.Data.l.z;
+	}
+
+	/**
+	 * 设置投注详情界面数据
+	 */
+	public setBetDetaile(betDetaile: game.BetDetaileData): void
+	{
+		let i = this._betDetailsTypeDatas.length;
+		for (let key in betDetaile.Data)
+		{
+			let value = betDetaile.Data[key];
+			let itemData: betDetails.BetDetailsTypeData = { money: value.money, playerName: value.name, region: [] };
+			let len = value.qy.length;
+			for (let i = 0; i < len; i++)
+			{
+				if (value.qy[i] == "b")
+				{
+					itemData.region.push(EnumerationType.RegionWinner.black);
+				}
+				if (value.qy[i] == "h")
+				{
+					itemData.region.push(EnumerationType.RegionWinner.red);
+				}
+				if (value.qy[i] == "z")
+				{
+					itemData.region.push(EnumerationType.RegionWinner.blackS);
+				}
+			}
+			this._betDetailsTypeDatas[i++] = itemData;
+		}
+	}
+
+	/**
+	 * 设置投注记录界面数据
+	 */
+	public setBetRecord(betRecord: game.BetRecordData): void
+	{
+
+		let i = this._betRecordsTypeDatas.length;
+		for (let key in betRecord.Data)
+		{
+			let value = betRecord.Data[key];
+			let itemData: betDetails.BetRecordsTypeData = { money: value.betmoney, isWin: value.hcoin, region: [] };
+			let len = value.qy.length;
+			for (let i = 0; i < len; i++)
+			{
+				if (value.qy[i] == "b")
+				{
+					itemData.region.push(EnumerationType.RegionWinner.black);
+				}
+				if (value.qy[i] == "h")
+				{
+					itemData.region.push(EnumerationType.RegionWinner.red);
+				}
+				if (value.qy[i] == "z")
+				{
+					itemData.region.push(EnumerationType.RegionWinner.blackS);
+				}
+			}
+			this._betRecordsTypeDatas[i++] = itemData;
+		}
+	}
+
+	/**
+	 * 设置今日大赢家数据
+	 */
+	public setBigWinner(bigWinner: game.BigWinnerData): void
+	{
+
+		let i = this._bigWinnerDatas.length;
+		for (let key in bigWinner.Data)
+		{
+			let value = bigWinner.Data[key];
+			let itemData: bigWinner.RankItemTypeData = { playerName: value.name, value: value.fr, jiangBeiNum: value.money };
+			this._bigWinnerDatas[i++] = itemData;
+		}
+	}
+
+	/**清空大赢家截面数据 */
+	public cleanBigWinner(): void
+	{
+		this._bigWinnerDatas = [];
+	}
+
+	/**清空投注界面数据 */
+	public cleanBetDetaile(): void
+	{
+		this._betDetailsTypeDatas = [];
+	}
+
+	/**清空投注记录数据 */
+	public cleanBetRecord(): void
+	{
+		this._betRecordsTypeDatas = [];
 	}
 
 	/**
@@ -117,6 +236,20 @@ class AllData extends egret.EventDispatcher
 			this._myBetBlackNum = 0;
 			this._myBetOtherNum = 0;
 		}
+	}
+
+	/**
+	 * 新一轮游戏开始，重置数据
+	 */
+	public onBeginGame(): void
+	{
+		this._bleckMoneyNum = 0;
+		this._redMoneyNum = 0;
+		this._otherMoneyNum = 0;
+		this._playerAddBNum = 0;
+		this._playerAddRNum = 0;
+		this._playerAddONum = 0;
+		this._myHdag = 0;
 	}
 
 	/**
@@ -142,15 +275,107 @@ class AllData extends egret.EventDispatcher
 			this._cardNums[i + 3] = this.parseCardNum(redCards[i]);
 			this._cardColor[i] = this.parseCardColor(blackCards[i]);
 			this._cardColor[i + 3] = this.parseCardColor(redCards[i]);
-			let hsData = resultData.Data.hash[0];
-			for (let k = 1; k <= 3; k++)
-			{
-				this._hX_ItemData[i][k] = hsData["k_" + k].toString();
-			}
 		}
+
+		//哈希列表数据
+		let hsListData = resultData.Data.hash[0];
+		let key = resultData.Data.hash.luck;
+
 		this._blackCardType = this.parseCardType(resultData.Data.block.m);
 		this._redCardType = this.parseCardType(resultData.Data.red.m);
-		//fix
+		let winnerInfo = resultData.Data.br;
+		let winnerStr: string = resultData.Data.hash[0][key].hr;
+		this._moveChat = winnerStr[winnerStr.length - 1];
+		let oneIndex = this.getOneHXStr().indexOf(this._moveChat);
+		let twoIndex = this.getTwoHXStr().indexOf(this._moveChat);
+		resultData.Data.hash[0][key].hr = winnerStr.slice(0, winnerStr.length - 1) + "<font color='#F9C834'>" + this._moveChat + "</font>";
+		if (oneIndex >= 0)
+		{
+			this._moveNum = oneIndex;
+			this._winHxStr = this.getOneHXStr().replace(this._moveChat, "<font color='#F9C834'>" + this._moveChat + "</font>");
+		}
+		else if (twoIndex >= 0)
+		{
+			this._moveNum = twoIndex;
+			this._winHxStr = this.getTwoHXStr().replace(this._moveChat, "<font color='#F9C834'>" + this._moveChat + "</font>");
+		}
+		else if (oneIndex < 0 && twoIndex < 0)
+		{
+			return;
+		}
+		this._hX_ItemData = [];
+		for (let itemIdex in hsListData)
+		{
+			let index = parseInt(itemIdex[itemIdex.length - 1]);
+			if (this._hX_ItemData[index] == undefined)
+			{
+				this._hX_ItemData[index] = [];
+			}
+			let hxItmeData: game.HxListItemData = hsListData[itemIdex];
+			this._hX_ItemData[index][0] = hxItmeData.ar.toString();
+			this._hX_ItemData[index][1] = hxItmeData.hr;
+			this._hX_ItemData[index][2] = hxItmeData.tr;
+			if (itemIdex == key)
+			{
+				break;
+			}
+		}
+
+		//设置本轮赢方
+		if (winnerInfo.b == 1)
+		{
+			if (winnerInfo.z == 1)
+			{
+				this._winner = EnumerationType.RegionWinner.blackS;
+			}
+			else
+			{
+				this._winner = EnumerationType.RegionWinner.black;
+			}
+		}
+		if (winnerInfo.r == 1)
+		{
+			this._winner = EnumerationType.RegionWinner.red
+			if (winnerInfo.z == 1)
+			{
+				this._winner = EnumerationType.RegionWinner.redS;
+			}
+			else
+			{
+				this._winner = EnumerationType.RegionWinner.red;
+			}
+		}
+
+		if (resultData.Data.bw && resultData.Data.bw.length > 0)
+		{
+			this._thisBigWinner = resultData.Data.bw;
+			let len = this._thisBigWinner.length;
+			for (let i = 0; i < len; i++)
+			{
+				this._thisBigWinner[i].index = i + 1;
+			}
+		}
+		else
+		{
+			this._thisBigWinner = [];
+		}
+	}
+
+	/**本轮大赢家数据 */
+	public get ThisBigWinnerData(): game.ThisBigWinnerData[]
+	{
+		return this._thisBigWinner;
+	}
+
+	/**是否显示交易信息 */
+	public get IsNoShowAgreem(): boolean
+	{
+		return this._isNoShowAgreem;
+	}
+
+	public set IsNoShowAgreem(value: boolean)
+	{
+		this._isNoShowAgreem = value
 	}
 
 	private parseCardNum(str: string): number
@@ -187,10 +412,11 @@ class AllData extends egret.EventDispatcher
 		switch (num)
 		{
 			case 10: return EnumerationType.CardType.baoZi;
-			case 9: return EnumerationType.CardType.sunJin;
+			case 9: return EnumerationType.CardType.shunJin;
 			case 8: return EnumerationType.CardType.jinHua;
-			case 7: return EnumerationType.CardType.sunZi;
+			case 7: return EnumerationType.CardType.shunZi;
 			case 6: return EnumerationType.CardType.duiZi;
+			case 5: return EnumerationType.CardType.sanPai;
 		}
 	}
 
@@ -338,7 +564,7 @@ class AllData extends egret.EventDispatcher
 	{
 		return this._betDetailsTypeDatas;
 	}
-	/**投注详情数据 */
+	/**投注记录数据 */
 	public get BetRecordsTypeDatas(): betDetails.BetRecordsTypeData[]
 	{
 		return this._betRecordsTypeDatas;
@@ -353,7 +579,7 @@ class AllData extends egret.EventDispatcher
 	 */
 	public getOneHXStr(): string
 	{
-		return "0,2,4,6,8,a,c,e";
+		return "1,3,5,7,9,b,d,f";
 	}
 
 	/**
@@ -361,7 +587,7 @@ class AllData extends egret.EventDispatcher
 	 */
 	public getTwoHXStr(): string
 	{
-		return "1,3,5,7,9,b,d,f";
+		return "0,2,4,6,8,a,c,e";
 	}
 
 	/**
@@ -394,12 +620,19 @@ class AllData extends egret.EventDispatcher
 	public getHXItemDataByNum(count: number): string[][]
 	{
 		let returnValue: string[][] = [];
-		let len = this._hX_ItemData.length;
-		for (let i = count; i > 0; i--)
+		// let len = this._hX_ItemData.length;
+		// for (let i = count; i > 0; i--)
+		// {
+		// 	if (this._hX_ItemData[i - 1] && this._hX_ItemData[i - 1].length != 0)
+		// 	{
+		// 		returnValue.push(this._hX_ItemData[i - 1]);
+		// 	}
+		// }
+		for(let i = 1; i <= count; i++)
 		{
-			if (this._hX_ItemData[i - 1] && this._hX_ItemData[i - 1].length != 0)
+			if (this._hX_ItemData[i] && this._hX_ItemData[i].length != 0)
 			{
-				returnValue.push(this._hX_ItemData[i - 1]);
+				returnValue.push(this._hX_ItemData[i]);
 			}
 		}
 		return returnValue;
@@ -457,40 +690,9 @@ class AllData extends egret.EventDispatcher
 	/**
 	 * 获取胜率
 	 */
-	public getWP(): { black: number, red: number, other: number }
+	public getWP(): { black: string, red: string, other: string }
 	{
-		let black: number = 0;
-		let red: number = 0;
-		let other: number = 0;
-		let allNum = this.AllWinners.length;
-		for (let i = 0; i < allNum; i++)
-		{
-			let winner = this.AllWinners[i];
-			switch (winner)
-			{
-				case EnumerationType.RegionWinner.black:
-					black++;
-					break;
-				case EnumerationType.RegionWinner.blackS:
-					black++;
-					other++;
-					break;
-				case EnumerationType.RegionWinner.red:
-					red++;
-					break;
-				case EnumerationType.RegionWinner.redS:
-					red++;
-					other++;
-					break;
-				default:
-					break;
-			}
-		}
-		black = Math.floor(black / allNum * 10000) / 100;
-		red = 100 - black;
-		other = Math.floor(other / allNum * 10000) / 100;
-
-		return { black: black, red: red, other: other };
+		return this._wp;
 	}
 
 	/**
@@ -565,38 +767,5 @@ class AllData extends egret.EventDispatcher
 		let dy = Math.abs(p1.y - p2.y);
 
 		return Math.sqrt(dx * dx + dy * dy);
-	}
-
-	public testSetData(): void
-	{
-
-		for (let i = 0; i < 15; i++)
-		{
-			let cardNum = this.getRandomInt(1, 13);
-			this._cardNums[i] = cardNum;
-			let color = this.getRandomInt(1, 4);
-			this._cardColor[i] = color;
-			let betData: betDetails.BetDetailsTypeData = { playerName: i.toString(), money: this.getRandomF(0, 1000), region: this.getRandomInt(0, 3) };
-			this._betDetailsTypeDatas.push(betData);
-			let recordData: betDetails.BetRecordsTypeData = { money: this.getRandomInt(100, 1000), isWin: this.getRandomInt(0, 2) == 1, region: this.getRandomInt(0, 3) };
-			this._betRecordsTypeDatas.push(recordData);
-			let strs: string[] = [i.toString(), EnumerationType.CardType[this.getRandomInt(0, 6)], this.getRandomInt(0, 7) * 100 + " HDAG"];
-			this._gmaeMethItemTypeDatas.push(strs);
-		}
-		this._beginTimeStamp = 1575302400;
-		let bwData1: bigWinner.RankItemTypeData = { playerName: "十七项", value: "651454.68", jiangBeiNum: 1 };
-		let bwData2: bigWinner.RankItemTypeData = { playerName: "十七项", value: "65154.68", jiangBeiNum: 2 };
-		let bwData3: bigWinner.RankItemTypeData = { playerName: "十七项", value: "65126454.68", jiangBeiNum: 3 };
-		this._bigWinnerDatas = [bwData1, bwData2, bwData3];
-		this._winner = EnumerationType.RegionWinner.blackS;
-		this._bleckMoneyNum = this.getRandomInt(1, 1000);
-		this._redMoneyNum = this.getRandomInt(1, 1000);
-		this._otherMoneyNum = this.getRandomInt(1, 1000);
-		this._myMoney = 250;
-		this._hX_ItemData[2] = ["21365", "...ee7b24123<font color='#E7B846'>4</font>", "14:15:16"];
-		this._hX_ItemData[1] = ["2123", "...ee7b241234", "14:15:16"];
-		this._hX_ItemData[0] = ["2g5", "...ee7b241234", "14:15:16"];
-		this._playerInfo = { name: "旺气象", money: 669, id: "adsf" };
-		console.log("动画数据设置完毕");
 	}
 }

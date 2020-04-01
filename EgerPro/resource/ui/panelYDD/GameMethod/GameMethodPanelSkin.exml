@@ -13,7 +13,7 @@
 	<e:Label text="今日大赢家" y="35" anchorOffsetX="0" anchorOffsetY="0" size="12" textColor="0xB676D7" horizontalCenter="-150.5"/>
 	<e:Label text="牌型" x="179" y="35" anchorOffsetX="0" anchorOffsetY="0" size="12" textColor="0xB676D7"/>
 	<e:Label text="奖金(HDAG)" y="35" anchorOffsetX="0" anchorOffsetY="0" size="12" textColor="0xB676D7" horizontalCenter="117.5"/>
-	<e:Scroller id="details_scl" width="365" height="110" x="12" y="63" anchorOffsetY="0">
+	<e:Scroller id="details_scl" width="365" height="94" x="12" y="63" anchorOffsetY="0">
 		<e:List id="details_list" anchorOffsetY="0" height="110" itemRendererSkinName="GameMethodItemSkin">
 		<e:layout>
 			<e:VerticalLayout paddingTop="5" gap="11"/>
@@ -28,4 +28,8 @@
 			</e:ArrayCollection>
 		</e:List>
 	</e:Scroller>
+	<e:Group id="loading_group" x="144.5" y="158" visible="false">
+		<e:Image width="20" height="20" x="0" y="0" source="loading_png"/>
+		<e:Label text="正在加载更多" x="27" y="5" size="11" textColor="0xB97CD3"/>
+	</e:Group>
 </e:Skin>

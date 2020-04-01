@@ -15,11 +15,26 @@
 	<e:Label text="玩家" x="46.33" y="57.34" anchorOffsetX="0" anchorOffsetY="0" size="12" textColor="0xb676d7" text.betRecord="区域"/>
 	<e:Label text="区域" x="179" y="57.34" anchorOffsetX="0" anchorOffsetY="0" size="12" textColor="0xB676D7" text.betRecord="投注"/>
 	<e:Label text="投注" x="314.33" y="58.01" anchorOffsetX="0" anchorOffsetY="0" size="12" textColor="0xB676D7" text.betRecord="输赢"/>
-	<e:Scroller id="details_scl" width="365" height="176" x="12" y="74" >
+	<e:Scroller id="details_scl" width="365" height="153.5" x="12" y="74"  anchorOffsetY="0">
 		<e:List id="details_list" itemRendererSkinName="BetDetailsItemSkin" itemRendererSkinName.betRecord="BetRecordsItemSkin">
 			<e:layout>
 				<e:VerticalLayout paddingTop="5" gap="11"/>
 			</e:layout>
+			<e:ArrayCollection>
+				<e:Array>
+					<e:Object null=""/>
+					<e:Object null=""/>
+					<e:Object null=""/>
+					<e:Object null=""/>
+					<e:Object null=""/>
+					<e:Object null=""/>
+					<e:Object null=""/>
+				</e:Array>
+			</e:ArrayCollection>
 		</e:List>
 	</e:Scroller>
+	<e:Group id="loading_group" x="144.5" y="230" visible="false">
+		<e:Image width="20" height="20" x="0" y="0" source="loading_png"/>
+		<e:Label text="正在加载更多" x="27" y="5" size="11" textColor="0xb97cd3"/>
+	</e:Group>
 </e:Skin>

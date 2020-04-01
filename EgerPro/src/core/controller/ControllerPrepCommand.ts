@@ -23,6 +23,11 @@ module game {
             (new BetMoneyCommand()).register();
             (new BetInfoCommand()).register();
             (new GameResultCommand()).register();
+            (new BetDetaileCommand()).register();
+            (new BetRecordCommand()).register();
+            (new PassWordCommand()).register();
+            (new TodayBigWinnerCommand()).register();
+            (new AgCommand()).register();
         }
 	}
 }

@@ -8,15 +8,6 @@ class RegionRed extends BaseRegion
 		this.skinName = "resource/ui/mainYDD/component/RegionRedSkin.exml";
 	}
 
-
-	protected onBegigGame(): void
-	{
-		if (this.win_img)
-		{
-			this.win_img.alpha = 0;
-		}
-	}
-
 	protected get StarPointX(): number
 	{
 		return 0;

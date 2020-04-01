@@ -13,7 +13,11 @@ module betDetails
 		{
 			return [
 				PanelNotify.OPEN_BET_DETAIL,
-				PanelNotify.CLOSE_BET_DETAIL
+				PanelNotify.CLOSE_BET_DETAIL,
+				GameNotify.BET_DETAILE,
+				GameNotify.BET_DETAILE_OVER,
+				GameNotify.BET_RECORD,
+				GameNotify.BET_RECORD_OVER
 			];
 		}
 		private _betDetailsPanel: BetDetailsPanel;
@@ -36,12 +40,44 @@ module betDetails
 						RES.addEventListener(RES.ResourceEvent.GROUP_PROGRESS, this.stLoadProcess, this);
 						RES.addEventListener(RES.ResourceEvent.GROUP_LOAD_ERROR, this.error, this);
 					}
-					// RES.createGroup(group, this.stImages);
+					if (this._badyData)
+					{
+						BetDetaileRequest.sendBetDetaileRequest();
+					}
+					else
+					{
+						BetRecordRequest.sendBetRecordRequest();
+					}
 					RES.loadGroup(group);
 					//显示角色面板
 					break;
 				case PanelNotify.CLOSE_BET_DETAIL:
 					this.closePanel(1);
+					break;
+				case GameNotify.BET_DETAILE:
+					if (this._betDetailsPanel)
+					{
+						this._betDetailsPanel.refreshView();
+						this._betDetailsPanel.IsGetDataing = false;
+					}
+					break;
+				case GameNotify.BET_RECORD:
+					if (this._betDetailsPanel)
+					{
+						this._betDetailsPanel.refreshView();
+						this._betDetailsPanel.IsGetDataing2 = false;
+					}
+				case GameNotify.BET_DETAILE_OVER:
+					if (this._betDetailsPanel)
+					{
+						this._betDetailsPanel.setDataOver();
+					}
+					break;
+				case GameNotify.BET_RECORD_OVER:
+					if (this._betDetailsPanel)
+					{
+						this._betDetailsPanel.setDataOver2();
+					}
 					break;
 			}
 		}

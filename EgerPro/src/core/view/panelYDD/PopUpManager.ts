@@ -27,7 +27,7 @@ module PopUpManager {
         panel.x = 0;
         panel.y = 0;
         panel.alpha = 1;
-        
+        dark = false;//fix
 		if(dark){
 			this.darkSprite = new egret.Sprite();
 	        this.darkSprite.graphics.clear();
