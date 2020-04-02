@@ -45,6 +45,8 @@ class AllData extends egret.EventDispatcher
 	private _isNoShowAgreem: boolean;
 	private _wp: { black: string, red: string, other: string };
 	private _thisBigWinner: game.ThisBigWinnerData[];
+	private _ballIndexs: number[][];			//新增小球投注
+	private _blackCardIsLaft: boolean;
 
 	public constructor()
 	{
@@ -78,6 +80,7 @@ class AllData extends egret.EventDispatcher
 		this._playerInfo = { id: "2333", name: "", money: 666 };
 		this._isNoShowAgreem = false;
 		this._bigWinnerDatas = [];
+		this._ballIndexs = []
 	}
 
 	/**
@@ -119,9 +122,50 @@ class AllData extends egret.EventDispatcher
 	 */
 	public setBetMoney(betMoneyData: game.BetMoneyData): void
 	{
-		this._bleckMoneyNum = betMoneyData.Data.h.z;
-		this._redMoneyNum = betMoneyData.Data.h.z;
-		this._otherMoneyNum = betMoneyData.Data.l.z;
+		let black = betMoneyData.Data.h.z;
+		let red = betMoneyData.Data.r.z;
+		let other = betMoneyData.Data.l.z;
+		this._ballIndexs[0] = [];
+		this._ballIndexs[1] = [];
+		this._ballIndexs[2] = [];
+		this._ballIndexs[0] = this.getBallIndexByValue(black - this._bleckMoneyNum);
+		this._ballIndexs[1] = this.getBallIndexByValue(red - this._redMoneyNum);
+		this._ballIndexs[2] = this.getBallIndexByValue(other - this._otherMoneyNum);
+		this._bleckMoneyNum = black;
+		this._redMoneyNum = red;
+		this._otherMoneyNum = other;
+	}
+
+	/**
+	 * 获取投注小球的索引数组
+	 * 0：黑色投注
+	 * 1: 红色投注
+	 * 2: 幸运一击投注
+	 */
+	public get BallIndexs(): number[][]
+	{
+		return this._ballIndexs;
+	}
+
+	/**
+	 * 根据投注大小获取筹码索引
+	 */
+	public getBallIndexByValue(value: number): number[]
+	{
+		let returnValue: number[] = [];
+		let fave = Math.floor(value / this.ballValue[5]);
+		let faver = value % this.ballValue[5];
+		let four = faver
+		for (let i = 5; i >= 0; i--)
+		{
+			let num = Math.floor(value / this.ballValue[i]);
+			for (let k = num; k > 0; k--)
+			{ 
+				returnValue.push(i);
+			}
+			value -= num;
+		}
+		return returnValue;
 	}
 
 	/**
@@ -263,6 +307,14 @@ class AllData extends egret.EventDispatcher
 	}
 
 	/**
+	 * 黑牌是否在左边
+	 */
+	public get BlackCardIsLaft(): boolean
+	{
+		return this._blackCardIsLaft;
+	}
+
+	/**
 	 * 卡牌结果
 	 */
 	public setGameResult(resultData: game.GameResultData): void
@@ -293,11 +345,13 @@ class AllData extends egret.EventDispatcher
 		{
 			this._moveNum = oneIndex;
 			this._winHxStr = this.getOneHXStr().replace(this._moveChat, "<font color='#F9C834'>" + this._moveChat + "</font>");
+			this._blackCardIsLaft = true;
 		}
 		else if (twoIndex >= 0)
 		{
 			this._moveNum = twoIndex;
 			this._winHxStr = this.getTwoHXStr().replace(this._moveChat, "<font color='#F9C834'>" + this._moveChat + "</font>");
+			this._blackCardIsLaft = false;
 		}
 		else if (oneIndex < 0 && twoIndex < 0)
 		{
@@ -307,6 +361,7 @@ class AllData extends egret.EventDispatcher
 		for (let itemIdex in hsListData)
 		{
 			let index = parseInt(itemIdex[itemIdex.length - 1]);
+			index = index == 0 ? 10 : index;
 			if (this._hX_ItemData[index] == undefined)
 			{
 				this._hX_ItemData[index] = [];
@@ -579,7 +634,7 @@ class AllData extends egret.EventDispatcher
 	 */
 	public getOneHXStr(): string
 	{
-		return "1,3,5,7,9,b,d,f";
+		return "0,2,4,6,8,a,c,e";
 	}
 
 	/**
@@ -587,7 +642,7 @@ class AllData extends egret.EventDispatcher
 	 */
 	public getTwoHXStr(): string
 	{
-		return "0,2,4,6,8,a,c,e";
+		return "1,3,5,7,9,b,d,f";
 	}
 
 	/**
@@ -620,15 +675,7 @@ class AllData extends egret.EventDispatcher
 	public getHXItemDataByNum(count: number): string[][]
 	{
 		let returnValue: string[][] = [];
-		// let len = this._hX_ItemData.length;
-		// for (let i = count; i > 0; i--)
-		// {
-		// 	if (this._hX_ItemData[i - 1] && this._hX_ItemData[i - 1].length != 0)
-		// 	{
-		// 		returnValue.push(this._hX_ItemData[i - 1]);
-		// 	}
-		// }
-		for(let i = 1; i <= count; i++)
+		for (let i = count; i > 0; i--)
 		{
 			if (this._hX_ItemData[i] && this._hX_ItemData[i].length != 0)
 			{

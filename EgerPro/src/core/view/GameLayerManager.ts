@@ -26,9 +26,12 @@ class GameLayerManager extends eui.UILayer{
     
     private static _instance:GameLayerManager; 
 
+    private _adaptation: api.ScreenAdaptation;
+
     //构造方法
     public constructor(){
         super();
+        this._adaptation = new api.ScreenAdaptation();
         this.init();
     }
 
@@ -56,6 +59,7 @@ class GameLayerManager extends eui.UILayer{
         this.addChild(this.effectLayer);
         this.addChild(this.maskLayer);
         this.addChild(this.loadLayer);
+        this._adaptation.layerdaptation(this);
     }
 
 }

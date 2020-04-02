@@ -16,12 +16,12 @@ var game_file_list = [
 	"libs/modules/jszip/jszip.js",
 	"promise/promise.js",
 	"bin-debug/core/view/mainYDD/component/BaseRegion.js",
-	"bin-debug/core/view/panelYDD/baseComponent/ZjwComponent.js",
 	"bin-debug/core/controller/Processor/AllResponseData.js",
 	"bin-debug/core/controller/Processor/CommandBase.js",
 	"bin-debug/core/model/ResourceProxyBase.js",
 	"bin-debug/core/view/mainYDD/component/RegionRed.js",
 	"bin-debug/core/view/panelYDD/BasePanelMediator.js",
+	"bin-debug/core/view/panelYDD/baseComponent/ZjwComponent.js",
 	"bin-debug/core/model/vo/GameVO.js",
 	"bin-debug/component/ETextField.js",
 	"bin-debug/config/GameConfig.js",
@@ -70,7 +70,7 @@ var game_file_list = [
 	"bin-debug/core/model/proxy/GameProxy.js",
 	"bin-debug/core/model/proxy/TemplateProxy.js",
 	"bin-debug/core/model/vo/BetDetailsTypeData.js",
-	"bin-debug/utils/UtilsClass/TipsUtils.js",
+	"bin-debug/LoadingUI.js",
 	"bin-debug/core/model/vo/PlayerInfo.js",
 	"bin-debug/core/model/vo/RankItemTypeData.js",
 	"bin-debug/core/view/GameLayerManager.js",
@@ -123,8 +123,9 @@ var game_file_list = [
 	"bin-debug/utils/api/ContinueAmiChain.js",
 	"bin-debug/utils/api/ErgodicUtils.js",
 	"bin-debug/utils/api/ObjectPool.js",
+	"bin-debug/utils/api/ScreenAdaptation.js",
 	"bin-debug/utils/UtilsClass/BitmapBlink.js",
-	"bin-debug/LoadingUI.js",
+	"bin-debug/utils/UtilsClass/TipsUtils.js",
 	//----auto game_file_list end----
 ];
 
@@ -154,7 +155,7 @@ egret_native.egretStart = function () {
         //----auto option start----
 		entryClassName: "Main",
 		frameRate: 30,
-		scaleMode: "showAll",
+		scaleMode: "none",
 		contentWidth: 812,
 		contentHeight: 375,
 		showPaintRect: false,

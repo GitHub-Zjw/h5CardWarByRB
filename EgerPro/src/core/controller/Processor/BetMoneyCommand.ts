@@ -18,7 +18,7 @@ module game
 			super.execute(notification);
 			let data: BetMoneyData = notification.getBody();
 			AllData.instance.setBetMoney(data);
-			game.AppFacade.instance.sendNotification(GameNotify.BET_MONEY);
+			game.AppFacade.instance.sendNotification(GameNotify.BET_MONEY, data);
 		}
 	}
 	export interface BetMoneyData extends AllResponseData

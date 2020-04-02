@@ -30,7 +30,7 @@ class Clock extends eui.Component implements eui.UIComponent
 	/**
 	 * 开始计时
 	 */
-	public starTiming(timeNum: number = 25, call?: Function): void
+	public starTiming(timeNum: number = 25, call: Function): void
 	{
 		this.visible = true;
 		this._surplusTime = timeNum;
@@ -76,6 +76,10 @@ class Clock extends eui.Component implements eui.UIComponent
 			if (this._surplusTime == 3)
 			{
 				core.SoundUtils.getInstance().playSound(5);
+			}
+			if (this._surplusTime && this._surplusTime % 5 == 0)
+			{
+				BetMoneyRequest.sendBetMoneyRequest();
 			}
 		}
 	}

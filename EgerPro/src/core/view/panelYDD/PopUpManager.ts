@@ -48,7 +48,7 @@ module PopUpManager {
 		GameLayerManager.gameLayer().panelLayer.addChild(panel);
 		GameConfig.curPanel = panel;
 		if(popUpWidth != 0){
-			panel.x = GameConfig.curWidth()/2 - popUpWidth/2;
+			panel.x = GameConfig.curWidth()/2 - popUpWidth/2 - GameLayerManager.gameLayer().x;
 			panel.y = GameConfig.curHeight()/2 - popUpHeight/2;
 		}else{
 			popUpWidth = panel.width;
@@ -56,7 +56,7 @@ module PopUpManager {
 		}
 
 		//以下是弹窗动画
-		var leftX:number = GameConfig.curWidth()/2 - popUpWidth/2;
+		var leftX:number = GameConfig.curWidth()/2 - popUpWidth/2 ;
 		var upY:number = GameConfig.curHeight()/2 - popUpHeight/2;
 
         switch(effectType){
@@ -66,7 +66,7 @@ module PopUpManager {
 				panel.alpha = 0;
 				panel.scaleX = 0.5;
 				panel.scaleY = 0.5;
-				panel.x = panel.x + popUpWidth/4;
+				panel.x = panel.x + popUpWidth/4 ;
 				panel.y = panel.y + popUpHeight/4;
 		        egret.Tween.get(panel).to({alpha:1,scaleX:1,scaleY:1,x:panel.x - popUpWidth/4,y:panel.y - popUpHeight/4},300,egret.Ease.backOut); 
                 break;

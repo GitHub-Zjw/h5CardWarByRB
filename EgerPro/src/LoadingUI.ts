@@ -52,7 +52,7 @@ class LoadingUI extends eui.UILayer{
 
         this.pgBg = new egret.Bitmap;
         this.pgBg.texture = RES.getRes("PreLoadingBarBg_png");
-        this.pgBg.x = this.w / 2 - this.pgBg.width/2;
+        this.pgBg.x = this.w / 2 - this.pgBg.width / 2 - GameLayerManager.gameLayer().x;
         this.pgBg.y = this.h - this.pgBg.height - 125;
         this.addChild(this.pgBg);
 
@@ -70,7 +70,7 @@ class LoadingUI extends eui.UILayer{
         this.textField.strokeColor = 0x000000;
         this.addChild(this.textField);
         this.textField.width = 100;
-        this.textField.x = this.w / 2 - this.textField.width / 2;
+        this.textField.x = this.w / 2 - this.textField.width / 2 - GameLayerManager.gameLayer().x;
         this.textField.y = this.pgBg.y + 20;
         this.textField.textAlign = "center";
         this.textField.text = "0%";

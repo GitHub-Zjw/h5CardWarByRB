@@ -85,14 +85,17 @@ class Main extends eui.UILayer {
         game.AppFacade.getInstance().sendNotification(SceneNotify.OPEN_HOME);
         game.AppFacade.getInstance().sendNotification(MainNotify.OPEN_MAIN);
         
-        this.stage.addEventListener(egret.Event.ACTIVATE, this.onStageFocusInEvent, this);
+        this.stage.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onStageFocusInEvent, this);
         this.stage.addEventListener(egret.Event.DEACTIVATE, this.onStageFocusOutEvent, this);
     }
 
     private onStageFocusInEvent(e: egret.Event): void
     {
-        GameLayerManager.gameLayer().IsHaveFocus = true;
-        game.AppFacade.getInstance().sendNotification(SysNotify.GET_FOCUS);
+        if (GameLayerManager.gameLayer().IsHaveFocus == false)
+        {
+            GameLayerManager.gameLayer().IsHaveFocus = true;
+            game.AppFacade.getInstance().sendNotification(SysNotify.GET_FOCUS);
+        }
     }
 
     private onStageFocusOutEvent(e: egret.Event): void

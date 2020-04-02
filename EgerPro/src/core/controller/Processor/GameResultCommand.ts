@@ -14,18 +14,40 @@ module game
 		{
 			super.execute(notification);
 			let data: GameResultData = notification.getBody();
+			if (data.Code == 400)
+			{
+				let temp = setTimeout(function ()
+				{
+					GameResultRequest.sendGameResultRequest();
+					clearTimeout(temp);
+				}, 1000);
+				return;
+			}
+			data = this.sortHXList(data);
 			AllData.instance.setGameResult(data);
 			game.AppFacade.instance.sendNotification(GameNotify.GAME_RESULT);
 		}
 
 		private sortHXList(data: GameResultData): GameResultData
 		{
-			for(let i = 1; i< 6; i++)
+			for (let i = 1; i < 6; i++)
 			{
-				let temp = data.Data.hash[0]["k_"+1];
-				data.Data.hash[0]["k_"+i] = data.Data.hash[0]["k_"+(11-i)];
-				data.Data.hash[0]["k_"+(11-i)] = temp;
+				let temp1: HxListItemData = data.Data.hash[0]["k_" + i];
+				let temp2: HxListItemData = data.Data.hash[0]["k_" + (11 - i)];
+				let ar1 = temp1.ar;
+				let tr1 = temp1.tr;
+				let hr1 = temp1.hr;
+				let ar2 = temp2.ar;
+				let tr2 = temp2.tr;
+				let hr2 = temp2.hr;
+				let data1: HxListItemData = { ar: ar1, tr: tr1, hr: hr1 };
+				let data2: HxListItemData = { ar: ar2, tr: tr2, hr: hr2 };
+				data.Data.hash[0]["k_" + i] = data2;
+				data.Data.hash[0]["k_" + (11 - i)] = data1;
 			}
+			let key = 11 - parseInt(data.Data.hash.luck[data.Data.hash.luck.length - 1]);
+			key = key == 11 ? 10 : key;
+			data.Data.hash.luck = "k_" + key;
 			return data;
 		}
 	}

@@ -45,7 +45,6 @@ module game
             {
                 case MainNotify.OPEN_MAIN:
                     HomePageRequest.sendHomePageData();
-                    BetMoneyRequest.sendBetMoneyRequest();
                     if (mainUI == null)
                     {
                         mainUI = new game.MainUIYDD();
@@ -67,6 +66,7 @@ module game
                     break;
                 case GameNotify.BET_MONEY:
                     mainUI.refreshMoneyLab();
+                    mainUI.addBall();
                     break;
                 case GameNotify.BET:
                     mainUI.onBetSecceed();

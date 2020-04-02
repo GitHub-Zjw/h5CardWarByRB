@@ -151,10 +151,10 @@ module core {
          * @param  {()=>void} onPlayComplete?   播放完毕回调
          */
         public playSound(id: number, loop: number = 1, onPlayComplete?: () => void): void {
-            // if (!GameLayerManager.gameLayer().IsHaveFocus)
-            // {
-              if (1==1)  return;
-            // }
+            if (!GameLayerManager.gameLayer().IsHaveFocus)
+            {
+                return;
+            }
             let config: SoundConfig = Config.getConfig(SoundConfig).get(id);
             if (config) {
                 if (this.isSoundPlaying(id) && config.soundType == 1) {
@@ -202,6 +202,7 @@ module core {
                 }
                 this.m_playChannel.add(config.coverKey, sound);
                 sound['cover'] = config.coverKey;
+                try{
                 let channel: egret.SoundChannel = sound.play(0, loop);
                 if (channel) {
                     channel['owner'] = sound;
@@ -217,6 +218,8 @@ module core {
                     }
                     channel.addEventListener(egret.Event.SOUND_COMPLETE, this.onPlayComplete, this);
                     this.m_channels.add(sound.hashCode, channel);
+                }}catch(e){
+                    egret.warn(e);
                 }
             } else {
                 egret.warn(`名称为${config.soundName}的音效资源不存在`);

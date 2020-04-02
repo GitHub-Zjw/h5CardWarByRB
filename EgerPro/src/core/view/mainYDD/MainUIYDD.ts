@@ -155,6 +155,7 @@ module game
 			this.regionRed.removeAllBall();
 			this.regionBlack.removeAllBall();
 			this.regionOther.removeAllBall();
+			this.refreshPlayerMoney();
 		}
 		/**
 		 * 游戏开始
@@ -210,12 +211,24 @@ module game
 			let myR = AllData.instance.PlayerBetRed;
 			let myB = AllData.instance.PlayerBetBlack;
 			let myO = AllData.instance.PlayerBetOther;
-			this.moneyNumB_lab.text = numB == 0 ? "" : numB.toString();
-			this.moneyNumR_lab.text = numR == 0 ? "" : numR.toString();
-			this.moneyNumO_lab.text = numO == 0 ? "" : numO.toString();
-			this.myBetRed_lab.text = myR == 0 ? "" : myR.toString();
-			this.myBetBlack_lab.text = myB == 0 ? "" : myB.toString();
-			this.myBetOther_lab.text = myO == 0 ? "" : myO.toString();
+			this.moneyNumB_lab.text = numB == 0 ? "" : this.ceilNum(numB).toString();
+			this.moneyNumR_lab.text = numR == 0 ? "" : this.ceilNum(numR).toString();
+			this.moneyNumO_lab.text = numO == 0 ? "" : this.ceilNum(numO).toString();
+			this.myBetRed_lab.text = myR == 0 ? "" : this.ceilNum(myR).toString();
+			this.myBetBlack_lab.text = myB == 0 ? "" : this.ceilNum(myB).toString();
+			this.myBetOther_lab.text = myO == 0 ? "" : this.ceilNum(myO).toString();
+		}
+
+		private ceilNum(num: number): number
+		{
+			return Math.ceil(num * 10) / 10;
+		}
+
+		public addBall(): void
+		{
+			this.regionRed.addBall(AllData.instance.BallIndexs[1]);
+			this.regionBlack.addBall(AllData.instance.BallIndexs[0]);
+			this.regionOther.addBall(AllData.instance.BallIndexs[2]);
 		}
 
 		/**刷新计分面板数据 */
@@ -370,7 +383,7 @@ module game
 				let self = this;
 				let temp = setTimeout(function ()
 				{
-					self.setHXListData(i + 1);
+					self.setHXListData(i);
 					clearTimeout(temp);
 					if (i == len - 1)
 					{
@@ -393,8 +406,8 @@ module game
 		{
 			this.hx_group.visible = true;
 			this.hxList.itemRenderer = HxItem;
-			this.oneHXNum_lab.textFlow = (new egret.HtmlTextParser).parser(AllData.instance.getOneHXStr());
-			this.twoHXNum_lab.textFlow = (new egret.HtmlTextParser).parser(AllData.instance.getTwoHXStr());
+			this.twoHXNum_lab.textFlow = (new egret.HtmlTextParser).parser(AllData.instance.getOneHXStr());
+			this.oneHXNum_lab.textFlow = (new egret.HtmlTextParser).parser(AllData.instance.getTwoHXStr());
 			this.move_lab.visible = false;
 			this.kuangR_img.visible = false;
 			this.kuangL_img.visible = false;
@@ -407,7 +420,15 @@ module game
 		private openCards(): void
 		{
 			let len = this._cards.length;
-			let cardCenterXs = [521, 557, 596, 218, 254, 290];
+			let cardCenterXs = [];
+			if (AllData.instance.BlackCardIsLaft)
+			{
+				cardCenterXs = [521, 557, 596, 218, 254, 290];
+			}
+			else
+			{
+				cardCenterXs = [218, 254, 290, 521, 557, 596];
+			}
 			let cardCenterY = 59;
 			let cardCenterS = 1.65;
 			//设置发牌起始位置 0
@@ -442,14 +463,14 @@ module game
 			let endY = this.oneHXNum_lab.y;
 			let winner = AllData.instance.Winner;
 			let changeLab: eui.Label;
-			if (winner == EnumerationType.RegionWinner.black || winner == EnumerationType.RegionWinner.blackS)
+			if (AllData.instance.BlackCardIsLaft)
 			{
-				endX = this.twoHXNum_lab.x + this.twoHXNum_lab.size * AllData.instance.getMoveNum();
+				endX = this.twoHXNum_lab.x + this.twoHXNum_lab.size * AllData.instance.getMoveNum() / 2;
 				changeLab = this.twoHXNum_lab;
 			}
 			else
 			{
-				endX = this.oneHXNum_lab.x + this.oneHXNum_lab.size * AllData.instance.getMoveNum();
+				endX = this.oneHXNum_lab.x + this.oneHXNum_lab.size * AllData.instance.getMoveNum() / 2;
 				changeLab = this.oneHXNum_lab;
 			}
 			this.move_lab.visible = true;
@@ -481,10 +502,10 @@ module game
 			let i = 0
 			for (; i < len - 1; i++)
 			{
-				let value = { com: this._cards[i], endX: this._cardStarXs[i], endY: this._card1StarY, sX: 1, sY: 1, time: 1000 };
+				let value = { com: this._cards[i], endX: this._cardStarXs[i], endY: this._card1StarY, sX: 1, sY: 1, time: 500 };
 				this.playBackCardMoveAmi(value);
 			}
-			let value = { com: this._cards[i], endX: this._cardStarXs[i], endY: this._card1StarY, sX: 1, sY: 1, time: 1000, call: this.showCard3OpenAmi };
+			let value = { com: this._cards[i], endX: this._cardStarXs[i], endY: this._card1StarY, sX: 1, sY: 1, time: 500, call: this.showCard3OpenAmi };
 			this.playBackCardMoveAmi(value);
 		}
 
@@ -740,21 +761,20 @@ module game
 				if (AllData.instance.getMoneyIsEnough(value, true))
 				{
 					let indexs: number[] = [this._selectIndex];
-					let id: string[] = [AllData.instance.playerInfo.id];
 					let btn = ent.target;
 					core.SoundUtils.getInstance().playSound(4);
 					switch (btn)
 					{
 						case this.regionRed_btn:
-							this.regionRed.addBall(indexs, id, true);
+							this.regionRed.addBall(indexs, true);
 							AllData.instance.playerAddBetR(value);
 							break;
 						case this.regionBlack_btn:
-							this.regionBlack.addBall(indexs, id, true);
+							this.regionBlack.addBall(indexs, true);
 							AllData.instance.playerAddBetB(value);
 							break;
 						case this.regionOther_btn:
-							this.regionOther.addBall(indexs, id, true);
+							this.regionOther.addBall(indexs, true);
 							AllData.instance.playerAddBetO(value);
 							break;
 					}
