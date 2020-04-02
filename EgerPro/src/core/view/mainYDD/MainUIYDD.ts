@@ -291,9 +291,6 @@ module game
 			core.SoundUtils.getInstance().playSound(11);
 		}
 
-		private getResultData(): void
-		{ }
-
 		private moveTw(uiCom: eui.UIComponent, starX: number, endX: number, call?: Function): void
 		{
 			let self = this;
@@ -301,10 +298,10 @@ module game
 			uiCom.x = starX;
 
 			let tw = egret.Tween.get(uiCom);
-			tw.to({ x: endX }, 500)
-				.wait(1000)
-				.to({ x: starX }, 500)
-				.wait(1000)
+			tw.to({ x: endX }, 300)
+				.wait(300)
+				.to({ x: starX }, 300)
+				.wait(300)
 				.call(function ()
 				{
 					if (call)

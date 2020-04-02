@@ -3,7 +3,7 @@
 	<w:Config id="17075f09754" ></w:Config>
 
 	<e:Group x="0" y="0" width="812" height="375">
-		<e:Image source="zhuoZi_png" x="0" y="0"/>
+		<e:Image source="zhuoZi_png" x="0" y="0" width="812" height="375"/>
 		<e:Image x="403.68" bottom="1" source="bghuiyou_png" width="243" height="112"/>
 		<e:Image x="412" y="352" source="textBg_png" alpha="0.5" width="93" height="15"/>
 		<e:Image x="413" source="qian_png" y="273" width="13" height="13"/>

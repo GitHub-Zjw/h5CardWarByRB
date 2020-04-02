@@ -48,6 +48,8 @@ class LoadingUI extends eui.UILayer{
 
         this.bg = new egret.Bitmap;
         this.bg.texture = RES.getRes("PreLoadingBg_png");
+        this.bg.height = 375;
+        this.bg.width = 812;
         this.addChild(this.bg);
 
         this.pgBg = new egret.Bitmap;
