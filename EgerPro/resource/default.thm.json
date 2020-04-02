@@ -24,7 +24,8 @@
     "bigWinner.BigWinnerItem": "resource/eui_skins/BigWinnerItemSkin.exml",
     "passWord.AgreementPanel": "resource/eui_skins/AgreementPanelSkin.exml",
     "passWord.SelectBtn": "resource/eui_skins/SelectBtn.exml",
-    "passWord.SelectOkBtn": "resource/ui/passWord/SelectOkBtn.exml"
+    "passWord.SelectOkBtn": "resource/ui/passWord/SelectOkBtn.exml",
+    "game.CollerHome": "resource/eui_skins/CollerHomeSkin.exml"
   },
   "autoGenerateExmlsList": true,
   "exmls": [
@@ -64,6 +65,7 @@
     "resource/ui/panelYDD/passWord/SelectOkBtn.exml",
     "resource/ui/panelYDD/passWord/AgreementPanelSkin.exml",
     "resource/ui/panelYDD/passWord/PassWordPanelSkin.exml",
+    "resource/ui/scene/CollerHomeSkin.exml",
     "resource/ui/scene/HomeCitySkin.exml",
     "src/component/button/main/ActivityBtnSkin.exml",
     "src/component/button/main/BackpackBtnSkin.exml",

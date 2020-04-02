@@ -32,6 +32,6 @@
 		</tween:TweenGroup>
 	</w:Declarations>
 	<w:Config id="1707f8b9d93" ></w:Config>
-	<e:Image id="line_img" source="regionDownLine_png" y="0" x="0" alpha="0"/>
+	<e:Image id="line_img" source="regionDownLine_png" y="0" x="0" alpha="0" width="306" height="135"/>
 	<e:Image id="win_img" source="win_png" alpha="0" horizontalCenter="-8" verticalCenter="6.5" width="88" height="26"/>
 </e:Skin>

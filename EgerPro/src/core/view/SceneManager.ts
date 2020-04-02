@@ -11,6 +11,7 @@ module game {
     export class SceneManager extends puremvc.SimpleCommand implements puremvc.ICommand {
 
         public static homeCity: HomeCity;
+        private _allView: CollerHome;
 
         public constructor() {
             super();
@@ -36,6 +37,11 @@ module game {
                         homeCity = new HomeCity();
                         panelCon.addChild(homeCity);
                         game.SceneManager.homeCity = homeCity;
+                    }
+                    if (this._allView == null)
+                    {
+                        this._allView = new CollerHome;
+                        GameLayerManager.gameLayer().loadLayer.addChild(this._allView);
                     }
                     break;
                 case SceneNotify.CLOSE_HOME:

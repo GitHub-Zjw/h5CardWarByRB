@@ -6,7 +6,7 @@ module gameMethod
 		public regionType_lab: eui.Label;
 		public moneyNum_lab: eui.Label;
 
-		public data: string[];
+		public data: bigWinner.RankItemTypeData;
 		public constructor()
 		{
 			super();
@@ -26,9 +26,9 @@ module gameMethod
 
 		protected dataChanged(): void
 		{
-			this.winner_lab.text = this.data[0];
-			this.regionType_lab.text = this.data[2];
-			this.moneyNum_lab.text = this.data[1];
+			this.winner_lab.text = this.data.playerName;
+			this.regionType_lab.text = this.data.jiangBeiNum;
+			this.moneyNum_lab.text = this.data.value;
 		}
 	}
 }

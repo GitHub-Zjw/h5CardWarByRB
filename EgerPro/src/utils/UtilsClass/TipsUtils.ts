@@ -119,7 +119,7 @@ module TipsUtils {
         
         // effectTips.text = str;
         // effectTips.strokeColor = 0x000000;
-        effectTips.x = GameConfig.curWidth()/2;        
+        effectTips.x = GameConfig.curWidth()/2 - GameLayerManager.gameLayer().x;        
         // effectTips.stroke  = 2;
         // effectTips.bold = true;
         // effectTips.textAlign = egret.HorizontalAlign.CENTER;

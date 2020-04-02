@@ -162,7 +162,10 @@
 		"dacha_png": "images/passWord/dacha.png",
 		"tuoYuan_png": "images/passWord/tuoYuan.png",
 		"xuanZhong_png": "images/passWord/xuanZhong.png",
-		"红黑大战 -金花 - 发起交易_png": "images/passWord/红黑大战 -金花 - 发起交易.png"
+		"红黑大战 -金花 - 发起交易_png": "images/passWord/红黑大战 -金花 - 发起交易.png",
+		"btnBgAll_png": "images/mainYDD/btnBgAll.png",
+		"closeAll_png": "images/mainYDD/closeAll.png",
+		"moreAll_png": "images/mainYDD/moreAll.png"
 	},
 	"groups": {
 		"loading": [
@@ -316,7 +319,10 @@
 			"shunzi_mp3",
 			"tzxz_mp3",
 			"config_zip",
-			"fdzpyx_mp3"
+			"fdzpyx_mp3",
+			"btnBgAll_png",
+			"closeAll_png",
+			"moreAll_png"
 		],
 		"betDetails": [
 			"tzxq_png",
@@ -442,24 +448,6 @@
 					"name": "images/bigWinner/红黑大战 -金花 - 本轮大赢家.png"
 				}
 			},
-			"loading": {
-				"PreLoadingBar.png": {
-					"url": "images/loading/PreLoadingBar.png",
-					"type": "image",
-					"name": "images/loading/PreLoadingBar.png",
-					"scale9grid": "5,4,4,2"
-				},
-				"PreLoadingBarBg.png": {
-					"url": "images/loading/PreLoadingBarBg.png",
-					"type": "image",
-					"name": "images/loading/PreLoadingBarBg.png"
-				},
-				"PreLoadingBg.png": {
-					"url": "images/loading/PreLoadingBg.png",
-					"type": "image",
-					"name": "images/loading/PreLoadingBg.png"
-				}
-			},
 			"gameMethod": {
 				"jbbg.png": {
 					"url": "images/gameMethod/jbbg.png",
@@ -523,6 +511,11 @@
 					"type": "image",
 					"name": "images/mainYDD/blackPoint.png"
 				},
+				"btnBgAll.png": {
+					"url": "images/mainYDD/btnBgAll.png",
+					"type": "image",
+					"name": "images/mainYDD/btnBgAll.png"
+				},
 				"cehui.png": {
 					"url": "images/mainYDD/cehui.png",
 					"type": "image",
@@ -532,6 +525,11 @@
 					"url": "images/mainYDD/close.png",
 					"type": "image",
 					"name": "images/mainYDD/close.png"
+				},
+				"closeAll.png": {
+					"url": "images/mainYDD/closeAll.png",
+					"type": "image",
+					"name": "images/mainYDD/closeAll.png"
 				},
 				"duiZi.png": {
 					"url": "images/mainYDD/duiZi.png",
@@ -602,6 +600,11 @@
 					"url": "images/mainYDD/mengBan.png",
 					"type": "image",
 					"name": "images/mainYDD/mengBan.png"
+				},
+				"moreAll.png": {
+					"url": "images/mainYDD/moreAll.png",
+					"type": "image",
+					"name": "images/mainYDD/moreAll.png"
 				},
 				"numberOne.png": {
 					"url": "images/mainYDD/numberOne.png",
@@ -1056,6 +1059,24 @@
 					}
 				}
 			},
+			"loading": {
+				"PreLoadingBar.png": {
+					"url": "images/loading/PreLoadingBar.png",
+					"type": "image",
+					"name": "images/loading/PreLoadingBar.png",
+					"scale9grid": "5,4,4,2"
+				},
+				"PreLoadingBarBg.png": {
+					"url": "images/loading/PreLoadingBarBg.png",
+					"type": "image",
+					"name": "images/loading/PreLoadingBarBg.png"
+				},
+				"PreLoadingBg.png": {
+					"url": "images/loading/PreLoadingBg.png",
+					"type": "image",
+					"name": "images/loading/PreLoadingBg.png"
+				}
+			},
 			"mask": {
 				"loadingCircle.png": {
 					"url": "images/mask/loadingCircle.png",
@@ -1238,6 +1259,13 @@
 					"name": "assets/CheckBox/checkbox_unselect.png"
 				}
 			},
+			"ItemRenderer": {
+				"selected.png": {
+					"url": "assets/ItemRenderer/selected.png",
+					"type": "image",
+					"name": "assets/ItemRenderer/selected.png"
+				}
+			},
 			"Panel": {
 				"border.png": {
 					"url": "assets/Panel/border.png",
@@ -1248,13 +1276,6 @@
 					"url": "assets/Panel/header.png",
 					"type": "image",
 					"name": "assets/Panel/header.png"
-				}
-			},
-			"ItemRenderer": {
-				"selected.png": {
-					"url": "assets/ItemRenderer/selected.png",
-					"type": "image",
-					"name": "assets/ItemRenderer/selected.png"
 				}
 			},
 			"ProgressBar": {

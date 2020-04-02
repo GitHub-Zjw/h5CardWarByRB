@@ -36,7 +36,7 @@ module gameMethod
 			switch (btn)
 			{
 				case this.close_btn:
-					game.AppFacade.getInstance().sendNotification(PanelNotify.CLOSE_GAME_METHOD);
+					game.AppFacade.getInstance().sendNotification(PanelNotify.CLOSE_GAME_METHOD, true);
 					break;
 			}
 		}

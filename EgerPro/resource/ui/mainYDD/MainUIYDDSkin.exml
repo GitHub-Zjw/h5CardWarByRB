@@ -56,7 +56,7 @@
 
 
 		<ns1:RegionRed id="regionRed" x="395" y="33" skinName="RegionRedSkin"/>
-		<ns1:RegionBlack id="regionBlack" x="83.67" y="21.7" skinName="RegionBlackSkin" anchorOffsetX="0" anchorOffsetY="0" touchEnabled="false" touchChildren="false" visible="false"/>
+		<ns1:RegionBlack id="regionBlack" x="83.67" y="21.7" skinName="RegionBlackSkin" anchorOffsetX="0" anchorOffsetY="0" touchEnabled="false" touchChildren="false"/>
 		<ns1:RegionOther id="regionOther" x="255" y="148" skinName="RegionOtherSkin"/>
 		<e:Button id="bets_btn" label="" x="573" y="274" icon="touzhu_png" width="57" height="22">
 			<e:skinName>

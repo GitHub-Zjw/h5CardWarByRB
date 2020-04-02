@@ -5,7 +5,7 @@
 			"name": "loading"
 		},
 		{
-			"keys": "enJson_txt,yellowBtn_png,tipsBg_png,loadingCircle_png,template_json,config_json,PreLoadingBar_png,PreLoadingBarBg_png,PreLoadingBg_png,backg_mp3,button_mp3,main_bgm_mp3,0.1_png,1_png,10_png,100_png,5_png,50_png,VS-1_png,baoZi_png,bghuiyou_png,bghuizuo_png,blackPoint_png,cehui_png,close_png,duiZi_png,goldenLain_png,groupVS_png,groupVS1_png,groupVS2_png,heiJia_png,heiSheng_png,hongJia_png,hongSheng_png,huangKuang_png,hxxp_png,jiangbei_png,jinHua_png,mengBan_png,numberOne_png,numberTwo_png,otherPoint_png,playerId_png,prefab_png,qian_png,redPoint_png,regionDownLine_png,regionUpLine_png,regionUpLine2_png,sanPai_png,shizhong_png,shunJin_png,shunZi_png,stopBet_png,stopBetBtn_png,textBg_png,timer_png,tipZiBg_png,touzhu_png,win_png,xu1_png,xu2_png,youRen_png,youxi_png,zhuoZi_png,ziDian_png,ziHa_png,ziPai_png,ziXi_png,ziXuan_png,ziZhong_png,zuoRen_png,红黑大战 -金花 - 开奖弹窗_png,card0_0_png,card1_1_png,card1_10_png,card1_11_png,card1_12_png,card1_13_png,card1_2_png,card1_3_png,card1_4_png,card1_5_png,card1_6_png,card1_7_png,card1_8_png,card1_9_png,card2_1_png,card2_10_png,card2_11_png,card2_12_png,card2_13_png,card2_2_png,card2_3_png,card2_4_png,card2_5_png,card2_6_png,card2_7_png,card2_8_png,card2_9_png,card3_1_png,card3_10_png,card3_11_png,card3_12_png,card3_13_png,card3_2_png,card3_3_png,card3_4_png,card3_5_png,card3_6_png,card3_7_png,card3_8_png,card3_9_png,card4_1_png,card4_10_png,card4_11_png,card4_12_png,card4_13_png,card4_2_png,card4_3_png,card4_4_png,card4_5_png,card4_6_png,card4_7_png,card4_8_png,card4_9_png,card5_1_png,card5_2_png,background1_mp3,baozi_mp3,cmxz_mp3,daojishi_mp3,dgcmxz1_mp3,dgcmxz2_mp3,duizi_mp3,dyjtc_mp3,fpyx_mp3,jinhua_mp3,kjpkdp_mp3,ksxz_mp3,sanpai_mp3,shunjin_mp3,shunzi_mp3,tzxz_mp3,config_zip,fdzpyx_mp3",
+			"keys": "enJson_txt,yellowBtn_png,tipsBg_png,loadingCircle_png,template_json,config_json,PreLoadingBar_png,PreLoadingBarBg_png,PreLoadingBg_png,backg_mp3,button_mp3,main_bgm_mp3,0.1_png,1_png,10_png,100_png,5_png,50_png,VS-1_png,baoZi_png,bghuiyou_png,bghuizuo_png,blackPoint_png,cehui_png,close_png,duiZi_png,goldenLain_png,groupVS_png,groupVS1_png,groupVS2_png,heiJia_png,heiSheng_png,hongJia_png,hongSheng_png,huangKuang_png,hxxp_png,jiangbei_png,jinHua_png,mengBan_png,numberOne_png,numberTwo_png,otherPoint_png,playerId_png,prefab_png,qian_png,redPoint_png,regionDownLine_png,regionUpLine_png,regionUpLine2_png,sanPai_png,shizhong_png,shunJin_png,shunZi_png,stopBet_png,stopBetBtn_png,textBg_png,timer_png,tipZiBg_png,touzhu_png,win_png,xu1_png,xu2_png,youRen_png,youxi_png,zhuoZi_png,ziDian_png,ziHa_png,ziPai_png,ziXi_png,ziXuan_png,ziZhong_png,zuoRen_png,红黑大战 -金花 - 开奖弹窗_png,card0_0_png,card1_1_png,card1_10_png,card1_11_png,card1_12_png,card1_13_png,card1_2_png,card1_3_png,card1_4_png,card1_5_png,card1_6_png,card1_7_png,card1_8_png,card1_9_png,card2_1_png,card2_10_png,card2_11_png,card2_12_png,card2_13_png,card2_2_png,card2_3_png,card2_4_png,card2_5_png,card2_6_png,card2_7_png,card2_8_png,card2_9_png,card3_1_png,card3_10_png,card3_11_png,card3_12_png,card3_13_png,card3_2_png,card3_3_png,card3_4_png,card3_5_png,card3_6_png,card3_7_png,card3_8_png,card3_9_png,card4_1_png,card4_10_png,card4_11_png,card4_12_png,card4_13_png,card4_2_png,card4_3_png,card4_4_png,card4_5_png,card4_6_png,card4_7_png,card4_8_png,card4_9_png,card5_1_png,card5_2_png,background1_mp3,baozi_mp3,cmxz_mp3,daojishi_mp3,dgcmxz1_mp3,dgcmxz2_mp3,duizi_mp3,dyjtc_mp3,fpyx_mp3,jinhua_mp3,kjpkdp_mp3,ksxz_mp3,sanpai_mp3,shunjin_mp3,shunzi_mp3,tzxz_mp3,config_zip,fdzpyx_mp3,btnBgAll_png,closeAll_png,moreAll_png",
 			"name": "preload"
 		},
 		{
@@ -846,6 +846,21 @@
 			"url": "images/passWord/红黑大战 -金花 - 发起交易.png",
 			"type": "image",
 			"name": "红黑大战 -金花 - 发起交易_png"
+		},
+		{
+			"url": "images/mainYDD/btnBgAll.png",
+			"type": "image",
+			"name": "btnBgAll_png"
+		},
+		{
+			"url": "images/mainYDD/closeAll.png",
+			"type": "image",
+			"name": "closeAll_png"
+		},
+		{
+			"url": "images/mainYDD/moreAll.png",
+			"type": "image",
+			"name": "moreAll_png"
 		}
 	]
 }

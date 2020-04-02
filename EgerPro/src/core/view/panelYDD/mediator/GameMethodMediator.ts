@@ -64,6 +64,10 @@ module gameMethod
 
 		public showMainUI(): void
 		{
+			if (this._betDetailsPanel || this._prizeInfoPanel)
+			{
+				this.closePanel(1);
+			}
 			if (this._badyData)
 			{
 				if (this._betDetailsPanel == null)

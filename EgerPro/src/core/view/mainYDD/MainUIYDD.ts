@@ -472,7 +472,7 @@ module game
 			}
 			this.move_lab.visible = true;
 			let self = this;
-			egret.Tween.get(this.move_lab).to({ x: endX, y: endY }, 1000)
+			egret.Tween.get(this.move_lab).to({ x: endX, y: endY }, 300)
 				.call(function ()
 				{
 					self.move_lab.visible = false;

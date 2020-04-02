@@ -38,7 +38,7 @@ module gameMethod
 
 		private listData(): eui.ArrayCollection
 		{
-			let returnValue = new eui.ArrayCollection(AllData.instance.GmaeMethItemTypeDatas);
+			let returnValue = new eui.ArrayCollection(AllData.instance.BigWinnerDatas);
 			return returnValue;
 		}
 
@@ -105,7 +105,7 @@ module gameMethod
 			{
 				case this.close_btn:
 					AllData.instance.cleanBigWinner();
-					game.AppFacade.getInstance().sendNotification(PanelNotify.CLOSE_GAME_METHOD);
+					game.AppFacade.getInstance().sendNotification(PanelNotify.CLOSE_GAME_METHOD, false);
 					break;
 			}
 		}

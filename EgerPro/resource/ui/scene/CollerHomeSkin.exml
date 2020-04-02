@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="CollerHomeSkin" width="812" height="375" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" >
+	<w:Config id="171396bfc0a" ></w:Config>
+	<e:Group id="all_group" x="797" y="27.36" alpha="1" anchorOffsetX="75">
+		<e:Image width="75" height="33" x="0" y="0" source="btnBgAll_png"/>
+		<e:Image width="18" height="7" x="12" y="12.64" source="moreAll_png"/>
+		<e:Image width="14" height="14" x="48" y="9.14" source="closeAll_png"/>
+		<e:Button id="moreAll_btn" label="" x="1.67" y="2.63" width="30" height="30" alpha="0"/>
+		<e:Button id="closeAll_btn" label="" x="41.03" y="1.14" width="30" height="30" alpha="0"/>
+	</e:Group>
+</e:Skin>

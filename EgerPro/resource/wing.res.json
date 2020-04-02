@@ -92,22 +92,6 @@
       "name": "images/bigWinner/红黑大战 -金花 - 本轮大赢家.png"
     },
     {
-      "url": "images/loading/PreLoadingBar.png",
-      "type": "image",
-      "name": "PreLoadingBar_png",
-      "scale9grid": "5,4,4,2"
-    },
-    {
-      "url": "images/loading/PreLoadingBarBg.png",
-      "type": "image",
-      "name": "PreLoadingBarBg_png"
-    },
-    {
-      "url": "images/loading/PreLoadingBg.png",
-      "type": "image",
-      "name": "PreLoadingBg_png"
-    },
-    {
       "url": "images/gameMethod/jbbg.png",
       "type": "image",
       "name": "jbbg_png"
@@ -168,6 +152,11 @@
       "name": "blackPoint_png"
     },
     {
+      "url": "images/mainYDD/btnBgAll.png",
+      "type": "image",
+      "name": "btnBgAll_png"
+    },
+    {
       "url": "images/mainYDD/cehui.png",
       "type": "image",
       "name": "cehui_png"
@@ -176,6 +165,11 @@
       "url": "images/mainYDD/close.png",
       "type": "image",
       "name": "close_png"
+    },
+    {
+      "url": "images/mainYDD/closeAll.png",
+      "type": "image",
+      "name": "closeAll_png"
     },
     {
       "url": "images/mainYDD/duiZi.png",
@@ -246,6 +240,11 @@
       "url": "images/mainYDD/mengBan.png",
       "type": "image",
       "name": "mengBan_png"
+    },
+    {
+      "url": "images/mainYDD/moreAll.png",
+      "type": "image",
+      "name": "moreAll_png"
     },
     {
       "url": "images/mainYDD/numberOne.png",
@@ -698,6 +697,22 @@
       "name": "card5_2_png"
     },
     {
+      "url": "images/loading/PreLoadingBar.png",
+      "type": "image",
+      "name": "PreLoadingBar_png",
+      "scale9grid": "5,4,4,2"
+    },
+    {
+      "url": "images/loading/PreLoadingBarBg.png",
+      "type": "image",
+      "name": "PreLoadingBarBg_png"
+    },
+    {
+      "url": "images/loading/PreLoadingBg.png",
+      "type": "image",
+      "name": "PreLoadingBg_png"
+    },
+    {
       "url": "images/mask/loadingCircle.png",
       "type": "image",
       "name": "loadingCircle_png"
@@ -868,6 +883,11 @@
       "name": "assets/CheckBox/checkbox_unselect.png"
     },
     {
+      "url": "assets/ItemRenderer/selected.png",
+      "type": "image",
+      "name": "assets/ItemRenderer/selected.png"
+    },
+    {
       "url": "assets/Panel/border.png",
       "type": "image",
       "name": "assets/Panel/border.png"
@@ -876,11 +896,6 @@
       "url": "assets/Panel/header.png",
       "type": "image",
       "name": "assets/Panel/header.png"
-    },
-    {
-      "url": "assets/ItemRenderer/selected.png",
-      "type": "image",
-      "name": "assets/ItemRenderer/selected.png"
     },
     {
       "url": "assets/ProgressBar/thumb.png",
