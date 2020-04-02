@@ -28,6 +28,7 @@ module passWord
 		{
 			super.initView();
 			this.input_elab.restrict = "0-9,a-z,A-Z";
+			this.input_elab.inputType = egret.TextFieldInputType.PASSWORD;
 			(<eui.Label>this.cencle_btn.labelDisplay).size = 13;
 			(<eui.Label>this.ok_btn.labelDisplay).size = 13;
 		}

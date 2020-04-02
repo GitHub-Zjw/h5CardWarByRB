@@ -2,10 +2,10 @@
 <e:Skin class="ScoreboardSkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing"  width="236" height="112">
 	<w:Config id="1708571970e" ></w:Config>
 
-	<e:Image source="bghuizuo_png"/>
-	<e:Image x="5" y="41" source="blackPoint_png"/>
-	<e:Image x="5" y="5" source="redPoint_png"/>
-	<e:Image x="5" y="78" source="otherPoint_png"/>
+	<e:Image source="bghuizuo_png" width="236" height="112"/>
+	<e:Image x="5" y="41" source="blackPoint_png" width="22" height="22"/>
+	<e:Image x="5" y="5" source="redPoint_png" width="22" height="22"/>
+	<e:Image x="5" y="78" source="otherPoint_png" width="22" height="22"/>
 	<e:Label id="wpRed_lab" text="0%" y="28.2" textColor="0xd59464" size="7" horizontalCenter="-102"/>
 	<e:Label id="wpBlack_lab" text="0%" y="67" textColor="0xD59464" size="7" horizontalCenter="-102"/>
 	<e:Label id="wpOther_lab" text="0%" y="101" textColor="0xD59464" size="7" horizontalCenter="-102"/>

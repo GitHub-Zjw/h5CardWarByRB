@@ -3,5 +3,5 @@
 	<w:Config id="1708a8d5965" ></w:Config>
 
 
-	<e:Image source="stopBetBtn_png" horizontalCenter="0" verticalCenter="0"/>
+	<e:Image source="stopBetBtn_png" horizontalCenter="0" verticalCenter="0" width="201" height="58"/>
 </e:Skin>

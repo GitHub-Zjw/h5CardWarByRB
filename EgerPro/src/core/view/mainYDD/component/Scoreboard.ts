@@ -58,6 +58,8 @@ class Scoreboard extends eui.Component implements eui.UIComponent
 	{
 		let imgS: string = AllData.instance.getPointImgByReion(winner);
 		let winPoint: eui.Image = ObjectPool.instance.pop("eui.Image", imgS);
+		winPoint.width = 15;
+		winPoint.height = 15;
 		this.board_group.addChild(winPoint);
 		this._pointImages.push(winPoint);
 		if (this._pointImages.length == 60)

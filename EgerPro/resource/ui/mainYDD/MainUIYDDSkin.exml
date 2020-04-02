@@ -4,11 +4,11 @@
 
 	<e:Group x="0" y="0" width="812" height="375">
 		<e:Image source="zhuoZi_png" x="0" y="0"/>
-		<e:Image x="403.68" bottom="1" source="bghuiyou_png"/>
-		<e:Image x="412" y="352" source="textBg_png" alpha="0.5"/>
-		<e:Image x="413" source="qian_png" y="273"/>
-		<e:Image x="413" y="353" source="playerId_png"/>
-		<e:Image x="413" y="353" source="playerId_png"/>
+		<e:Image x="403.68" bottom="1" source="bghuiyou_png" width="243" height="112"/>
+		<e:Image x="412" y="352" source="textBg_png" alpha="0.5" width="93" height="15"/>
+		<e:Image x="413" source="qian_png" y="273" width="13" height="13"/>
+
+		<e:Image x="413" y="353" source="playerId_png" width="13" height="13"/>
 
 
 
@@ -17,8 +17,8 @@
 
 
 
-		<e:Image id="blackMan_img" x="97.02" source="zuoRen_png" y="27"/>
-		<e:Image id="redMan_img" source="youRen_png" x="437" y="28"/>
+		<e:Image id="blackMan_img" x="97.02" source="zuoRen_png" y="27" width="278" height="94"/>
+		<e:Image id="redMan_img" source="youRen_png" x="437" y="28" width="278" height="94"/>
 		<e:Image x="181" y="37.3" source="xu2_png"/>
 		<e:Image x="230" y="37.3" source="xu2_png"/>
 		<e:Image x="279" y="37.3" source="xu2_png"/>
@@ -27,9 +27,9 @@
 		<e:Image x="595" y="37.3" source="xu1_png"/>
 
 
-		<e:Image x="370" source="VS-1_png" y="41"/>
-		<e:Image id="vsManRed_img" source="groupVS2_png" x="375" y="99" visible="false"/>
-		<e:Image id="vsManBlack_img" x="158" source="groupVS1_png" y="96" visible="false"/>
+		<e:Image x="370" source="VS-1_png" y="41" width="77" height="52"/>
+		<e:Image id="vsManRed_img" source="groupVS2_png" x="375" y="99" width="279" height="179" visible="false"/>
+		<e:Image id="vsManBlack_img" x="158" source="groupVS1_png" y="96" width="277" height="184" visible="false"/>
 
 
 
@@ -56,9 +56,9 @@
 
 
 		<ns1:RegionRed id="regionRed" x="395" y="33" skinName="RegionRedSkin"/>
-		<ns1:RegionBlack id="regionBlack" x="83.67" y="21.7" skinName="RegionBlackSkin" anchorOffsetX="0" anchorOffsetY="0" touchEnabled="false" touchChildren="false"/>
+		<ns1:RegionBlack id="regionBlack" x="83.67" y="21.7" skinName="RegionBlackSkin" anchorOffsetX="0" anchorOffsetY="0" touchEnabled="false" touchChildren="false" visible="false"/>
 		<ns1:RegionOther id="regionOther" x="255" y="148" skinName="RegionOtherSkin"/>
-		<e:Button id="bets_btn" label="" x="573" y="274" icon="touzhu_png">
+		<e:Button id="bets_btn" label="" x="573" y="274" icon="touzhu_png" width="57" height="22">
 			<e:skinName>
 			<e:Skin states="up,down,disabled">
 				<e:Image width="100%" height="100%" source="touzhu_png"/>
@@ -66,7 +66,7 @@
 			</e:Skin>
 			</e:skinName>
 		</e:Button>
-		<e:Button id="withdraw_btn" label="" x="505" y="274" icon="touzhu_png">
+		<e:Button id="withdraw_btn" label="" x="505" y="274" icon="touzhu_png" width="57" height="22">
 			<e:skinName>
 			<e:Skin states="up,down,disabled">
 				<e:Image width="100%" height="100%" source="cehui_png"/>
@@ -76,7 +76,7 @@
 		</e:Button>
 		<e:Button id="betDetails_btn" label="投注详情" x="237" anchorOffsetX="0" width="101" anchorOffsetY="0" height="27" top="0" alpha="0"/>
 		<e:Button id="betRecord_btn" label="投注详情" x="340" anchorOffsetX="0" width="98" anchorOffsetY="0" height="27" top="0" alpha="0" y="10"/>
-		<e:Button id="gameMethod_btn" label="" x="460" y="3">
+		<e:Button id="gameMethod_btn" label="" x="460" y="3" width="21" height="21">
 			<e:skinName>
 			<e:Skin states="up,down,disabled">
 				<e:Image width="100%" height="100%" source="jiangbei_png"/>
@@ -84,7 +84,7 @@
 			</e:Skin>
 			</e:skinName>
 		</e:Button>
-		<e:Button id="prizeInfo_btn" label="" x="525" y="5">
+		<e:Button id="prizeInfo_btn" label="" x="525" y="5" width="24" height="17">
 			<e:skinName>
 			<e:Skin states="up,down,disabled">
 				<e:Image width="100%" height="100%" source="youxi_png"/>
@@ -118,7 +118,7 @@
 		<e:Group id="hx_group" left="0" right="0" top="0" bottom="0" visible="false">
 			<e:Image source="stopBet_png" x="0" y="0"/>
 
-			<e:Image source="hxxp_png" x="214" y="215.33"/>
+			<e:Image source="hxxp_png" x="214" y="215.33" width="384" height="140"/>
 			<e:Image id="kuangL_img" x="174.67" y="55.65" source="huangKuang_png" visible="false"/>
 			<e:Image id="kuangR_img" x="478.34" y="55.65" source="huangKuang_png" visible="false"/>
 			<e:Label text="区块" x="258" y="252" anchorOffsetX="0" anchorOffsetY="0" size="12" textColor="0xB676D7"/>
@@ -141,8 +141,8 @@
 		<ns1:Card y="34" skinName="CardSkin" anchorOffsetX="25" anchorOffsetY="0" id="card4" x="517" visible="false"/>
 		<ns1:Card y="34" skinName="CardSkin" anchorOffsetX="25" anchorOffsetY="0" id="card5" x="567" visible="false"/>
 		<ns1:Card y="34" skinName="CardSkin" anchorOffsetX="25" anchorOffsetY="0" id="card6" x="617" visible="false"/>
-		<e:Image id="blackResult_img" x="169" source="jinHua_png" top="84" alpha="0"/>
-		<e:Image id="redResult_img" x="485" top="84" alpha="0" source="sanPai_png"/>
+		<e:Image id="blackResult_img" x="169" source="jinHua_png" top="84" alpha="0" width="160" height="38"/>
+		<e:Image id="redResult_img" x="485" top="84" alpha="0" source="sanPai_png" width="160" height="38"/>
 	</e:Group>
 
 

@@ -163,7 +163,7 @@ class AllData extends egret.EventDispatcher
 			{ 
 				returnValue.push(i);
 			}
-			value -= num;
+			value -= num * this.ballValue[i];
 		}
 		return returnValue;
 	}

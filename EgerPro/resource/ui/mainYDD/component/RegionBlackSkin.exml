@@ -33,5 +33,5 @@
 	</w:Declarations>
 	<w:Config id="1707f8b9d93" ></w:Config>
 	<e:Image id="line_img" source="regionUpLine2_png" left="0" right="1" top="0" bottom="80" alpha="0" anchorOffsetX="0" anchorOffsetY="0"/>
-	<e:Image id="win_img" source="win_png" horizontalCenter="-36.5" verticalCenter="-45.5" alpha="0"/>
+	<e:Image id="win_img" source="win_png" horizontalCenter="-36.5" verticalCenter="-45.5" alpha="0" width="88" height="26"/>
 </e:Skin>

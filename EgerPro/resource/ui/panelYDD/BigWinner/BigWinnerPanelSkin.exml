@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <e:Skin class="BigWinnerPanelSkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing"  width="380" height="287">
 	<w:Config id="170bced36c2" ></w:Config>
-	<e:Image source="bigWinnerBg_png"/>
+	<e:Image source="bigWinnerBg_png" width="380" height="287"/>
 	<e:Scroller width="281" height="163.34" x="62" y="122.99" anchorOffsetY="0">
 		<e:List id="rankList" itemRendererSkinName="BigWinnerItemSkin">
 			<e:layout>
