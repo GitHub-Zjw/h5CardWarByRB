@@ -14,9 +14,9 @@ class HttpManager
 	public request(typeStr: string, msgData: any, completeLink?: string): void
 	{
 		let sunlight = "sunlight=" + this.getRSAStr();
-		let language = "&language=cn";
+		let language = "&language=" + AllData.instance.Language;
 		let content: string = sunlight + language + this.paseObj(msgData);
-		egret.log("发送请求：", msgData);
+		// egret.log("发送请求：", msgData);
 		let request = this._requests.get(typeStr);
 		if (request == null)
 		{
@@ -37,7 +37,7 @@ class HttpManager
 			"-----END PUBLIC KEY-----";
 		let currentTime = new Date().getTime();
 		currentTime = Math.floor(currentTime / 6000) * 6000 - 1551571200;
-		let src = "24c8a7fb8e2af720d8dc718e+" + "HD30d4c42d31283b52f175f83400865e5102a35fd0c54ad864602dd9dfdca+" + currentTime;
+		let src = "24c8a7fb8e2af720d8dc718e+" + AllData.instance.Sunlight + "+" + currentTime;
 		let jse = new JSEncrypt();
 		jse.setPublicKey(publicKey);
 		var value: string = jse.encrypt(src);
@@ -104,7 +104,7 @@ class MyRequest
 		let data: AllResponseData = JSON.parse(request.response);
 		if (data.Code == 200 || data.Code == 400)
 		{
-			egret.log("收到服务器消息: ", data);
+			// egret.log("收到服务器消息: ", data);
 			game.AppFacade.instance.sendNotification(this._typeStr, data);
 		}
 		else

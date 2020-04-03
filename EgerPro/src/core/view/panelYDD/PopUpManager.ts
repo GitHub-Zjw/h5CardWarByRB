@@ -21,6 +21,10 @@ module PopUpManager {
 		if(GameLayerManager.gameLayer().panelLayer.contains(panel)){//判断是否包含panel
 			return;
 		}
+		if (GameLayerManager.gameLayer().panelLayer.numChildren > 0)
+		{
+			return;
+		}
 
         panel.scaleX = 1;
         panel.scaleY = 1;

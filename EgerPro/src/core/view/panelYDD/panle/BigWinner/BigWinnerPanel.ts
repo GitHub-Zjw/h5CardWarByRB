@@ -17,7 +17,7 @@ module bigWinner
 
 		protected childrenCreated(): void
 		{
-			super.childrenCreated();
+			super.childrenCreated();AllData.instance.getCurrentIssueNumber()
 		}
 
 		public initView(): void
@@ -48,7 +48,6 @@ module bigWinner
 		public closePanel(): void
 		{
 			AllData.instance.onBeginGame();
-			HomePageRequest.sendHomePageData();
 			game.AppFacade.getInstance().sendNotification(PanelNotify.CLOSE_BIG_WINNER);
 		}
 	}

@@ -44,6 +44,8 @@ module game
 		public betRecord_btn: eui.Button;
 		public prizeInfo_btn: eui.Button;
 		public gameMethod_btn: eui.Button;
+		public sound_Btn: eui.CheckBox;
+		public sound_Btn2: eui.CheckBox;
 
 		public hx_group: eui.Group;
 		public oneHXNum_lab: eui.Label;
@@ -66,7 +68,6 @@ module game
 		private _cardStarXs: number[];
 		private _vsManBlackX: number;
 		private _vsManRedX: number;
-		private _isFirstOpenGame: boolean = true;
 		public constructor()
 		{
 			super();
@@ -115,6 +116,7 @@ module game
 			this.regionRed_btn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onRegionClick, this);
 			this.regionBlack_btn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onRegionClick, this);
 			this.regionOther_btn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onRegionClick, this);
+			this.sound_Btn2.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onSoundBtnClick, this);
 			this.bets_btn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBetsBtn, this);
 			this.withdraw_btn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBackBetsBtnClick, this);
 			AllData.instance.addEventListener(GameNotify.GAME_STAR, this.onBegigGame, this);
@@ -135,6 +137,7 @@ module game
 			this.regionRed_btn.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onRegionClick, this);
 			this.regionBlack_btn.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onRegionClick, this);
 			this.regionOther_btn.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onRegionClick, this);
+			this.sound_Btn2.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onSoundBtnClick, this);
 			this.bets_btn.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onBetsBtn, this);
 			this.withdraw_btn.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onBackBetsBtnClick, this);
 			AllData.instance.removeEventListener(GameNotify.GAME_STAR, this.onBegigGame, this);
@@ -164,27 +167,18 @@ module game
 		{
 			this.resetView();
 
-			if (this._isFirstOpenGame)
+			let currentSecond = AllData.instance.getCurrentSecond();
+			if (currentSecond <= 4)
 			{
-				let currentSecond = AllData.instance.getCurrentSecond();
-				egret.log("游戏执行到" + currentSecond + "秒");
-				this._isFirstOpenGame = false;
-				if (currentSecond <= 4)
-				{
-					this.showBeginAmi();
-				}
-				else if (currentSecond < 28)
-				{//处于25秒倒计时内
-					this.playAllLine(28 - currentSecond);
-				}
-				else
-				{
-					GameResultRequest.sendGameResultRequest();
-				}
+				this.showBeginAmi();
+			}
+			else if (currentSecond < 28)
+			{//处于25秒倒计时内
+				this.playAllLine(28 - currentSecond);
 			}
 			else
 			{
-				this.showBeginAmi();
+				GameResultRequest.sendGameResultRequest();
 			}
 		}
 
@@ -261,10 +255,6 @@ module game
 		 */
 		public showBeginAmi(): void
 		{
-			if (this._isFirstOpenGame)
-			{
-				this._isFirstOpenGame = false;
-			}
 			let self = this;
 			let vsLeft = this.vsManBlack_img;
 			let vsRight = this.vsManRed_img;
@@ -340,10 +330,6 @@ module game
 
 		private changeAlpha(com: eui.Image, time: number, call?: Function): void
 		{
-			if (this._isFirstOpenGame)
-			{
-				return;
-			}
 			egret.Tween.get(com).to({ alpha: 1 }, time)
 				.call(function ()
 				{
@@ -354,19 +340,44 @@ module game
 				}, this);
 		}
 
+
+		private _timer2: egret.Timer;
 		private playShowBigWinner(): void
 		{
-			if (this._isFirstOpenGame)
-			{
-				this._isFirstOpenGame = false;
-			}
 			if (AllData.instance.ThisBigWinnerData.length > 0)
 			{
 				game.AppFacade.getInstance().sendNotification(PanelNotify.OPEN_BIG_WINNER, true);
 			}
-			else
+			this.startTimer(1000);
+		}
+
+		private startTimer(time: number): void
+		{
+			if (this._timer == null)
+			{
+				this._timer = new egret.Timer(time);
+				this._timer.addEventListener(egret.TimerEvent.TIMER, this.onTimer, this);
+			}
+			this._timer.start();
+			this.onTimer(null);
+		}
+
+		private removeTimer(): void
+		{
+			if (this._timer)
+			{
+				this._timer.removeEventListener(egret.TimerEvent.TIMER, this.onTimer, this);
+				this._timer.stop();
+				this._timer = null;
+			}
+		}
+
+		private onTimer(e: egret.TimerEvent): void
+		{
+			if (AllData.instance.getCurrentIssueNumber() > AllData.instance.qihao)
 			{
 				HomePageRequest.sendHomePageData();
+				this.removeTimer();
 			}
 		}
 
@@ -374,7 +385,7 @@ module game
 		private playHXItemAmi(): void
 		{
 			let len = AllData.instance.HX_ItemData.length;
-			let speed = 500;//Math.floor(1000 / len);
+			let speed = 250;//Math.floor(1000 / len);
 			for (let i = 0; i < len; i++)
 			{
 				let self = this;
@@ -392,10 +403,6 @@ module game
 
 		private setHXListData(count: number): void
 		{
-			if (this._isFirstOpenGame)
-			{
-				return;
-			}
 			this.hxList.dataProvider = new eui.ArrayCollection(AllData.instance.getHXItemDataByNum(count));
 		}
 
@@ -449,10 +456,6 @@ module game
 		/**飘字动画 */
 		private playMoveLabAmi(): void
 		{
-			if (this._isFirstOpenGame)
-			{
-				return;
-			}
 			this.move_lab.x = 436;
 			this.move_lab.y = 272;
 			this.move_lab.text = AllData.instance.getMoveChat();
@@ -508,10 +511,6 @@ module game
 
 		private showWinK(): void
 		{
-			if (this._isFirstOpenGame)
-			{
-				return;
-			}
 			let winner = AllData.instance.Winner;
 			if (winner == EnumerationType.RegionWinner.black || winner == EnumerationType.RegionWinner.blackS)
 			{
@@ -530,10 +529,6 @@ module game
 
 		private setCardStarTF(com: eui.UIComponent): void
 		{
-			if (this._isFirstOpenGame)
-			{
-				return;
-			}
 			com.scaleX = 1.65;
 			com.scaleY = 1.65;
 			com.x = 404;
@@ -543,29 +538,11 @@ module game
 		// /**翻前两张牌 1 */
 		private playOpenCardAmi(): void
 		{
-			if (this._isFirstOpenGame)
-			{
-				this.beforePlayOpenCardAmi();
-			}
 			let cards = this._cards;
 			this.playOpenTwoCardAmi(cards[0], cards[1], cards[2], this.playHXItemAmi);
 			this.playOpenTwoCardAmi(cards[3], cards[4], cards[5]);
 		}
 
-		private beforePlayOpenCardAmi(): void
-		{
-			this._isFirstOpenGame = false;
-			this.showHXUI();
-			let len = this._cards.length;
-			let cardCenterXs = [521, 557, 596, 218, 254, 290];
-			for (let i = 0; i < len; i++)
-			{
-				this._cards[i].visible = true;
-				this._cards[i].x = cardCenterXs[i];
-				this._cards[i].y = 59;
-				this._cards[i].scaleX = this._cards[i].scaleY = 1.65;
-			}
-		}
 
 		private showCard(): void
 		{
@@ -601,10 +578,6 @@ module game
 		 */
 		public playSendCardMoveAmi(value: { com: eui.UIComponent, endX: number, endY: number, sX: number, sY: number, time: number, waitTime?: number }): void
 		{
-			if (this._isFirstOpenGame)
-			{
-				return;
-			}
 			core.SoundUtils.getInstance().playSound(7);
 			this.playMoveAmi(value);
 		}
@@ -614,10 +587,6 @@ module game
 		 */
 		public playBackCardMoveAmi(value: { com: eui.UIComponent, endX: number, endY: number, sX: number, sY: number, time: number }): void
 		{
-			if (this._isFirstOpenGame)
-			{
-				return;
-			}
 			this.playMoveAmi(value);
 		}
 		/**
@@ -625,16 +594,6 @@ module game
 		 */
 		public showCard3OpenAmi(): void
 		{
-			if (this._isFirstOpenGame)
-			{
-				this.showCard();
-				this._isFirstOpenGame = false;
-				this.setCardData();
-				this.card1.openSelf();
-				this.card2.openSelf();
-				this.card4.openSelf();
-				this.card5.openSelf();
-			}
 			this.card3.showOpenCardAmi(true, this.playCardResultAmiL);
 		}
 
@@ -643,10 +602,6 @@ module game
 		 */
 		public showCard6OpenAmi(): void
 		{
-			if (this._isFirstOpenGame)
-			{
-				return;
-			}
 			this.card6.showOpenCardAmi(true, this.playCardResultAmiR);
 		}
 
@@ -670,10 +625,6 @@ module game
 
 		public showWinner(): void
 		{
-			if (this._isFirstOpenGame)
-			{
-				return;
-			}
 			let winner: EnumerationType.RegionWinner = AllData.instance.Winner;
 			switch (winner)
 			{
@@ -782,7 +733,12 @@ module game
 		private ht: HttpManager = new HttpManager();
 		private onBetsBtn(e: egret.TouchEvent): void
 		{
-			if (AllData.instance.IsNoShowAgreem)
+			if (AllData.instance.MyBetBlackNum + AllData.instance.MyBetRedNum + AllData.instance.MyBetOtherNum <= 0)
+			{
+				TipsUtils.showTipsFromCenter("还未下注");
+				return;
+			}
+			if (AllData.instance.IsNoShowPwd)
 			{
 				game.AppFacade.getInstance().sendNotification(PanelNotify.OPEN_INPUT_PASSWORD);
 			}
@@ -808,7 +764,28 @@ module game
 			}
 		}
 
-
+		private onSoundBtnClick(e: egret.TouchEvent): void
+		{
+			let self = this;
+			this.sound_Btn2.touchEnabled= false;
+			let temp = setTimeout(function() {
+				self.sound_Btn2.touchEnabled = true;
+				clearTimeout(temp);
+			}, 1000);
+			this.sound_Btn.selected = this.sound_Btn2.selected;
+			if (this.sound_Btn.selected)
+			{
+				core.SoundUtils.getInstance().stopAllSound();
+				core.SoundUtils.getInstance().setEffectEnable(false);
+				core.SoundUtils.getInstance().setMusicEnable(false);
+			}
+			else
+			{
+				core.SoundUtils.getInstance().setEffectEnable(true);
+				core.SoundUtils.getInstance().setMusicEnable(true);
+				core.SoundUtils.getInstance().playSound(1, 0);
+			}
+		}
 
 
 		private onBallBtnClick(ent: egret.TouchEvent): void

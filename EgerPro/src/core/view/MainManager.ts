@@ -61,6 +61,7 @@ module game
                     }
                     break;
                 case GameNotify.HOME_PAGE_DATA:
+                    AllData.instance.onBeginGame();
                     AllData.instance.dispatchEventWith(GameNotify.GAME_STAR);
                     mainUI.refreshScoreBoard();
                     break;

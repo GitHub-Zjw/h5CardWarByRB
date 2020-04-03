@@ -10,10 +10,14 @@ class AllData extends egret.EventDispatcher
 		return AllData._info;
 	}
 
+	public qihao: number;
+	public isQihaos: boolean[];
 	/**小球资源名 */
 	public ballSource: string[];
 	/**小球大小 */
 	public ballValue: number[];
+	public Sunlight: string;
+	public Language: string;
 
 	private _winHxStr: string;
 	private _moveChat: string;
@@ -43,6 +47,7 @@ class AllData extends egret.EventDispatcher
 	private _playerInfo: game.PlayerInfo;
 	private _beginTimeStamp: number;		//游戏开始时间戳
 	private _isNoShowAgreem: boolean;
+	public IsNoShowPwd: boolean;
 	private _wp: { black: string, red: string, other: string };
 	private _thisBigWinner: game.ThisBigWinnerData[];
 	private _ballIndexs: number[][];			//新增小球投注
@@ -80,7 +85,10 @@ class AllData extends egret.EventDispatcher
 		this._playerInfo = { id: "2333", name: "", money: 666 };
 		this._isNoShowAgreem = false;
 		this._bigWinnerDatas = [];
-		this._ballIndexs = []
+		this._ballIndexs = [];
+		this.isQihaos = [];
+		this.qihao = 0;
+		this.IsNoShowPwd = false;
 	}
 
 	/**
@@ -160,7 +168,7 @@ class AllData extends egret.EventDispatcher
 		{
 			let num = Math.floor(value / this.ballValue[i]);
 			for (let k = num; k > 0; k--)
-			{ 
+			{
 				returnValue.push(i);
 			}
 			value -= num * this.ballValue[i];
@@ -814,5 +822,21 @@ class AllData extends egret.EventDispatcher
 		let dy = Math.abs(p1.y - p2.y);
 
 		return Math.sqrt(dx * dx + dy * dy);
+	}
+
+	/**
+	 * 解析url
+	 */
+	public parseUrl(): any
+	{
+		var searchHref = window.location.search.replace('?', '');
+		var params = searchHref.split('&');
+		var returnParam = {};
+		params.forEach(function (param)
+		{
+			var paramSplit = param.split('=');
+			returnParam[paramSplit[0]] = paramSplit[1];
+		});
+		return returnParam;
 	}
 }

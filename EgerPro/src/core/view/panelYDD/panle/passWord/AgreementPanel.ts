@@ -8,11 +8,15 @@ module passWord
 		public transfer_lab: eui.Label;
 		public to_lab: eui.Label;
 		public selectBtn: eui.RadioButton;
+		public money_lab: eui.Label;
+		public hjk_lab: eui.Label;
 
 		private _isSelect: boolean;
-		public constructor()
+		private _agData: game.AgData;
+		public constructor(data: game.AgData)
 		{
 			super();
+			this._agData = data;
 			this.skinName = "resource/ui/panelYDD/passWord/AgreementPanelSkin.exml";
 			this._isSelect = AllData.instance.IsNoShowAgreem;
 		}
@@ -28,7 +32,9 @@ module passWord
 				case this.ok_btn:
 					AllData.instance.IsNoShowAgreem = this._isSelect;
 					game.AppFacade.getInstance().sendNotification(PanelNotify.CLOSE_AGREEMENT_PANEL);
-					game.AppFacade.getInstance().sendNotification(PanelNotify.OPEN_INPUT_PASSWORD);
+					setTimeout(function() {
+						game.AppFacade.getInstance().sendNotification(PanelNotify.OPEN_INPUT_PASSWORD);
+					}, 200);
 					break;
 				case this.selectBtn:
 					this._isSelect = !this._isSelect
@@ -41,6 +47,15 @@ module passWord
 		{
 			this.to_lab.text = data.Data.to;
 			this.name_lab.text = data.Data.name;
+			this.money_lab.text = (AllData.instance.MyBetBlackNum + AllData.instance.MyBetRedNum + AllData.instance.MyBetOtherNum) + "HDAG";
+			this.transfer_lab.text = data.Data.to;
+			this.hjk_lab.text = AllData.instance.Sunlight;
+		}
+
+		public initView(): void
+		{
+			super.initView();
+			this.refreshView(this._agData);
 		}
 	}
 }

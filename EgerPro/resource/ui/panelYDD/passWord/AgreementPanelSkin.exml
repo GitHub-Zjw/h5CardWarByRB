@@ -12,8 +12,9 @@
 			<e:Label text="Transfer" x="11.33" y="17.33" size="16" textColor="0x000000"/>
 			<e:Label id="transfer_lab" text="hjkhjklhjklhjklhjklhjklhjklhjkljkljuifod aufiodfasjhjkahjklhjkl" x="86.33" y="15.33" size="14" anchorOffsetX="0" width="232" anchorOffsetY="0" height="36" textColor="0x323232"/>
 			<e:Label id="to_lab" text="hjkhjklhjklhjklhjklhjklhjklhjkljkljuifod aufiodfasjhjkahjklhjkl" x="12" y="190.33" textColor="0x323232" size="14" anchorOffsetX="0" width="302" anchorOffsetY="0" height="36"/>
-			<e:Label text="hjkhjklhjklhjklhjklhjklhjklhjkljkljuifod aufiodfasjhjkahjklhjkl" x="12" y="262.33" textColor="0x323232" size="14" anchorOffsetX="0" width="302" anchorOffsetY="0" height="36"/>
-			<e:Label text="hsadgyhukdfshafkjhdsajkflhdsajk" x="12" y="76.33" textColor="0x323232" size="14" anchorOffsetX="0" width="307" anchorOffsetY="0" height="19"/>
+			<e:Label id="hjk_lab" text="hjkhjklhjklhjklhjklhjklhjklhjkljkljuifod aufiodfasjhjkahjklhjkl" x="12" y="262.33" textColor="0x323232" size="14" anchorOffsetX="0" width="302" anchorOffsetY="0" height="36"/>
+			<e:Label text="红黑大战-金花" x="12" y="76.33" textColor="0x323232" size="14" anchorOffsetX="0" width="307" anchorOffsetY="0" height="19"/>
+			<e:Label id="money_lab" text="0 HDAG" x="12" y="139.33" textColor="0x323232" size="14" anchorOffsetX="0" width="307" anchorOffsetY="0" height="19"/>
 			<e:Label text="memo" x="12" y="55" size="14" textColor="0x999999"/>
 			<e:Label text="quantity" x="12" y="113" size="14" textColor="0x999999"/>
 			<e:Label text="to" x="12" y="169" size="14" textColor="0x999999"/>

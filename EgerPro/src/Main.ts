@@ -72,6 +72,9 @@ class Main extends eui.UILayer {
         await RES.loadGroup("preload",0,loading);
         GameLayerManager.gameLayer().removeChild(this.loadingView);
 
+        let urlData = AllData.instance.parseUrl();
+        AllData.instance.Sunlight = urlData["sunlight"];
+        AllData.instance.Language = urlData["language"];
         this.createGameScene();
     }
 

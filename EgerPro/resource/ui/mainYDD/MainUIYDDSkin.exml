@@ -28,6 +28,10 @@
 
 
 		<e:Image x="370" source="VS-1_png" y="41" width="77" height="52"/>
+		<e:Image x="308" y="5" source="fenGeTiao_png" width="2" height="17"/>
+		<e:Image x="408" source="fenGeTiao_png" y="5" width="2" height="17"/>
+		<e:Image x="477" source="fenGeTiao_png" y="5" width="2" height="17"/>
+		<e:Image x="548" source="fenGeTiao_png" y="5" width="2" height="17"/>
 		<e:Image id="vsManRed_img" source="groupVS2_png" x="375" y="99" width="279" height="179" visible="false"/>
 		<e:Image id="vsManBlack_img" x="158" source="groupVS1_png" y="96" width="277" height="184" visible="false"/>
 
@@ -36,7 +40,7 @@
 
 
 
-		<ns1:Scoreboard id="scoreBoard" x="166" skinName="ScoreboardSkin" bottom="0"/>
+		<ns1:Scoreboard id="scoreBoard" x="166" skinName="ScoreboardSkin" width="236" height="112" bottom="0"/>
 		<ns1:BallBtn id="ball0_btn" label="" x="415" y="310" skinName="BallBtnSkin" icon="0.1_png"/>
 		<ns1:BallBtn id="ball1_btn" label="" x="452" y="310" icon="1_png" skinName="BallBtnSkin"/>
 		<ns1:BallBtn id="ball2_btn" label="" x="489" y="310" skinName="BallBtnSkin" icon="5_png"/>
@@ -74,9 +78,9 @@
 			</e:Skin>
 			</e:skinName>
 		</e:Button>
-		<e:Button id="betDetails_btn" label="投注详情" x="237" anchorOffsetX="0" width="101" anchorOffsetY="0" height="27" top="0" alpha="0"/>
-		<e:Button id="betRecord_btn" label="投注详情" x="340" anchorOffsetX="0" width="98" anchorOffsetY="0" height="27" top="0" alpha="0" y="10"/>
-		<e:Button id="gameMethod_btn" label="" x="460" y="3" width="21" height="21">
+		<e:Button id="betDetails_btn" label="投注详情" x="210" anchorOffsetX="0" width="101" anchorOffsetY="0" height="27" top="0" alpha="0"/>
+		<e:Button id="betRecord_btn" label="投注详情" x="313" anchorOffsetX="0" width="98" anchorOffsetY="0" height="27" top="0" alpha="0" y="10"/>
+		<e:Button id="gameMethod_btn" label="" x="433" y="3" width="21" height="21">
 			<e:skinName>
 			<e:Skin states="up,down,disabled">
 				<e:Image width="100%" height="100%" source="jiangbei_png"/>
@@ -84,7 +88,7 @@
 			</e:Skin>
 			</e:skinName>
 		</e:Button>
-		<e:Button id="prizeInfo_btn" label="" x="525" y="5" width="24" height="17">
+		<e:Button id="prizeInfo_btn" label="" x="503" y="5" width="24" height="17">
 			<e:skinName>
 			<e:Skin states="up,down,disabled">
 				<e:Image width="100%" height="100%" source="youxi_png"/>
@@ -95,6 +99,15 @@
 		<e:Button id="regionBlack_btn" label="" x="104" y="121" anchorOffsetX="0" width="163" anchorOffsetY="0" height="147" alpha="0"/>
 		<e:Button id="regionRed_btn" label="" x="550" y="122" anchorOffsetX="0" width="153" anchorOffsetY="0" height="147" alpha="0"/>
 		<e:Button id="regionOther_btn" label="" x="304" y="188" anchorOffsetX="0" width="192" anchorOffsetY="0" height="74" alpha="0"/>
+		<e:CheckBox id="sound_Btn" label="" x="569" y="6" width="20" height="17" touchEnabled="false">
+			<e:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="soundOk_png" source.down="soundNo_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+			</e:skinName>
+		</e:CheckBox>
+		<e:CheckBox id="sound_Btn2" label="CheckBox" x="552.33" y="2.33" anchorOffsetX="0" width="53.67" anchorOffsetY="0" height="22.33" alpha="0"/>
 		<e:Button id="mengBan_btn" label="" x="403" y="262" icon="mengBan_png" anchorOffsetY="0" height="114" anchorOffsetX="0" width="244" visible="false">
 			<e:skinName>
 			<e:Skin states="up,down,disabled">
@@ -104,8 +117,8 @@
 			</e:skinName>
 		</e:Button>
 		<e:Label text="投注金额" x="436" y="274" textColor="0xa09eac" size="11.3" fontFamily="Microsoft YaHei"/>
-		<e:Label text="投注详情" x="265" textColor="0xdf8cfb" size="13" top="6" touchEnabled="false"/>
-		<e:Label text="投注记录" x="363" textColor="0xDF8CFB" size="13" top="6" touchEnabled="false"/>
+		<e:Label text="投注详情" x="238" textColor="0xdf8cfb" size="13" top="6" touchEnabled="false"/>
+		<e:Label text="投注记录" x="336" textColor="0xDF8CFB" size="13" top="6" touchEnabled="false"/>
 		<e:Label id="moneyNumB_lab" text="0" y="121.34" size="10.6" horizontalCenter="-203" textColor="0xfac33f"/>
 		<e:Label id="moneyNumR_lab" text="0" y="121.34" size="10.6" textColor="0xFAC33F" horizontalCenter="137"/>
 		<e:Label id="moneyNumO_lab" text="0" y="168.34" size="10.6" textColor="0xFAC33F" horizontalCenter="-30"/>

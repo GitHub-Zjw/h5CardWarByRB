@@ -7,6 +7,7 @@ module passWord
 		public constructor(viewComponent: any = null)
 		{
 			super(PassWordMediator.NAME, viewComponent);
+			AgRequest.sendAgRequest();
 		}
 
 		public listNotificationInterests(): Array<any>
@@ -30,7 +31,15 @@ module passWord
 				case PanelNotify.OPEN_INPUT_PASSWORD:
 					if (RES.getRes("srbmBg_png"))
 					{
-						this.showMainUI();
+						if (AllData.instance.IsNoShowPwd)
+						{
+							let data = AllData.instance;
+							BetInfoRequest.sendBetRequestData(data.MyBetBlackNum, data.MyBetRedNum, data.MyBetOtherNum);
+						}
+						else
+						{
+							this.showMainUI();
+						}
 					}
 					else
 					{
@@ -66,6 +75,7 @@ module passWord
 					{
 						let data = AllData.instance;
 						BetInfoRequest.sendBetRequestData(data.MyBetBlackNum, data.MyBetRedNum, data.MyBetOtherNum);
+						AllData.instance.IsNoShowPwd = AllData.instance.IsNoShowAgreem;
 					}
 					else
 					{
@@ -73,13 +83,12 @@ module passWord
 					}
 					break;
 				case GameNotify.AG_DATA:
-					if (this._agPanel)
-					{
-						this._agPanel.refreshView(badyData);
-					}
+					this._agPanelData = badyData;
 					break;
 			}
 		}
+		
+		private _agPanelData: game.AgData;
 
 		public showMainUI(): void
 		{
@@ -95,9 +104,8 @@ module passWord
 		{
 			if (this._agPanel == null)
 			{
-				this._agPanel = new AgreementPanel();
+				this._agPanel = new AgreementPanel(this._agPanelData);
 			}
-			AgRequest.sendAgRequest();
 			PopUpManager.addPopUp(this._agPanel, true, 384, 375, 1);
 		}
 

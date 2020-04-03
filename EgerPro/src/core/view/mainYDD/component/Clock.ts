@@ -32,6 +32,11 @@ class Clock extends eui.Component implements eui.UIComponent
 	 */
 	public starTiming(timeNum: number = 25, call: Function): void
 	{
+		if (timeNum < 0)
+		{
+			console.warn("开始时间过小");
+			return ;
+		}
 		this.visible = true;
 		this._surplusTime = timeNum;
 		this.surplusTime_lab.text = this._surplusTime.toString();

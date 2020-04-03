@@ -32,7 +32,21 @@ module game
 
 		private onCloseAllBtnClick(e: egret.TouchEvent): void
 		{
-			window.close();
+			let str = GameConfig.systemType();
+			core.SoundUtils.getInstance().stopAllSound();
+			if (str == "windows")
+			{
+				window.close();
+			}
+			else if (str == "ios")
+			{
+				// eval("OFFAudio()");
+				eval("finishPage()");
+			}
+			else if (str == "android")
+			{
+				eval("javaInterface.finishPage()");
+			}
 		}
 
 
@@ -46,14 +60,14 @@ module game
 			if (clientWidth > clientHeight)
 			{
 				let change = curHeight / clientHeight;
-				this.all_group.x += (clientWidth - curWidth)/2 - 5;
+				this.all_group.x += (clientWidth - curWidth) / 2 - 5;
 				this.all_group.scaleX = this.all_group.scaleY = change;
 			}
 			else
 			{
 				let change = curHeight / clientWidth;
 				this.all_group.scaleX = this.all_group.scaleY = change;
-				this.all_group.x += (clientWidth - curHeight)/2 - 5;
+				this.all_group.x += (clientWidth - curHeight) / 2 - 5;
 			}
 			this.all_group.y = 10;
 		}
