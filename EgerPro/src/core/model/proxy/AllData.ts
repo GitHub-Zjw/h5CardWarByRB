@@ -75,7 +75,7 @@ class AllData extends egret.EventDispatcher
 		this._bigWinnerDatas = [];
 		this._myHdag = 0;
 		this._myMoney = 0;
-		this._beginTimeStamp = 0;
+		this._beginTimeStamp = 1575302400;
 		this._playerAddBNum = 0;
 		this._playerAddRNum = 0;
 		this._playerAddONum = 0;
@@ -829,14 +829,32 @@ class AllData extends egret.EventDispatcher
 	 */
 	public parseUrl(): any
 	{
+		if (location.port == "5660")
+		{//测试服
+			return {sunlight:"HD30d4c42d31283b52f175f83400865e5102a35fd0c54ad864602dd9dfdca",language:"cn"};
+		}
 		var searchHref = window.location.search.replace('?', '');
 		var params = searchHref.split('&');
 		var returnParam = {};
-		params.forEach(function (param)
-		{
+		params.forEach(function (param){
 			var paramSplit = param.split('=');
 			returnParam[paramSplit[0]] = paramSplit[1];
 		});
 		return returnParam;
+	}
+
+	/**
+	 * 获取请求网址
+	 */
+	public getWebsite(): string
+	{
+		if (location.port == "5660")
+		{//测试服
+			return "www.libraw.io";
+		}
+		else
+		{
+			return "www.harmonydag.com";
+		}
 	}
 }

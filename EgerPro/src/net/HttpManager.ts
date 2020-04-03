@@ -79,7 +79,7 @@ class MyRequest
 	private openNet()
 	{
 		let request = this._request;
-		let dizhi = this._completeLink ? this._completeLink : "http://www.libraw.io/hgmdapp/golden/" + this._typeStr;
+		let dizhi = this._completeLink ? this._completeLink : "http://" + AllData.instance.getWebsite() + "/hgmdapp/golden/" + this._typeStr;
 		request.responseType = egret.HttpResponseType.TEXT;
 		request.open(dizhi, "POST");
 		request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");

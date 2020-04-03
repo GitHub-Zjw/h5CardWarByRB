@@ -760,7 +760,7 @@ module game
 			}
 			else
 			{
-				TipsUtils.showTipsFromCenter("没有可撤回的投注", false);
+				TipsUtils.showTipsFromCenter("没有可撤回的下注", false);
 			}
 		}
 

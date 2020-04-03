@@ -32,4 +32,12 @@
 			</e:Skin>
 		</e:skinName>
 	</e:RadioButton>
+	<e:RadioButton id="selectBtn2" label="" x="12" y="279" width="206" height="29" alpha="0">
+		<e:skinName>
+		<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" source="tuoYuan_png" source.down="xuanZhong_png"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+		</e:Skin>
+		</e:skinName>
+	</e:RadioButton>
 </e:Skin>

@@ -10,6 +10,7 @@ module passWord
 		public selectBtn: eui.RadioButton;
 		public money_lab: eui.Label;
 		public hjk_lab: eui.Label;
+		public selectBtn2: eui.RadioButton
 
 		private _isSelect: boolean;
 		private _agData: game.AgData;
@@ -36,8 +37,8 @@ module passWord
 						game.AppFacade.getInstance().sendNotification(PanelNotify.OPEN_INPUT_PASSWORD);
 					}, 200);
 					break;
-				case this.selectBtn:
-					this._isSelect = !this._isSelect
+				case this.selectBtn2:
+					this._isSelect = !this._isSelect;
 					this.selectBtn.selected = this._isSelect;
 					break;
 			}

@@ -13,6 +13,6 @@ module PassWordRequest
 		var value: string = jse.encrypt(passWord);
 		value = encodeURIComponent(value);
 		let content = { password: value };
-		game.AppFacade.getInstance().HttpManager.request(RequestsNotify.checkpwd, content, "http://www.libraw.io/hgmdapp/open/checkpwd");
+		game.AppFacade.getInstance().HttpManager.request(RequestsNotify.checkpwd, content, "http://" + AllData.instance.getWebsite() + "/hgmdapp/open/checkpwd");
 	}
 }

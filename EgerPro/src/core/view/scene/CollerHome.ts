@@ -34,19 +34,22 @@ module game
 		{
 			let str = GameConfig.systemType();
 			core.SoundUtils.getInstance().stopAllSound();
-			if (str == "windows")
+			setTimeout(function ()
 			{
-				window.close();
-			}
-			else if (str == "ios")
-			{
-				// eval("OFFAudio()");
-				eval("finishPage()");
-			}
-			else if (str == "android")
-			{
-				eval("javaInterface.finishPage()");
-			}
+				if (str == "windows")
+				{
+					window.close();
+				}
+				else if (str == "ios")
+				{
+					// eval("OFFAudio()");
+					eval("finishPage()");
+				}
+				else if (str == "android")
+				{
+					eval("javaInterface.finishPage()");
+				}
+			}, 500);
 		}
 
 
