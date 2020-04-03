@@ -59,7 +59,7 @@ class AllData extends egret.EventDispatcher
 		this._cardColor = [];
 		this._cardNums = [];
 		this.ballSource = ["0.1_png", "1_png", "5_png", "10_png", "50_png", "100_png"];
-		this.ballValue = [0.1, 1, 5, 10, 50, 100];
+		this.ballValue = [1, 10, 50, 100, 1000, 5000];
 		this._bleckMoneyNum = 0;
 		this._redMoneyNum = 0;
 		this._redMoneyNum = 0;

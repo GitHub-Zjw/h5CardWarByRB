@@ -19,6 +19,14 @@ module betDetails
 		{
 			this.betNum_lab.text = this.data.money;
 			this.TorF_lab.text = this.data.isWin;
+			if (this.data.isWin[0] == "-")
+			{
+				this.TorF_lab.textColor = 0xDC5558;
+			}
+			else
+			{
+				this.TorF_lab.textColor = 0x65B54D;
+			}
 			let imgS: string = "";
 			let len = this.data.region.length;
 			this.color_img0.visible = false;

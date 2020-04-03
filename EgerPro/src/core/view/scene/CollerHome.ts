@@ -42,7 +42,6 @@ module game
 				}
 				else if (str == "ios")
 				{
-					// eval("OFFAudio()");
 					eval("finishPage()");
 				}
 				else if (str == "android")
@@ -63,14 +62,15 @@ module game
 			if (clientWidth > clientHeight)
 			{
 				let change = curHeight / clientHeight;
-				this.all_group.x += (clientWidth - curWidth) / 2 - 5;
+				// this.all_group.x += (clientWidth - curWidth) / 2 - 5;
+				this.all_group.x = clientWidth - (clientWidth - curWidth) / 2 - 40;
 				this.all_group.scaleX = this.all_group.scaleY = change;
 			}
 			else
 			{
 				let change = curHeight / clientWidth;
 				this.all_group.scaleX = this.all_group.scaleY = change;
-				this.all_group.x += (clientWidth - curHeight) / 2 - 5;
+				this.all_group.x = clientHeight - 15;
 			}
 			this.all_group.y = 10;
 		}
