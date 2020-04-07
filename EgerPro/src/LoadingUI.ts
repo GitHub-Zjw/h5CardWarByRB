@@ -85,14 +85,21 @@ class LoadingUI extends eui.UILayer{
      */
     // public progressBar:egret.gui.ProgressBar;
 
-    public setProgress(current:number, total:number):void {
+    public setProgress(current:number, total:number, desc?: string):void {
         // if(this.progressBar)
         // {
         //     this.progressBar.maximum = total;
         //     this.progressBar.value = current;
         // }
         var rate: number = Math.round((current / total) * 100);
-        this.textField.text = rate + "%";
         this.pgBar.width = (this.pgBg.width - 5) * (current / total);
+        if(desc)
+        {
+            this.textField.text = desc;
+        }
+        else
+        {
+            this.textField.text = rate + "%";
+        }
     }
 }

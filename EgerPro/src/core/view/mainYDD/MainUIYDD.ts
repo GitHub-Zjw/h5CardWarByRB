@@ -99,6 +99,7 @@ module game
 			this.regitEvent();
 			this.refreshMoneyLab();
 			core.SoundUtils.getInstance().setMusicEnable(true);
+			HomePageRequest.sendHomePageData();
 		}
 
 		private regitEvent(): void
@@ -767,8 +768,9 @@ module game
 		private onSoundBtnClick(e: egret.TouchEvent): void
 		{
 			let self = this;
-			this.sound_Btn2.touchEnabled= false;
-			let temp = setTimeout(function() {
+			this.sound_Btn2.touchEnabled = false;
+			let temp = setTimeout(function ()
+			{
 				self.sound_Btn2.touchEnabled = true;
 				clearTimeout(temp);
 			}, 1000);

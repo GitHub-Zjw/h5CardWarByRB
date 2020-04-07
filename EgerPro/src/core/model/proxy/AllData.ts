@@ -829,9 +829,11 @@ class AllData extends egret.EventDispatcher
 	 */
 	public parseUrl(): any
 	{
-		if (location.port == "5660")
+		if (1 == 1)
 		{//测试服
-			return {sunlight:"HD30d4c42d31283b52f175f83400865e5102a35fd0c54ad864602dd9dfdca",language:"cn"};
+			// return {sunlight:"HD30d4c42d31283b52f175f83400865e5102a35fd0c54ad864602dd9dfdca",language:"cn"};//本机
+			return {sunlight:"HD9ae9bca5bcac2ac8f759b44c387ba282ffbb0a7faf042ce56da97c2b611",language:"cn"};//测试服
+			
 		}
 		var searchHref = window.location.search.replace('?', '');
 		var params = searchHref.split('&');

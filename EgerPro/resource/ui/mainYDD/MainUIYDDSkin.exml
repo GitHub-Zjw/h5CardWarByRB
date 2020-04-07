@@ -17,8 +17,8 @@
 
 
 
-		<e:Image id="blackMan_img" x="97.02" source="zuoRen_png" y="27" width="278" height="94"/>
-		<e:Image id="redMan_img" source="youRen_png" x="437" y="28" width="278" height="94"/>
+		<e:Image id="blackMan_img" x="114.36" source="zuoRen_png" y="27" width="248" height="94"/>
+		<e:Image id="redMan_img" source="youRen_png" x="453.67" y="28" width="248" height="94"/>
 		<e:Image x="181" y="37.3" source="xu2_png"/>
 		<e:Image x="230" y="37.3" source="xu2_png"/>
 		<e:Image x="279" y="37.3" source="xu2_png"/>
@@ -27,13 +27,13 @@
 		<e:Image x="595" y="37.3" source="xu1_png"/>
 
 
-		<e:Image x="370" source="VS-1_png" y="41" width="77" height="52"/>
+		<e:Image x="366" source="VS-1_png" y="27" width="82" height="82"/>
 		<e:Image x="308" y="5" source="fenGeTiao_png" width="2" height="17"/>
 		<e:Image x="408" source="fenGeTiao_png" y="5" width="2" height="17"/>
 		<e:Image x="477" source="fenGeTiao_png" y="5" width="2" height="17"/>
 		<e:Image x="548" source="fenGeTiao_png" y="5" width="2" height="17"/>
-		<e:Image id="vsManRed_img" source="groupVS2_png" x="375" y="99" width="279" height="179" visible="false"/>
-		<e:Image id="vsManBlack_img" x="158" source="groupVS1_png" y="96" width="277" height="184" visible="false"/>
+
+
 
 
 
@@ -156,6 +156,8 @@
 		<ns1:Card y="34" skinName="CardSkin" anchorOffsetX="25" anchorOffsetY="0" id="card6" x="617" visible="false"/>
 		<e:Image id="blackResult_img" x="169" source="jinHua_png" top="84" alpha="0" width="160" height="38"/>
 		<e:Image id="redResult_img" x="485" top="84" alpha="0" source="sanPai_png" width="160" height="38"/>
+		<e:Image id="vsManRed_img" source="groupVS2_png" x="371" width="422" height="195" y="90" touchEnabled="false" visible="false"/>
+		<e:Image id="vsManBlack_img" x="5" source="groupVS1_png" width="444" height="189" y="89" touchEnabled="false" visible="false"/>
 	</e:Group>
 
 

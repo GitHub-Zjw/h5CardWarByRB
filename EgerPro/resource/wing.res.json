@@ -54,7 +54,7 @@
     {
       "url": "images/bettingDetails/红黑大战 -金花 - 投注详情弹窗.png",
       "type": "image",
-      "name": "红黑大战 -金花 - 投注详情弹窗_png"
+      "name": "images/bettingDetails/红黑大战 -金花 - 投注详情弹窗.png"
     },
     {
       "url": "images/bigWinner/bigWinnerBg.png",
@@ -116,6 +116,46 @@
       "url": "images/loading/PreLoadingBg.png",
       "type": "image",
       "name": "PreLoadingBg_png"
+    },
+    {
+      "url": "images/mask/loadingCircle.png",
+      "type": "image",
+      "name": "loadingCircle_png"
+    },
+    {
+      "url": "images/mask/tipsBg.png",
+      "type": "image",
+      "name": "tipsBg_png"
+    },
+    {
+      "url": "images/passWord/dacha.png",
+      "type": "image",
+      "name": "dacha_png"
+    },
+    {
+      "url": "images/passWord/pwBtnBg.png",
+      "type": "image",
+      "name": "pwBtnBg_png"
+    },
+    {
+      "url": "images/passWord/srbmBg.png",
+      "type": "image",
+      "name": "srbmBg_png"
+    },
+    {
+      "url": "images/passWord/tuoYuan.png",
+      "type": "image",
+      "name": "tuoYuan_png"
+    },
+    {
+      "url": "images/passWord/xuanZhong.png",
+      "type": "image",
+      "name": "xuanZhong_png"
+    },
+    {
+      "url": "images/passWord/红黑大战 -金花 - 发起交易.png",
+      "type": "image",
+      "name": "images/passWord/红黑大战 -金花 - 发起交易.png"
     },
     {
       "url": "images/mainYDD/0.1.png",
@@ -288,11 +328,6 @@
       "name": "playerId_png"
     },
     {
-      "url": "images/mainYDD/prefab.png",
-      "type": "image",
-      "name": "prefab_png"
-    },
-    {
       "url": "images/mainYDD/qian.png",
       "type": "image",
       "name": "qian_png"
@@ -446,11 +481,6 @@
       "url": "images/mainYDD/zuoRen.png",
       "type": "image",
       "name": "zuoRen_png"
-    },
-    {
-      "url": "images/mainYDD/红黑大战 -金花 - 开奖弹窗.png",
-      "type": "image",
-      "name": "红黑大战 -金花 - 开奖弹窗_png"
     },
     {
       "url": "images/mainYDD/cards/card0_0.png",
@@ -728,46 +758,6 @@
       "name": "card5_2_png"
     },
     {
-      "url": "images/mask/loadingCircle.png",
-      "type": "image",
-      "name": "loadingCircle_png"
-    },
-    {
-      "url": "images/mask/tipsBg.png",
-      "type": "image",
-      "name": "tipsBg_png"
-    },
-    {
-      "url": "images/passWord/dacha.png",
-      "type": "image",
-      "name": "dacha_png"
-    },
-    {
-      "url": "images/passWord/pwBtnBg.png",
-      "type": "image",
-      "name": "pwBtnBg_png"
-    },
-    {
-      "url": "images/passWord/srbmBg.png",
-      "type": "image",
-      "name": "srbmBg_png"
-    },
-    {
-      "url": "images/passWord/tuoYuan.png",
-      "type": "image",
-      "name": "tuoYuan_png"
-    },
-    {
-      "url": "images/passWord/xuanZhong.png",
-      "type": "image",
-      "name": "xuanZhong_png"
-    },
-    {
-      "url": "images/passWord/红黑大战 -金花 - 发起交易.png",
-      "type": "image",
-      "name": "红黑大战 -金花 - 发起交易_png"
-    },
-    {
       "url": "sound/backg.mp3",
       "type": "sound",
       "name": "backg_mp3"
@@ -868,6 +858,21 @@
       "name": "tzxz_mp3"
     },
     {
+      "url": "assets/Button/button_down.png",
+      "type": "image",
+      "name": "assets/Button/button_down.png"
+    },
+    {
+      "url": "assets/Button/button_up.png",
+      "type": "image",
+      "name": "assets/Button/button_up.png"
+    },
+    {
+      "url": "assets/ItemRenderer/selected.png",
+      "type": "image",
+      "name": "assets/ItemRenderer/selected.png"
+    },
+    {
       "url": "assets/CheckBox/checkbox_select_disabled.png",
       "type": "image",
       "name": "assets/CheckBox/checkbox_select_disabled.png"
@@ -888,21 +893,6 @@
       "name": "assets/CheckBox/checkbox_unselect.png"
     },
     {
-      "url": "assets/Button/button_down.png",
-      "type": "image",
-      "name": "assets/Button/button_down.png"
-    },
-    {
-      "url": "assets/Button/button_up.png",
-      "type": "image",
-      "name": "assets/Button/button_up.png"
-    },
-    {
-      "url": "assets/ItemRenderer/selected.png",
-      "type": "image",
-      "name": "assets/ItemRenderer/selected.png"
-    },
-    {
       "url": "assets/Panel/border.png",
       "type": "image",
       "name": "assets/Panel/border.png"
@@ -911,16 +901,6 @@
       "url": "assets/Panel/header.png",
       "type": "image",
       "name": "assets/Panel/header.png"
-    },
-    {
-      "url": "assets/ProgressBar/thumb.png",
-      "type": "image",
-      "name": "assets/ProgressBar/thumb.png"
-    },
-    {
-      "url": "assets/ProgressBar/track.png",
-      "type": "image",
-      "name": "assets/ProgressBar/track.png"
     },
     {
       "url": "assets/RadioButton/radiobutton_select_disabled.png",
@@ -943,6 +923,26 @@
       "name": "assets/RadioButton/radiobutton_unselect.png"
     },
     {
+      "url": "assets/ProgressBar/thumb.png",
+      "type": "image",
+      "name": "assets/ProgressBar/thumb.png"
+    },
+    {
+      "url": "assets/ProgressBar/track.png",
+      "type": "image",
+      "name": "assets/ProgressBar/track.png"
+    },
+    {
+      "url": "assets/ScrollBar/roundthumb.png",
+      "type": "image",
+      "name": "assets/ScrollBar/roundthumb.png"
+    },
+    {
+      "url": "assets/ScrollBar/track.png",
+      "type": "image",
+      "name": "assets/ScrollBar/track.png"
+    },
+    {
       "url": "assets/Slider/thumb.png",
       "type": "image",
       "name": "assets/Slider/thumb.png"
@@ -956,16 +956,6 @@
       "url": "assets/Slider/tracklight.png",
       "type": "image",
       "name": "assets/Slider/tracklight.png"
-    },
-    {
-      "url": "assets/ScrollBar/roundthumb.png",
-      "type": "image",
-      "name": "assets/ScrollBar/roundthumb.png"
-    },
-    {
-      "url": "assets/ScrollBar/track.png",
-      "type": "image",
-      "name": "assets/ScrollBar/track.png"
     },
     {
       "url": "assets/ToggleSwitch/handle.png",

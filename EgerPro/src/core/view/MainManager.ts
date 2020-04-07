@@ -44,7 +44,6 @@ module game
             switch (notification.getName())
             {
                 case MainNotify.OPEN_MAIN:
-                    HomePageRequest.sendHomePageData();
                     if (mainUI == null)
                     {
                         mainUI = new game.MainUIYDD();

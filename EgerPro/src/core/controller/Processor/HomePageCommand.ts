@@ -13,7 +13,12 @@ module game
 		public execute(notification: puremvc.INotification): void
 		{
 			super.execute(notification);
-			let data = notification.getBody();
+			let data: JhGameData = notification.getBody();
+			if (data.Msg == "400")
+			{
+				TipsUtils.showTipsFromCenter("没有获取到后端数据");
+				return;
+			}
 			AllData.instance.setHomePageData(data);
 			game.AppFacade.instance.sendNotification(GameNotify.HOME_PAGE_DATA);
 		}

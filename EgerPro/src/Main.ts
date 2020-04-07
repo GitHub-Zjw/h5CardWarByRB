@@ -62,20 +62,56 @@ class Main extends eui.UILayer {
        
         //设置加载进度界面
         self.loadingView  = new LoadingUI();
-        GameLayerManager.gameLayer().addChild(self.loadingView);
+        GameLayerManager.gameLayer().loadLayer.addChild(self.loadingView);
 
-        let loading:RES.PromiseTaskReporter = {
-            onProgress(current: number, total: number){
-                self.loadingView.setProgress(current,total);
-            }
-        };
-        await RES.loadGroup("preload",0,loading);
-        GameLayerManager.gameLayer().removeChild(this.loadingView);
+        // let loading:RES.PromiseTaskReporter = {
+        //     onProgress(current: number, total: number){
+        //         self.loadingView.setProgress(current,total);
+        //     }
+        // };
+
+            RES.addEventListener(RES.ResourceEvent.GROUP_COMPLETE, this.onResourceLoadComplete, this);
+            //添加资源组加载失败事件
+            RES.addEventListener(RES.ResourceEvent.GROUP_LOAD_ERROR, this.onResourceLoadError, this);
+            //添加资源加载失败事件
+            RES.addEventListener(RES.ResourceEvent.ITEM_LOAD_ERROR, this.onResourceItemLoadError, this);
+            //添加资源组加载进度事件
+            RES.addEventListener(RES.ResourceEvent.GROUP_PROGRESS, this.onResourceProgress, this);
+        RES.loadGroup("preload",0);
+    }
+
+    private onResourceLoadComplete(event:RES.ResourceEvent): void
+    {
+        
+        GameLayerManager.gameLayer().loadLayer.removeChild(this.loadingView);
 
         let urlData = AllData.instance.parseUrl();
         AllData.instance.Sunlight = urlData["sunlight"];
         AllData.instance.Language = urlData["language"];
         this.createGameScene();
+    }
+
+    private onResourceLoadError(event:RES.ResourceEvent): void
+    {
+        this.loadingView.setProgress(1,1,"加载失败：" + event.resItem.url);
+        let self = this;
+        setTimeout(function() {
+            self.onResourceLoadComplete(event);
+        }, 5000);
+    }
+
+    private onResourceItemLoadError(event:RES.ResourceEvent): void
+    {
+        this.loadingView.setProgress(1,1,"加载出错：" + event.itemsLoaded + " / " + event.itemsTotal + " + event.resItem.url");
+        let self = this;
+        setTimeout(function() {
+            self.onResourceLoadComplete(event);
+        }, 5000);
+    }
+
+    private onResourceProgress(event:RES.ResourceEvent): void
+    {
+        this.loadingView.setProgress(event.itemsLoaded, event.itemsTotal);
     }
 
     /**

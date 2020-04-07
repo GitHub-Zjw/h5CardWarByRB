@@ -43,12 +43,12 @@
     <!--这个标签会被替换为项目中所有的 javascript 文件-->
     <!--game_files_start-->
 	<script egret="lib" src="bin-debug/core/view/mainYDD/component/BaseRegion.js"></script>
+	<script egret="lib" src="bin-debug/core/controller/Processor/AllResponseData.js"></script>
 	<script egret="lib" src="bin-debug/core/controller/Processor/CommandBase.js"></script>
 	<script egret="lib" src="bin-debug/core/model/ResourceProxyBase.js"></script>
 	<script egret="lib" src="bin-debug/core/view/mainYDD/component/RegionRed.js"></script>
 	<script egret="lib" src="bin-debug/core/view/panelYDD/BasePanelMediator.js"></script>
 	<script egret="lib" src="bin-debug/core/view/panelYDD/baseComponent/ZjwComponent.js"></script>
-	<script egret="lib" src="bin-debug/core/controller/Processor/AllResponseData.js"></script>
 	<script egret="lib" src="bin-debug/core/model/vo/PlayerInfo.js"></script>
 	<script egret="lib" src="bin-debug/component/ETextField.js"></script>
 	<script egret="lib" src="bin-debug/config/GameConfig.js"></script>
@@ -98,7 +98,7 @@
 	<script egret="lib" src="bin-debug/core/model/proxy/TemplateProxy.js"></script>
 	<script egret="lib" src="bin-debug/core/model/vo/BetDetailsTypeData.js"></script>
 	<script egret="lib" src="bin-debug/core/model/vo/GameVO.js"></script>
-	<script egret="lib" src="bin-debug/utils/UtilsClass/TipsUtils.js"></script>
+	<script egret="lib" src="bin-debug/LoadingUI.js"></script>
 	<script egret="lib" src="bin-debug/core/model/vo/RankItemTypeData.js"></script>
 	<script egret="lib" src="bin-debug/core/view/GameLayerManager.js"></script>
 	<script egret="lib" src="bin-debug/core/view/MainManager.js"></script>
@@ -153,7 +153,7 @@
 	<script egret="lib" src="bin-debug/utils/api/ObjectPool.js"></script>
 	<script egret="lib" src="bin-debug/utils/api/ScreenAdaptation.js"></script>
 	<script egret="lib" src="bin-debug/utils/UtilsClass/BitmapBlink.js"></script>
-	<script egret="lib" src="bin-debug/LoadingUI.js"></script>
+	<script egret="lib" src="bin-debug/utils/UtilsClass/TipsUtils.js"></script>
 	<!--game_files_end-->
 </head>
 <body>
@@ -172,7 +172,7 @@
          data-log-filter="" data-show-fps-style="x:0,y:0,size:30,textColor:0x00c200,bgAlpha:0.9">
     </div>
     <script>
-        egret.runEgret({ renderMode: "webgl", audioType: 2,screenAdapter:null,antialias:false,retina:true});
+        egret.runEgret({ renderMode: "webgl", audioType: 0,screenAdapter:null,antialias:false,retina:true});
     </script>
 </body>
 </html>
