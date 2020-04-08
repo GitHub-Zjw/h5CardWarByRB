@@ -67,12 +67,16 @@ class MyRequest
 	private _content: string;
 	private _request: egret.HttpRequest;
 	private _completeLink: string;
+	private _timeOutNum: number;
+	private _timer: egret.Timer;
+	private _isShowTip: boolean;
 	public constructor(typeStr: string, content: string, completeLink?: string)
 	{
 		this._typeStr = typeStr;
 		this._content = content;
 		this._request = new egret.HttpRequest();
 		this._completeLink = completeLink;
+		this._isShowTip = true;
 		this.openNet();
 	}
 
@@ -83,10 +87,10 @@ class MyRequest
 		request.responseType = egret.HttpResponseType.TEXT;
 		request.open(dizhi, "POST");
 		request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-		request.send(this._content);
 		request.addEventListener(egret.Event.COMPLETE, this.onPostComplete, this);
 		request.addEventListener(egret.IOErrorEvent.IO_ERROR, this.onPostIOError, this);
 		request.addEventListener(egret.ProgressEvent.PROGRESS, this.onPostProgress, this);
+		this.send(this._content);
 	}
 
 	/**
@@ -95,11 +99,14 @@ class MyRequest
 	public send(conent: string): void
 	{
 		this._request.send(conent);
+		this._isShowTip = true;
+		this.starTiming();
 	}
 
 
 	private onPostComplete(event: egret.Event): void
 	{
+		this._isShowTip = false;
 		var request = <egret.HttpRequest>event.currentTarget;
 		let data: AllResponseData = JSON.parse(request.response);
 		if (data.Code == 200 || data.Code == 400)
@@ -121,5 +128,48 @@ class MyRequest
 	private onPostProgress(event: egret.ProgressEvent): void
 	{
 		console.log("post progress : " + Math.floor(100 * event.bytesLoaded / event.bytesTotal) + "%");
+	}
+
+
+	/**
+	 * 开始计时
+	 */
+	public starTiming(timeNum: number = 15000): void
+	{
+		if (timeNum < 0)
+		{
+			console.warn("开始时间过小");
+			return;
+		}
+		this.startTimer(timeNum);
+	}
+
+	private startTimer(time: number): void
+	{
+		if (this._timer == null)
+		{
+			this._timer = new egret.Timer(time);
+			this._timer.addEventListener(egret.TimerEvent.TIMER, this.onTimer, this);
+		}
+		this._timer.start();
+	}
+
+	private removeTimer(): void
+	{
+		if (this._timer)
+		{
+			this._timer.removeEventListener(egret.TimerEvent.TIMER, this.onTimer, this);
+			this._timer.stop();
+			this._timer = null;
+		}
+	}
+
+	private onTimer(e: egret.TimerEvent): void
+	{
+		this.removeTimer();
+		if (this._isShowTip)
+		{
+			TipsUtils.showTipsFromCenter("当前网络较慢");
+		}
 	}
 }

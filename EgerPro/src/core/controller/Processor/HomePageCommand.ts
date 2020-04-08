@@ -14,9 +14,9 @@ module game
 		{
 			super.execute(notification);
 			let data: JhGameData = notification.getBody();
-			if (data.Msg == "400")
+			if (data.Code == 400)
 			{
-				TipsUtils.showTipsFromCenter("没有获取到后端数据");
+				TipsUtils.showTipsFromCenter(data.Msg);
 				return;
 			}
 			AllData.instance.setHomePageData(data);

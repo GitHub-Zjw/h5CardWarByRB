@@ -850,13 +850,13 @@ class AllData extends egret.EventDispatcher
 	 */
 	public getWebsite(): string
 	{
-		if (location.port == "5660")
-		{//测试服
-			return "www.libraw.io";
-		}
-		else
-		{
+		// if (location.port == "5660")
+		// {//测试服
+		// 	return "www.libraw.io";
+		// }
+		// else
+		// {
 			return "www.harmonydag.com";
-		}
+		// }
 	}
 }

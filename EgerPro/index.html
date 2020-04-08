@@ -49,7 +49,7 @@
 	<script egret="lib" src="bin-debug/core/view/mainYDD/component/RegionRed.js"></script>
 	<script egret="lib" src="bin-debug/core/view/panelYDD/BasePanelMediator.js"></script>
 	<script egret="lib" src="bin-debug/core/view/panelYDD/baseComponent/ZjwComponent.js"></script>
-	<script egret="lib" src="bin-debug/core/model/vo/PlayerInfo.js"></script>
+	<script egret="lib" src="bin-debug/core/model/vo/GameVO.js"></script>
 	<script egret="lib" src="bin-debug/component/ETextField.js"></script>
 	<script egret="lib" src="bin-debug/config/GameConfig.js"></script>
 	<script egret="lib" src="bin-debug/config/GlobalData.js"></script>
@@ -95,10 +95,11 @@
 	<script egret="lib" src="bin-debug/NewFile.js"></script>
 	<script egret="lib" src="bin-debug/core/model/proxy/AllData.js"></script>
 	<script egret="lib" src="bin-debug/core/model/proxy/GameProxy.js"></script>
+	<script egret="lib" src="bin-debug/core/model/proxy/SoundManager.js"></script>
 	<script egret="lib" src="bin-debug/core/model/proxy/TemplateProxy.js"></script>
 	<script egret="lib" src="bin-debug/core/model/vo/BetDetailsTypeData.js"></script>
-	<script egret="lib" src="bin-debug/core/model/vo/GameVO.js"></script>
 	<script egret="lib" src="bin-debug/LoadingUI.js"></script>
+	<script egret="lib" src="bin-debug/core/model/vo/PlayerInfo.js"></script>
 	<script egret="lib" src="bin-debug/core/model/vo/RankItemTypeData.js"></script>
 	<script egret="lib" src="bin-debug/core/view/GameLayerManager.js"></script>
 	<script egret="lib" src="bin-debug/core/view/MainManager.js"></script>
@@ -171,8 +172,12 @@
          data-show-fps="false" data-show-log="false"
          data-log-filter="" data-show-fps-style="x:0,y:0,size:30,textColor:0x00c200,bgAlpha:0.9">
     </div>
+	<div id="bgSound">
+	</div>
+	<div id="eSound">
+	</div>
     <script>
-        egret.runEgret({ renderMode: "webgl", audioType: 0,screenAdapter:null,antialias:false,retina:true});
+        egret.runEgret({ renderMode: "webgl", audioType: 2,screenAdapter:null,antialias:false,retina:true});
     </script>
 </body>
 </html>

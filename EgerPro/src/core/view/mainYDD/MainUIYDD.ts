@@ -797,14 +797,17 @@ module game
 				this._selectedBall.hideSelectedAmi();
 			}
 			let btn: BallBtn = ent.target;
+			let tempx: SoundManager.SoundManager = new SoundManager.SoundManager();
 			this._selectedBall = btn;
 			btn.showSelectedAmi();
 			switch (btn)
 			{
 				case this.ball0_btn:
 					this._selectIndex = 0;
+			tempx.playTestSound();
 					break;
 				case this.ball1_btn:
+				tempx.stopSound();
 					this._selectIndex = 1;
 					break;
 				case this.ball2_btn:

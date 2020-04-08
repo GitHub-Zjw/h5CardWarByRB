@@ -145,6 +145,17 @@ module core {
         }
 
         /**
+         * 播放测试音效
+         */
+        public playTestSound(): void
+        {
+            //jinhua
+            let sound: egret.Sound = RES.getRes("jinhua_mp3");
+            sound.type = egret.Sound.EFFECT;
+            sound.play(0, 1);
+        }
+
+        /**
          * 播放音乐或音效
          * @param  {number} id  声音配置ID
          * @param  {number=1} loop 播放次数，默认值是 1，循环播放。 大于 0 为播放次数，如 1 为播放 1 次；小于等于 0，为循环播放。
